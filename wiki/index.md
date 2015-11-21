@@ -1,6 +1,7 @@
 ---
-layout: wiki
 title: Wiki
 ---
-
-- [Concerns](Concerns)
+* [Concerns](Concerns)
+* [Frameworks](Frameworks)
+* [Patterns](Patterns)
+* [Programming Languages](Programming-Languages)
