@@ -6,7 +6,7 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: CodingItWrong.com
+title: CodingItWrong
 email: me@codingitwrong.com
 description: > # this means to ignore newlines until "baseurl:"
   Full-stack developer for sufficiently small definitions of stack. Work for Big Nerd Ranch. This site is a bit more serious; visit my Twitter account for sarcasm over 9000.
