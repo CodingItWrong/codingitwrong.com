@@ -1,6 +1,5 @@
 ---
 title: There's More to Programming Than Programming
-layout: post
 ---
 
 Last fall I got pulled onto two projects to help get them over the finish line. I think I made significant contributions, but the strange thing to me was that I didn't do any programming on either of them. For one, I organized the testing and release of several small sites all related to one campaign. For another, I organized the testing, including triaging the defect list to get blocking issues fixed first.
