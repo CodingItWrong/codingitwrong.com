@@ -10,6 +10,10 @@ The other view seems to be held by DHH and Katz, among others. In their view, Ra
 
 Which view of architecture is right? The answer is easy to see in the edge cases. Rails out-of-the-box should be enough at *least* for prototype apps, and something of the scale of Facebook most likely requires some custom-tailored engineering.
 
-But what about the 99% of systems in between? There's some kind of spectrum, but how much of it is on Uncle Bob's side and how much is on DHH's? Spoilers! I won't be answering that. What I will be doing is diving into architecture and Rails so you can decide for yourself. I'll be reviewing different thoughts on architecture as a whole, as well as different possible components of Rails application architectures and how they fit together. Most of this is not new information by a long shot, but I haven't seen it brought together in this way.
+But what about the 99% of systems in between? There's some kind of spectrum, but how much of it is on Uncle Bob's side and how much is on DHH's? Spoilers! I won't be answering that. What I will be doing is:
+
+- First, looking at the Single Responsibility Principle, the main OO design principle that drives the discussion.
+- Then, reviewing at some of the common patterns people add on top of Rails to accomplish single responsibility.
+- Finally, zooming back up to a big-picture level to talk about the two camps' view on the costs and benefits of splitting up these responsibilities vs. sticking with the standard.
 
 In the meantime, feel free to check out my [Rails architecture](http://www.youtube.com/playlist?list=PLHhDPKFbKsTLAVB4dhDCpT7k1-gdMZ3fR) YouTube playlist and start forming your own opinions. And [let me know](https://twitter.com/CodingItWrong) what other talks and blog posts I should be looking at.
