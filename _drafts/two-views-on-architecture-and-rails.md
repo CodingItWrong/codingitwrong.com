@@ -6,4 +6,4 @@ As someone who's followed Rails for years but never worked in it full-time until
 
 Sure enough, now that I'm looking around for information about architecture in Rails applications, there are a whole spectrum of views.
 
-The one view is summarized well by the title of a 2014 blog post, ["Rails Does Not Define Your Application Architecture"](http://naildrivin5.com/blog/2014/05/27/rails-does-not-define-your-application-architecture.html). In a similar vein, Uncle Bob argues that the web and the database are I/O devices, and 
+The one view is summarized well by the title of a 2014 blog post, ["Rails Does Not Define Your Application Architecture"](http://naildrivin5.com/blog/2014/05/27/rails-does-not-define-your-application-architecture.html). In a similar vein, [Uncle Bob argues](http://t.co/4XJ8xGcNz4) that the web and the database are I/O devices, and your application is everything in between that isn't bound to either. And that's basically the point of [hexagonal architecture](http://fideloper.com/hexagonal-architecture) as well.
