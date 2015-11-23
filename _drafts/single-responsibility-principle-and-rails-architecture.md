@@ -7,3 +7,24 @@ Despite how much is said today about how simple MVC violates SRP, it was actuall
 The next significant architectural change was from fat controllers to fat models. Models tended to be simple subclasses of an ORM class, sometimes entirely empty. Controllers handled all logic, and tended to get very long ("fat"). Ultimately, the observation was made that there were really two types of logic in the controllers: domain logic, for things like sending an email when a user registers, and application logic, for things like redirecting to a confirmation page. By moving the domain logic into the model, that leaves only the application logic in the controller, giving each class a single responsibility.
 
 But what a "single responsibility" is changes over time. As web applications, and Rails applications in particular, got larger and larger, "domain logic" went from one responsibility to many. Large model classes became the bottleneck that slowed down development for the same reasons that led to SRP in the first place: too much code in one place making understanding difficult and changes risky.
+
+In response, developers started finding various other responsibilities to pull out of the models, as well as other places. Unlike with MVC or Fat-Model, there wasn't a consensus on what to do. Instead, different applications had different needs.
+
+In a post and conference talk, Bryan Helmcamp summarized a number of these ways to refactor fat models. These included:
+
+- **Value objects**: extract logic around a single field
+- **Service objects**: extract complex business logic
+- **Form objects**: extract operations on multiple models
+- **Query objects**: extract complex custom SQL queries
+- **View objects**: extract logic to display model data
+- **Policy objects**: extract permissions checks
+- **Decorators**: extract callback logic
+
+To dig more into Rails architecture options, we'll look into each of these in turn, as well as a few others:
+
+- **Serializers**: extract logic to transform a model into another representation, such as JSON
+- **Queued jobs**: extract asynchronous calls
+- **Events**: further decouple classes by making the "caller" not need to know everything that's called as a result of its operation
+- **Domain model**: extracts business logic from persistence logic
+- **Repository**: extracts persistence implementation from the model classes themselves
+
