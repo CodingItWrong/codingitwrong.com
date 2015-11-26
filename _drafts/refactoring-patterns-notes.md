@@ -1,4 +1,4 @@
-P- Query Objects
+- Query Objects
 - Value Objects: no one talks about this much, probably because ActiveRecord makes it hard.
 - Policy Objects: for reads, especially permissions checks
 - Draper-style Decorator: additional display logic related to a model, instead of in helpers
@@ -22,7 +22,7 @@ DISPLAY LOGIC
 - View model: model-agnostic display logic
 - Draper decorator: model-specific display logic
 - Value objects: field-specific display logic
-- Model
+- Model: just the core concerns of the business object
 
 SECONDARY EFFECTS
 
@@ -35,3 +35,12 @@ SECONDARY EFFECTS
 - Concerns: separate module, included in same model; for related domains; could include callbacks, events, validators, value objects. Just a way for organizing built-in or external patterns within model itself.
 - Validators
 - Model
+
+DIFFERENT APPLICATION LAYERS
+
+- Rails web UI
+- API (might be separate controllers)
+- Rake tasks
+- Queued jobs
+
+What needs to be shared across all of those? And what is separate for each?
