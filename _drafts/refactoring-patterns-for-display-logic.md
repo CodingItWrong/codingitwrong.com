@@ -1,0 +1,6 @@
+- View: just markup output. For real.
+- View object, view model, presenter: model-agnostic display logic. Multiple models out. Many in the Rails community call this a Presenter. Multiple models. View display logic not directly related to one model.
+- Draper decorator: model-specific display logic
+- Value objects: field-specific display logic. no one talks about this much, probably because ActiveRecord makes it hard.
+- Policy Objects: for reads, especially permissions checks
+- Model: just the core concerns of the business object
