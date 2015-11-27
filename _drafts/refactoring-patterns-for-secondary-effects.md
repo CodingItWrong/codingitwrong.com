@@ -4,7 +4,32 @@ This is the mechanism built in to Active Record for firing off secondary effects
 
 ## Form Objects
 
-- Form object: for form-specific validation or coordinating of multiple models. If have secondary effects, probably better to call it a service object. Multiple models in. Laravel calls these FormRequests. Jay Fields calls this a Presenter. Can also use for form-specific conditional validation; model validation is just the core. Example is password/conf. Good alternative to accepts-nested-attributes.
+Form objects represent the specific form being submitted (or the specific web service request being made) as its own object, independent of the model itself. There are at least two motivations for this. First, when a form corresponds to multiple model objects, the single form object can take the input, validate it, and save each separate model as needed. Second, when certain validations are only needed on one form and not on the model in general, the form object can implement that validation, simplifying the model's validations to only include rules that always apply. In particular, Bryan from Code Climate recommends this approach to using `accepts_nested_attributes_for`.
+
+This pattern goes by a few other names. Jay Fields introduced the pattern and referred to it as the Presenter pattern, but that name is now also used for the View Object pattern. The Laravel framework has this pattern built-in, calling them FormRequests.
+
+## General Decorators
+
+Decorator is a classic OO pattern where an object is wrapped by another object with the same or a similar interface, to add behavior. This can be used for models to add secondary effects upon saving, such as sending email. The decorator's `save` method would call the model's `save` method, then, upon success, the decorator would send an email.
+
+With general decorators, callbacks aren't always fired. The caller is responsible for wrapping the model in whichever decorators it needs. This is a very flexible approach. It also means that knowledge of secondary effects is the responsibility of the caller. If a new secondary effect needs to be added, all callers that need that effect must be updated. The implications of this will be explored below.
+
+I'm calling this pattern "General Decorator" to contrast it with "Draper-style Decorators," which are for display logic instead.
+
+## Service Object
+
+Service Objects are the poster child for not doing things "The Rails Way," but they do offer unique benefits compared to other patterns. The service object corresponds a single business use case, and handles calling the model for persistence as well as initiating any necessary secondary effects. Because of this, neither the model nor the caller need to know about secondary effects, simplifying them. However, the caller *does* need to know which Service Object to call, but this should be clear if the Service Object really is named after a use case.
+
+Someone observed that Service Objects are conceptually very similar to Active Jobs, and that this can offer a "Rails Way" to do Service Objects. This is in fact exactly what the Laravel framework does: jobs can be synchronous or asynchronous.
+
+## Events and Event Handlers
+
+Events aren't discussed much in the Rails ecosystem, but they offer a unique way to reduce coupling. In an Event/Handler approach, when a model is saved, it can tell the framework that a certain event has happened, such as "UserRegistered". Then, the framework checks to see what handlers are registered to handle that event: for example, a RegistrationMailer. Each of these handlers is called in turn.
+
+Events are similar to Service Objects in that the knowledge of secondary effects lives in an independent location, not in the model or the caller. The difference is that the caller uses the model directly, and the secondary effects are always called.
+
+Support for Events is built into Rails as `ActiveSupport::Notification`. It's not very widely used, perhaps because it's described in terms of specifically monitoring instrumentation; but it can be used for any application-specific event/handler needs.
+
 - General decorator: secondary effects wrapped around model. Knowledge of effects in caller, not always fired. Best when there aren't many, and when conceptually you are mainly interacting with the model. Good for critical-path effects.
 - Service object: secondary effects in independent class; an active job is a category of this. Knowledge of effects in independent class, but caller needs to know about it in the abstract, so not always fired. Could coordinate general decorators. Good for critical-path effects, like payment. If you aren't conceptually interacting with just one model, this is best. BNR says use for more complex effects instead of callbacks. Especially if coordinating external services like payment. Laravel calls these jobs. Also called command handlers.
 - Events: secondary effects originating from model, bound outside of model. Always fired, but knowledge of effects not coupled to model OR caller. Good for non-critical-path effects, like logging or emailing.
