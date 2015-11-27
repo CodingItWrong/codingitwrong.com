@@ -18,15 +18,12 @@ In a [post](http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-
 - **Query objects**: extract complex custom SQL queries
 - **View objects**: extract logic to display model data
 - **Policy objects**: extract permissions checks
-- **Decorators**: extract callback logic
+- **General Decorators**: extract callback logic
 
 To dig more into Rails architecture options, we'll look into each of these in turn, as well as a few others:
 
-- **Serializers**: extract logic to transform a model into another representation, such as JSON
-- **Queued jobs**: extract asynchronous calls
+- **Draper-Style Decorators**: extract model-specific display logic from model
 - **Events**: further decouple classes by making the "caller" not need to know everything that's called as a result of its operation
-- **Domain model**: extracts business logic from persistence logic
-- **Repository**: extracts persistence implementation from the model classes themselves
 
 We'll also look at responses to these patterns from those who would argue that they aren't necessary and that using Rails' built-in patterns is better.
 

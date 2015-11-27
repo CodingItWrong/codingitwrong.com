@@ -3,4 +3,5 @@
 - Draper decorator: model-specific display logic
 - Value objects: field-specific display logic. no one talks about this much, probably because ActiveRecord makes it hard.
 - Policy Objects: for reads, especially permissions checks
+- Query Objects: for complex queries
 - Model: just the core concerns of the business object
