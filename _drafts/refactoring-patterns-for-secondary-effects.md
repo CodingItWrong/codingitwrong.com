@@ -30,6 +30,39 @@ Events are similar to Service Objects in that the knowledge of secondary effects
 
 Support for Events is built into Rails as `ActiveSupport::Notification`. It's not very widely used, perhaps because it's described in terms of specifically monitoring instrumentation; but it can be used for any application-specific event/handler needs.
 
+Callbacks
+- Maps to model
+- Always called
+- Knowledge in model
+
+Form Requests
+- Does not map to model
+- Always called
+- Knowledge in form request
+
+General Decorators
+- Maps to model
+- Not always called
+- Knowledge in caller
+
+Service Objects
+- Does not map to model
+- Not always called
+- Knowledge in 3rd party object
+
+Events and Handlers
+- Maps to model
+- Always called
+- Knowledge in 3rd party object
+
+Decision recommendation
+- If you just need to update fields in the same model, use callbacks. This can be used with other patterns.
+- If you have a form with multiple models, or form-specific validation, but no secondary effects, use a form object
+- If you have a few secondary effects used rarely, use model decorators
+- If you have secondary effects that are always used, use events
+- If you have many secondary effects called from multiple places in different combinations, use service objects
+- If your service objects are getting complex or repetitive, you can have them use general decorators or broadcast events instead of issuing effects directly.
+
 - General decorator: secondary effects wrapped around model. Knowledge of effects in caller, not always fired. Best when there aren't many, and when conceptually you are mainly interacting with the model. Good for critical-path effects.
 - Service object: secondary effects in independent class; an active job is a category of this. Knowledge of effects in independent class, but caller needs to know about it in the abstract, so not always fired. Could coordinate general decorators. Good for critical-path effects, like payment. If you aren't conceptually interacting with just one model, this is best. BNR says use for more complex effects instead of callbacks. Especially if coordinating external services like payment. Laravel calls these jobs. Also called command handlers.
 - Events: secondary effects originating from model, bound outside of model. Always fired, but knowledge of effects not coupled to model OR caller. Good for non-critical-path effects, like logging or emailing.
