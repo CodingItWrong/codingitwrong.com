@@ -34,6 +34,8 @@ Service Objects are the poster child for not doing things "The Rails Way," but t
 
 Andy Croll observed that [Rails Active Jobs are conceptually very similar to Service Objects](http://youtu.be/60LH3em78V8), and that they can offer a "Rails Way" to do Service Objects. This is in fact exactly the way the Laravel framework implements service objects out of the box: it has a concept of [jobs that can be synchronous or asynchronous](http://laravel.com/docs/5.1/queues) (although the documentation currently emphasizes their asynchronous aspect).
 
+In a sample project of design patterns](http://youtu.be/bHpVdOzrvkE) code reviewed by DHH, Service Object was the pattern he most strenuously objected to. But in this case it seems like the Service Object was less about wrapping secondary effects and more about application logic that really belonged in the controller. So although DHH says he has never seen a good scenario for a Service Object, I haven't yet run across an example of what specifically he would say about a good one.
+
 ## Events and Event Handlers
 
 Events aren't discussed much in the Rails ecosystem, but they offer a unique way to reduce coupling. In an Event/Handler approach, when a model is saved, it can tell the framework that a certain event has happened, such as "UserRegistered". Then, the framework checks to see what handlers are registered to handle that event: for example, a RegistrationMailer. Each of these handlers is called in turn.
