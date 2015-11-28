@@ -8,13 +8,13 @@ With that in mind, let's take a look at the different patterns for secondary eff
 
 ## Callbacks
 
-Callbacks are the mechanism built in to Active Record for firing off secondary effects when models are created, updated, or deleted. There are a few downsides to this mechanism, though. The model is responsible for having full knowledge of all secondary effects, which contributes to large, complex models. Also, the callbacks are always fired, so if they're only needed some of the time then the model is *also* responsible for conditional logic around the secondary effects.
+[Callbacks](http://guides.rubyonrails.org/active_record_callbacks.html) are the mechanism built in to Active Record for firing off secondary effects when models are created, updated, or deleted. There are a few downsides to this mechanism, though. The model is responsible for having full knowledge of all secondary effects, which contributes to large, complex models. Also, the callbacks are always fired, so if they're only needed some of the time then the model is *also* responsible for conditional logic around the secondary effects.
 
 Because of this, Big Nerd Ranch's "Ruby on the Server" course materials recommend only using callbacks for the simplest cases: specifically, updating fields on the model for data consistency, such as setting a GUID or permalink field. Other needs for secondary effects are often best handled by another pattern.
 
 ## Form Objects
 
-Form objects represent the specific form being submitted (or the specific web service request being made) as its own object, independent of the model itself. There are at least two motivations for this.
+[Form objects](http://culttt.com/2015/11/04/using-form-objects-in-ruby-on-rails) represent the specific form being submitted (or the specific web service request being made) as its own object, independent of the model itself. There are at least two motivations for this.
 
 First, when a form corresponds to multiple model objects, the single form object can take the input, validate it, and save each separate model as needed. In particular, Bryan Helpcamp from Code Climate recommends this approach to using `accepts_nested_attributes_for`.
 
@@ -24,7 +24,7 @@ The Form Object pattern goes by a few other names. Jay Fields introduced the pat
 
 ## General Decorators
 
-Decorator is a classic OO pattern where an object is wrapped by another object with the same or a similar interface, to add behavior. (I'm calling this pattern "General Decorator" to contrast it with "Draper-style Decorators," which are for display logic instead.) General decorators can be used for models to add secondary effects upon saving, such as sending email. The decorator's `save` method would call the model's `save` method. Then, upon success, the decorator would send an email.
+Decorator is a classic OO pattern where an object is wrapped by another object with the same or a similar interface, to add behavior. (I'm calling this pattern "General Decorator" to contrast it with "Draper-style Decorators," which are for display logic instead.) General decorators can be used for models to [add secondary effects upon saving](http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-activerecord-models/), such as sending email. The decorator's `save` method would call the model's `save` method. Then, upon success, the decorator would send an email.
 
 With general decorators, callbacks aren't always fired. The caller is responsible for wrapping the model in whichever decorators it needs. This is a very flexible approach, but it means that the caller is responsible to know which secondary effects it needs. If a new secondary effect needs to be added, all callers that need that effect must be updated. The implications of this will be explored below.
 
@@ -40,7 +40,7 @@ Events aren't discussed much in the Rails ecosystem, but they offer a unique way
 
 Events are similar to Service Objects in that the knowledge of secondary effects lives in an independent location, not in the model or the caller. The difference is that the caller uses the model directly, and the secondary effects are always called.
 
-Support for Events is built into Rails in the `ActiveSupport::Notifications` module. It's not very widely used, perhaps because it's described specifically in terms of instrumentation; but [it can be used](http://youtu.be/dgUhP606F9w) for any application-specific event/handler needs.
+Support for Events is built into Rails in the [`ActiveSupport::Notifications`](http://api.rubyonrails.org/classes/ActiveSupport/Notifications.html) module. It's not very widely used, perhaps because it's described specifically in terms of instrumentation; but [it can be used](http://youtu.be/dgUhP606F9w) for any application-specific event/handler needs.
 
 ## How to Decide
 
