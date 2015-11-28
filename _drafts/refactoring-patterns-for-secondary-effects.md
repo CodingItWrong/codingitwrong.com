@@ -2,17 +2,25 @@ So far in the Rails architecture series, we've talked about the controversy over
 
 When I say "secondary effects," here's what I mean. The primary effect of a write operation on the web operation is almost always a create, update, or delete on a database records. But there are often many secondary effects as well: creating or updating additional records, writing to logs, sending notifications via email, text, or mobile apps. I would even consider taking payment a secondary effect, for this reason: no system ever *just* takes payment: they always save a database record for an order or a donation. So placing the order or donation is the primary effect, and charging the card is the secondary effect.
 
+There are several different patterns about how to implement secondary effects, with vocal adherents of each. What makes secondary effects more controversial than other application needs? I think the reason is because one of the biggest differences between hobby apps and enterprise apps is the quantity and complexity of callbacks. A hobby app might not have any secondary effects for most of its operations, whereas an enterprise app might do extensive logging, profiling, and auditing for even the simplest operation. With needs that different, it's no wonder very different patterns might be needed for the two cases.
 
+With that in mind, let's take a look at the different patterns for secondary effects and when they're useful.
 
 ## Callbacks
 
-This is the mechanism built in to Active Record for firing off secondary effects when models are created, updated, or deleted. There are a few downsides to this mechanism, though. The model is responsible for having full knowledge of all secondary effects. Also, the callbacks are always fired, so if they're only needed some of the time then the model is *also* responsible for knowing the conditions when they should be fired. Because of this, Big Nerd Ranch's "Ruby on the Server" course materials recommend only using callbacks for updating fields on the model for data consistency, such as setting a GUID or permalink field. Other needs for secondary effects should be handled by another pattern.
+Callbacks are the mechanism built in to Active Record for firing off secondary effects when models are created, updated, or deleted. There are a few downsides to this mechanism, though. The model is responsible for having full knowledge of all secondary effects, which contributes to large, complex models. Also, the callbacks are always fired, so if they're only needed some of the time then the model is *also* responsible for conditional logic around the secondary effects.
+
+Because of this, Big Nerd Ranch's "Ruby on the Server" course materials recommend only using callbacks for the simplest cases: specifically, updating fields on the model for data consistency, such as setting a GUID or permalink field. Other needs for secondary effects are often best handled by another pattern.
 
 ## Form Objects
 
-Form objects represent the specific form being submitted (or the specific web service request being made) as its own object, independent of the model itself. There are at least two motivations for this. First, when a form corresponds to multiple model objects, the single form object can take the input, validate it, and save each separate model as needed. Second, when certain validations are only needed on one form and not on the model in general, the form object can implement that validation, simplifying the model's validations to only include rules that always apply. In particular, Bryan from Code Climate recommends this approach to using `accepts_nested_attributes_for`.
+Form objects represent the specific form being submitted (or the specific web service request being made) as its own object, independent of the model itself. There are at least two motivations for this.
 
-This pattern goes by a few other names. Jay Fields introduced the pattern and referred to it as the Presenter pattern, but that name is now also used for the View Object pattern. The Laravel framework has this pattern built-in, calling them FormRequests.
+First, when a form corresponds to multiple model objects, the single form object can take the input, validate it, and save each separate model as needed. In particular, Bryan Helpcamp from Code Climate recommends this approach to using `accepts_nested_attributes_for`.
+
+Second, when certain validations are only needed on one form and not on the model in general, the form object can implement that validation, simplifying the model's validations to only include rules that always apply. The canonical example of conditional validations is user signup. On the signup form, a cleartext password and confirmation are required, but they are not required on other forms, such as an email update form. If all validation is on the model, this conditional validation needs to be handled in the model. But with form objects, the model itself will just not require a cleartext password, while the signup form *will* require it.
+
+The Form Object pattern goes by a few other names. Jay Fields introduced the pattern and referred to it as [the Presenter pattern](http://blog.jayfields.com/2007/03/rails-presenter-pattern.html), but that name is now also used for the View Object pattern. The Laravel framework has this pattern built-in, calling them [Form Requests](http://laravel.com/docs/5.1/validation#form-request-validation).
 
 ## General Decorators
 
