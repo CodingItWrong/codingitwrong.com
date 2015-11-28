@@ -1,0 +1,2 @@
+- Sandi "nothing" video on modules not being good enough
+- API video on different views of simplicity
