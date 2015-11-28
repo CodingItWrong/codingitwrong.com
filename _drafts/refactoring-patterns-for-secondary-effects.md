@@ -10,7 +10,7 @@ With that in mind, let's take a look at the different patterns for secondary eff
 
 [Callbacks](http://guides.rubyonrails.org/active_record_callbacks.html) are the mechanism built in to Active Record for firing off secondary effects when models are created, updated, or deleted. There are a few downsides to this mechanism, though. The model is responsible for having full knowledge of all secondary effects, which contributes to large, complex models. Also, the callbacks are always fired, so if they're only needed some of the time then the model is *also* responsible for conditional logic around the secondary effects.
 
-Because of this, Big Nerd Ranch's "Ruby on the Server" course materials recommend only using callbacks for the simplest cases: specifically, updating fields on the model for data consistency, such as setting a GUID or permalink field. Other needs for secondary effects are often best handled by another pattern.
+Because of this, Big Nerd Ranch's ["Ruby on the Server"]() course materials recommend only using callbacks for the simplest cases: specifically, updating fields on the model for data consistency, such as setting a GUID or permalink field. Other needs for secondary effects are often best handled by another pattern.
 
 ## Form Objects
 
