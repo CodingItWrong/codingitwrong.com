@@ -24,17 +24,15 @@ The Form Object pattern goes by a few other names. Jay Fields introduced the pat
 
 ## General Decorators
 
-Decorator is a classic OO pattern where an object is wrapped by another object with the same or a similar interface, to add behavior. This can be used for models to add secondary effects upon saving, such as sending email. The decorator's `save` method would call the model's `save` method, then, upon success, the decorator would send an email.
+Decorator is a classic OO pattern where an object is wrapped by another object with the same or a similar interface, to add behavior. (I'm calling this pattern "General Decorator" to contrast it with "Draper-style Decorators," which are for display logic instead.) General decorators can be used for models to add secondary effects upon saving, such as sending email. The decorator's `save` method would call the model's `save` method. Then, upon success, the decorator would send an email.
 
-With general decorators, callbacks aren't always fired. The caller is responsible for wrapping the model in whichever decorators it needs. This is a very flexible approach. It also means that knowledge of secondary effects is the responsibility of the caller. If a new secondary effect needs to be added, all callers that need that effect must be updated. The implications of this will be explored below.
-
-I'm calling this pattern "General Decorator" to contrast it with "Draper-style Decorators," which are for display logic instead.
+With general decorators, callbacks aren't always fired. The caller is responsible for wrapping the model in whichever decorators it needs. This is a very flexible approach, but it means that the caller is responsible to know which secondary effects it needs. If a new secondary effect needs to be added, all callers that need that effect must be updated. The implications of this will be explored below.
 
 ## Service Object
 
-Service Objects are the poster child for not doing things "The Rails Way," but they do offer unique benefits compared to other patterns. The service object corresponds a single business use case, and handles calling the model for persistence as well as initiating any necessary secondary effects. Because of this, neither the model nor the caller need to know about secondary effects, simplifying them. However, the caller *does* need to know which Service Object to call, but this should be clear if the Service Object really is named after a use case.
+Service Objects are the poster child for not doing things "The Rails Way," but they do offer unique benefits compared to other patterns. The service object corresponds a single business use case, and handles calling the model for persistence as well as executing any necessary secondary effects. Because of this, neither the model nor the caller need to know about secondary effects, simplifying both of them. The caller *does* need to know which Service Object to call, but this should be fairly obvious if the Service Object really is named after a use case.
 
-Someone observed that Service Objects are conceptually very similar to Active Jobs, and that this can offer a "Rails Way" to do Service Objects. This is in fact exactly what the Laravel framework does: jobs can be synchronous or asynchronous.
+Andy Croll observed that [Rails Active Jobs are conceptually very similar to Service Objects](http://youtu.be/60LH3em78V8), and that they can offer a "Rails Way" to do Service Objects. This is in fact exactly the way the Laravel framework implements service objects out of the box: it has a concept of [jobs that can be synchronous or asynchronous](http://laravel.com/docs/5.1/queues) (although the documentation currently emphasizes their asynchronous aspect).
 
 ## Events and Event Handlers
 
@@ -42,7 +40,18 @@ Events aren't discussed much in the Rails ecosystem, but they offer a unique way
 
 Events are similar to Service Objects in that the knowledge of secondary effects lives in an independent location, not in the model or the caller. The difference is that the caller uses the model directly, and the secondary effects are always called.
 
-Support for Events is built into Rails as `ActiveSupport::Notification`. It's not very widely used, perhaps because it's described in terms of specifically monitoring instrumentation; but it can be used for any application-specific event/handler needs.
+Support for Events is built into Rails in the `ActiveSupport::Notifications` module. It's not very widely used, perhaps because it's described specifically in terms of instrumentation; but [it can be used](http://youtu.be/dgUhP606F9w) for any application-specific event/handler needs.
+
+## How to Decide
+
+I hinted at some of the differences between these patterns above, but how do you decide which, if any, are right for your application? Here are my suggestions:
+
+- If you just need to update fields in the same model, use callbacks. You can still do this for field updates even if you also need other patterns for more complex needs.
+- If you have a form with multiple models, or form-specific validation, use a form object. But I don't recommend using form objects if you have other secondary effects: a service object is probably better in that case.
+- If you have a few secondary effects that you use rarely, or that aren't on the critical path, use model decorators
+- If you have secondary effects that aren't on the critical path, and they're always used, use events
+- If you have many secondary effects called from multiple places in different combinations, or if they're on the critical path, use service objects
+- If your service objects are getting complex or repetitive, you can have them use general decorators or broadcast events instead of issuing effects directly.
 
 Callbacks
 - Maps to model
@@ -68,29 +77,3 @@ Events and Handlers
 - Maps to model
 - Always called
 - Knowledge in 3rd party object
-
-Decision recommendation
-- If you just need to update fields in the same model, use callbacks. This can be used with other patterns.
-- If you have a form with multiple models, or form-specific validation, but no secondary effects, use a form object
-- If you have a few secondary effects used rarely, use model decorators
-- If you have secondary effects that are always used, use events
-- If you have many secondary effects called from multiple places in different combinations, use service objects
-- If your service objects are getting complex or repetitive, you can have them use general decorators or broadcast events instead of issuing effects directly.
-
-- General decorator: secondary effects wrapped around model. Knowledge of effects in caller, not always fired. Best when there aren't many, and when conceptually you are mainly interacting with the model. Good for critical-path effects.
-- Service object: secondary effects in independent class; an active job is a category of this. Knowledge of effects in independent class, but caller needs to know about it in the abstract, so not always fired. Could coordinate general decorators. Good for critical-path effects, like payment. If you aren't conceptually interacting with just one model, this is best. BNR says use for more complex effects instead of callbacks. Especially if coordinating external services like payment. Laravel calls these jobs. Also called command handlers.
-- Events: secondary effects originating from model, bound outside of model. Always fired, but knowledge of effects not coupled to model OR caller. Good for non-critical-path effects, like logging or emailing.
-- Callbacks: secondary effects IN model. BNR says just for internal stuff, like data consistency. Always fired, knowledge of effects in model.
-
-- Concerns: separate module, included in same model; for related domains; could include callbacks, events, validators, value objects. Just a way for organizing built-in or external patterns within model itself.
-- Validators
-- Model
-
-DIFFERENT APPLICATION LAYERS
-
-- Rails web UI
-- API (might be separate controllers)
-- Rake tasks
-- Queued jobs
-
-What needs to be shared across all of those? And what is separate for each?
