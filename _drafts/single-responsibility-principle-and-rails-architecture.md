@@ -1,4 +1,4 @@
-The idea to add to an application's architecture doesn't just come out of thin air; it should be in response to problems caused by the app's current architecture.
+Last week I wrote about [the controversy over Rails architecture]({% post_url 2015-11-22-the-rails-architecture-controversy %}). To start out our analysis of it, we need to look at where architectural patterns come from. The idea to add to an application's architecture doesn't just come out of thin air; it should be in response to problems caused by the app's current architecture.
 
 One common problem is that classes tend to grow larger and larger, which makes them harder and harder to change without causing unforeseen bugs. In response to this problem, the [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single_responsibility_principle) (SRP) states that a class should only have one thing it's responsible for. If more than one thing needs to be accomplished, additional classes can be created, and the classes can call each other.
 
@@ -20,11 +20,11 @@ In a [post](http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-
 - **Policy objects**: extract permissions checks
 - **General Decorators**: extract callback logic
 
-To dig more into Rails architecture options, we'll look into each of these in turn, as well as a few others:
+To dig more into Rails architecture options, we'll look into some of these in more detail, as well as a few others:
 
 - **Draper-Style Decorators**: extract model-specific display logic from model
 - **Events**: further decouple classes by making the "caller" not need to know everything that's called as a result of its operation
 
-We'll also look at responses to these patterns from those who would argue that they aren't necessary and that using Rails' built-in patterns is better.
+We'll also look at responses to these patterns from those who would argue that they aren't necessary and that using Rails' built-in patterns are better.
 
 If there are other patterns that play a significant role in your web application architecture, [let me know](https://twitter.com/CodingItWrong)!
