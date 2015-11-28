@@ -46,7 +46,7 @@ Support for Events is built into Rails in the [`ActiveSupport::Notifications`](h
 
 ## How to Decide
 
-I hinted at some of the differences between these patterns above, but how do you decide which, if any, are right for your application? Here are my suggestions:
+I hinted at some of the differences between these patterns above, but how do you decide which, if any, are right for your application? I haven't used all of these patterns extensively enough to have a decisive opinion, but here are my initial thoughts. If you've used them and have feedback, [let me know](https://twitter.com/CodingItWrong)!
 
 - If you just need to update fields in the same model, use callbacks. You can still do this for field updates even if you also need other patterns for more complex needs.
 - If you have a form with multiple models, or form-specific validation, use a form object. But I don't recommend using form objects if you have other secondary effects: a service object is probably better in that case.
