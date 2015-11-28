@@ -1,2 +1,7 @@
+- Common thread: concerns vs collaborators
+- Each says the other is a junk drawer
+- Jason DHH reply
+- Bryan post/talk
+- Different organizing principles: productivity from readability or modularity
 - Sandi "nothing" video on modules not being good enough
 - API video on different views of simplicity
