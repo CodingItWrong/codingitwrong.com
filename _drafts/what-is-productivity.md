@@ -1,7 +1,16 @@
 - Common thread: concerns vs collaborators
 - Each says the other is a junk drawer
-- Jason DHH reply
-- Bryan post/talk
-- Different organizing principles: productivity from readability or modularity
-- Sandi "nothing" video on modules not being good enough
-- API video on different views of simplicity
+    - Jason DHH reply
+    - Bryan post/talk
+- Why the different views of concerns and collaborators? Different views of what achieves productivity
+    - DHH is focused on readability, and modules/concerns are good for that: smaller files, logical groupings, simple calling syntax
+    - Classical OO folks are focused on modularity, and modules/concerns don't help with that, because it's still one huge model, with no protections for how things access each other
+        - Sandi "nothing" video on modules not being good enough
+- Do you have to pick one or the other? It's a tension to manage. That's what it means to be a senior developer: to know when to apply different principles and when not to.
+- My recommendations:
+    - Start with the Rails standards
+    - Evolve your architecture in an agile way
+    - Know these patterns so you can identify a need to refactor when it arises
+    - Make exemplary code so others on the team will follow
+   
+- API video on different views of simplicity: same pattern vs. single responsibility
