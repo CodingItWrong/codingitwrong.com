@@ -14,6 +14,8 @@ The problem that View Objects address is that controllers can get cluttered up w
 
 View Objects can also simplify our view templates. We all know views should only contain display logic: things like loops and conditionals on the data passed in to it. But even display logic can get pretty cluttered up with things like choosing which CSS class to add to an element, drilling down multiple levels into an object, etc. Logic like this can be moved to the View Object. This results in views that are much more readable, because they're almost entirely markup and simple output ERB tags.
 
+NOTES ON VIEW OBJECT NAMES
+
 ## Value Objects
 
 
