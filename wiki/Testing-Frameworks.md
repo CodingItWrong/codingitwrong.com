@@ -7,4 +7,4 @@ title: Testing Frameworks
 * By Application Framework
     - [Rails Testing Frameworks](Rails-Testing-Frameworks)
 * By Language
-    - [Ruby Testing Frameworks](Ruby Testing Frameworks)
+    - [Ruby Testing Frameworks](Ruby-Testing-Frameworks)
