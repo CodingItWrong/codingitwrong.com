@@ -1,5 +1,5 @@
 ---
-Single Responsibility Principle and the History of Rails Architecture
+title: Single Responsibility Principle and the History of Rails Architecture
 ---
 
 Last week I wrote about [the controversy over Rails architecture]({% post_url 2015-11-22-the-rails-architecture-controversy %}). To start out our analysis of it, we need to look at where architectural patterns come from. The idea to add to an application's architecture doesn't just come out of thin air; it should be in response to problems caused by the app's current architecture.
