@@ -8,15 +8,15 @@ This separation is a good start, but there are a few additional extractions we c
 
 ## Draper-Style Decorators
 
-Draper-style Decorators provide a place to put model-specific display logic all in one place. This is a way to separate out the core domain responsibilities of the model from display responsibilities. Such logic is also sometimes placed in helpers, but Draper-style Decorators are objects, making them easier to work with and test in some ways.
+[Draper-style Decorators](https://github.com/drapergem/draper) provide a place to put model-specific display logic all in one place. This is a way to separate out the core domain responsibilities of the model from display responsibilities. Such logic is also sometimes placed in helpers, but Draper-style Decorators are objects, making them easier to work with and test in some ways.
 
-This is an application of the general Decorator pattern, which involved wrapping an object with another object to add additional behavior. In this case, the model object is wrapped in another object that adds formatting. Usually, all the model's methods are directly accessible, as well as additional formatting methods.
+This is an application of the general [Decorator pattern](https://en.wikipedia.org/wiki/Decorator_pattern), which involved wrapping an object with another object to add additional behavior. In this case, the model object is wrapped in another object that adds formatting. Usually, all the model's methods are directly accessible, as well as additional formatting methods.
 
-I use the term "Draper-style" because Draper is a common Ruby gem for applying this pattern. The Decorator pattern can also be used for applying secondary effects to model save operations, which I'll discuss in a future post.
+I use the term "Draper-style" because Draper is a common Ruby gem for applying this pattern. You can also implement the pattern yourself with a little more work. The Decorator pattern can also be used for applying secondary effects to model save operations, which I'll discuss in a future post.
 
 ## View Objects
 
-The problem that View Objects address is that controllers can get cluttered up with code to load and arrange data in the way the view needs it. This isn't the main responsibility of a controller: what it *needs* to do is accept input, route it to the appropriate models, then return the correct response to the browser: either a view or a redirect. By separating out data loading, we can simplify our controllers and make them more readable. This means that only a single object is loaded in the controller for the view: the View Object. It handles the loading of all other necessary objects.
+The problem that [View Objects](http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-activerecord-models/) address is that controllers can get cluttered up with code to load and arrange data in the way the view needs it. This isn't the main responsibility of a controller: what it *needs* to do is accept input, route it to the appropriate models, then return the correct response to the browser: either a view or a redirect. By separating out data loading, we can simplify our controllers and make them more readable. This means that only a single object is loaded in the controller for the view: the View Object. It handles the loading of all other necessary objects.
 
 View Objects can also simplify our view templates. Views should only contain display logic: things like loops and conditionals on the data passed in to it. But even display logic can get pretty cluttered up with things like choosing which CSS class to add to an element, drilling down multiple levels into an object, etc. Logic like this can be moved to the View Object. This results in views that are much more readable, because they're almost entirely markup and simple output ERB tags.
 
@@ -26,7 +26,7 @@ View objects have gone by a few different names, like View Model. Also, Presente
 
 Sometimes a single field on a model has logic around it more than what's built into the Ruby data type object. Bryan Helmcamp gives the example of a rating field of A, B, C, D, or F. Some logic that might be needed related to that field includes sorting and grouping.
 
-Initially, you might implement logic like this as methods on the model, like `sort_by_rating`. But once there are three or four method all relating to the same field, that starts to feel like a separate responsibility that belongs in its own object.
+Initially, you might implement logic like this as methods on the model, like `sort_by_rating`. But once there are three or four method all relating to the same field, that starts to feel like a separate responsibility that belongs in its own object. This is called a [Value Object](http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-activerecord-models/).
 
 I haven't heard a lot of talk about value objects in frameworks that use the Active Record pattern for database access. One reason may be that, by default, Active Record objects expose all database columns as basic data types--so you either have to jump through some hoops to prevent accidental access to the non-value-object version of the field, or else be disciplined to never use the raw version. It's not the cleanest.
 
@@ -34,11 +34,13 @@ I haven't heard a lot of talk about value objects in frameworks that use the Act
 
 When all these patterns are brought together, we have a display stack that splits up responsibilities nicely:
 
-- Model: just the core domain logic
-- Value Object: logic around individual fields that have some complexity
-- Draper Decorator: adds model-related view logic onto the model
-- View Object: handles assembling the data needed for the template
-- View Template: renders the markup
-- Partials: makes bits of markup reusable
+- **Model**: just the core domain logic
+- **Value Object**: logic around individual fields that have some complexity
+- **Draper Decorator**: adds model-related view logic onto the model
+- **View Object**: handles assembling the data needed for the template
+- **View Template**: renders the markup
+- **Partials**: makes bits of markup reusable
 
 Notice that helpers aren't included in the list. When these other patterns are used, there isn't a lot of need for custom helpers in your application. Of course, this doesn't include built-in helpers like form helpers: those still have a very valuable role.
+
+This isn't to say that every model and view of every application needs all these patterns. It's best to start simple, and only add additional objects when there really *is* a separate responsibility to pull out. And even then, you may only need Decorators for a few models, and you certainly don't want Value Objects for all of your fields.
