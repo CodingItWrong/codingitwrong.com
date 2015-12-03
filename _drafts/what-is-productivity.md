@@ -1,3 +1,7 @@
+We've talked about a number of patterns that can be added to Rails to separate out concerns from your models, views, and controllers. But what does the Rails core team think about this? Do they encourage you to reorganize your app any way you like? Are they working to add decorators and form objects to Rails 5? Well, no. Rails *is* gradually adding new patterns, like Active Job and Action Cable, but they're about more than just code organization. They're about entirely new ways of functioning: queues and persistent client connections, respectively.
+
+On the topic of code organization, the message from DHH has generally been that what Rails gives you should be enough. He objects to some patterns more 
+
 - Common thread: concerns vs collaborators
 - Each says the other is a junk drawer
     - Jason DHH reply
