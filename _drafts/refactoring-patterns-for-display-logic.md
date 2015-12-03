@@ -1,8 +1,10 @@
-In the default Rails stack, four types of component work together to generate HTML: the view templates themselves, partials, models, and helpers. Of course, the main responsibility of the view is to output the markup of the page, based on the data in the model (or multiple models). As display logic gets more complex in the template, there are three places you can abstract that logic to.
+So far in the Rails Architecture series we've talked about [what all the fuss is about]({% post_url 2015-11-22-the-rails-architecture-controversy %}), then about [how the Single Responsibility Principle leads us to seek out new design patterns]({% post_url 2015-11-30-single-responsiblity-principle-and-the-history-of-rails-architecture %}). Now let's dive in to some of these patterns to see how they can work together to simplify your classes. I won't be providing detailed code samples, but I'll link to articles for additional detail on each pattern.
 
-- If you just have a portion of markup that needs to be reused, or is complex enough that it makes it hard to understand the overall flow of the page's markup, you can place it in a partial.
-- Helpers are more useful for if you need to generate markup but it's more convenient to build up the HTML string from within plain Ruby code.
-- If you don't need to generate markup at all, but rather do a data operation like formatting a date or dollar amount, or concatenating fields in a standard way, you can add methods to the model itself.
+In this post we'll start with patterns relates to display logic. In the default Rails stack, four types of component work together to generate HTML: the view templates themselves, partials, models, and helpers. Of course, the main responsibility of the view is to output the markup of the page, based on the data in the model (or multiple models). As display logic gets more complex in the template, there are three places you can abstract that logic to:
+
+- If you just have a portion of markup that needs to be reused, or is complex enough that it makes it hard to understand the overall flow of the page's markup, you can place it in a **view partial**.
+- **Helpers** are more useful for if you need to generate markup but it's more convenient to build up the HTML string from within plain Ruby code.
+- If you don't need to generate markup at all, but rather do a data operation like formatting a date or dollar amount, or concatenating fields in a standard way, you can add methods to the **model** itself.
 
 This separation is a good start, but there are a few additional extractions we can make to make our code simpler and more object-oriented.
 
@@ -44,3 +46,5 @@ When all these patterns are brought together, we have a display stack that split
 Notice that helpers aren't included in the list. When these other patterns are used, there isn't a lot of need for custom helpers in your application. Of course, this doesn't include built-in helpers like form helpers: those still have a very valuable role.
 
 This isn't to say that every model and view of every application needs all these patterns. It's best to start simple, and only add additional objects when there really *is* a separate responsibility to pull out. And even then, you may only need Decorators for a few models, and you certainly don't want Value Objects for all of your fields.
+
+How do you use these patterns in your apps? Do you have other patterns for display logic? [Let me know!](https://twitter.com/CodingItWrong)
