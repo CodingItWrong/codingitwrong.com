@@ -24,7 +24,9 @@ View objects have gone by a few different names, like View Model. Also, Presente
 
 ## Value Objects
 
+Sometimes a single field on a model has logic around it more than what's built into the Ruby data type object. Bryan Helmcamp gives the example of a rating field of A, B, C, D, or F. Some logic that might be needed related to that field includes sorting and grouping.
 
+Initially, you might implement logic like this as methods on the model, like `sort_by_rating`. But once there are three or four 
 
 ## Bringing it All Together
 
