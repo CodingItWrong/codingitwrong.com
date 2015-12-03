@@ -26,7 +26,9 @@ View objects have gone by a few different names, like View Model. Also, Presente
 
 Sometimes a single field on a model has logic around it more than what's built into the Ruby data type object. Bryan Helmcamp gives the example of a rating field of A, B, C, D, or F. Some logic that might be needed related to that field includes sorting and grouping.
 
-Initially, you might implement logic like this as methods on the model, like `sort_by_rating`. But once there are three or four 
+Initially, you might implement logic like this as methods on the model, like `sort_by_rating`. But once there are three or four method all relating to the same field, that starts to feel like a separate responsibility that belongs in its own object.
+
+I haven't heard a lot of talk about value objects in frameworks that use the Active Record pattern for database access. One reason may be that, by default, Active Record objects expose all database columns as basic data types--so you either have to jump through some hoops to prevent accidental access to the non-value-object version of the field, or else be disciplined to never use the raw version. It's not the cleanest.
 
 ## Bringing it All Together
 
