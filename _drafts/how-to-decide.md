@@ -3,3 +3,5 @@
 - What do you believe about unit tests?
 - Be inconsistent when you have a good reason; otherwise be consistent. CRUD is okay at parts.
 - Do you believe productivity comes from maximum readability or maximum modularity of components?
+
+Test
