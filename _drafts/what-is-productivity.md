@@ -12,13 +12,4 @@ The "patterns" group is applying classical object-oriented design principles. In
 
 DHH clearly lays out his contrasting philosophy in his 2014 RailsConf keynote. In his view, the way to achieve quick, reliable code is readability. As someone once said, "code is written for people to read and only incidentally for computers to execute"--meaning that it's essential for people to be able to easily understand it. In this view, breaking code up into too many different types of class means difficulty drilling through them all to figure out what a method call ultimately does. And in this view, unit tests are less important than integration tests, so the ability to test individual classes is less important.
 
-So what are we as developers supposed to do with these two different views? Pick one side? Not entirely. One way to summarize the difference between junior and senior developers is that junior developers write code without intentional structure, 
-
-
-- Do you have to pick one or the other? It's a tension to manage. That's what it means to be a senior developer: to know when to apply different principles and when not to.
-- My recommendations:
-    - Start with the Rails standards
-    - Evolve your architecture in an agile way
-    - Know these patterns so you can identify a need to refactor when it arises
-    - Make exemplary code so others on the team will follow
-   
+So what are we as developers supposed to do with these two different views? Pick one side? Not entirely. Either side can be misapplied: a model can multiply concerns far beyond the point of reason, just like the patterns view can multiply classes when totally unnecessary. So it's important to listen to the concerns of both sides to keep you balanced. That being said, when your model gets too big you're either going to leave it, create concerns, create other types of class, or both. I don't have enough experience with either approach to be able to advocate strongly either way. Which you decide depends on 
