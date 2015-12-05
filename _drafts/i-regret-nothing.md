@@ -1,0 +1,1 @@
+When I was applying for my current job at [Big Nerd Ranch](http://bignerdranch.com), one of the things they asked me to do was to prepare a ten-minute presentation on anything I would like. At my then-current job I had been thinking a lot about how to evaluate new technologies, so I decided to present on that. It was a lot of fun, so I thought I'd share my thoughts here as well.
