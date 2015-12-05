@@ -22,4 +22,8 @@ I think there is. I think the way off the roller coaster is to interrogate your 
 
 
 
-When I say interrogate, I mean to ask good questions about them.
+When I say interrogate, I mean to ask good questions about them. I'd like to propose five questions to ask of any new technologies to help you evaluate them. When you're excited about a new tool and its benefits, it's not always easy to see the downsides. These questions will help.
+
+
+
+
