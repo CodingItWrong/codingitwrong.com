@@ -1,3 +1,7 @@
+---
+title:Refactoring Patterns for Secondary Effects
+---
+
 So far in the Rails architecture series, we've talked about the controversy over different approaches, as well as talking about the why and how of creating new types of class. I'd like to look in more detail about the most controversial of those classes: the ones related to secondary effects.
 
 When I say "secondary effects," here's what I mean. The primary effect of a write operation on the web operation is almost always a create, update, or delete on a database records. But there are often many secondary effects as well: creating or updating additional records, writing to logs, sending notifications via email, text, or mobile apps. I would even consider taking payment a secondary effect, for this reason: no system ever *just* takes payment: they always save a database record for an order or a donation. So placing the order or donation is the primary effect, and charging the card is the secondary effect.
