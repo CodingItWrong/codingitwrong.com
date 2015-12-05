@@ -10,13 +10,13 @@ With that in mind, let's take a look at the different patterns for secondary eff
 
 [Callbacks](http://guides.rubyonrails.org/active_record_callbacks.html) are the mechanism built in to Active Record for firing off secondary effects when models are created, updated, or deleted. There are a few downsides to this mechanism, though. The model is responsible for having full knowledge of all secondary effects, which contributes to large, complex models. Also, the callbacks are always fired, so if they're only needed some of the time then the model is *also* responsible for conditional logic around the secondary effects.
 
-Because of this, Big Nerd Ranch's ["Ruby on the Server"]() course materials recommend only using callbacks for the simplest cases: specifically, updating fields on the model for data consistency, such as setting a GUID or permalink field. Other needs for secondary effects are often best handled by another pattern.
+Because of this, Big Nerd Ranch's ["Ruby on the Server"](https://training.bignerdranch.com/classes/ruby-on-the-server) course materials recommend only using callbacks for the simplest cases: specifically, updating fields on the model for data consistency, such as setting a GUID or permalink field. Other needs for secondary effects are often best handled by another pattern.
 
 ## Form Objects
 
 [Form objects](http://culttt.com/2015/11/04/using-form-objects-in-ruby-on-rails) represent the specific form being submitted (or the specific web service request being made) as its own object, independent of the model itself. There are at least two motivations for this.
 
-First, when a form corresponds to multiple model objects, the single form object can take the input, validate it, and save each separate model as needed. In particular, Bryan Helpcamp from Code Climate recommends this approach to using `accepts_nested_attributes_for`.
+First, when a form corresponds to multiple model objects, the single form object can take the input, validate it, and save each separate model as needed. In particular, Bryan Helmcamp from Code Climate recommends this approach to using `accepts_nested_attributes_for`.
 
 Second, when certain validations are only needed on one form and not on the model in general, the form object can implement that validation, simplifying the model's validations to only include rules that always apply. The canonical example of conditional validations is user signup. On the signup form, a cleartext password and confirmation are required, but they are not required on other forms, such as an email update form. If all validation is on the model, this conditional validation needs to be handled in the model. But with form objects, the model itself will just not require a cleartext password, while the signup form *will* require it.
 
