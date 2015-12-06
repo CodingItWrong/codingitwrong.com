@@ -26,7 +26,7 @@ The problem that [View Objects](http://blog.codeclimate.com/blog/2012/10/17/7-wa
 
 View Objects can also simplify our view templates. Views should only contain display logic: things like loops and conditionals on the data passed in to it. But even display logic can get pretty cluttered up with things like choosing which CSS class to add to an element, drilling down multiple levels into an object, etc. Logic like this can be moved to the View Object. This results in views that are much more readable, because they're almost entirely markup and simple output tags.
 
-View Objects have gone by a few different names, like "View Model." Also, "Presenter" is commonly used in the Rails community, but there's one complexity: Jay Fields [coined the term Presenter](http://blog.jayfields.com/2007/03/rails-presenter-pattern.html) to describe a different pattern, related to form submission.
+View Objects have gone by a few different names, like "View Model" and "Presenter." The latter is commonly used in the Rails community, but there's one complexity: Jay Fields [coined the term Presenter](http://blog.jayfields.com/2007/03/rails-presenter-pattern.html) to describe a different pattern, related to form submission.
 
 ## Value Objects
 
@@ -47,7 +47,7 @@ When all these patterns are brought together, we have a display stack that split
 - **View Template**: renders the markup
 - **Partials**: makes bits of markup reusable
 
-Notice that helpers aren't included in the list. When these other patterns are used, there isn't a lot of need for custom helpers in your application. Of course, this doesn't include built-ins like form helpers: those still have a very valuable role.
+Notice that helpers aren't included in the list. When these other patterns are used, there isn't a lot of need for custom helpers in your application. The other patterns handle all the needs in a more object-oriented way. Of course, this doesn't include built-ins like form helpers: those still have a very valuable role.
 
 This isn't to say that every model and view of every application needs all these patterns. It's best to start simple, and only add additional objects when there really *is* a separate responsibility to pull out. And even then, you may only need Decorators for a few models, and you certainly don't want Value Objects for all of your fields.
 
