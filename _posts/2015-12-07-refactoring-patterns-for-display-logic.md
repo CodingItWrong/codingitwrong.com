@@ -1,5 +1,5 @@
 ---
-title:Refactoring Patterns for Display Logic
+title: Refactoring Patterns for Display Logic
 ---
 
 So far in the Rails Architecture series we've talked about [what all the fuss is about]({% post_url 2015-11-22-the-rails-architecture-controversy %}), then about [how the Single Responsibility Principle leads us to seek out new design patterns]({% post_url 2015-11-30-single-responsiblity-principle-and-the-history-of-rails-architecture %}). Now let's dive in to some of these patterns to see how they can work together to simplify your classes. I won't be providing detailed code samples, but I'll link to articles for additional detail on each pattern.
