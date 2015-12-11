@@ -1,5 +1,5 @@
 ---
-title:Refactoring Patterns for Secondary Effects
+title: Refactoring Patterns for Secondary Effects
 ---
 
 In my last post, we looked at [patterns for display logic]({% post_url 2015-12-07-refactoring-patterns-for-display-logic %}) in Rails architecture. Now I'd like to talk in more detail about a more controversial type of pattern: the ones related to secondary effects.
