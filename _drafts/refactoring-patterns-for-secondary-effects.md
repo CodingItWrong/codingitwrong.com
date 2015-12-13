@@ -54,11 +54,11 @@ Support for Events is built into Rails in the [`ActiveSupport::Notifications`](h
 
 I described some of the differences between these patterns above, but how do you decide which, if any, are right for your application? I haven't used all of these patterns extensively enough to have a decisive opinion, but here are my initial thoughts:
 
-- If you just need to update fields in the same model, use callbacks. You can still do this for field updates even if you also need other patterns for more complex needs.
-- If you have a form with multiple models or with form-specific validation, use a form object. But I don't recommend adding secondary effects to a form object.
-- If you have only few secondary effects that you use rarely, or that aren't on the critical path, use model decorators.
-- If you have secondary effects that aren't on the critical path, and they're always used, use events.
-- If you have many secondary effects called from multiple places in different combinations, or if they're on the critical path, use service objects.
-- If your service objects are getting complex or repetitive, you can have *them* use general decorators or broadcast events instead of issuing effects directly.
+- If you just need to update fields in the same model, use Callbacks. You can still do this for field updates even if you also need other patterns for more complex needs.
+- If you have a form with multiple models or with form-specific validation, use a Form Object. But I don't recommend adding secondary effects to a Form Object.
+- If you have only few secondary effects that you use rarely, or that aren't on the critical path, use General Decorators.
+- If you have secondary effects that aren't on the critical path, and they're always used, use Events.
+- If you have many secondary effects called from multiple places in different combinations, or if they're on the critical path, use Service Objects.
+- If your Service Objects are getting complex or repetitive, you can have *them* use General Decorators or broadcast Events instead of calling secondary effects directly.
 
-What do you think? Is this the approach you take to these patterns, or do you have another way to think about them? [Let me know!](https://twitter.com/CodingItWrong)
+What do you think? How do you decide what patterns to use for secondary effects? Are there other patterns I missed? [Let me know!](https://twitter.com/CodingItWrong)
