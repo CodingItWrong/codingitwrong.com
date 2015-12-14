@@ -8,7 +8,7 @@ When using [Capybara](Capybara) with [RSpec](RSpec), instead of using the standa
 * `scenario` - an Example, corresponding to `it`
 * `background` - corresponds to `before`
 
-```ruby
+```
 feature "Signing in" do
   background do
     User.make(:email => 'user@example.com', :password => 'caplin')
