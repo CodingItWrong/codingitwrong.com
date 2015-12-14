@@ -8,7 +8,7 @@ A [Ruby testing framework](Ruby-Testing-Frameworks).
 * [RSpec-Rails](RSpec-Rails)
 * [RSpec Expectations](RSpec-Expectations)
 * [RSpec Structure](RSpec-Structure)
-* [Rspec Terminology](RSpec-Terminology)
+* [RSpec Terminology](RSpec-Terminology)
 
 Links:
 
