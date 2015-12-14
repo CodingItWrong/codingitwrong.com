@@ -2,6 +2,8 @@
 title: Capybara
 ---
 
+[Docs](https://github.com/jnicklas/capybara)
+
 * [Capybara-RSpec](Capybara-RSpec)
 
 Capybara provides a common language to perform web application acceptance testing using both different [Ruby testing frameworks](Ruby-Testing-Frameworks) and different test drivers.
