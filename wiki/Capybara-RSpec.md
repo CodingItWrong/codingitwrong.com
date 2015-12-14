@@ -2,7 +2,7 @@
 title: Capybara-RSpec
 ---
 
-When using [Capybara] with [RSpec], instead of using the standard `describe` and `it` DSL, you can also the following DSL that is more acceptance-test focused:
+When using [Capybara](Capybara) with [RSpec](RSpec), instead of using the standard `describe` and `it` DSL, you can also the following DSL that is more acceptance-test focused:
 
 * `feature` - an ExampleGroup, corresponding to `describe`
 * `scenario` - an Example, corresponding to `it`
