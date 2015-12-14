@@ -10,3 +10,4 @@ http://rspec.info/documentation/3.3/rspec-expectations/
 
 * [RSpec-Rails](RSpec-Rails)
 * [RSpec Expectations](RSpec-Expectations)
+* [RSpec Structure](RSpec-Structure)
