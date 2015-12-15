@@ -2,6 +2,8 @@
 title: Single Responsibility Principle and the History of Rails Architecture
 ---
 
+{% include posts/toc_rails_architecture.md %}
+
 Last week I wrote about [the controversy over Rails architecture]({% post_url 2015-11-22-the-rails-architecture-controversy %}). To start out our analysis of it, we need to look at where architectural patterns come from. The idea to add to an application's architecture doesn't just come out of thin air; it should be in response to problems caused by the app's current architecture.
 
 One common problem is that classes tend to grow larger and larger, which makes them harder and harder to change without causing unforeseen bugs. In response to this problem, the [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single_responsibility_principle) (SRP) states that a class should only have one thing it's responsible for. If more than one thing needs to be accomplished, additional classes can be created, and the classes can call each other.

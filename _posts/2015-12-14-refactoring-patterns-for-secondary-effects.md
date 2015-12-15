@@ -2,6 +2,8 @@
 title: Refactoring Patterns for Secondary Effects
 ---
 
+{% include posts/toc_rails_architecture.md %}
+
 In my last post, we looked at [patterns for display logic]({% post_url 2015-12-07-refactoring-patterns-for-display-logic %}) in Rails architecture. Now I'd like to look at a more controversial category of pattern: the ones related to secondary effects.
 
 When I say "secondary effects," here's what I mean. The primary effect of a write operation on the web is usually a create, update, or delete on a database record. But there are often secondary effects as well: for example, creating or updating secondary records, writing to logs, or sending notifications via email, text, or mobile apps. I would even consider taking payment to be a secondary effect, for this reason: no system ever *just* takes payment; they always save a database record for an order or a donation. So placing the order or donation is the primary effect, and charging the card is the secondary effect.

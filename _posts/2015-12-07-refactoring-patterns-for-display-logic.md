@@ -2,6 +2,8 @@
 title: Refactoring Patterns for Display Logic
 ---
 
+{% include posts/toc_rails_architecture.md %}
+
 So far in the Rails Architecture series we've talked about [what all the fuss is about]({% post_url 2015-11-22-the-rails-architecture-controversy %}), then about [how the Single Responsibility Principle leads us to seek out new design patterns]({% post_url 2015-11-30-single-responsiblity-principle-and-the-history-of-rails-architecture %}). Now let's dive in to some of these patterns to see how they can work together to simplify your classes. I won't be providing detailed code samples, but I'll link to articles for additional detail on each pattern.
 
 In this post we'll start with patterns related to display logic. In the default Rails stack, four types of component work together to generate HTML: the view templates themselves, partials, models, and helpers. Of course, the main responsibility of the view is to output the markup of the page, based on the data in the model (or multiple models). As display logic gets more complex in the template, there are three places you can abstract that logic to:

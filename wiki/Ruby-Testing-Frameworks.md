@@ -4,6 +4,7 @@ title: Ruby Testing Frameworks
 
 [Testing frameworks](Testing-Frameworks) for testing [Ruby](Ruby) code.
 
-* minitest
+* [Capybara](Capybara) - not a full framework, just a library
+  - [Capybara-RSpec](Capybara-RSpec)
+* [Cucumber](Cucumber)
 * [RSpec](RSpec)
-* Test::Unit
