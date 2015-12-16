@@ -1,3 +1,7 @@
+---
+title: Automated Testing is Not Just About Speed
+---
+
 Before I had my first kid, a friend told me that until you have children your whole life is a vacation. I figured she was exaggerating: sure, kids are an extra responsibility, but people with kids still go to movies and play video games, right? Then my wife and I had the baby, and wow—I really *was* on vacation before that. It's not just a matter of having slightly less time: it's a whole different way of thinking. We don't make a single decision without thinking about the baby; she's never off our minds. It's a paradigm shift, and I'm not sure there's any way to fully understand it before you cross the threshold.
 
 I was reminded of this paradigm shift when I looked back on [NPM Digital](http://npmdigital.org)'s move from manual software deployment to automated deployment while I worked for them. That was a paradigm shift, too, but in the opposite direction: no matter how easy you think your manual deployment process, automated deployment is a vacation by comparison. But it's not just a matter of having slightly faster deployments; it totally changes the way you think about the development process. You’re able to do things that were never possible before.
