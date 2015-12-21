@@ -2,7 +2,9 @@
 title: The Two Paths of Rails Architecture
 ---
 
-We've talked about a number of patterns that can be added to Rails to separate out concerns from your models, views, and controllers. But what do the people guiding Rails' development think about this? Do they encourage you to reorganize your app any way you like? Are they working to add decorators and form objects to Rails 5? Well, no. Rails *is* gradually adding new patterns, like Active Job and Action Cable, but they're not mainly about patterns of code organization. Instead, they're about making apps work in entirely new ways: queues and persistent client connections, respectively.
+{% include posts/toc_rails_architecture.md %}
+
+We've talked about a number of patterns that can be added to Rails to separate out concerns from your models, views, and controllers. But what do the people guiding Rails' development think about this? Do they encourage you to reorganize your app any way you like? Are they working to add decorators and form objects to Rails 5? Well, no, not as far as I know. Rails *is* gradually adding new patterns, like Active Job and Action Cable, but they're not mainly about patterns of code organization. Instead, they're about making apps work in entirely new ways: queues and persistent client connections, respectively.
 
 On the topic of code organization, the message from DHH has generally been that what Rails gives you should be enough. He objects to some patterns more strenuously than others. But when it comes to code organization, I've heard him generally give two pieces of advice: use Rails classes the way they're intended, and use concerns.
 
