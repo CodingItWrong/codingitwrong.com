@@ -2,8 +2,8 @@
 title: Git Push-to-Deploy
 ---
 
-Git 2.4 and above have a simple mechanism that allows you to push to a server
-to deploy files just as you would push to a repository.
+[Git](Git) 2.4 and above have a simple mechanism that allows you to push to a server
+to [deploy](Deployment) files just as you would push to a repository.
 
 ## Server Setup
 
