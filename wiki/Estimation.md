@@ -32,7 +32,7 @@ The Code
 - API accessibility
 - User accounts: third-party integration, locking, resetting, customer support
 - Security: TLS, authorization, exploit protection, compliance
-- Secondary behaviors: caching, logging, auditing, notifications
+- Secondary behaviors: caching, logging, auditing, notifications, analytics
 
 Delivery
 
