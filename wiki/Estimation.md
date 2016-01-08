@@ -24,7 +24,7 @@ The Code
 - Testing needs: automated, manual, QA team coordination, user acceptance approach
 - Data persistence
 - Data pushes or synchronization
-- Payment processing
+- Monetization: payment processing, advertising integration
 - Search reliability
 - Robustness of validation needed
 - Robustness of error handling needed
