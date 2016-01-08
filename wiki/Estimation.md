@@ -17,6 +17,7 @@ Architecture
 - Developer's familiarity with technologies
 - Stability of technologies
 - Dependency upgrades
+- Performance and throughput needs
 
 The Code
 
