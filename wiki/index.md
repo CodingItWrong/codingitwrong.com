@@ -1,5 +1,5 @@
 ---
-title: Wiki
+title: CodingItWiki
 ---
 * [Concerns](Concerns)
 * [Frameworks](Frameworks)
