@@ -28,7 +28,7 @@ The Code
 - Robustness of error handling needed
 - User interface: functionality, design
 - API accessibility
-- User accounts: third-party integration, locking, resetting
+- User accounts: third-party integration, locking, resetting, customer support
 - Security: TLS, authorization, exploit protection, compliance
 - Secondary behaviors: logging, auditing, notifications
 
