@@ -25,6 +25,7 @@ The Code
 - Data persistence
 - Data pushes or synchronization
 - Payment processing
+- Search reliability
 - Robustness of validation needed
 - Robustness of error handling needed
 - User interface: functionality, design
