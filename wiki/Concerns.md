@@ -1,7 +1,7 @@
 ---
 title: Concerns
 ---
-* Authentication and Authorization
+* [Authentication and Authorization](Auth)
 * Logging
 * Persistence
 * Security
