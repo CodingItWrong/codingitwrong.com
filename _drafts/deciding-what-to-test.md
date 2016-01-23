@@ -46,6 +46,8 @@ Middle-out, domain-model-out: integration test starting from the middle, then ac
 - Build domain objects for a feature first, then layer UI on. (Fowler)
 - Avoids having to fake anything (Fowler)
 - Test the interfaces by using real collaborators or stubs
+- Refactor step: emergent design (RSpec book)
+- But design not determined: you choose designs to solve problems, how much complexity to trade for testability
 
 [BDD:](http://dannorth.net/introducing-bdd/) - RSpec Book - acceptance test everything, then unit test beneath
 - Good code is code that tells, not asks
@@ -54,6 +56,7 @@ Middle-out, domain-model-out: integration test starting from the middle, then ac
 - Use mocks to test collaborations
 - Designed to answer "where to start, what to test and what not to test" (North)
 - Focus on analysis/design, so outside in (Fowler)
+- Two concentric red/green/refactor cycles
 - Need-driven development, outside-in testing (Fowler)
 - System design driven by tests (Fowler)
 - Write outside tests, mock first level of collaborators; then build those (Fowler)
@@ -73,6 +76,7 @@ Discovery Testing
 - Jordan: acceptance tests don't need to specify all edge/error cases, that can be at unit level
 - This results in highly-coupled unit tests, which is fine because that's how you test them. Delete and recreate when requirements change, don't refactor.
 - Test the implementation by mocks giving you feedback
+- Generally no need to refactor
 
 Bonus: bug reported, replicate with a test first (Bell)
 
