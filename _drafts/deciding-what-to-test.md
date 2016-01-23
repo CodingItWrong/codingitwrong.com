@@ -3,20 +3,16 @@ Types of test pros and cons:
 - Integration: closer to actual usage, but slower and can break
 - Acceptance: testing the whole system, what user sees; lot of repetition and slow, can be more brittle b/c UI dependent, not test isolation
 
+You need a strategy to decide how much of each type of test to do, when.
+Your strategy depends on bigger questions: what do you think good code is, and therefore what is the purpose of each type of test to that end?
+
 Question: how much do you write acceptance vs integration vs unit tests, and in what order?
 
-[BDD:](http://dannorth.net/introducing-bdd/) acceptance test everything, then unit test beneath
-- Designed to answer "where to start, what to test and what not to test" (North)
-- Focus on analysis/design, so outside in (Fowler)
-- Need-driven development, outside-in testing (Fowler)
-- System design driven by tests (Fowler)
-- Write outside tests, mock first level of collaborators; then build those (Fowler)
-- Emphasizing what an object does (interface), not what it is (implementation) (RSpec)
-Middle-out, domain-model-out: integration test starting from the middle, then acceptance
-- One option in classical TDD (Fowler)
-- Build domain objects for a feature first, then layer UI on. (Fowler)
-- Avoids having to fake anything (Fowler)
 DHH: acceptance test
+- Good code is simple and easy to read
+- I can get good code myself
+- Integration and acceptance tests are valuable to catch regressions
+- Unit tests are worthless
 - TDD causes design damage: code is more complex, harder to understand
 - "Is it easier to test?" isn't a good measure of success
 - If you're mocking everything, you aren't testing anything. "You can make anything fast if it doesn't have to work."
@@ -26,8 +22,29 @@ DHH: acceptance test
 - Regression tests, don't drive your design through test-first
 - Kent Beck: "Test as little as possible to reach a given level of confidence"
 Ward Bell: unit test rigorously, acceptance test only the key moneymaking features (due to JS difficulties?)
-Testing Pyramid:
-- Unit tests for design,
+
+Middle-out, domain-model-out: integration test starting from the middle, then acceptance
+- Integration tests are valuable to drive your design and catch regressions
+- Mocking isn't as valuable
+- One option in classical TDD (Fowler)
+- Build domain objects for a feature first, then layer UI on. (Fowler)
+- Avoids having to fake anything (Fowler)
+
+[BDD:](http://dannorth.net/introducing-bdd/) acceptance test everything, then unit test beneath
+- Good code is code that tells, not asks
+- Acceptance tests and unit tests are both valuable to drive design and catch regressions
+- Use mocks to test collaborations
+- Designed to answer "where to start, what to test and what not to test" (North)
+- Focus on analysis/design, so outside in (Fowler)
+- Need-driven development, outside-in testing (Fowler)
+- System design driven by tests (Fowler)
+- Write outside tests, mock first level of collaborators; then build those (Fowler)
+- Emphasizing what an object does (interface), not what it is (implementation) (RSpec)
+
+Discovery Testing
+- Good code is code that either coordinates collaboration or performs logic, not both
+- Unit tests are to drive your design, exposing coupling
+- Use mocks to show coupling
 - Acceptance tests for safety: "Test the system by using it just as a real user would so you can change implementation details with confidence you won't see false negatives." Minimal coupling so can replace *anything*, including the framework. Don't influence design. May not be able to refactor, but can at least rewrite safely.
 - Don't write integration tests: "The'll be both coupled to your implementation and divorced from reality. Don't write or use testing tools that rely on your application's coupling to Rails, Ember, Angular, or any other application library or framework."
 - TDD's main benefit is to improve design, regression is secondary to illusory
@@ -57,3 +74,4 @@ https://overcast.fm/+DcFRMRvTE)
 - [Testing Pyramid](https://github.com/testdouble/contributing-tests/wiki/Testing-Pyramid) - just shows different kinds of tests, but also discourages the middle
 - [The Failures of Intro to TDD](http://blog.testdouble.com/posts/2014-01-25-the-failures-of-intro-to-tdd.html) - turned Jordan on to the view of low-level unit for design
 - [Tests' Influence on Design](https://github.com/testdouble/contributing-tests/wiki/Tests'-Influence-on-Design) - more info on the approach
+- [Test Isolation is About Avoiding Mocks](https://www.destroyallsoftware.com/blog/2014/test-isolation-is-about-avoiding-mocks)
