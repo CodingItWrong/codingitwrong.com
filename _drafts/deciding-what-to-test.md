@@ -6,12 +6,27 @@ Types of test pros and cons:
 You need a strategy to decide how much of each type of test to do, when.
 Your strategy depends on bigger questions: what do you think good code is, and therefore what is the purpose of each type of test to that end?
 
-Question: how much do you write acceptance vs integration vs unit tests, and in what order?
+You can't tell someone's strategy by looking at the test.
+
+Why this discussion
+- I want correction!
+- I want to hear your view, even nuances of it--maybe we all agree, maybe not
+- I want resources!
+
+People use different terms in different ways. Ask questions to understand their view, not just the term.
+I apologize if categories aren't helpful to you; they are to me
+
+Antipattern: mock purgatory
+- Isolation tests with 3+ levels of embedded mocks
+- Entirely coupled to implementation
+- Very hard to read to understand intent or get design feedback
+- Nobody thinks this is good; what do you do?
 
 DHH: acceptance test
+- Writing Software talk, TDD is Dead post
 - Good code is simple and easy to read
-- I can get good code myself
-- Integration and acceptance tests are valuable to catch regressions
+- I can get good code myself, no tests drive me there
+- Integration and acceptance tests are valuable to catch regressions; cover what's valuable
 - Unit tests are worthless
 - TDD causes design damage: code is more complex, harder to understand
 - "Is it easier to test?" isn't a good measure of success
@@ -24,15 +39,18 @@ DHH: acceptance test
 Ward Bell: unit test rigorously, acceptance test only the key moneymaking features (due to JS difficulties?)
 
 Middle-out, domain-model-out: integration test starting from the middle, then acceptance
-- Integration tests are valuable to drive your design and catch regressions
-- Mocking isn't as valuable
+- TDD book, Kent Beck
+- Acceptance and unit tests are valuable to drive your design and catch regressions; cover every case
+- Isolation with mocks isn't as valuable
 - One option in classical TDD (Fowler)
 - Build domain objects for a feature first, then layer UI on. (Fowler)
 - Avoids having to fake anything (Fowler)
+- Test the interfaces by using real collaborators or stubs
 
-[BDD:](http://dannorth.net/introducing-bdd/) acceptance test everything, then unit test beneath
+[BDD:](http://dannorth.net/introducing-bdd/) - RSpec Book - acceptance test everything, then unit test beneath
 - Good code is code that tells, not asks
 - Acceptance tests and unit tests are both valuable to drive design and catch regressions
+- Acceptance and unit tests both cover all cases
 - Use mocks to test collaborations
 - Designed to answer "where to start, what to test and what not to test" (North)
 - Focus on analysis/design, so outside in (Fowler)
@@ -42,6 +60,7 @@ Middle-out, domain-model-out: integration test starting from the middle, then ac
 - Emphasizing what an object does (interface), not what it is (implementation) (RSpec)
 
 Discovery Testing
+- GOOS, Jordan and Jeremy posts
 - Good code is code that either coordinates collaboration or performs logic, not both
 - Unit tests are to drive your design, exposing coupling
 - Use mocks to show coupling
@@ -53,6 +72,7 @@ Discovery Testing
 - Separation between classes that facilitate collaboration and tests that implement logic--gets appropriate separation on first shot
 - Jordan: acceptance tests don't need to specify all edge/error cases, that can be at unit level
 - This results in highly-coupled unit tests, which is fine because that's how you test them. Delete and recreate when requirements change, don't refactor.
+- Test the implementation by mocks giving you feedback
 
 Bonus: bug reported, replicate with a test first (Bell)
 
