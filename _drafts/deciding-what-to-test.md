@@ -95,3 +95,4 @@ https://overcast.fm/+DcFRMRvTE)
 - [The Failures of Intro to TDD](http://blog.testdouble.com/posts/2014-01-25-the-failures-of-intro-to-tdd.html) - turned Jordan on to the view of low-level unit for design
 - [Tests' Influence on Design](https://github.com/testdouble/contributing-tests/wiki/Tests'-Influence-on-Design) - more info on the approach
 - [Test Isolation is About Avoiding Mocks](https://www.destroyallsoftware.com/blog/2014/test-isolation-is-about-avoiding-mocks)
+- [A New Look at Test-Driven Development](http://blog.daveastels.com.s3-website-us-west-2.amazonaws.com/2014/09/29/a-new-look-at-test-driven-development.html
