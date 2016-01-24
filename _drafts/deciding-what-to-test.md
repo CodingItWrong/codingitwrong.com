@@ -1,4 +1,5 @@
 Types of test pros and cons:
+
 - Unit: fast and low repetition, test isolation; mocks can couple you to the implementation, and can end up only testing spelling
 - Integration: closer to actual usage, but slower and can break
 - Acceptance: testing the whole system, what user sees; lot of repetition and slow, can be more brittle b/c UI dependent, not test isolation
@@ -9,6 +10,7 @@ Your strategy depends on bigger questions: what do you think good code is, and t
 You can't tell someone's strategy by looking at the test.
 
 Why this discussion
+
 - I want correction!
 - I want to hear your view, even nuances of it--maybe we all agree, maybe not
 - I want resources!
@@ -17,12 +19,14 @@ People use different terms in different ways. Ask questions to understand their 
 I apologize if categories aren't helpful to you; they are to me
 
 Antipattern: mock purgatory
+
 - Isolation tests with 3+ levels of embedded mocks
 - Entirely coupled to implementation
 - Very hard to read to understand intent or get design feedback
 - Nobody thinks this is good; what do you do?
 
 DHH: acceptance test
+
 - Writing Software talk, TDD is Dead post
 - Good code is simple and easy to read
 - I can get good code myself, no tests drive me there
@@ -36,9 +40,12 @@ DHH: acceptance test
 - Move up to integration tests: model tests
 - Regression tests, don't drive your design through test-first
 - Kent Beck: "Test as little as possible to reach a given level of confidence"
-Ward Bell: unit test rigorously, acceptance test only the key moneymaking features (due to JS difficulties?)
+- DHH: the code should be the documentation, not the tests
+- Refactoring can get skipped
+- Is there room for safe refactoring in this view?
 
 Middle-out, domain-model-out: integration test starting from the middle, then acceptance
+
 - TDD book, Kent Beck
 - Acceptance and unit tests are valuable to drive your design and catch regressions; cover every case
 - Isolation with mocks isn't as valuable
@@ -48,8 +55,14 @@ Middle-out, domain-model-out: integration test starting from the middle, then ac
 - Test the interfaces by using real collaborators or stubs
 - Refactor step: emergent design (RSpec book)
 - But design not determined: you choose designs to solve problems, how much complexity to trade for testability
+- Traditional TDD has trade offs
+- Coverage: avoid double-testing—BDD would disagree
+- Validations: assume the library works
+- TDD discipline: decide when to be in it and when not to
+- People do more refactoring as they grow in skill
 
 [BDD:](http://dannorth.net/introducing-bdd/) - RSpec Book - acceptance test everything, then unit test beneath
+
 - Good code is code that tells, not asks
 - Acceptance tests and unit tests are both valuable to drive design and catch regressions
 - Acceptance and unit tests both cover all cases
@@ -63,6 +76,7 @@ Middle-out, domain-model-out: integration test starting from the middle, then ac
 - Emphasizing what an object does (interface), not what it is (implementation) (RSpec)
 
 Discovery Testing
+
 - GOOS, Jordan and Jeremy posts
 - Good code is code that either coordinates collaboration or performs logic, not both
 - Unit tests are to drive your design, exposing coupling
@@ -91,6 +105,7 @@ To review:
 - *GOOS* book
 
 Done:
+
 - [BDD](http://dannorth.net/introducing-bdd/)
 - [Mocks Aren't Stubs](http://www.martinfowler.com/articles/mocksArentStubs.html)
 - [Adventures in Angular, Ward Bell](Adventures in Angular: 026 AiA Testing Tools
