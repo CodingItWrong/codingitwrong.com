@@ -94,10 +94,10 @@ Discovery Testing
 
 Bonus: bug reported, replicate with a test first (Bell)
 
-[Adventures in Angular, Ward Bell](Adventures in Angular: 026 AiA Testing Tools
-https://overcast.fm/+DcFRMRvTE) - 37ish, core moneymaking functions, Lucas, acceptance test critical path, rigorous unit tests; Ward Bell regression main paths
+[Adventures in Angular, Ward Bell](https://overcast.fm/+DcFRMRvTE) - 37ish, core moneymaking functions, Lucas, acceptance test critical path, rigorous unit tests; Ward Bell regression main paths
 
 To review:
+
 - [Is TDD Dead?](http://martinfowler.com/articles/is-tdd-dead/)
 - [Everzet: Classicist vs. Mockist](https://overcast.fm/+DtC47yT1g)
 - Other Full Stack testing episodes
@@ -108,12 +108,11 @@ Done:
 
 - [BDD](http://dannorth.net/introducing-bdd/)
 - [Mocks Aren't Stubs](http://www.martinfowler.com/articles/mocksArentStubs.html)
-- [Adventures in Angular, Ward Bell](Adventures in Angular: 026 AiA Testing Tools
-https://overcast.fm/+DcFRMRvTE)
+- [Adventures in Angular, Ward Bell](https://overcast.fm/+DcFRMRvTE)
 - [DHH: Writing Software](https://youtu.be/9LfmrkyP81M?t=23m58s) - to 45:00
 - [Testing Pyramid](https://github.com/testdouble/contributing-tests/wiki/Testing-Pyramid) - just shows different kinds of tests, but also discourages the middle
 - [The Failures of Intro to TDD](http://blog.testdouble.com/posts/2014-01-25-the-failures-of-intro-to-tdd.html) - turned Jordan on to the view of low-level unit for design
 - [Tests' Influence on Design](https://github.com/testdouble/contributing-tests/wiki/Tests'-Influence-on-Design) - more info on the approach
 - [Test Isolation is About Avoiding Mocks](https://www.destroyallsoftware.com/blog/2014/test-isolation-is-about-avoiding-mocks)
-- [A New Look at Test-Driven Development](http://blog.daveastels.com.s3-website-us-west-2.amazonaws.com/2014/09/29/a-new-look-at-test-driven-development.html
+- [A New Look at Test-Driven Development](http://blog.daveastels.com.s3-website-us-west-2.amazonaws.com/2014/09/29/a-new-look-at-test-driven-development.html)
 - *The RSpec Book*
