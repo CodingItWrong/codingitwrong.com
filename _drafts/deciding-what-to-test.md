@@ -101,7 +101,6 @@ Bonus: bug reported, replicate with a test first (Bell)
 
 To review:
 
-- [Is TDD Dead?](http://martinfowler.com/articles/is-tdd-dead/)
 - [Everzet: Classicist vs. Mockist](https://overcast.fm/+DtC47yT1g)
 - Other Full Stack testing episodes
 - *TDD* book
@@ -119,3 +118,4 @@ Done:
 - [Test Isolation is About Avoiding Mocks](https://www.destroyallsoftware.com/blog/2014/test-isolation-is-about-avoiding-mocks)
 - [A New Look at Test-Driven Development](http://blog.daveastels.com.s3-website-us-west-2.amazonaws.com/2014/09/29/a-new-look-at-test-driven-development.html)
 - *The RSpec Book*
+- [Is TDD Dead?](http://martinfowler.com/articles/is-tdd-dead/)
