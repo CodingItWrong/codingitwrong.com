@@ -61,6 +61,7 @@ Middle-out, domain-model-out: integration test starting from the middle, then ac
 - System design driven by tests (Fowler)
 - Write outside tests, mock first level of collaborators; then build those (Fowler)
 - Emphasizing what an object does (interface), not what it is (implementation) (RSpec)
+- Focus on building good APIs
 
 Discovery Testing
 - GOOS, Jordan and Jeremy posts
