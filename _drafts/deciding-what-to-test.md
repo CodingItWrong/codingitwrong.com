@@ -43,6 +43,8 @@ DHH: acceptance test
 - DHH: the code should be the documentation, not the tests
 - Refactoring can get skipped
 - Is there room for safe refactoring in this view?
+- TDD gave benefit for regression tests, not design pushback
+- Major warning flag: I hardly ever hear DHH use the word "refactoring". And he explicitly argues against code reuse, I.e. For APIs.
 
 Middle-out, domain-model-out: integration test starting from the middle, then acceptance
 
