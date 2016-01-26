@@ -81,7 +81,7 @@ Middle-out, domain-model-out: integration test starting from the middle, then ac
 Discovery Testing
 
 - GOOS, Jordan and Jeremy posts
-- Good code is code that either coordinates collaboration or performs logic, not both
+- Good code is code that either coordinates collaboration or performs logic, not both. It's ports and adapters, hexagonal.
 - Unit tests are to drive your design, exposing coupling
 - Use mocks to show coupling
 - Acceptance tests for safety: "Test the system by using it just as a real user would so you can change implementation details with confidence you won't see false negatives." Minimal coupling so can replace *anything*, including the framework. Don't influence design. May not be able to refactor, but can at least rewrite safely.
@@ -101,6 +101,7 @@ Bonus: bug reported, replicate with a test first (Bell)
 
 To review:
 
+- [Visualizing Test Terminology](http://natpryce.com/articles/000772.html)
 - [Everzet: Classicist vs. Mockist](https://overcast.fm/+DtC47yT1g)
 - Other Full Stack testing episodes
 - *TDD* book
