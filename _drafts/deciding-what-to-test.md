@@ -4,7 +4,8 @@ Types of test pros and cons:
 - Integration: closer to actual usage, but slower and can break
 - Acceptance: testing the whole system, what user sees; lot of repetition and slow, can be more brittle b/c UI dependent, not test isolation
 
-You need a strategy to decide how much of each type of test to do, when.
+You need a strategy to decide how much of each type of test to do.
+As I looked for answers, I found they were inseparable from bigger questions: what process do you go through? What is your end goal as far as good code?
 Your strategy depends on bigger questions: what do you think good code is, and therefore what is the purpose of each type of test to that end?
 
 You can't tell someone's strategy by looking at the test.
@@ -18,19 +19,12 @@ Why this discussion
 People use different terms in different ways. Ask questions to understand their view, not just the term.
 I apologize if categories aren't helpful to you; they are to me
 
-Antipattern: mock purgatory
-
-- Isolation tests with 3+ levels of embedded mocks
-- Entirely coupled to implementation
-- Very hard to read to understand intent or get design feedback
-- Nobody thinks this is good; what do you do?
-
 DHH: acceptance test
 
 - Writing Software talk, TDD is Dead post
-- Good code is simple and easy to read
+- Good code is simple and easy to read. The code should be the documentation, not the tests.
 - I can get good code myself, no tests drive me there
-- Integration and acceptance tests are valuable to catch regressions; cover what's valuable
+- Integration and acceptance tests are valuable to catch regressions; only cover what's valuable
 - Unit tests are worthless
 - TDD causes design damage: code is more complex, harder to understand
 - "Is it easier to test?" isn't a good measure of success
@@ -40,10 +34,6 @@ DHH: acceptance test
 - Move up to integration tests: model tests
 - Regression tests, don't drive your design through test-first
 - Kent Beck: "Test as little as possible to reach a given level of confidence"
-- DHH: the code should be the documentation, not the tests
-- Refactoring can get skipped
-- Is there room for safe refactoring in this view?
-- TDD gave benefit for regression tests, not design pushback
 - Major warning flag: I hardly ever hear DHH use the word "refactoring". And he explicitly argues against code reuse, I.e. For APIs.
 
 Middle-out, domain-model-out: integration test starting from the middle, then acceptance
@@ -59,7 +49,7 @@ Middle-out, domain-model-out: integration test starting from the middle, then ac
 - But design not determined: you choose designs to solve problems, how much complexity to trade for testability
 - Traditional TDD has trade offs
 - Coverage: avoid double-testing—BDD would disagree
-- Validations: assume the library works
+- Example of ActiveRecord validations: assume the framework works
 - TDD discipline: decide when to be in it and when not to
 - People do more refactoring as they grow in skill
 
@@ -68,7 +58,7 @@ Middle-out, domain-model-out: integration test starting from the middle, then ac
 - Good code is code that tells, not asks
 - Acceptance tests and unit tests are both valuable to drive design and catch regressions
 - Acceptance and unit tests both cover all cases
-- Use mocks to test collaborations
+- Use mocks to test collaborations. Seem to have the goal that mocks minimize coupling
 - Designed to answer "where to start, what to test and what not to test" (North)
 - Focus on analysis/design, so outside in (Fowler)
 - Two concentric red/green/refactor cycles
@@ -101,7 +91,6 @@ Bonus: bug reported, replicate with a test first (Bell)
 
 To review:
 
-- [Visualizing Test Terminology](http://natpryce.com/articles/000772.html)
 - [Everzet: Classicist vs. Mockist](https://overcast.fm/+DtC47yT1g)
 - Other Full Stack testing episodes
 - *TDD* book
@@ -120,3 +109,45 @@ Done:
 - [A New Look at Test-Driven Development](http://blog.daveastels.com.s3-website-us-west-2.amazonaws.com/2014/09/29/a-new-look-at-test-driven-development.html)
 - *The RSpec Book*
 - [Is TDD Dead?](http://martinfowler.com/articles/is-tdd-dead/)
+
+Summary
+
+Regression testing
+- Who? DHH
+- Resources? Writing Software and TDD is Dead
+- What is good code? Simple, readable code
+- How can I get good code? I can write good code myself; having tests drive it makes it worse
+- Process? Green, then regression test
+- What are the test types for? acceptance and integration for regression, unit useless
+- Dependencies? The real thing
+- Role of refactoring? not mentioned
+
+Classical TDD
+- Who? Kent Beck, Martin Fowler
+- TDD book
+- What is good code? Classical OO principles and design patterns, with tradeoffs
+- How can I get good code? Let tests provide feedback to consider
+- Process? Red, green, refactor. In middle-out, domain classes, then build up
+- What are the test types for: "unit" (not isolated) for driving design, deemphasize acceptance
+- Dependencies? The real thing when possible, stubs next, mocks last
+- Refactoring a key step you need discipline to do
+
+BDD
+- Who? Dan North
+- Resources? The RSpec Book
+- What is good code? Code that tells, doesn't ask
+- How can I get good code? Let tests drive your design from the outside APIs
+- Process? Two RGR circles, for application and for classes
+- Acceptance and unit for driving your design, regression secondary
+- Dependencies? Mocks
+- Refactoring a key step
+
+Discovery Testing
+- Who? Justin Searls
+- Resources? GOOS
+- What is good code? Code that either coordinates collaboration or performs logic, not both. It's ports and adapters, hexagonal.
+- How can I get good code? By driving it with unit tests only
+- Process? Red, green, then implement what you mocked
+- Unit for driving your design, acceptance for regression
+- Dependencies: mocks
+- Design prevents need for regular refactoring. Recreate components rather than refactor
