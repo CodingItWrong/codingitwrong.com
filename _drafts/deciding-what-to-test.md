@@ -4,8 +4,10 @@ Types of test pros and cons:
 - Integration: closer to actual usage, but slower and can break
 - Acceptance/system/end-to-end: testing the whole system, what user sees; lot of repetition and slow, can be more brittle b/c UI dependent, not test isolation
 
-How much of each type of test should I do?
-As I looked for answers, I found they were inseparable from bigger questions: what process do you go through? What is your end goal as far as good code?
+Been interested in testing for a long time, but this is the first place I've been able to consistently practice it.
+How much of each type of test should I do? Unit, Integration, Acceptance.
+There are different views on this!
+As I tried to understand the different views, I found their answer to "how much of each type of test should I do?" was inseparable from bigger questions: what process do you go through? What is your end goal as far as good code?
 
 This is a discussion, not a talk:
 
@@ -14,6 +16,7 @@ This is a discussion, not a talk:
 - I want more resources to read/watch!
 
 Some qualifications:
+
 - People use different terms in different ways. Ask questions to understand their view, not just the term.
 - I apologize if categories aren't helpful to you; they are to me
 - You don't have to personally always do only one of these. You can think of them as disciplines that apply for certain systems or parts of your code.
@@ -21,7 +24,10 @@ Some qualifications:
 # Regression testing
 
 - Who? DHH
-- Resources? Writing Software and TDD is Dead
+- Resources?
+    - [Writing Software][]
+    - [TDD is Dead][]
+    - [Is TDD Dead?][]
 - **What is good code?** Simple, readable code
 - **How can I get good code?** I can write good code myself; having tests drive it makes it worse
 - **What are the test types for?** acceptance and integration for regression, unit useless
@@ -35,7 +41,12 @@ Some qualifications:
 # Classical TDD
 
 - Who? Kent Beck, Martin Fowler
-- TDD book
+- Resources
+  - [Classicist and Mockist TDD][]
+  - [Mocks Aren't Stubs][]
+  - [Is TDD Dead?][]
+  - [TDD: Where Did It All Go Wrong][]
+  - *[Test-Driven Development: By Example][TDD By Example]*
 - Associated terms and concepts: Detroit/Boston school, middle-out
 - **What is good code?** Classical OO principles and design patterns
 - **How can I get good code?** Let tests provide feedback to consider
@@ -54,7 +65,12 @@ Some qualifications:
 # Mockist TDD
 
 - Who? Dan North, Steve Freeman, Nat Pryce, XP Tuesdays
-- Resources? The RSpec Book, GOOS
+- Resources?
+  - [Classicist and Mockist TDD][]
+  - *[The RSpec Book][]*
+  - [Test Isolation is About Avoiding Mocks][Avoiding Mocks]
+  - [Introducing BDD][]
+  - *[Growing Object-Oriented Software, Guided by Tests][GOOS]*
 - Associated terms and concepts: BDD (but that has a larger scope), isolation testing, London school, outside-in, need-driven development
 - **What is good code?** Code that can be reused and recombined in different ways. Code with low coupling. Code that tells, doesn't ask.
 - **How can I get good code?** Let tests drive your design at each layer, with mocks exerting pressure to reduce coupling.
@@ -74,7 +90,10 @@ Some qualifications:
 # Discovery Testing
 
 - Who? Test Double, Justin Searls
-- Resources? "The Failures of Intro to TDD", "Tests' Influence on Design"
+- Resources?
+  - [The Failures of Intro to TDD][]
+  - [Tests' Influence on Design][]
+  - [The Testing Pyramid][]
 - **What is good code?** A tree of classes that either coordinate collaboration or perform logic, not both. Disposable classes.
 - **How can I get good code?** By driving it with unit tests only, with mocks helping you think through decomposing the problem.
 - **What are the test types for?** Unit for driving your design, acceptance for regression. Integration bad because has downsides of both.
@@ -84,6 +103,21 @@ Some qualifications:
 - Dependencies? mocks
 - How do you verify? For collaboration nodes, check mocks. For leaf notes, check return values.
 - Discourages refactoring or code reuse--rewrite instead. But how does this work for nontrivial needs?
+
+[Avoiding Mocks]: https://www.destroyallsoftware.com/blog/2014/test-isolation-is-about-avoiding-mocks
+[Classicist and Mockist TDD]: https://overcast.fm/+DtC47yT1g
+[The Failures of Intro to TDD]: http://blog.testdouble.com/posts/2014-01-25-the-failures-of-intro-to-tdd.html
+[GOOS]: http://www.informit.com/store/growing-object-oriented-software-guided-by-tests-9780321503626
+[Introducing BDD]: http://dannorth.net/introducing-bdd/
+[Is TDD Dead?]: http://martinfowler.com/articles/is-tdd-dead/
+[Mocks Aren't Stubs]: http://www.martinfowler.com/articles/mocksArentStubs.html
+[The RSpec Book]: https://pragprog.com/book/achbd/the-rspec-book
+[TDD By Example]: http://www.amazon.com/Test-Driven-Development-By-Example/dp/0321146530
+[TDD is Dead]: http://david.heinemeierhansson.com/2014/tdd-is-dead-long-live-testing.html
+[TDD: Where Did It All Go Wrong]: https://vimeo.com/68375232
+[The Testing Pyramid]: https://github.com/testdouble/contributing-tests/wiki/Testing-Pyramid
+[Tests' Influence on Design]: https://github.com/testdouble/contributing-tests/wiki/Tests'-Influence-on-Design
+[Writing Software]: https://youtu.be/9LfmrkyP81M?t=23m58s
 
 ***
 
@@ -144,26 +178,3 @@ To review:
 
 - *TDD* book
 - *GOOS* book
-
-Done:
-
-- Regression Testing
-  - [DHH: Writing Software](https://youtu.be/9LfmrkyP81M?t=23m58s) - to 45:00
-- Classical TDD
-  - [TDD: Where Did It All Go Wrong](https://vimeo.com/68375232)
-- Mockist TDD
-  - [BDD](http://dannorth.net/introducing-bdd/)
-  - *The RSpec Book*
-- Discovery Testing
-  - [Testing Pyramid](https://github.com/testdouble/contributing-tests/wiki/Testing-Pyramid) - just shows different kinds of tests, but also discourages the middle
-  - [The Failures of Intro to TDD](http://blog.testdouble.com/posts/2014-01-25-the-failures-of-intro-to-tdd.html) - turned Jordan on to the view of low-level unit for design
-  - [Tests' Influence on Design](https://github.com/testdouble/contributing-tests/wiki/Tests'-Influence-on-Design) - more info on the approach
-  - [Test Isolation is About Avoiding Mocks](https://www.destroyallsoftware.com/blog/2014/test-isolation-is-about-avoiding-mocks)
-- Multiple
-  - [Mocks Aren't Stubs](http://www.martinfowler.com/articles/mocksArentStubs.html)
-  - [Everzet: Classicist vs. Mockist](https://overcast.fm/+DtC47yT1g)
-  - [Is TDD Dead?](http://martinfowler.com/articles/is-tdd-dead/)
-
-- [Adventures in Angular, Ward Bell](https://overcast.fm/+DcFRMRvTE)
-- [A New Look at Test-Driven Development](http://blog.daveastels.com.s3-website-us-west-2.amazonaws.com/2014/09/29/a-new-look-at-test-driven-development.html)
-- Other Full Stack testing episodes
