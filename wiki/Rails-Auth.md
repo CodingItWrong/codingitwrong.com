@@ -6,6 +6,7 @@ The following are popular gems for Rails authentication and authorization.
 
 As a reminder, authentication means determining whether the person making the request is really a certain user, and authorization means determining what that user is allowed to do.
 
+* [**CanCanCan**](https://github.com/CanCanCommunity/cancancan) - allows authorization via central Ability classes
 * [**Devise**](https://github.com/plataformatec/devise) - a high-level Rails authentication framework, including full Rails engine features (model mixins, views, controllers)
 * [**Doorkeeper**](https://github.com/doorkeeper-gem/doorkeeper) - allows your Rails app to be an OAuth 2 provider; i.e. your own user store is made available through the OAuth API
 * [**OmniAuth**](https://github.com/intridea/omniauth) - allows authentication via a number of third-party services, some OAuth and some otherwise
@@ -14,7 +15,7 @@ As a reminder, authentication means determining whether the person making the re
 
 Some relationships between these gems include:
 
-* Pundit can be used with any of the others, because it's the only authorization library listed; the others are all authentication.
+* Pundit and CanCanCan can be used with any of the others, because it's the only authorization library listed; the others are all authentication. You would only want to use one of the two.
 * If you're making a web service:
   * Use Doorkeeper if you want people to authenticate to it with OAuth
   * Use Warden if you want them to authenticate in a different way
