@@ -66,6 +66,7 @@ Some qualifications:
   - Mocks not actually testing anything, but that's what acceptance tests are for
   - Too many levels of mocks, but this is exactly the design feedback you're supposed to respond to, and apply Demeter/Tell-Don't-Ask [Test Isolation is About Avoiding Mocks]
   - Mocks couple you to the implementation: no, if you plan to reuse the classes, outgoing messages are the interface. The implementation is what's in the method and any private methods, not what's an outgoing message.
+ - Extracting a class then adding tests is test-after development; but you can TDD the abstraction as you pull it out one bit at a tim
 
 # Discovery Testing
 
