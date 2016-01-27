@@ -6,11 +6,11 @@ The following are popular gems for Rails authentication and authorization.
 
 As a reminder, authentication means determining whether the person making the request is really a certain user, and authorization means determining what that user is allowed to do.
 
-* **Devise** - a high-level Rails authentication framework, including full Rails engine features (model mixins, views, controllers)
-* **Doorkeeper** - allows your Rails app to be an OAuth 2 provider; i.e. your own user store is made available through the OAuth API
-* **Pundit** - allows easily configuring authorization via policy classes
-* **OmniAuth** - allows authentication via a number of third-party services, some OAuth and some otherwise
-* **Warden** - a low-level Rack authentication framework, suitable for web services
+* [**Devise**](https://github.com/plataformatec/devise) - a high-level Rails authentication framework, including full Rails engine features (model mixins, views, controllers)
+* [**Doorkeeper**](https://github.com/doorkeeper-gem/doorkeeper) - allows your Rails app to be an OAuth 2 provider; i.e. your own user store is made available through the OAuth API
+* [**OmniAuth**](https://github.com/intridea/omniauth) - allows authentication via a number of third-party services, some OAuth and some otherwise
+* [**Pundit**](https://github.com/elabs/pundit) - allows easily configuring authorization via policy classes
+* [**Warden**](https://github.com/hassox/warden) - a low-level Rack authentication framework, suitable for web services
 
 Some relationships between these gems include:
 
