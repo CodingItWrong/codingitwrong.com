@@ -4,22 +4,85 @@ Types of test pros and cons:
 - Integration: closer to actual usage, but slower and can break
 - Acceptance/system/end-to-end: testing the whole system, what user sees; lot of repetition and slow, can be more brittle b/c UI dependent, not test isolation
 
-You need a strategy to decide how much of each type of test to do.
+How much of each type of test should I do?
 As I looked for answers, I found they were inseparable from bigger questions: what process do you go through? What is your end goal as far as good code?
-Your strategy depends on bigger questions: what do you think good code is, and therefore what is the purpose of each type of test to that end?
 
-You can't tell someone's strategy by looking at the test.
+This is a discussion, not a talk:
 
-Why this discussion
-
-- I want correction!
+- I want correction when I'm wrong!
 - I want to hear your view, even nuances of it--maybe we all agree, maybe not
-- I want resources!
+- I want more resources to read/watch!
 
 Some qualifications:
 - People use different terms in different ways. Ask questions to understand their view, not just the term.
 - I apologize if categories aren't helpful to you; they are to me
 - You don't have to personally always do only one of these. You can think of them as disciplines that apply for certain systems or parts of your code.
+
+# Regression testing
+
+- Who? DHH
+- Resources? Writing Software and TDD is Dead
+- **What is good code?** Simple, readable code
+- **How can I get good code?** I can write good code myself; having tests drive it makes it worse
+- **What are the test types for?** acceptance and integration for regression, unit useless
+- **How much do you test?** Test only what's valuable
+- **What process do I go through to achieve this?** Write the code, then write the regression test
+- Dependencies? The real thing
+- How do you verify? Check output on screen or in DB
+- No refactoring or code reuse. He explicitly advocates against architecting for code reuse, i.e. command-line or APIs
+
+# Classical TDD
+
+- Who? Kent Beck, Martin Fowler
+- TDD book
+- Associated terms and concepts: Detroit/Boston school, middle-out
+- **What is good code?** Classical OO principles and design patterns
+- **How can I get good code?** Let tests provide feedback to consider
+- **What are the test types for?** "unit" (not isolated) for driving design, then refactor without test feedback
+- **How much do you test?** Test everything once; avoid double-testing, especially in extracted classes
+- **What process do I go through to achieve this?** Red, green, refactor. In middle-out, domain classes, then build up
+- Dependencies? The real thing when possible, stubs next, mocks last
+- How do you verify? Check state
+- High support for refactoring, low for code reuse
+- Criticisms
+  - Exposing state for the sake of testing, but "not a big deal"
+  - Doesn't exert pressure on you to refactor; do more as you get more experienced
+  - Extracting objects is painful
+
+# Mockist TDD
+
+- Who? Dan North, Steve Freeman, Nat Pryce, XP Tuesdays
+- Resources? The RSpec Book, GOOS
+- Associated terms and concepts: BDD (but that has a larger scope), isolation testing, London school, outside-in, need-driven development
+- **What is good code?** Code that can be reused and recombined in different ways. Code with low coupling. Code that tells, doesn't ask.
+- **How can I get good code?** Let tests drive your design at each layer, with mocks exerting pressure to reduce coupling.
+- **What are the test types for?** Acceptance and unit for driving your design, regression secondary. Integration good because a mix.
+- **How much do you test?** Test many things at both the acceptance and unit level, since acceptance drives you to unit level. But if one test at the unit level fixes multiple at the acceptance level, you're done. This can happen when you see patterns in acceptance tests failing, knowing what you know about the implementation. When you wrote the acceptance test, you didn't know the implementation.
+- **What process do I go through to achieve this?** Two RGR circles, for application and for classes. But the outer circle writes a whole test case at once.
+- Dependencies? Mocks
+- How do you verify? Check messages sent
+- Balanced support for refactoring and code reuse
+- Criticisms
+  - Mocks not actually testing anything, but that's what acceptance tests are for
+  - Too many levels of mocks, but this is exactly the design feedback you're supposed to respond to, and apply Demeter/Tell-Don't-Ask [Test Isolation is About Avoiding Mocks]
+  - Mocks couple you to the implementation: no, if you plan to reuse the classes, outgoing messages are the interface. The implementation is what's in the method and any private methods, not what's an outgoing message.
+
+# Discovery Testing
+
+- Who? Test Double, Justin Searls
+- Resources? "The Failures of Intro to TDD", "Tests' Influence on Design"
+- **What is good code?** A tree of classes that either coordinate collaboration or perform logic, not both. Disposable classes.
+- **How can I get good code?** By driving it with unit tests only, with mocks helping you think through decomposing the problem.
+- **What are the test types for?** Unit for driving your design, acceptance for regression. Integration bad because has downsides of both.
+- **How much do you test?** Test everything at the unit level to design and the acceptance level to catch regressions?
+- **What process do I go through to achieve this?** Red, green, then step down the tree to implement the collaborators you mocked.
+- Dependencies? mocks
+- How do you verify? For collaboration nodes, check mocks. For leaf notes, check return values.
+- Discourages refactoring or code reuse--rewrite instead. But how does this work for nontrivial needs?
+
+***
+
+More notes (may or may not be incorporated into discussion)
 
 DHH: acceptance test
 
@@ -72,10 +135,6 @@ Discovery Testing
 - Jordan: acceptance tests don't need to specify all edge/error cases, that can be at unit level
 - This results in highly-coupled unit tests, which is fine because that's how you test them. Delete and recreate when requirements change, don't refactor.
 
-Bonus: bug reported, replicate with a test first (Bell)
-
-[Adventures in Angular, Ward Bell](https://overcast.fm/+DcFRMRvTE) - 37ish, core moneymaking functions, Lucas, acceptance test critical path, rigorous unit tests; Ward Bell regression main paths
-
 To review:
 
 - *TDD* book
@@ -103,63 +162,3 @@ Done:
 - [Adventures in Angular, Ward Bell](https://overcast.fm/+DcFRMRvTE)
 - [A New Look at Test-Driven Development](http://blog.daveastels.com.s3-website-us-west-2.amazonaws.com/2014/09/29/a-new-look-at-test-driven-development.html)
 - Other Full Stack testing episodes
-
-Summary
-
-Regression testing
-- Who? DHH
-- Resources? Writing Software and TDD is Dead
-1. What is good code? Simple, readable code
-2. How can I get good code? I can write good code myself; having tests drive it makes it worse
-3. What are the test types for? acceptance and integration for regression, unit useless
-4. How much do you test? Test only what's valuable
-5. What process do I go through to achieve this? Write the code, then write the regression test
-- Dependencies? The real thing
-- How do you verify? Check output on screen or in DB
-- No refactoring or code reuse. He explicitly advocates against architecting for code reuse, i.e. command-line or APIs
-
-Classical TDD
-- Who? Kent Beck, Martin Fowler
-- TDD book
-- Associated terms and concepts: Detroit/Boston school, middle-out
-1. What is good code? Classical OO principles and design patterns
-2. How can I get good code? Let tests provide feedback to consider
-3. What are the test types for? "unit" (not isolated) for driving design, then refactor without test feedback
-4. How much do you test? Test everything once; avoid double-testing, especially in extracted classes
-5. What process do I go through to achieve this? Red, green, refactor. In middle-out, domain classes, then build up
-- Dependencies? The real thing when possible, stubs next, mocks last
-- How do you verify? Check state
-- High support for refactoring, low for code reuse
-- Criticisms
-  - Exposing state for the sake of testing, but "not a big deal"
-  - Doesn't exert pressure on you to refactor; do more as you get more experienced
-  - Extracting objects is painful
-
-Mockist TDD
-- Who? Dan North, Steve Freeman, Nat Pryce, XP Tuesdays
-- Resources? The RSpec Book, GOOS
-- Associated terms and concepts: BDD (but that has a larger scope), isolation testing, London school, outside-in, need-driven development
-1. What is good code? Code that can be reused and recombined in different ways. Code with low coupling. Code that tells, doesn't ask.
-2. How can I get good code? Let tests drive your design at each layer, with mocks exerting pressure to reduce coupling.
-3. What are the test types for? Acceptance and unit for driving your design, regression secondary. Integration good because a mix.
-4. How much do you test? Test everything at both the acceptance and unit level, since acceptance drives you to unit level
-5. What process do I go through to achieve this? Two RGR circles, for application and for classes
-- Dependencies? Mocks
-- How do you verify? Check messages sent
-- Balanced support for refactoring and code reuse
-- Criticisms
-  - Mocks not actually testing anything, but that's what acceptance tests are for
-  - Too many levels of mocks, but this is exactly the design feedback you're supposed to respond to, and apply Demeter/Tell-Don't-Ask [Test Isolation is About Avoiding Mocks]
-  - Mocks couple you to the implementation: no, if you plan to reuse the classes, outgoing messages are the interface
-
-Discovery Testing
-- Who? Test Double, Justin Searls
-- Resources? "The Failures of Intro to TDD", "Tests' Influence on Design"
-1. What is good code? A tree of classes that either coordinate collaboration or perform logic, not both. Disposable classes.
-2. How can I get good code? By driving it with unit tests only, with mocks helping you think through decomposing the problem.
-3. What are the test types for? Unit for driving your design, acceptance for regression. Integration bad because has downsides of both.
-4. How much do you test? Test everything at the unit level to design and the acceptance level to catch regressions?
-5. What process do I go through to achieve this? Red, green, then step down the tree to implement the collaborators you mocked.
-- Dependencies? mocks
-- How do you verify? For collaboration nodes, check mocks. For leaf notes, check return values.
-- Discourages refactoring or code reuse--rewrite instead. But how does this work for nontrivial needs?
