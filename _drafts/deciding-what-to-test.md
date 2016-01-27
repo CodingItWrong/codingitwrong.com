@@ -27,6 +27,7 @@ Some qualifications:
 - **What are the test types for?** acceptance and integration for regression, unit useless
 - **How much do you test?** Test only what's valuable
 - **What process do I go through to achieve this?** Write the code, then write the regression test
+- How much code do you write at first? All of it.
 - Dependencies? The real thing
 - How do you verify? Check output on screen or in DB
 - No refactoring or code reuse. He explicitly advocates against architecting for code reuse, i.e. command-line or APIs
@@ -41,6 +42,7 @@ Some qualifications:
 - **What are the test types for?** "unit" (not isolated) for driving design, then refactor without test feedback
 - **How much do you test?** Test everything once; avoid double-testing, especially in extracted classes
 - **What process do I go through to achieve this?** Red, green, refactor. In middle-out, domain classes, then build up
+- How much code do you write at first? Absolute bare minimum to get the test to pass.
 - Dependencies? The real thing when possible, stubs next, mocks last
 - How do you verify? Check state
 - High support for refactoring, low for code reuse
@@ -59,6 +61,7 @@ Some qualifications:
 - **What are the test types for?** Acceptance and unit for driving your design, regression secondary. Integration good because a mix.
 - **How much do you test?** Test many things at both the acceptance and unit level, since acceptance drives you to unit level. But if one test at the unit level fixes multiple at the acceptance level, you're done. This can happen when you see patterns in acceptance tests failing, knowing what you know about the implementation. When you wrote the acceptance test, you didn't know the implementation.
 - **What process do I go through to achieve this?** Two RGR circles, for application and for classes. But the outer circle writes a whole test case at once.
+- How much code do you write at first? The code you wish you had.
 - Dependencies? Mocks
 - How do you verify? Check messages sent
 - Balanced support for refactoring and code reuse
@@ -77,6 +80,7 @@ Some qualifications:
 - **What are the test types for?** Unit for driving your design, acceptance for regression. Integration bad because has downsides of both.
 - **How much do you test?** Test everything at the unit level to design and the acceptance level to catch regressions?
 - **What process do I go through to achieve this?** Red, green, then step down the tree to implement the collaborators you mocked.
+- How much code do you write at first? The code you wish you had.
 - Dependencies? mocks
 - How do you verify? For collaboration nodes, check mocks. For leaf notes, check return values.
 - Discourages refactoring or code reuse--rewrite instead. But how does this work for nontrivial needs?
