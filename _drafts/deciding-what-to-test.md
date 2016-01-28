@@ -25,7 +25,7 @@ Some qualifications:
 
 # Regression testing
 
-- Who? DHH
+- Major representatives? DHH
 - Resources?
     - [Writing Software][]
     - [TDD is Dead][]
@@ -38,87 +38,91 @@ Some qualifications:
 - How much code do you write at first? All of it.
 - Dependencies? The real thing
 - How do you verify? Check output on screen or in DB
-- No refactoring or code reuse. He explicitly advocates against architecting for code reuse, i.e. command-line or APIs
+- No refactoring or code reuse. He explicitly advocates against architecting for code reuse, i.e. command-line or APIs. [[Is TDD Dead?][]]
 
 # Classical TDD
 
-- Who? Kent Beck, Martin Fowler; there is a lot of leeway here so specifically representing Ian Cooper's view
+- Major representatives? Kent Beck, Martin Fowler; there is a lot of leeway here so specifically representing Ian Cooper's view
 - Resources
   - [Classicist and Mockist TDD][]
-  - [Mocks Aren't Stubs][]
+  - [Mocks Aren't Stubs][MAS]
   - [Is TDD Dead?][]
-  - [TDD: Where Did It All Go Wrong][]
+  - [TDD: Where Did It All Go Wrong][AGR]
   - *[Test-Driven Development: By Example][TDD By Example]*
 - Associated terms and concepts: Detroit/Boston school, middle-out
 - **What is good code?** Classical OO principles and design patterns
 - **How can I get good code?** Let tests provide feedback to consider
-- **What are the test types for?** "unit" (not isolated) for driving design, then refactor without test feedback
-- **How much do you test?** Test everything once; avoid double-testing, especially in extracted classes
-- **What process do I go through to achieve this?** Red, green, refactor. In middle-out, domain classes, then build up
+- **What are the test types for?** "unit" (not isolated) for driving design, then refactor without test feedback [[AGR][]]
+- **How much do you test?** Test everything once; avoid double-testing, especially in extracted classes [[AGR][]]
+- **What process do I go through to achieve this?** Red, green, refactor. In middle-out, domain classes, then build up [[MAS][]]
 - How much code do you write at first? Absolute bare minimum to get the test to pass.
 - Dependencies? The real thing when possible, stubs next, mocks last
 - How do you verify? Check state
 - High support for refactoring, low for code reuse
 - Criticisms
-  - Exposing state for the sake of testing, but "not a big deal"
+  - Exposing state for the sake of testing, but "not a big deal" [[MAS][]]
   - Doesn't exert pressure on you to refactor; do more as you get more experienced
   - Extracting objects is painful
 
 # Mockist TDD
 
-- Who? Dan North, Steve Freeman, Nat Pryce, XP Tuesdays
+- Major representatives? Dan North, David Chelimsky, Dave Astels, Steve Freeman, Nat Pryce
 - Resources?
   - [Classicist and Mockist TDD][]
-  - *[The RSpec Book][]*
-  - [Test Isolation is About Avoiding Mocks][Avoiding Mocks]
+  - *[The RSpec Book][RB]*
+  - [Test Isolation is About Avoiding Mocks][AM]
   - [Introducing BDD][]
   - *[Growing Object-Oriented Software, Guided by Tests][GOOS]*
+  - [Outside-in TDD and Dependency Injection in Rails][OITDD]
 - Associated terms and concepts: BDD (but that has a larger scope), isolation testing, London school, outside-in, need-driven development
-- **What is good code?** Code that can be reused and recombined in different ways. Code with low coupling. Code that tells, doesn't ask.
-- **How can I get good code?** Let tests drive your design at each layer, with mocks exerting pressure to reduce coupling.
-- **What are the test types for?** Acceptance and unit for driving your design, regression secondary. Integration good because a mix.
-- **How much do you test?** Test many things at both the acceptance and unit level, since acceptance drives you to unit level. But if one test at the unit level fixes multiple at the acceptance level, you're done. This can happen when you see patterns in acceptance tests failing, knowing what you know about the implementation. When you wrote the acceptance test, you didn't know the implementation.
-- **What process do I go through to achieve this?** Two RGR circles, for application and for classes. But the outer circle writes a whole test case at once.
+- **What is good code?** Code that can be reused and recombined in different ways. Code with low coupling. Code that tells, doesn't ask. [[GOOS][]]
+- **How can I get good code?** Let tests drive your design at each layer, with mocks exerting pressure to reduce coupling. [[AM][]]
+- **What are the test types for?** Acceptance and unit for driving your design, regression secondary. Integration good because a mix. [[GOOS][]]
+- **How much do you test?** Test many things at both the acceptance and unit level, since acceptance drives you to unit level. But if one test at the unit level fixes multiple at the acceptance level, you're done. This can happen when you see patterns in acceptance tests failing, knowing what you know about the implementation. When you wrote the acceptance test, you didn't know the implementation. [[RB][]]
+- **What process do I go through to achieve this?** Two RGR circles, for application and for classes. But the outer circle writes a whole test case at once. [[RB][]]
 - How much code do you write at first? The code you wish you had.
 - Dependencies? Mocks
 - How do you verify? Check messages sent
 - Balanced support for refactoring and code reuse
 - Criticisms
-  - Mocks not actually testing anything, but that's what acceptance tests are for
-  - Too many levels of mocks, but this is exactly the design feedback you're supposed to respond to, and apply Demeter/Tell-Don't-Ask [Test Isolation is About Avoiding Mocks]
+  - Mocks not actually testing that the system works; but that's what acceptance tests are for
+  - Too many levels of mocks, but this is exactly the design feedback you're supposed to respond to, and apply Demeter/Tell-Don't-Ask [[AM][]]
   - Mocks couple you to the implementation: no, if you plan to reuse the classes, outgoing messages are the interface. The implementation is what's in the method and any private methods, not what's an outgoing message.
- - Extracting a class then adding tests is test-after development; but you can TDD the abstraction as you pull it out one bit at a tim
+  - Extracting a class then adding tests is test-after development; but you can TDD the abstraction as you pull it out one bit at a time [[OITDD][]]
 
 # Discovery Testing
 
 - Who? Test Double, Justin Searls
 - Resources?
-  - [The Failures of Intro to TDD][]
+  - [The Failures of Intro to TDD][FITDD]
   - [Tests' Influence on Design][]
-  - [The Testing Pyramid][]
-- **What is good code?** A tree of classes that either coordinate collaboration or perform logic, not both. Disposable classes.
-- **How can I get good code?** By driving it with unit tests only, with mocks helping you think through decomposing the problem.
-- **What are the test types for?** Unit for driving your design, acceptance for regression. Integration bad because has downsides of both.
+  - [The Testing Pyramid][TP]
+- **What is good code?** A tree of classes that either coordinate collaboration or perform logic, not both. Disposable classes. [[FITDD][]]
+- **How can I get good code?** By driving it with unit tests only, with mocks helping you think through decomposing the problem. [[FITDD][]]
+- **What are the test types for?** Unit for driving your design, acceptance for regression. Integration bad because has downsides of both. [[TP][]]
 - **How much do you test?** Test everything at the unit level to design and the acceptance level to catch regressions?
-- **What process do I go through to achieve this?** Red, green, then step down the tree to implement the collaborators you mocked.
+- **What process do I go through to achieve this?** Red, green, then step down the tree to implement the collaborators you mocked. [[FITDD][]]
 - How much code do you write at first? The code you wish you had.
 - Dependencies? mocks
 - How do you verify? For collaboration nodes, check mocks. For leaf notes, check return values.
 - Discourages refactoring or code reuse--rewrite instead. But how does this work for nontrivial needs?
 
-[Avoiding Mocks]: https://www.destroyallsoftware.com/blog/2014/test-isolation-is-about-avoiding-mocks
+[AGR]: https://vimeo.com/68375232
+[AM]: https://www.destroyallsoftware.com/blog/2014/test-isolation-is-about-avoiding-mocks
 [Classicist and Mockist TDD]: https://overcast.fm/+DtC47yT1g
-[The Failures of Intro to TDD]: http://blog.testdouble.com/posts/2014-01-25-the-failures-of-intro-to-tdd.html
+[FITDD]: http://blog.testdouble.com/posts/2014-01-25-the-failures-of-intro-to-tdd.html
 [GOOS]: http://www.informit.com/store/growing-object-oriented-software-guided-by-tests-9780321503626
 [Introducing BDD]: http://dannorth.net/introducing-bdd/
 [Is TDD Dead?]: http://martinfowler.com/articles/is-tdd-dead/
-[Mocks Aren't Stubs]: http://www.martinfowler.com/articles/mocksArentStubs.html
-[The RSpec Book]: https://pragprog.com/book/achbd/the-rspec-book
+[MAS]: http://www.martinfowler.com/articles/mocksArentStubs.html
+[RB]: https://pragprog.com/book/achbd/the-rspec-book
+[OITDD]: https://overcast.fm/+DtC4BiOdM/7:54
 [TDD By Example]: http://www.amazon.com/Test-Driven-Development-By-Example/dp/0321146530
 [TDD is Dead]: http://david.heinemeierhansson.com/2014/tdd-is-dead-long-live-testing.html
 [TDD: Where Did It All Go Wrong]: https://vimeo.com/68375232
 [The Testing Pyramid]: https://github.com/testdouble/contributing-tests/wiki/Testing-Pyramid
 [Tests' Influence on Design]: https://github.com/testdouble/contributing-tests/wiki/Tests'-Influence-on-Design
+[TP]: https://github.com/testdouble/contributing-tests/wiki/Testing-Pyramid
 [Writing Software]: https://youtu.be/9LfmrkyP81M?t=23m58s
 
 ***
