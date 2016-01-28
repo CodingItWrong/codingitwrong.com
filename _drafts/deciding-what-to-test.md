@@ -17,9 +17,11 @@ This is a discussion, not a talk:
 
 Some qualifications:
 
-- People use different terms in different ways. Ask questions to understand their view, not just the term.
-- I apologize if categories aren't helpful to you; they are to me
-- You don't have to personally always do only one of these. You can think of them as disciplines that apply for certain systems or parts of your code.
+- There are more approaches than these
+- There are variations within each approach
+- Terms change meaning over time and person-to-person
+- You don't have to always do only one of these. You can think of them as disciplines that apply for certain systems or parts of your code.
+- But categories are still helpful for understanding differences and alternatives
 
 # Regression testing
 
@@ -40,7 +42,7 @@ Some qualifications:
 
 # Classical TDD
 
-- Who? Kent Beck, Martin Fowler
+- Who? Kent Beck, Martin Fowler; there is a lot of leeway here so specifically representing Ian Cooper's view
 - Resources
   - [Classicist and Mockist TDD][]
   - [Mocks Aren't Stubs][]
