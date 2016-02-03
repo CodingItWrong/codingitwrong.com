@@ -80,8 +80,8 @@ Some qualifications:
 - **How much do you test?** Test many things at both the acceptance and unit level, since acceptance drives you to unit level. But if one test at the unit level fixes multiple at the acceptance level, you're done. This can happen when you see patterns in acceptance tests failing, knowing what you know about the implementation. When you wrote the acceptance test, you didn't know the implementation.
 - **What process do I go through to achieve this?** Two RGR circles, for application and for classes. But the outer circle writes a whole test case at once.
 - How much code do you write at first? The code you wish you had.
-- Dependencies? Mocks
-- How do you verify? Check messages sent
+- Dependencies? Mocks of roles, not specific objects
+- How do you verify? Check messages sent; behavior, not state
 - Balanced support for refactoring and code reuse
 - Criticisms
   - Mocks not actually testing anything, but that's what acceptance tests are for
