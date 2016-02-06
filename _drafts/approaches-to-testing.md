@@ -38,13 +38,14 @@ You may have heard about the "[TDD is Dead][]" firestorm that DHH, the creator o
     - "[Writing Software][]", a RailsConf 2014 keynote that DHH gave around the same time as the blog post.
     - "[Is TDD Dead?][]", a series of recorded Google Hangouts between DHH, Kent Beck, and Martin Fowler where they discussed which of DHH's points they do and don't agree on.
 
-- **1. What are the test types for?** Acceptance and integration tests are for regression testing only. Unit tests are **useless**. They don't actually test that your application works. Furthermore, changing your code to be easy to unit test makes it more difficult to read and understand, leading to "test-induced design damage."
-- **2. How much do I test?** Test only what's valuable. Maybe the most common use cases of your app, or what makes you money. You don't need to test every screen of your app.
-- **3. What process do I go through to achieve this?** Write the code, test it manually, then optionally write a regression test.
-- **4. How do I use test doubles?** Don't. Always use your real, connected production code. This ensures you're testing real behavior.
-- **5. What do I check for in my tests?** Mostly check for rendered page content or database entries. Integration tests that access objects may also check return values.
-- **6. How do I deal with change?** Just do it! Refactoring is de-emphasized. Most of what DHH talks about is adding new features to your app, not about restructuring your code to make it more flexible as your application grows. Also, he explicitly discourages code reuse, such as making your business logic accessible from the command line or web services. [[Is TDD Dead?][]]
-- **7. What even is good code?** Simple, readable code. Small classes and methods are no advantage if they make it harder to read through and understand the entirety of what a user request does. I won't say definitively that he's advocating procedural coding, but he's much closer to it than the other approaches.
+1. **What are the test types for?** Acceptance and integration tests are for regression testing only. Unit tests don't provide any value: they don't actually test that your application works. Furthermore, changing your code to be easy to unit test makes it more difficult to read and understand, leading to "test-induced design damage."
+2. **How much do I test?** Test only what's valuable. Maybe the most common use cases of your app, or what makes you money. You don't need to test every screen of your app.
+3. **What process do I go through to achieve this?** Write the code, test it manually, then optionally write a regression test.
+4. **How do I use test doubles?** Don't. Always use your real, connected production code. This ensures you're testing real behavior.
+5. **What do I check for in my tests?** Mostly check for rendered page content or database entries. Integration tests that access objects may also check return values.
+6. **How do I deal with change?** Just do it! Refactoring is de-emphasized. Most of what DHH talks about is adding new features to your app, not about restructuring your code to make it more flexible as your application grows. Also, he explicitly discourages code reuse, such as making your business logic accessible from the command line or web services. [[Is TDD Dead?][]]
+7. **What even is good code?** Simple, readable code. Small classes and methods are no advantage if they make it harder to read through and understand the entirety of what a user request does. I won't say definitively that he's advocating procedural coding, but he's much closer to it than the other approaches.
+
 - Criticisms
     - There are a lot of dependencies between classes. They're hard-coded to use each other, and can end up with a lot of coupling between one another. Even if you don't reuse code, this can make it hard to understand for debugging and adding features.
     - Because of this coupling, it's difficult to follow this approach as apps grow in size. Defects can go up and development speed can go down
