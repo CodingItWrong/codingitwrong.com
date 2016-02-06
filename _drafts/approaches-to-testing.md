@@ -1,6 +1,4 @@
-*These are my presentation notes from a Web Jibber Jabber presentation. This will probably end up on another blog soon--my own, if nothing else. But for now, here it is!*
-
-As I've been getting into testing, I've been asking myself how much testing to do--specifically, how much unit, integration, and acceptance testing. Turns out Folks Got Opinions™ on this! As I looked, I found at least four different approaches to testing, that answered a number of questions I was asking:
+The last few months have been my first opportunity to do automated testing at my full-time job. As I've been trying to get the hang of it, my biggest question has been how many of each type to test to write: how many unit, integration, and acceptance tests. Turns out Folks Got Opinions™ on this! As I researched, I found at least four different approaches to testing, and they each provide helpful answers to a number of questions:
 
 1. What are the different test types for?
 2. How much do I test?
@@ -28,32 +26,32 @@ First, a clarification of how I use testing terms:
 
 - - -
 
-# Test Approach #1: Whatever it is DHH does.
-(Maybe "Regression Testing"?)
+# Test Approach #1: Whatever it is DHH does. (Maybe "Regression Testing"?)
+
+You may have heard about the "[TDD is Dead][]" firestorm that DHH, the creator of Rails, kicked off in 2014. DHH is nothing if not opinionated, and these opinions extend to Test-Driven Development. Reacting to what he perceives as inherent problems with TDD, DHH proposed returning to a simpler test-after approach, focusing only on regression testing.
 
 ![Regression Testing](assets/images/2016-02-04-regression-testing.png)
 
-- Related terms?
-    - Test-After Development
-    - ⌘-R-Driven Development
-- Major representatives? DHH
 - Resources?
     - "[Writing Software][]" RailsConf 2014 keynote
     - "[TDD is Dead][]" blog post
     - "[Is TDD Dead?][]" panels
-- **1. What are the test types for?** Acceptance and integration tests are for regression. Unit tests are **useless**.
-- **2. How much do I test?** Test only what's valuable. Maybe the most common use cases of your app, or what makes you money.
-- **3. What process do I go through to achieve this?** Write the code, ⌘-R, then write the regression test. Test in the browser.
-- **4. How do I use test doubles?** Don't. Always use your real, connected production code.
-- **5. What do I check for in my tests?** Check page content or database entries.
-- **6. How do I deal with change?** Just do it! Refactoring is de-emphasized; code reuse is discouraged. [[Is TDD Dead?][]]
-- **7. What even is good code?** Simple, readable code.
+
+- **1. What are the test types for?** Acceptance and integration tests are for regression testing only. Unit tests are **useless**. They don't actually test that your application works. Furthermore, changing your code to be easy to unit test makes it more difficult to read and understand, leading to "test-induced design damage."
+- **2. How much do I test?** Test only what's valuable. Maybe the most common use cases of your app, or what makes you money. You don't need to test every screen of your app.
+- **3. What process do I go through to achieve this?** Write the code, test it manually, then optionally write a regression test.
+- **4. How do I use test doubles?** Don't. Always use your real, connected production code. This ensures you're testing real behavior.
+- **5. What do I check for in my tests?** Mostly check for rendered page content or database entries. Integration tests that access objects may also check return values.
+- **6. How do I deal with change?** Just do it! Refactoring is de-emphasized. Most of what DHH talks about is adding new features to your app, not about restructuring your code to make it more flexible as your application grows. Also, he explicitly discourages code reuse, such as making your business logic accessible from the command line or web services. [[Is TDD Dead?][]]
+- **7. What even is good code?** Simple, readable code. Small classes and methods are no advantage if they make it harder to read through and understand the entirety of what a user request does. I won't say definitively that he's advocating procedural coding, but he's much closer to it than the other approaches.
 - Criticisms
-    - There are a lot of dependencies between classes.
-    - Difficult to follow this approach as apps grow in size.
-    - It's concerning that there's no mention of refactoring.
+    - There are a lot of dependencies between classes. They're hard-coded to use each other, and can end up with a lot of coupling between one another. Even if you don't reuse code, this can make it hard to understand for debugging and adding features.
+    - Because of this coupling, it's difficult to follow this approach as apps grow in size. Defects can go up and development speed can go down
+    - It's concerning to me that there's no mention of refactoring. That suggests to me that this approach at best isn't optimized for refactoring, and at worst hinders it.
 
 # Test Approach #2: Classical TDD
+
+Test-Driven Development originates with Kent Beck and was most thoroughly laid out by him in *[Test-Driven Development: By Example][TDD By Example]*.
 
 - Related terms?
     - Detroit School of TDD
@@ -65,22 +63,24 @@ First, a clarification of how I use testing terms:
     - "[Is TDD Dead?][]" panels
     - "[TDD: Where Did It All Go Wrong][AGR]" conference talk
     - *[Test-Driven Development: By Example][TDD By Example]* book
-- **1. What are the different test types for?** "Unit" tests are for driving design...for sufficiently large definitions of "unit." It's more similar to what others mean when they say "integration testing." [[AGR][]]
-- **2. How much do I test?** Test everything once and only once. [[AGR][]]
-- **3. What process do I go through to write tests?** Red, green, refactor. [[MAS][]]
-- **4. How do I use test doubles?** Use stubs *only* when the real collaborators are difficult to work with.
+- **1. What are the different test types for?** "Unit" tests are for driving design...for sufficiently large definitions of "unit." Beck admits that his usage of the term "unit" is different from most developers before him—and that's remained true. It's more similar to what others mean when they say "integration testing": testing several classes working together. [[AGR][]]
+- **2. How much do I test?** Test everything once and only once. You don't write a line of production code until you first have a test that fails without that line. I say test everything *only* once because duplicate test coverage is discouraged. If you refactor a class to collaborate with another new class, the new class is already covered by your existing test: don't write an additional test for it. [[AGR][]]
+- **3. What process do I go through to write tests?** Red, green, refactor. First write just enough of a test to fail (making your test output red). Then write just enough production code to make the test pass (green). Then refactor to improve the code—especially by removing duplication.
+- **4. How do I use test doubles?** Only when necessary. Test classes against their real collaborators as much as you can. Use stubs *only* when the real collaborators are difficult to work with, such as connection to third-party or asynchronous services. [[MAS][]]
 - **5. What do I check for in my tests?** Check state, internal and external. For example, you might send a message to one object then check a value three objects away. You might also have to expose some internal properties of an object just for testing.
-- **6. How do I deal with change??** Refactor the class's implementation, which includes its dependencies that aren't directly accessed from the outside.
+- **6. How do I deal with change??** Refactor the class's implementation, which includes its collaborators that aren't directly accessed from the outside. Because the collaborators aren't tested directly (see question 2), it's easy to change them and ensure they still return the same result overall.
 - **7. What even is good code?** A black box with well-defined external functionality.
 - Criticisms
-  - Exposing state for the sake of testing--but practicioners say this doesn't cause a big problem in practice. [[CAM][]]
-  - Doesn't exert pressure on you to refactor--but practicioners say as your skills grow you do this more. [[FITDD][]]
-  - Extracting objects is painful. [[FITDD][]]
+  - When testing state, sometimes you have to expose internal variables only for the sake of testing. This was one of the main motivations for the creation of the third test approach. However, practicioners say this doesn't cause a big problem in practice. [[CAM][]]
+  - The methodology doesn't exert pressure on you to refactor, so that step can often be minimized. Put practicioners say that as your design skills grow, you do this more. [[FITDD][]]
+  - Extracting objects is a painful process. [[FITDD][]]
 
-# Test Approahc #3: Isolation Testing
+# Test Approach #3: Mockist TDD
+
+This approach started in London's XP Tuesdays meetup in response to what they perceived to be difficulties using Classical TDD, especially the frequent need to expose internal object state for testing.
 
 - Related terms?
-    - Mockist TDD--this is the most common term for it, but you'll see below why I think the term "Isolation Testing" better captures the essence for the sake of this comparison
+    - Isolation testing
     - London School of TDD
     - Outside-In Testing
     - Need-Driven Development
@@ -92,34 +92,34 @@ First, a clarification of how I use testing terms:
   - "[Test Isolation is About Avoiding Mocks][AM]" blog post
   - *[Growing Object-Oriented Software, Guided by Tests][GOOS]* book
   - "[Outside-in TDD and Dependency Injection in Rails][OITDD]" podcast episode
-- **1. What are the different test types for?** Acceptance and unit tests are for driving your design. Acceptance tests are also for catching regressions. [[GOOS][]]
-- **2. How much do you test?** Test everything at both the acceptance and unit level, since acceptance tests drive you to unit level. [[RB][]]
-- **3. What process do I go through to write tests?** Do two red-green-refactor circles, acceptance-level and unit-level. [[RB][]]
-- **4. How do I use test doubles?** Stub or mock all collaborators.
-- **5. What do I check for in my tests?** Check behavior, not state--i.e. check messages sent. (But when there are return values you also check those.)
-- **6. How do I deal with change?** Reconfigure your component, by which I mean...
-- **7. What even is good code?** Small, reusable components. [[GOOS][]]
+- **1. What are the different test types for?** Acceptance and unit tests are both for driving your design, not just unit tests as in Classical TDD. Acceptance tests are also for catching regressions—unit tests are not. [[GOOS][]]
+- **2. How much do you test?** You everything at both the acceptance and unit level, since you only write unit tests and production code when an acceptance test drives you to them. [[RB][]]
+- **3. What process do I go through to write tests?** Do two red-green-refactor circles, one at acceptance-level and the other at unit-level. Write an acceptance test that defines the user-facing behavior needed. Then as soon as it fails and you need to write production code to fix the first failure, step down and write a unit test for the class you need, then write the class. [[RB][]]
+- **4. How do I use test doubles?** Stub or mock all collaborators. Mockists use the traditional definition of "unit test": a class that's tested by itself without any real collaborators, frameworks, or external services.
+- **5. What do I check for in my tests?** Check behavior, not state. Mockist testing emphasizes the "tell-don't-ask" principle, which means that classes frequently issue commands to other classes. Mocks provide the easiest way to verify that those messages are sent. When there are return values you check those directly, and no mocks are needed.
+- **6. How do I deal with change?** The internals of a class can be refactored. When larger changes are needed, the mocks in tests discourage you from changing interfaces too quickly. If classes can be reused to provide the newly-desired behavior, that's preferable.
+- **7. What even is good code?** Small, reusable components. By isolation testing including outgoing messages, this approach encourages you to think about how objects collaborate, which leads to more consistency between interfaces and easier reuse. [[GOOS][]]
 - Criticisms
-  - Mocks not actually testing that the system works--but that's what acceptance tests are for.
-  - Too many levels of mocks--but this is exactly the design feedback you're supposed to respond to, simplifying your code by applying the Law of Demeter and the Tell-Don't-Ask principle. [[AM][]]
-  - Mocks couple you to the implementation--but if you want reusable components, outgoing messages *are* the interface. The implementation is what's in the method and any private methods, not what's an outgoing message.
-  - Extracting a class then adding tests is test-after development--but you can TDD the abstraction as you pull it out one bit at a time [[OITDD][]]
+  - Mocks are not actually testing that the system works. However, that's not the purpose of unit tests: they're for driving your design. Regression testing is what your acceptance tests are for.
+  - There can be a tendency to have three or more levels of mocks, making them very hard to read. But this is exactly the design feedback unit tests are supposed to provide, simplifying your code by applying the Tell-Don't-Ask principle to reduce the number of mocks needed. [[AM][]]
+  - Mocks couple you to the implementation of your classes, making it impossible to refactor without changing tests. But if you want reusable components, outgoing messages *are* the interface. The implementation is what's in the method and any private methods, not what's an outgoing message. There is a rigidity here, but it's a tradeoff to be able to have reusable components.
+  - Extracting a class during refactoring and then adding tests is test-after development, which loses the benefits of TDD. But you can first write the new class as an inner class, then TDD it as you pull it out one bit at a time [[OITDD][]]
 
 # Test Approach #4: Discovery Testing
 
-- Major Representatives? Justin Searls, [Test Double](http://testdouble.com/)
+Discovery Testing is a response to both Classical and Mockist TDD and the perceived difficulties that both present in terms of refactoring. Justin Searls or [Test Double](http://testdouble.com/) is the main proponent.
 - Resources?
     - "[The Failures of Intro to TDD][FITDD]" blog post
     - "[Tests' Influence on Design][]" page
     - "[The Testing Pyramid][TP]" diagram
-- **1. What are the different test types for?** Unit tests are for driving your design, acceptance tests are for regression. [[TP][]]
+- **1. What are the different test types for?** Unit tests are for driving your design and acceptance tests are for regression. [[TP][]]
 - **2. How much do I test?** Test-drive everything at the unit level, then test at the acceptance level to catch regressions.
-- **3. What process do I go through to write tests?** Red, green, then implement the collaborators you mocked...not quite as catchy! Decompose the problem into smaller parts from the start, instead of refactoring after the fact. [[FITDD][]]
+- **3. What process do I go through to write tests?** Red, green, then…implement the collaborators you mocked. What this means is that you decompose the problem into collaborators from the start, instead of refactoring after the fact as in other TDD approaches. [[FITDD][]]
 - **4. How do I use test doubles?** Stub or mock all collaborators.
 - **5. What do I check for in my tests?** Check behavior, just like in Isolation Testing.
-- **6. How do I deal with change?** Throw out and rewrite a subtree of your classes.
+- **6. How do I deal with change?** Throw out and rewrite a subtree of your classes. These classes are intended to be so small that it's easier to rewrite them than refactor them.
 - **7. What even is good code?** A tree of tiny, disposable classes. [[FITDD][]]
-- I haven't found any responses to Discovery Testing online, but here are the questions I have:
+- I haven't found any responses to Discovery Testing online, but here are the questions I have about it:
     - Does disposable code work for complex features? Even if each class is tiny, one feature might be implemented with dozens of classes that you'd have to throw out if the feature changed at a high level.
     - Is code reuse *never* worth the cost?
     - Do you always know the right way to decompose your problem at first?
@@ -131,7 +131,7 @@ So how do you decide what testing approach to take? I would suggest that the bet
 - Refactorable black boxes?
 - Pluggable components?
 - Disposable subtrees?
-- ...Literature? I guess??
+- ...Literature? I guess?? I'm not sure what to call what DHH advocates!
 
 The answer is It Depends™. On a number of things:
 
