@@ -1,4 +1,4 @@
-The last few months have been my first opportunity to do automated testing at my full-time job. As I've been trying to get the hang of it, my biggest question has been how many of each type to test to write: how many unit, integration, and acceptance tests. Turns out Folks Got Opinions™ on this! As I researched, I found at least four different approaches to testing, and they each provide helpful answers to a number of questions:
+The last few months have been my first opportunity to do automated testing at my full-time job. As I've been trying to get the hang of it, my biggest question has been how many of each type to test to write: how many unit, integration, and acceptance tests. Turns out Folks Got Opinions™ on this! As I researched, I found at least four different approaches to testing, and they each provide different answers to a number of questions:
 
 1. What are the different test types for?
 2. How much do I test?
@@ -13,9 +13,9 @@ But it turns out these different approaches to testing *also* answered some bigg
 
 I wanted to share what I found. And as a bonus, I have a **crazy theory** to share: each approach to testing is tailor-made to guide you towards a certain kind of architecture. So, if you try to use a testing approach for an architecture it's not a good fit for, you're gonna have a bad time.
 
-One quick note: there aren't hard boundaries between these types of testing. Don't think of them as things you have to pick exactly one of. Think of them as tools you can apply in different situations as they fit best.
+One quick note: there aren't hard boundaries between these types of testing. Don't think of them as things you have to pick one and use it all the time. Think of them as tools you can apply in different situations as they fit best.
 
-First, a clarification of how I use testing terms:
+First, since testing terms are used in so many different ways, here's a clarification of how I use then:
 
 - **Acceptance test**: tests the whole system from the outside (i.e. web user interface).
 - **Integration test**: tests an object connected to other objects and external systems (i.e. the database).
@@ -26,16 +26,17 @@ First, a clarification of how I use testing terms:
 
 - - -
 
-# Test Approach #1: Whatever it is DHH does. (Maybe "Regression Testing"?)
+# Test Approach #1: Whatever it is DHH does.
+## (Maybe "Regression Testing"?)
 
-You may have heard about the "[TDD is Dead][]" firestorm that DHH, the creator of Rails, kicked off in 2014. DHH is nothing if not opinionated, and these opinions extend to Test-Driven Development. Reacting to what he perceives as inherent problems with TDD, DHH proposed returning to a simpler test-after approach, focusing only on regression testing.
+You may have heard about the "[TDD is Dead][]" firestorm that DHH, the creator of Rails, kicked off in 2014. DHH is nothing if not opinionated, and these opinions extend to Test-Driven Development. Reacting to what he perceived as inherent problems with TDD, DHH proposed returning to a simpler test-after approach, focusing only on regression testing.
 
 ![Regression Testing](assets/images/2016-02-04-regression-testing.png)
 
-- Resources?
-    - "[Writing Software][]" RailsConf 2014 keynote
-    - "[TDD is Dead][]" blog post
-    - "[Is TDD Dead?][]" panels
+- Resources
+    - "[TDD is Dead][]", the blog post that started it all.
+    - "[Writing Software][]", a RailsConf 2014 keynote that DHH gave around the same time as the blog post.
+    - "[Is TDD Dead?][]", a series of recorded Google Hangouts between DHH, Kent Beck, and Martin Fowler where they discussed which of DHH's points they do and don't agree on.
 
 - **1. What are the test types for?** Acceptance and integration tests are for regression testing only. Unit tests are **useless**. They don't actually test that your application works. Furthermore, changing your code to be easy to unit test makes it more difficult to read and understand, leading to "test-induced design damage."
 - **2. How much do I test?** Test only what's valuable. Maybe the most common use cases of your app, or what makes you money. You don't need to test every screen of your app.
@@ -51,18 +52,14 @@ You may have heard about the "[TDD is Dead][]" firestorm that DHH, the creator o
 
 # Test Approach #2: Classical TDD
 
-Test-Driven Development originates with Kent Beck and was most thoroughly laid out by him in *[Test-Driven Development: By Example][TDD By Example]*.
+Test-Driven Development originated with Kent Beck. After the development of Mockist TDD as an offshoot, the original formulation began to be referred to as Classical TDD or the Detroit School of TDD.
 
-- Related terms?
-    - Detroit School of TDD
-    - Middle-Out Testing
-- Major representatives? Kent Beck, Martin Fowler; there is a lot of leeway here so specifically representing Ian Cooper's view
 - Resources
-    - "[Classicist and Mockist TDD][CAM]" podcast episode
-    - "[Mocks Aren't Stubs][MAS]" blog post
+    - *[Test-Driven Development: By Example][TDD By Example]*, an early book where Kent Beck most thoroughly lays out his view
+    - "[Mocks Aren't Stubs][MAS]", an extended blog post where Martin Fowler contrasts Classical and Mockist TDD.
+    - "[Classicist and Mockist TDD][CAM]", a podcast episode that does the same.
     - "[Is TDD Dead?][]" panels
-    - "[TDD: Where Did It All Go Wrong][AGR]" conference talk
-    - *[Test-Driven Development: By Example][TDD By Example]* book
+    - "[TDD: Where Did It All Go Wrong][AGR]", a conference talk where Ian Cooper contrasts Classical TDD to some misapplications of it
 - **1. What are the different test types for?** "Unit" tests are for driving design...for sufficiently large definitions of "unit." Beck admits that his usage of the term "unit" is different from most developers before him—and that's remained true. It's more similar to what others mean when they say "integration testing": testing several classes working together. [[AGR][]]
 - **2. How much do I test?** Test everything once and only once. You don't write a line of production code until you first have a test that fails without that line. I say test everything *only* once because duplicate test coverage is discouraged. If you refactor a class to collaborate with another new class, the new class is already covered by your existing test: don't write an additional test for it. [[AGR][]]
 - **3. What process do I go through to write tests?** Red, green, refactor. First write just enough of a test to fail (making your test output red). Then write just enough production code to make the test pass (green). Then refactor to improve the code—especially by removing duplication.
@@ -77,21 +74,15 @@ Test-Driven Development originates with Kent Beck and was most thoroughly laid o
 
 # Test Approach #3: Mockist TDD
 
-This approach started in London's XP Tuesdays meetup in response to what they perceived to be difficulties using Classical TDD, especially the frequent need to expose internal object state for testing.
+This approach started in London's XP Tuesdays meetup in response to what they perceived to be difficulties using Classical TDD, especially the frequent need to expose internal object state for testing. It's sometimes referred to as the London School of TDD, Isolation Testing, or Outside-In Testing. It's closely related to Behavior-Driven Development (BDD), although that has a larger scope involving customer interaction and feature prioritization.
 
-- Related terms?
-    - Isolation testing
-    - London School of TDD
-    - Outside-In Testing
-    - Need-Driven Development
-    - Behavior-Driven Development (BDD; but that has a larger scope)
-- Major representatives? Dan North, David Chelimsky, Dave Astels, Steve Freeman, Nat Pryce
-- Resources?
+- Resources
+  - *[Growing Object-Oriented Software, Guided by Tests][GOOS]*, considered by many to be the foundational articulation of Mockist TDD  
+  - *[The RSpec Book][RB]*, an introduction to BDD, Mockist TDD, and Rails-specific tools for doing it
+  - "[Test Isolation is About Avoiding Mocks][AM]", a blog post about the criticism of too many mocks
+  - "[Outside-in TDD and Dependency Injection in Rails][OITDD]", a podcast episode about some practicalities of this approach
+  - "[Mocks Aren't Stubs][MAS]" blog post
   - "[Classicist and Mockist TDD][CAM]" podcast episode
-  - *[The RSpec Book][RB]*
-  - "[Test Isolation is About Avoiding Mocks][AM]" blog post
-  - *[Growing Object-Oriented Software, Guided by Tests][GOOS]* book
-  - "[Outside-in TDD and Dependency Injection in Rails][OITDD]" podcast episode
 - **1. What are the different test types for?** Acceptance and unit tests are both for driving your design, not just unit tests as in Classical TDD. Acceptance tests are also for catching regressions—unit tests are not. [[GOOS][]]
 - **2. How much do you test?** You everything at both the acceptance and unit level, since you only write unit tests and production code when an acceptance test drives you to them. [[RB][]]
 - **3. What process do I go through to write tests?** Do two red-green-refactor circles, one at acceptance-level and the other at unit-level. Write an acceptance test that defines the user-facing behavior needed. Then as soon as it fails and you need to write production code to fix the first failure, step down and write a unit test for the class you need, then write the class. [[RB][]]
@@ -108,10 +99,12 @@ This approach started in London's XP Tuesdays meetup in response to what they pe
 # Test Approach #4: Discovery Testing
 
 Discovery Testing is a response to both Classical and Mockist TDD and the perceived difficulties that both present in terms of refactoring. Justin Searls or [Test Double](http://testdouble.com/) is the main proponent.
-- Resources?
-    - "[The Failures of Intro to TDD][FITDD]" blog post
-    - "[Tests' Influence on Design][]" page
-    - "[The Testing Pyramid][TP]" diagram
+
+- Resources
+    - "[The Failures of Intro to TDD][FITDD]", the main blog post that lays out this view.
+    - "[Tests' Influence on Design][]", an article with more detail.
+    - "[The Testing Pyramid][TP]", an illustration of the roles of the different test types.
+
 - **1. What are the different test types for?** Unit tests are for driving your design and acceptance tests are for regression. [[TP][]]
 - **2. How much do I test?** Test-drive everything at the unit level, then test at the acceptance level to catch regressions.
 - **3. What process do I go through to write tests?** Red, green, then…implement the collaborators you mocked. What this means is that you decompose the problem into collaborators from the start, instead of refactoring after the fact as in other TDD approaches. [[FITDD][]]
