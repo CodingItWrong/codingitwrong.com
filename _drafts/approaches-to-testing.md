@@ -1,4 +1,4 @@
-The last few months have been my first opportunity to do automated testing at my full-time job. As I've been trying to get the hang of it, my biggest question has been how many of each type to test to write: how many unit, integration, and acceptance tests. Turns out Folks Got Opinions™ on this! As I researched, I found at least four different approaches to testing, and they each provide different answers to a number of questions:
+The last few months have been my first opportunity to do automated testing at my full-time job. As I've been trying to get the hang of it, my biggest question has been how many of each type to test to write: how many unit, integration, and acceptance tests. Turns out Folks Got Opinions™ on this! As I researched, I found at least four different approaches to testing, and they each provide different answers to a number of questions I had:
 
 1. What are the different test types for?
 2. How much do I test?
@@ -6,23 +6,21 @@ The last few months have been my first opportunity to do automated testing at my
 4. How do I use test doubles?
 5. What do I check for in my tests?
 
-But it turns out these different approaches to testing *also* answered some bigger-picture questions I wasn't expecting:
+But it turns out these approaches *also* answered some bigger-picture questions I wasn't expecting:
 
 6. How do I deal with change in my application?
 7. What even **is** good code?
 
-I wanted to share what I found. And as a bonus, I have a **crazy theory** to share: each approach to testing is tailor-made to guide you towards a certain kind of architecture. So, if you try to use a testing approach for an architecture it's not a good fit for, you're gonna have a bad time.
+I wanted to share what I found, hoping it will help you learn some new approaches to try, whether you're a testing newbie like me or a seasoned veteran. And as a bonus, I have a **crazy theory** to share: each approach to testing is tailor-made to guide you towards a certain kind of architecture. So, if you try to use a testing approach for an architecture it's not a good fit for, you're gonna have a bad time.
 
-One quick note: there aren't hard boundaries between these types of testing. Don't think of them as things you have to pick one and use it all the time. Think of them as tools you can apply in different situations as they fit best.
+One quick note: there aren't hard boundaries between these types of testing. Don't think of it as though you have to pick one and use it all the time. Think of them as tools you can apply in different situations as they fit best.
 
-First, since testing terms are used in so many different ways, here's a clarification of how I use then:
+First, since terms for categories of tests are used in so many different ways, here's how I'll use them in this post:
 
 - **Acceptance test**: tests the whole system from the outside (i.e. web user interface).
-- **Integration test**: tests an object connected to other objects and external systems (i.e. the database).
+- **Integration test**: tests an object connected to other objects and/or external systems (i.e. the database).
 - **Unit test**: tests an object in isolation from any other objects.
 - **“Unit” test**: when I am being sarcastic about Kent Beck saying “unit test” to refer to what the industry considers an integration test. More on this in a minute!
-- **Stub**: a test double that provides hard-coded responses, and may record state changes.
-- **Mock**: a test double that allows you to verify that certain methods were called
 
 - - -
 
@@ -36,7 +34,7 @@ You may have heard about the "[TDD is Dead][]" firestorm that DHH, the creator o
 Resources
 
 - "[TDD is Dead][]", the blog post that started it all.
-- "[Writing Software][]", a RailsConf 2014 keynote that DHH gave around the same time as the blog post.
+- "[Writing Software][]", a conference keynote that DHH gave around the same time as the blog post.
 - "[Is TDD Dead?][]", a series of recorded Google Hangouts between DHH, Kent Beck, and Martin Fowler where they discussed which of DHH's points they do and don't agree on.
 
 1. **What are the different test types for?** Acceptance and integration tests are for regression testing only. Unit tests don't provide any value: they don't actually test that your application works. Furthermore, changing your code to be easy to unit test makes it more difficult to read and understand, leading to "test-induced design damage."
