@@ -1,3 +1,7 @@
+---
+title: Approaches to Testing
+---
+
 The last few months have been my first opportunity to do automated testing at my full-time job. As I've been trying to get the hang of it, my biggest question has been how many of each type to test to write: how many unit, integration, and acceptance tests. Turns out Folks Got Opinions™ on this! As I researched, I found at least four different approaches to testing, and they each provide different answers to a number of questions I had:
 
 1. What are the different test types for?
@@ -24,18 +28,19 @@ First, since terms for categories of tests are used in so many different ways, h
 
 - - -
 
-# Test Approach #1: Whatever it is DHH does.
-## (Maybe "Regression Testing"?)
+## Test Approach #1: Whatever it is DHH does.
+
+#### (Maybe "Regression Testing"?)
 
 You may have heard about the "[TDD is Dead][]" firestorm that DHH, the creator of Rails, kicked off in 2014. DHH is nothing if not opinionated, and these opinions extend to Test-Driven Development. Reacting to what he perceived as inherent problems with TDD, DHH proposed returning to a simpler test-after approach, focusing only on regression testing.
-
-![Regression Testing](assets/images/2016-02-04-regression-testing.png)
 
 Resources
 
 - "[TDD is Dead][]", the blog post that started it all.
 - "[Writing Software][]", a conference keynote that DHH gave around the same time as the blog post.
 - "[Is TDD Dead?][]", a series of recorded Google Hangouts between DHH, Kent Beck, and Martin Fowler where they discussed which of DHH's points they do and don't agree on.
+
+![Regression Testing](/img/posts/approaches-to-testing/regression-testing.png)
 
 1. **What are the different test types for?** Acceptance and integration tests are for regression testing. Unit tests don't provide any value: they don't really test that your application works. Furthermore, changing your code to be easy to unit test makes it more difficult to read and understand, leading to "test-induced design damage."
 2. **How much should I test?** Test only what's valuable. Maybe the most common use cases of your app, or what makes you money. You don't need to test every feature of your app.
@@ -51,7 +56,7 @@ Criticisms
 - Because of this coupling, it's difficult to follow this approach as apps grow in size. Defects can go up and development speed can go down.
 - It's concerning to me that there's no mention of refactoring. This suggests to me that this approach at best isn't optimized for refactoring, and at worst hinders it.
 
-# Test Approach #2: Classical TDD
+## Test Approach #2: Classical TDD
 
 Test-Driven Development originated with Kent Beck. After the development of Mockist TDD as an offshoot, the original formulation began to be referred to as Classical TDD or the Detroit School of TDD.
 
@@ -62,6 +67,8 @@ Resources
 - "[Classicist and Mockist TDD][CAM]", a podcast episode that does the same.
 - "[Is TDD Dead?][]" panels.
 - "[TDD: Where Did It All Go Wrong][AGR]", a conference talk where Ian Cooper contrasts correct and incorrect applications of Classical TDD.
+
+![Classical TDD](/img/posts/approaches-to-testing/classical-tdd.png)
 
 1. **What are the different test types for?** "Unit" tests are for driving design...for sufficiently large definitions of "unit." Beck admits that his usage of the term "unit" is different from most developers before him—and that's remained true sine then. It's closer to what others mean when they say "integration testing": testing several classes working together. [[AGR][]]
 2. **How much should I test?** Test everything once and only once. You don't write a line of production code until you first have a test that fails without that line. I say test everything *only* once because duplicate test coverage is discouraged. If you refactor a class to extract another new class, the new class is already covered by your existing test: don't write an additional test for it. [[AGR][]]
@@ -77,7 +84,7 @@ Criticisms
 - The methodology doesn't exert pressure on you to refactor, so that step can often be minimized. Put practitioners say that as your design skills grow, you do this more. [[FITDD][]]
 - Extracting objects is a painful process. [[FITDD][]]
 
-# Test Approach #3: Mockist TDD
+## Test Approach #3: Mockist TDD
 
 This approach started in London's XP Tuesdays meetup in response to what they perceived to be problems with Classical TDD, especially the frequent need to expose internal object state for testing. It's sometimes referred to as the London School of TDD, Isolation Testing, or Outside-In Testing. It's closely related to Behavior-Driven Development (BDD), although BDD has a larger scope involving customer interaction and feature prioritization.
 
@@ -89,6 +96,8 @@ Resources
 - "[Classicist and Mockist TDD][CAM]" podcast episode.
 - "[Test Isolation is About Avoiding Mocks][AM]", a blog post about the criticism of "too many mocks."
 - "[Outside-in TDD and Dependency Injection in Rails][OITDD]", a podcast episode that mentions the issue of class extraction and test-after development.
+
+![Mockist TDD](/img/posts/approaches-to-testing/mockist-tdd.png)
 
 1. **What are the different test types for?** Acceptance and unit tests are both for driving your design, not just unit tests as in Classical TDD. Acceptance tests are also for catching regressions—unit tests are not. [[GOOS][]]
 2. **How much should I test?** You test everything at both the acceptance and unit level, since you only write unit tests and production code when an acceptance test drives you to them. [[RB][]]
@@ -105,7 +114,7 @@ Criticisms
 - Mocks couple you to the implementation of your classes, making it impossible to refactor without changing tests. But if you want reusable components, outgoing messages *are* the interface. The implementation is what's in the method and any private methods, not what's an outgoing message. It's true that this introduces some rigidity, but it's a necessary tradeoff to be able to have reusable components.
 - Extracting a class during refactoring and then adding tests is test-after development, which loses the benefits of TDD. But you can first write the new class as an inner class, then TDD it as you pull it out one bit at a time [[OITDD][]]
 
-# Test Approach #4: Discovery Testing
+## Test Approach #4: Discovery Testing
 
 Discovery Testing is a response to both Classical and Mockist TDD and the perceived difficulties that both present in terms of refactoring. Justin Searls of [Test Double](http://testdouble.com/) is the main proponent.
 
@@ -114,6 +123,8 @@ Resources
 - "[The Failures of Intro to TDD][FITDD]", the main blog post that lays out this view.
 - "[Tests' Influence on Design][]", an article with more detail.
 - "[The Testing Pyramid][TP]", an illustration of the roles of the different test types.
+
+![Mockist TDD](/img/posts/approaches-to-testing/discovery-testing.png)
 
 1. **What are the different test types for?** Unit tests are for driving your design and acceptance tests are for regression. [[TP][]]
 2. **How much should I test?** Test-drive everything at the unit level, then test at the acceptance level to catch regressions.
