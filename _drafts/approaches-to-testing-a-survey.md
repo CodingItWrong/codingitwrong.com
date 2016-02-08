@@ -1,19 +1,23 @@
 ---
-title: Approaches to Testing
+title: "Approaches to Testing: A Survey"
 ---
 
 The last few months have been my first opportunity to do automated testing at my full-time job. As I've been trying to get the hang of it, my biggest question has been how many of each type to test to write: how many unit, integration, and acceptance tests. Turns out Folks Got Opinions™ on this! As I researched, I found at least four different approaches to testing, and they each provide different answers to a number of questions I had:
 
-1. What are the different test types for?
-2. How much do I test?
-3. What process do I go through to write tests?
-4. How do I use test doubles?
-5. What do I check for in my tests?
+<ol>
+<li>What are the different test types for?</li>
+<li>How much do I test?</li>
+<li>What process do I go through to write tests?</li>
+<li>How do I use test doubles?</li>
+<li>What do I check for in my tests?</li>
+</ol>
 
 But it turns out these approaches *also* answered some bigger-picture questions I wasn't expecting:
 
-6. How do I deal with change in my application?
-7. What even **is** good code?
+<ol start="6">
+<li>How do I deal with change in my application?</li>
+<li>What even **is** good code?</li>
+</ol>
 
 I wanted to share what I found, hoping it will help you learn some new approaches to try, whether you're a testing newbie like me or a seasoned veteran. And as a bonus, I have a **crazy theory** to share: each approach to testing is tailor-made to guide you towards a certain kind of architecture. So, if you try to use a testing approach for an architecture it's not a good fit for, you're gonna have a bad time.
 
