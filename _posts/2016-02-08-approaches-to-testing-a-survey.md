@@ -58,7 +58,7 @@ Criticisms
 
 - There are a lot of dependencies between classes. They're hard-coded to use each other, and can end up with a lot of coupling between one another. Even if you don't Need to reuse code, this can make it hard to understand for debugging and adding features.
 - Because of this coupling, it's difficult to follow this approach as apps grow in size. Defects can go up and development speed can go down.
-- It's concerning to me that there's no mention of refactoring. This suggests to me that this approach at best isn't optimized for refactoring, and at worst hinders it.
+- It's concerning to me that there's no mention of refactoring, suggesting that when you run into difficulties doing it you may be on your own figuring out how to handle them. Regression tests certainly do provide some protection and flexibility for it. But when the tests don't fully cover the behavior of the system, refactoring can be risky.
 
 ## Test Approach #2: Classical TDD
 
