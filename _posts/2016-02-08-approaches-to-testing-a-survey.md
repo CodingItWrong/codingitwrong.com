@@ -16,7 +16,7 @@ But it turns out these approaches *also* answered some bigger-picture questions 
 
 <ol start="6">
 <li>How do I deal with change in my application?</li>
-<li>What even **is** good code?</li>
+<li>What even <strong>is</strong> good code?</li>
 </ol>
 
 I wanted to share what I found, hoping it will help you learn some new approaches to try, whether you're a testing newbie like me or a seasoned veteran. And as a bonus, I have a **crazy theory** to share: each approach to testing is tailor-made to guide you towards a certain kind of architecture. So, if you try to use a testing approach for an architecture it's not a good fit for, you're gonna have a bad time.
