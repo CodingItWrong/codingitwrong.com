@@ -1,0 +1,37 @@
+---
+title: RSpec Style Guide
+---
+
+Here are the style principles I try to follow personally in my RSpec specs. I've found that they make for better specs. Most of them relate to readability, because in my opinion readability is even more important in specs than in production code. You can afford to take a little effort to understand production code, but specs need to be *stupid* simple to understand.
+
+## Organization
+
+- **Prioritize readability above DRY.** Here are a few cases where this comes up:
+    - **Don't use `let()` statements and `before` blocks to separate code that needs to be understood together.** In that case, some duplication for the sake of readability is probably better.
+    - **Try not to nest `context` blocks: only use them one level deep.** More than one level of context can make it hard to find all the `let` statements and `before` blocks that apply. It's okay for you to have to duplicate some `let` statements, and it's okay for there to be an "and" in your context description!
+- **In unit specs, one behavior per example.** This might just be one expectation, or it might be a few--but probably not a lot. The key is that you aren't specifying unrelated things. Stick with the Single Responsibility Principle when it comes to examples.
+- **In acceptance specs, many behaviors per example.** For any spec that's hitting the whole application (a feature spec, or maybe a request spec), having only one behavior per example may make your test suite too slow. In this case, it's best to have only one example that makes a given request/call, and you specify all the behaviors of that call as part of the same example.
+
+## Test Data
+
+- **Only use `let!` instead of `let` when absolutely necessary.** If you get into the habit of always using `let!`, you'll end up instantiating variables that most of your examples don't need. Write `let` first, and change it to `let!` only if you have to do so to get a spec to pass.
+- **Minimize data setup per expectation.** Whether it's in `let` statements or in method calls in a `before` block or the example itself, lots of data setup for each expectation makes it hard to grok. Ideally, you should only need to see the data setup that's necessary to understand the example. Here are a few approaches that can help:
+    - Define default data using a factory system like FactoryGirl. That way, when insantiating classes, you only need to override the fields necessary for that example.
+    - Define objects in the broader context using `let` statements, then override only the fields you need to for the given test.
+    - Create custom matchers that match for something specific you're looking for, so that you don't have to construct complex objects to use for matching.
+- **Always set the pertinent fields on objects in the expectation, even if you know they'll already be set to an appropriate value.** For example, you are specifying what happens when a certain field on an object is set to true. You happen to know that the factory for that object sets that field to true by default. One problem with this is that it leads to test fragility: if you change the default value of that field in the factory, lots of specs could start failing. It also hinders readability: it's not as clear to the reader that that field will be set to true. Go ahead and set it in your example (or a very close `before` block).
+
+## Test Doubles
+
+- **Stub in a before block, mock in the example.** If you're specifying only one behavior per example, there will often be a lot of outgoing messages you *don't* care about for that example, but that still need to work. Stubbing (`allow()`) instead of mocking (`expect()`) is a way to make it clear that you aren't specifying that behavior, just supplying something to get the method call to work. But all those stubs will clutter up your examples, and there will be a lot of duplication. Instead, put all your `allow()` statements in a single `before` block; that sets up the mock collaborators for all the behavior that all the examples will need. Then your examples will only have the `expect()` statements related to what they're specifying. This makes for very clear examples.
+- **But actually spy instead of mock.** When your method calls are stubbed, you don't need to set expectations before calling your production code; the stubs will allow them to pass. Then you're free to use spying instead of mocking. Spies tend to be more readable than mocks, because they follow the "arrange, act, assert" order more clearly.
+
+## Subjects
+
+- **Use the implicit subject when and only when the expectation reads like English.** If `it { is_expected.to... }` makes it harder to understand what you're specifying, and you have to explain it in a surrounding `context` block's name, just use a regular `it` statement instead.
+- **Whatever you're specifying against should be the `subject`**. This isn't always the class that the unit spec relates to: in some `describe`s, it might be the result of a method call.
+- **Always name your `subject`, even if you don't need to refer to it by that name.** Leaving the name of the subject `subject` makes for less readable specs; name it what it is. Even if all of your examples use an implicit subject (i.e. `it { is_expected.to… }`), naming the subject will still make the `subject` line clearer. And then you're ready for if you eventually have to add examples that don't use an implicit subject.
+- **Implement your "act" step in the way that works best for its needs.** There are a few options:
+    - **When you will always be checking the return value of your "act" step, make it your subject.** This makes it flexible for you to refer to it wherever you need it in your examples.
+    - **When you will not always be checking the return value of your "act" step, but it needs to run before each example, put it in a `before` block.** For example, if you are specifying the behavior of the `push` method on an object that acts as a stack, your "act" step might be `stack.push(object_to_push)`. That step would likely be repeated in all of your examples for the push behavior, but you wouldn't necessarily always check its return value. If that's the case, remove duplication by moving the call to `push` into a `before` block. That way, all your examples might consist entirely of `expect` statements--and a lot of them might have implicit subjects.
+    - **When you won't always be checking the return value of your "act" step, and you can't put your "act" step in a `before` block, name it as a "bang variable".** One situation I run into a lot when I can't put my "act" step in a `before` block is when I need to use `let` statements to define different variables for each example that are needed for the "act" step. If I put each `let` statement and example in its own `context`, then put a `before` block outside of all the `context`s to run the "act" step, the `let` statements are run *after* the `before` block, so they aren't ready in time. In a case like this, the only option may seem to be to duplicate the "act" step in each example. But there's a way to remove that duplication. For example, say our "act" step is `list.remove_random(how_many)`. We can define `let(:remove_random!) { list.remove_random(how_many) }`, so that in each example we only have to write `remove_random!`. The bang makes it clear that it's a method call with side effects.
