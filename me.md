@@ -68,6 +68,6 @@ An open-source system for registering people for volunteering opportunities.
 
 ## Personal Life
 
-I live in Atlanta, GA with my wife Jen and 2-year-old daughter Emily.
+I live in Atlanta, GA with my wife Jen, 2-year-old daughter Emily, and newborn Katherine.
 
 My biggest hobby is video gaming. You can often find me [chasing Sephiroth](https://itunes.apple.com/us/app/final-fantasy-vii/id1021566244?mt=8), [wrecking bandits](http://borderlandsthegame.com/), [obeying Peter Dinklage](https://www.destinythegame.com/), and using [the Black Speech](https://www.shadowofmordor.com) or [my fus-ro-dah](http://www.elderscrolls.com/skyrim/).
