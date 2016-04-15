@@ -19,7 +19,7 @@ Here are the settings I investigated:
 - **`config.serve_static_files`**: allows Rails to serve up files in `/public/`, including precompiled assets.
 - **Running `rake assets:precompile`**: generates assets at build time and stores them in `/public/`.
 
-Here are the effects of enabling and disabling these settings in different combinations:
+Here are the effects of enabling and disabling these settings in different combinations, as to whether the asset loads (HTTP status 200) or can't be found (404):
 
 <table>
   <thead>
@@ -30,7 +30,7 @@ Here are the effects of enabling and disabling these settings in different combi
       <th title="config.assets.digest">digest</th>
       <th title="config.serve_static_files">serve</th>
       <th title="run rake assets:precompile">precompile</th>
-      <th title="whether the browser is able to load the assets">works?</th>
+      <th title="whether the browser is able to load the assets">status</th>
       <th title="the path(s) to the asset(s) generated">path(s)</th>
     </tr>
   </thead>
@@ -42,7 +42,7 @@ Here are the effects of enabling and disabling these settings in different combi
       <td>true</td>
       <td>(either)</td>
       <td>(either)</td>
-      <td class="works">works</td>
+      <td class="works">200</td>
       <td><code>/assets/jquery.self-FINGERPRINT.js?body=1<br />/assets/jquery_ujs.self-FINGERPRINT.js?body=1<br />/assets/turbolinks.self-FINGERPRINT.js?body=1<br />/assets/application.self-FINGERPRINT.js?body=1</code></td>
     </tr>
     <tr>
@@ -52,7 +52,7 @@ Here are the effects of enabling and disabling these settings in different combi
       <td>false</td>
       <td>(either)</td>
       <td>(either)</td>
-      <td class="works">works</td>
+      <td class="works">200</td>
       <td><code>/assets/jquery.self.js?body=1<br />/assets/jquery_ujs.self.js?body=1<br />/assets/turbolinks.self.js?body=1</code></td>
     </tr>
     <tr>
@@ -62,7 +62,7 @@ Here are the effects of enabling and disabling these settings in different combi
       <td>true</td>
       <td>(either)</td>
       <td>(either)</td>
-      <td class="works">works</td>
+      <td class="works">200</td>
       <td><code>/assets/application-FINGERPRINT.js</code></td>
     </tr>
     <tr>
@@ -72,7 +72,7 @@ Here are the effects of enabling and disabling these settings in different combi
       <td>false</td>
       <td>(either)</td>
       <td>(either)</td>
-      <td class="works">works</td>
+      <td class="works">200</td>
       <td><code>/assets/application.js</code></td>
     </tr>
     <tr>
@@ -82,7 +82,7 @@ Here are the effects of enabling and disabling these settings in different combi
       <td>(either)</td>
       <td>(either)</td>
       <td>(either)</td>
-      <td class="does-not-work">does not work</td>
+      <td class="does-not-work">404</td>
       <td><code>/stylesheets/application.js</code></td>
     </tr>
     <tr>
@@ -92,7 +92,7 @@ Here are the effects of enabling and disabling these settings in different combi
       <td>true</td>
       <td>true</td>
       <td>true</td>
-      <td class="works">works</td>
+      <td class="works">200</td>
       <td><code>/assets/application-FINGERPRINT.js</code></td>
     </tr>
     <tr>
@@ -102,7 +102,7 @@ Here are the effects of enabling and disabling these settings in different combi
       <td>true</td>
       <td>true</td>
       <td>false</td>
-      <td class="does-not-work">does not work</td>
+      <td class="does-not-work">404</td>
       <td><code>/stylesheets/application.js</code></td>
     </tr>
     <tr>
@@ -122,7 +122,7 @@ Here are the effects of enabling and disabling these settings in different combi
       <td>true</td>
       <td>false</td>
       <td>false</td>
-      <td class="does-not-work">does not work</td>
+      <td class="does-not-work">404</td>
       <td><code>/stylesheets/application.js</code></td>
     </tr>
     <tr>
@@ -132,7 +132,7 @@ Here are the effects of enabling and disabling these settings in different combi
       <td>false</td>
       <td>(either)</td>
       <td>(either)</td>
-      <td class="does-not-work">does not work</td>
+      <td class="does-not-work">404</td>
       <td><code>/stylesheets/application.js</code></td>
     </tr>
   </tbody>
