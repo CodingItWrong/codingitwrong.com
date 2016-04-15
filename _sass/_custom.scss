@@ -1,0 +1,29 @@
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+table {
+  td, th {
+    border: solid 1px gray;
+    margin: 0;
+    padding: 4px;
+    vertical-align: top;
+
+    &[title] {
+      cursor: pointer;
+    }
+
+    &.works {
+      background: #99FF99;
+    }
+
+    &.does-not-work {
+      background: #FF9999;
+    }
+
+    &.depends {
+      background: #FFFF99;
+    }
+  }
+}
