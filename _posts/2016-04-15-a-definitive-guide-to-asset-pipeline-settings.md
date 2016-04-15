@@ -83,7 +83,7 @@ Here are the effects of enabling and disabling these settings in different combi
       <td>(either)</td>
       <td>(either)</td>
       <td class="does-not-work">404</td>
-      <td><code>/stylesheets/application.js</code></td>
+      <td><code>/javascripts/application.js</code></td>
     </tr>
     <tr>
       <td>6</td>
@@ -103,7 +103,7 @@ Here are the effects of enabling and disabling these settings in different combi
       <td>true</td>
       <td>false</td>
       <td class="does-not-work">404</td>
-      <td><code>/stylesheets/application.js</code></td>
+      <td><code>/javascripts/application.js</code></td>
     </tr>
     <tr>
       <td>8</td>
@@ -123,7 +123,7 @@ Here are the effects of enabling and disabling these settings in different combi
       <td>false</td>
       <td>false</td>
       <td class="does-not-work">404</td>
-      <td><code>/stylesheets/application.js</code></td>
+      <td><code>/javascripts/application.js</code></td>
     </tr>
     <tr>
       <td>10</td>
@@ -133,7 +133,7 @@ Here are the effects of enabling and disabling these settings in different combi
       <td>(either)</td>
       <td>(either)</td>
       <td class="does-not-work">404</td>
-      <td><code>/stylesheets/application.js</code></td>
+      <td><code>/javascripts/application.js</code></td>
     </tr>
   </tbody>
 </table>
