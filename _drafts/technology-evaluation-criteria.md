@@ -12,19 +12,19 @@ Are unit and acceptance tests of code on this platform possible, supported, enco
 
 ## Foundation
 
-Is the platform code itself stable, usable, secure, and flexible?
+Is the platform itself (including its underlying dependencies) stable, usable, secure, and flexible? Stability can best be measured by how easily you can get it installed and running, without having to change the steps you follow and configuration you use to account for new versions.
 
 ## Components
 
-Are third party components available via a package manager, stable, interoperable, supported, and maintained? Are there broadly-accepted standard components?
+Are third party components available via a package manager, stable, interoperable, supported, and maintained? Are there broadly-accepted standard components? Recently on a podcast someone asked "I'm used to having a gem for everything in Ruby. Is Elixir that way yet?" And the reply was effectively "Yes, you can do anything in Elixir—you just might have to write it from scratch." In my mind, that's not a "yes" at all.
 
 ## Code
 
-Does the platform support writing code that conforms to good software engineering practices, like the single-responsibility principle, the law of Demeter, and the dependency inversion principle?
+Does the platform support writing code that conforms to good software engineering practices, like the single-responsibility principle, the law of Demeter, and the dependency inversion principle? 
 
 ## Deployment
 
-Can code be easily containerized or deployed to PaaS platforms? If database migrations are needed, are they automated?
+Can code be deployed without having to do a lot of tool and infrastructure configuration? This includes building code, running tests, If database migrations are needed, are they automated?
 
 ## Upgradability
 
