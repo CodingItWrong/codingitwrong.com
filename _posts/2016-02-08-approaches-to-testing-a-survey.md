@@ -79,7 +79,7 @@ Resources
 3. **What process do I go through to write tests?** "Red, green, refactor." First write just enough of a test to fail (making your test output red). Then write just enough production code to make the test pass (green). Then refactor to improve the code—especially by removing duplication.
 4. **How do I use test doubles?** Only when necessary; test classes against their real collaborators as much as you can. Use stubs *only* when the real collaborators are difficult to work with, such as connection to third-party or asynchronous services. [[MAS][]]
 5. **What do I check for in my tests?** Check state, internal and external. For example, you might send a message to one object then check a value three objects away. You might also have to expose some internal properties of an object just for testing.
-6. **How do I deal with change??** Refactor the class's implementation, which includes its collaborators that aren't directly accessed from the outside. Because the collaborators aren't tested directly (see question 2), it's easy to change them and ensure they still return the same result overall.
+6. **How do I deal with change?** Refactor the class's implementation, which includes its collaborators that aren't directly accessed from the outside. Because the collaborators aren't tested directly (see question 2), it's easy to change them and ensure they still return the same result overall.
 7. **What even is good code?** A black box with well-defined external functionality.
 
 Criticisms
