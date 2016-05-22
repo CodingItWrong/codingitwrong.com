@@ -7,7 +7,7 @@ title: Test-Driven Development
 ##  Links
 
 * [Introducing BDD](http://dannorth.net/introducing-bdd/), Dan North, March 2006, the original article describing Behavior-Driven Development
-* [Mocks Aren't Stubs](http://martinfowler.com/articles/mocksArentStubs.html), Martin Fowler, January 2007, comparing classicist and mockist TDD
+* [Mocks Aren't Stubs](http://martinfowler.com/articles/mocksArentStubs.html), Martin Fowler, January 2007, comparing classical and mockist TDD
 * [TDD: Where Did It All Go Wrong?](https://vimeo.com/68375232), Ian Cooper, 2013, a clarification of classical TDD in contrast to mockist TDD
 * [The Failures of Intro to TDD](http://blog.testdouble.com/posts/2014-01-25-the-failures-of-intro-to-tdd.html), Justin Searls, January 25, 2014, the original article describing Discovery Testing
     * [Tests' Influence on Design](https://github.com/testdouble/contributing-tests/wiki/Tests'-Influence-on-Design), Justin Searls, a wiki article with more detail
@@ -18,4 +18,4 @@ title: Test-Driven Development
     * [TDD, Straw Men, and Rhetoric](https://www.destroyallsoftware.com/blog/2014/tdd-straw-men-and-rhetoric), Gary Bernhardt, April 30, 2014, in response to DHH
     * [Is TDD Dead?](http://martinfowler.com/articles/is-tdd-dead/), DHH, Kent Beck, and Martin Fowler, May-June 2014, a series of panel discussions
         * [Test Isolation is About Avoiding Mocks](https://www.destroyallsoftware.com/blog/2014/test-isolation-is-about-avoiding-mocks), Gary Bernhardt, May 15, 2014, a response to the criticism that mockist TDD leads to too many mock objects
-* [Full Stack Radio episode 15: Everzet - Classicist and Mockist TDD](http://www.fullstackradio.com/15), Konstantin Kudryashov, April 20, 2015, a podcast episode comparing classicist and mockist TDD
+* [Full Stack Radio episode 15: Everzet - Classicist and Mockist TDD](http://www.fullstackradio.com/15), Konstantin Kudryashov, April 20, 2015, a podcast episode comparing classical and mockist TDD
