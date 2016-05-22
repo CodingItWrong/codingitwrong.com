@@ -8,4 +8,5 @@ The most prominent [Ruby Application Framework](Ruby Application Frameworks).
 
 * [Rails Application Architecture](Rails-Application-Architecture)
 * [Rails Auth](Rails-Auth)
+* [Rails Guides](Rails-Guides)
 * [Rails Testing Frameworks](Rails-Testing-Frameworks)
