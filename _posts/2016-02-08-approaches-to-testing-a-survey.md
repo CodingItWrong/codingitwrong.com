@@ -180,7 +180,7 @@ What's your personal testing approach? Does it match up with the kind of system 
 [GOOS]: http://www.informit.com/store/growing-object-oriented-software-guided-by-tests-9780321503626
 [Is TDD Dead?]: http://martinfowler.com/articles/is-tdd-dead/
 [MAS]: http://www.martinfowler.com/articles/mocksArentStubs.html
-[RB]: https://pragprog.com/book/achbd/the-rspec-book
+[RB]: https://www.amazon.com/dp/1934356379/ref=cm_sw_r_cp_api_SYGqxbSMHVRPB
 [OITDD]: https://overcast.fm/+DtC4BiOdM/7:54
 [TDD By Example]: http://www.amazon.com/Test-Driven-Development-By-Example/dp/0321146530
 [TDD is Dead]: http://david.heinemeierhansson.com/2014/tdd-is-dead-long-live-testing.html
