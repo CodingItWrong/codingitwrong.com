@@ -31,6 +31,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+      author: Josh Justice
   -
     scope:
       path: "wiki"
