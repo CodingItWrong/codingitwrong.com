@@ -1,8 +1,10 @@
 ---
-title: Rails Model Generation
+title: Rails Model Generation and Migrations
 ---
 
-Generates a model class and a migration to create the corresponding table.
+## Model Generation
+
+Generates a model class and a corresponding `create_table` migration.
 
 <http://guides.rubyonrails.org/active_record_migrations.html#model-generators>
 <http://guides.rubyonrails.org/command_line.html#rails-generate>
@@ -28,9 +30,23 @@ rails generate model NAME [field[:type][:index] field[:type][:index]] [options]
 * :boolean
 * :references or :belongs_to - creates an ID column referencing another model table by name, along with a foreign key constraint
 
-Once the migration is created, [column modifiers](http://guides.rubyonrails.org/active_record_migrations.html#column-modifiers) can be added to the `t.column` lines. The most common are:
+## Create Table Migrations
+
+Whether a `create_table` migration is generated or written by hand, [column modifiers](http://guides.rubyonrails.org/active_record_migrations.html#column-modifiers) can be added to the `t.column` lines to further configure the column creation. The most common are:
 
 * default: the default value
 * index: whether to create an index for the column
 * limit: max characters
 * null: whether the column is nullable
+
+##  Modifying Columns
+
+Outside of a `create_table` migration, columns on existing tables can be added, removed, or [changed](http://guides.rubyonrails.org/active_record_migrations.html#changing-columns).
+
+* Change type: `change_column`
+* Change nullability: `change_column_null`
+* Change default value: `change_column_default`
+* `add_foreign_key`
+* `remove_foreign_key`
+* `add_index`
+* `remove_index`
