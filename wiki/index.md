@@ -6,4 +6,5 @@ title: CodingItWiki
 * [Patterns](Patterns)
 * [Processes](Processes)
 * [Programming Languages](Programming-Languages)
+* [Specifications](Specifications)
 * [Tools](Tools)
