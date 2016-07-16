@@ -16,4 +16,4 @@ Links:
 * Documentation
   * [Core](http://rspec.info/documentation/3.4/rspec-core/)
   * [Expectations](http://rspec.info/documentation/3.4/rspec-expectations/)
-
+* [RSpec Style Guide](https://www.bignerdranch.com/blog/writing-stylish-tests-with-an-rpsec-style-guide/)
