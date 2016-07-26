@@ -9,10 +9,10 @@ These are some of my all-time favorite resources on software engineering.
 * ["7 Patterns to Refactor Fat ActiveRecord Models"](http://blog.codeclimate.com/blog/2012/10/17/7-ways-to-decompose-fat-activerecord-models/)
 * ["Agile is Dead (Long Live Agility)"](https://pragdave.me/blog/2014/03/04/time-to-kill-agile/)
 * ["Choose Boring Technology"](http://mcfunley.com/choose-boring-technology)
-* ["Introducing BDD"](dannorth.net/introducing-bdd/)
+* ["Introducing BDD"](http://dannorth.net/introducing-bdd/)
 * ["Manifesto for Agile Software Development"](http://www.agilemanifesto.org/) - originally, this is all agile was supposed to be. Really!
 * ["Mocks Aren't Stubs"](http://www.martinfowler.com/articles/mocksArentStubs.html) - note that this article prefers classical TDD to mockist TDD, but I advocate mockist TDD
-* ["Principles of OOD"](butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod)
+* ["Principles of OOD"](http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod)
 * ["Test Isolation is About Avoiding Mocks"](https://www.destroyallsoftware.com/blog/2014/test-isolation-is-about-avoiding-mocks)
 
 ## Books
