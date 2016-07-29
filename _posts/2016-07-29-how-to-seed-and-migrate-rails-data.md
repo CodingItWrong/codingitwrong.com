@@ -8,8 +8,8 @@ There are a few things about setting up initial data and migrating existing data
 
 Rails provides a `rails db:seed` command that makes it easy to [set up initial data in a database](http://guides.rubyonrails.org/active_record_migrations.html#migrations-and-seed-data). But what kind of data is that supposed to be? There are at least two kinds of initial data:
 
-* **Reference data:** data needed in all environments, from dev to production. This could include things like lists of countries and states.
-* **Sample data:** data needed only for the dev environment, so that there are already fake records in every table to make the app easy to interact with.
+* **Reference data:** data needed in all environments, from dev to production. This could include things like lists of countries and states. Usually hard-coded data.
+* **Sample data:** data needed only for the dev environment, so that there are already fake records in every table to make the app easy to interact with. Usually generated with Factory Girl.
 
 The seeds file is commonly used for both of these, but that makes it difficult to set up initial data in production. The Rails guides don't make it clear which of these the seeds file is for.
 
