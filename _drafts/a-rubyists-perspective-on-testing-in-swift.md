@@ -7,3 +7,8 @@ title: A Rubyist's Perspective on Testing in Swift
 * KIF's main examples are in Objective-C, but it works well with Swift too. Just follow the instructions in the readme and you shouldn't have any trouble.
 * I tried writing my KIF UI tests with Quick, but the explicit `self` required in its closures was a big detriment to readability: I had to write `self.tester()` instead of 'tester()`, which was a big drag when the tester is referenced so many times. Saving the return value of `self.tester()` to a local variable wasn't a good workaround, because this broke line number reporting.
 * But Nimble expectations worked great with KIF tests, even using normal Xcode test classes instead of Quick specs. I already find assertion-style less readable than expectation-style, and the fact that Xcode assertions have an `XCT` prefix makes the readability even worse.
+* Use Quick
+* throws with XCTest, try! with Quick
+* Go ahead and put protocols around services, since you'll want mock ones for unit testing
+* deleteAll()
+* Hand mocks
