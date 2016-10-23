@@ -29,7 +29,9 @@ if let theInt = possibleInt {
 }
 ```
 
-## Default Values
+## Nil Coalescing Operator
+
+Provides a default value when the optional is nil.
 
 `let name = possibleName ?? "hi"`
 
