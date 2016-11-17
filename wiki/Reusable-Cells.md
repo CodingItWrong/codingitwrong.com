@@ -1,0 +1,11 @@
+---
+title: Reusable Cells
+---
+[Cocoa Touch](Cocoa-Touch) `UITableView`s and `UICollectionView`s reuse their cells for performance purposes, but this can cause strange behavior when loading data asynchronously. Loading images is the most common case. Images can show up in the wrong cells, either because they aren't cleared out when the cell is reused, or because when the asynchronous call returns the cell is now being used somewhere else.
+
+Big Nerd Ranch's [_iOS Programming_] guide recommends a pattern to prevent this problem:
+
+1. Subclass the `UITableViewCell` or `UICollectionViewCell` and override `prepareForReuse()` to clear out any data in the cell. (Reference for the [`UITableViewCell` version](https://developer.apple.com/reference/uikit/uitableviewcell/1623223-prepareforreuse) and [`UICollectionViewCell` version](https://developer.apple.com/reference/uikit/uicollectionreusableview/1620141-prepareforreuse).)
+2. Don't kick off the asynchronous request until the delegate's `willDisplay` method is called. ([`tableView(_:willDisplay:forRowAt:)`](https://developer.apple.com/reference/uikit/uitableviewdelegate/1614883-tableview) and [`collectionView(_:willDisplay:forItemAt:)`](https://developer.apple.com/reference/uikit/uicollectionviewdelegate/1618087-collectionview))
+3. After the asynchronous request returns, store or cache the loaded data somewhere outside of the cell itself. Since the cell will be reused and cleared out, you need somewhere to access the data again when the cell is hidden and re-shown without needing another asynchronous request.
+4. After storing or caching the returned data, don't put it into the same cell reference--it might be hidden or reused. Call the view's "cell" method to determine if the cell for the corresponding `IndexPath` is being shown, and if so, what instance to use for it. If a cell is returned, the data can safely be populated there. ([`UITableView`'s `cellForRow(at:)` method](https://developer.apple.com/reference/uikit/uitableview/1614983-cellforrow) and [`UICollectionView`'s `cellForItem(at:)` method](https://developer.apple.com/reference/uikit/uicollectionview/1618088-cellforitem)) (Note that if the data can change, you may need to look up the correct `IndexPath` as well, based on some other identifier.)
