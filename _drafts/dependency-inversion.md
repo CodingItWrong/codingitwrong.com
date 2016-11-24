@@ -23,7 +23,7 @@ Next, let's look at an example of changing a dependency on a concretion into a d
 
 To visualize this dependency it's helpful to use a class diagram, where association is represented by an arrow from from the sender to the receiver:
 
-![1](../img/posts/dependency-inversion/01-hard-coded.png)
+![Diagram with CreateBlogPost having an association to TwitterClient](../img/posts/dependency-inversion/01-hard-coded.png)
 
 The high-level `CreateBlogPost` class depends on the low-level `TwitterClient` class. Ideally, we'd like to be able to reuse `CreateBlogPost` — for example, posting a notification to Facebook instead. But we can't reuse `CreateBlogPost` if it's coupled to the concrete `TwitterClient`.
 
@@ -31,7 +31,7 @@ The high-level `CreateBlogPost` class depends on the low-level `TwitterClient` c
 
 This is the problem dependency inversion is designed to solve. First, we introduce an abstraction in between the two. Let's call it `SocialMediaClient` for now:
 
-![2](../img/posts/dependency-inversion/02-add-abstraction.png)
+![Diagram adding a SocialMediaClient abstraction. CreateBlogPost has an association to SocialMediaClient, and TwitterClient implements SocialMediaClient.](../img/posts/dependency-inversion/02-add-abstraction.png)
 
 Extension is represented in a class diagram with a hollow arrow from the child to the parent. `SocialMediaClient` is an abstraction, and `TwitterClient` is a concretion that implements that abstraction. Now `CreateBlogPost` isn't associated to a `TwitterClient` per se, but rather to *some kind* of `SocialMediaClient` — and that's all it knows.
 
@@ -47,11 +47,11 @@ We're depending on an abstraction now…but does that involve *inverting* the de
 
 We can change whether it *looks like* an inversion by changing how we draw the diagram. If we draw the abstraction close to `CreateBlogPost` the longest dependency line points left, so it looks more like an inversion:
 
-![3](../img/posts/dependency-inversion/03-move-left.png)
+![Diagram where moving SocialMediaClient close to CreateBlogPost emphasizes the dependency from TwitterClient left to SocialMediaClient](../img/posts/dependency-inversion/03-move-left.png)
 
 But if we draw the abstraction close to `TwitterClient` we're right back where we started: the longest dependency line points right!
 
-![4](../img/posts/dependency-inversion/04-move-right.png)
+![Diagram where moving SocialMediaClient close to TwitterClient emphasizes the dependency from CreateBlogPost right to SocialMediaClient](../img/posts/dependency-inversion/04-move-right.png)
 
 Is this a sign that our diagram is totally arbitrary?
 
@@ -59,7 +59,7 @@ No: this is actually a way the diagram helps us think through alternatives in ou
 
 If we want to invert the dependency and have our high-level classes independent of our low-level classes, our diagram suggests the *client* should own the abstraction. They should be part of the same "package" (depending on your language, a namespace, module, or group). Drawing the diagram this way makes it clearer that the dependency really has been inverted:
 
-![5](../img/posts/dependency-inversion/05-client-owns.png)
+![Diagram combining CreateBlogPost and SocialMediaClient in one package](../img/posts/dependency-inversion/05-client-owns.png)
 
 `TwitterClient` depends on the client package that includes `CreateBlogPost` and `SocialMediaClient`. If the client package changes, it forces a change to the implementor. So the dependency is from the low-level implementor to the high-level client. We really have inverted the dependency! And we've accomplished the goal of making the high-level code more reusable.
 
@@ -67,7 +67,7 @@ If we want to invert the dependency and have our high-level classes independent 
 
 Just *saying* the client owns the abtraction doesn't change anything. But *treating* the abstraction as owned by the client can influence its design. Think about the name the abstraction has right now: `SocialMediaClient`. That name doesn't look right in the same package as `CreateBlogPost`; it's more about the implementation (Twitter) than the role the client is using it for. All `CreateBlogPost` cares about is that it has an object that notifies people that a blog post has been posted. So it's better to name the abstraction something like `PostNotifier`, and the implementation `TwitterPostNotifier`:
 
-![6](../img/posts/dependency-inversion/06-named-for-client-role.png)
+![Diagram changing the name of the abstraction to PostNotifier](../img/posts/dependency-inversion/06-named-for-client-role.png)
 
 This name makes the relationship between the client and interface obvious: as part of `CreateBlogPost`'s responsibilities, it needs a `PostNotifier` to notify someone that a post has been created.
 
