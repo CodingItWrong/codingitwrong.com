@@ -55,7 +55,7 @@ But if we draw the abstraction close to `TwitterClient` we're right back where w
 
 Is this a sign that our diagram is totally arbitrary?
 
-No: this is actually a way the diagram helps us think through alternatives in our design. We could think of the abstraction either as more closely associated with `CreateBlogPost` or with `TwitterClient`. In other words, the interface can be *owned by* either the client or the implementor.
+No: this is actually a way the diagram helps us think through alternatives in our design. We could think of the abstraction either as more closely associated with `CreateBlogPost` or with `TwitterClient`. In other words, the abstraction can be *owned by* either the client or the implementor.
 
 If we want to invert the dependency and have our high-level classes independent of our low-level classes, our diagram suggests the *client* should own the abstraction. They should be part of the same "package" (depending on your language, a namespace, module, or group). Drawing the diagram this way makes it clearer that the dependency really has been inverted:
 
@@ -65,13 +65,15 @@ If we want to invert the dependency and have our high-level classes independent 
 
 ## Naming
 
-Just *saying* the client owns the abtraction doesn't change anything. But *treating* the abstraction as owned by the client can influence its design. Think about the name the abstraction has right now: `SocialMediaClient`. That name doesn't look right in the same package as `CreateBlogPost`; it's more about the implementation (Twitter) than the role the client is using it for. All `CreateBlogPost` cares about is that it has an object that notifies people that a blog post has been posted. So it's better to name the abstraction something like `PostNotifier`, and the implementation `TwitterPostNotifier`:
+Just *saying* the client owns the abtraction doesn't change anything: you need to *treating* the abstraction as owned by the client. The client should *define* the abstraction in terms of the role it needs that abstraction to play.
+
+Think about the name the abstraction has right now: `SocialMediaClient`. That name doesn't look right in the same package as `CreateBlogPost`; it's more about the implementation (Twitter) than the role the client is using it for. `CreateBlogPost` doesn't *need* anything to do with social media; all it cares about is that it has an object that notifies people that a blog post has been posted. So defining the abstraction in terms of the client's need might lead to a naming it `PostNotifier`, and the implementation `TwitterPostNotifier`:
 
 ![Diagram changing the name of the abstraction to PostNotifier](../img/posts/dependency-inversion/06-named-for-client-role.png)
 
 This name makes the relationship between the client and interface obvious: as part of `CreateBlogPost`'s responsibilities, it needs a `PostNotifier` to notify someone that a post has been created.
 
-Changing the name of the abstraction, in turn, influences the design of the messages we send it. A `SocialMediaClient` might be designed to receive a message like:
+Defining the abstraction in terms of the client affects the design of messages as well. A `SocialMediaClient` might be designed to receive a message like:
 
 ```ruby
 social_media_client.add_status(message, username, password)
@@ -83,11 +85,11 @@ This design restricts `CreateBlogPost` to adding statuses to social media client
 post_notifier.created(blog_post)
 ```
 
-This interface captures the role the notifier plays for the `CreateBlogPost` client: it's provided with a blog post that was created, and it takes care of any details about how to send a notification: what account to post it to, what the status message should say, etc. This message design makes the high-level `CreateBlogPost` class even more independent of its low-level collaborators.
+This interface captures the role the notifier plays for the `CreateBlogPost` client. It's provided with a blog post that was created, and it takes care of any details about how to send a notification: what account to post it to, what the status message should say, etc. This message design makes the high-level `CreateBlogPost` class even more independent of its low-level collaborators.
 
 ## Conclusion
 
-Class diagrams have helped us see that depending on abstractions doesn't automatically invert the direction of dependencies. Whether they're inverted depends on whether you decide that the client owns the abstraction. That decision influences the design of the abstraction, freeing up your high-level classes from low-level details.
+Class diagrams have helped us see that depending on abstractions doesn't automatically invert the direction of dependencies. Whether they're inverted depends on whether you decide that the client owns the abstraction — it defines the abstraction. That decision influences the design of the abstraction, freeing up your high-level classes from low-level details.
 
 Take a look at the abstractions in your code and see if you can refactor them to focus more on the role they play in the client. And maybe even try drawing a class diagram to see if it helps!
 
