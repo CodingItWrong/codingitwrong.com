@@ -4,23 +4,15 @@ title: Reading and Writing Dictionaries
 
 When you need to store a dictionary, there are a few different options for doing so.
 
-## URLs to the bundle and docs directory
+## Info.plist
+
+First, a quick note about `Info.plist`. You don't need to manually read in a file to access the contents of this file as a dictionary: you can just call `Bundle.main.infoDictionary`.
+
+## URLs to the docs directory
 
 First, let's talk about how to refer to file locations. The `URL` is the main way locations are referred to, even though they're local URLs on the device.
 
-If you want to access your application's `Info.plist` file, that lives in your application's bundle, with the other included assets. You can get the base URL of the bundle:
-
-```swift
-let bundleBaseURL = Bundle.main.bundleURL
-```
-
-Then you can add a path component to get the URL to the `Info.plist` file specifically:
-
-```swift
-var infoPlistURL = bundleBaseURL.appendingPathComponent("Info.plist")
-```
-
-The bundle is read-only, so you can't write files to it. To write files, you use the documents directory. The base documents directory is a bit more complex to calculate, because it uses the same API as on macOS, where there are more options:
+To write files, you use the documents directory. The base documents directory is a bit more complex to calculate, because it uses the same API as on macOS, where there are more options:
 
 ```swift
 let docsBaseURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
