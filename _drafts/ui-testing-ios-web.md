@@ -103,6 +103,17 @@ We haven't reached a consensus about which approach to take, and I think present
 An approach that makes end-to-end testing easier could have a transformative effect on the way we're able to refactor our old code and keep our development running quickly and smoothly.
 I'll be doing some research in this area, so keep an eye out for an upcoming post!
 
+- - -
+
+To do a presentation model on iOS requires an atypical architecture
+But in an agile approach, the need for the PM won't be visible at the start: it will feel like unnecessary overhead. Especially if the app really is mostly a web service UI
+So you will be tempted not to do it until the need becomes clear
+But by that time you will be in the habit of writing VCs the normal way, and it won't be easy to change
+
+By contrast, on the web, because UI testing is well-defined, you can do it from the start without changing your architecture, and get value
+In other words, the cost of end-to-end testing is low, so you're more likely to get an immediate payoff.
+But this also sets you up in an XP cycle where you can refactor easily from the start.
+
 [last-time]: https://www.bignerdranch.com/blog/a-rubyists-perspective-on-testing-in-swift/
 [ember]: https://guides.emberjs.com/v2.11.0/testing/acceptance/
 [enzyme]: https://github.com/airbnb/enzyme
