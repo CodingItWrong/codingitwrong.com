@@ -101,18 +101,12 @@ End-to-end tests would still cover an entire sequence of user interaction, they 
 The idea of thinning out ViewControllers is nothing new in the iOS community.
 We haven't reached a consensus about which approach to take, and I think presentation models are an approach worth investigating.
 An approach that makes end-to-end testing easier could have a transformative effect on the way we're able to refactor our old code and keep our development running quickly and smoothly.
-I'll be doing some research in this area, so keep an eye out for an upcoming post!
 
-- - -
+A presentation model approach could help, but it seems unlikely to gain widespread adoption on iOS. A presentation model feels like unnecessary overhead for simple view controllers, and this will be quite common if the app functions as a user interface for a web service. So developers will be tempted not to implement presentation models until the need for them becomes clear. But by that time you will be in the habit of writing view controllers the normal way. It won't be easy to change your habits to use presentation models. And if it's an existing controller that could use refactoring to a presentation model, the refactoring will be difficult because it's not yet under test. This is still further pressure not to test.
 
-To do a presentation model on iOS requires an atypical architecture
-But in an agile approach, the need for the PM won't be visible at the start: it will feel like unnecessary overhead. Especially if the app really is mostly a web service UI
-So you will be tempted not to do it until the need becomes clear
-But by that time you will be in the habit of writing VCs the normal way, and it won't be easy to change
+By contrast, on the web, because UI testing is well-defined, you can do it from the start without changing your architecture. In other words, the cost of end-to-end testing is low, so you're more likely to get an immediate payoff. Even more importantly, though, this makes it far more likely that you'll be able to get your system under test from the start, allowing you the freedom to refactor and improve the code as you go.
 
-By contrast, on the web, because UI testing is well-defined, you can do it from the start without changing your architecture, and get value
-In other words, the cost of end-to-end testing is low, so you're more likely to get an immediate payoff.
-But this also sets you up in an XP cycle where you can refactor easily from the start.
+So the future doesn't look bright for iOS end-to-end testing. This explains why iOS testing advocates like Jon Reid and Graham Lee focus more on unit testing. But unit testing can't confirm that all the pieces of your app work together, so a significant amount of manual testing is still needed. This being the case, I'm not sure how much XP approaches apply on iOS.
 
 [last-time]: https://www.bignerdranch.com/blog/a-rubyists-perspective-on-testing-in-swift/
 [ember]: https://guides.emberjs.com/v2.11.0/testing/acceptance/
