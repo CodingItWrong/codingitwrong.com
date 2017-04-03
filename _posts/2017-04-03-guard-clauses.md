@@ -8,7 +8,7 @@ Every time I have to write a [guard clause](http://wiki.c2.com/?GuardClause) I f
 Ruby:
 
 ```ruby
-if unexpected_condition do
+if unexpected_condition
   return_or_raise
 end
 ```
@@ -30,7 +30,7 @@ This form is actually not the most common in either Ruby or Swift, because they 
 Ruby:
 
 ```ruby
-unless expected_condition do
+unless expected_condition
   return_or_raise
 end
 ```
@@ -66,8 +66,8 @@ Like many Swift developers, I reach for the `guard` keyword first when I need a 
 Ruby:
 
 ```ruby
-if unexpected_condition { return_or_raise }
-unless expected_condition { return_or_raise }
+if unexpected_condition then return_or_raise end
+unless expected_condition then return_or_raise end
 ```
 
 Swift:
@@ -83,7 +83,7 @@ You could technically do this even if there were multiple statements in the bloc
 
 I definitely wouldn't use single-line format for anything long, like complex conditionals or errors with init parameters. You have to be able to see the return or throw at a glance, which means it needs to be very short.
 
-Stylistically I'd be less likely to use a single-line guard clause in languages that require a semicolon inside the block. And I wouldn't use these in Ruby because it has a number of other one-line constructs that are more common.
+Stylistically I'd be less likely to use a single-line guard clause in languages that require a semicolon inside the block. And I wouldn't use these in Ruby because it has a number of other one-line constructs that are more common. This is likely because the `then`/`end` keywords make it more verbose than the others.
 
 # Statement Modifiers
 
@@ -153,3 +153,5 @@ if unexpected_condition {
   return_or_throw
 }
 ```
+
+_Thanks to [@rossta](https://twitter.com/rossta) for some Ruby syntax corrections!_
