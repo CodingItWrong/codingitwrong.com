@@ -1,0 +1,12 @@
+{
+  "name": "codingitwrong.com",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://CodingItWrong@github.com/CodingItWrong/codingitwrong.github.io.git",
+  "author": "Josh Justice <me@codingitwrong.com>",
+  "license": "MIT",
+  "scripts": {
+    "serve": "bundle exec jekyll serve",
+    "images": "rm -fr img/webrings && mkdir img/webrings && sharp --format jpeg resize 740 313 --input _assets/img/webrings/* --output img/webrings"
+  }
+}
