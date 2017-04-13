@@ -2,6 +2,10 @@
 title: Lord of the Webrings
 ---
 
+## 200 OK
+
+![200 OK](img/webrings/200-ok.png)
+
 ## 201 Created
 
 ![201 Created](img/webrings/201-created.png)
@@ -14,6 +18,10 @@ title: Lord of the Webrings
 
 ![203 Non-Authoritative Information](img/webrings/203-non-authoritative-information.png)
 
+## 204 No Content
+
+![204 No Content](img/webrings/204-no-content.png)
+
 ## 300 Multiple Choices
 
 ![300 Multiple Choices](img/webrings/300-multiple-choices.png)
@@ -21,6 +29,10 @@ title: Lord of the Webrings
 ## 301 Moved Permanently
 
 ![301 Moved Permanently](img/webrings/301-moved-permanently.png)
+
+## 302 Found
+
+![302 Found](img/webrings/302-found.png)
 
 ## 304 Not Modified
 
@@ -58,6 +70,10 @@ title: Lord of the Webrings
 
 ![203 Non-Authoritative Information](img/webrings/423-locked.png)
 
+## 424 Failed Dependency
+
+![424 Failed Dependency](img/webrings/424-failed-dependency.png)
+
 ## 426 Upgrade Required
 
 ![426 Upgrade Required](img/webrings/426-upgrade-required.png)
@@ -66,6 +82,10 @@ title: Lord of the Webrings
 
 ![500 Internal Server Error](img/webrings/500-internal-server-error.png)
 
+## 501 Not Implemented
+
+![501 Not Implemented](img/webrings/501-not-implemented.png)
+
 ## 502 Bad Gateway
 
 ![502 Bad Gateway](img/webrings/502-bad-gateway.png)
@@ -73,6 +93,10 @@ title: Lord of the Webrings
 ## 506 Variant Also Negotiates
 
 ![506 Variant Also Negotiates](img/webrings/506-variant-also-negotiates.png)
+
+## 508 Loop Detected
+
+![508 Loop Detected](img/webrings/508-loop-detected.png)
 
 ## 511 Network Authentication Required
 
