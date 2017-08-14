@@ -62,7 +62,7 @@ Note, though, that this understanding still implicitly puts people on a linear p
 
 ## 5. "Different people and situations have different needs."
 
-At the start of 2017 I spent six months to Big Nerd Ranch's iOS team. I knew the iOS team didn't have quite the same level of automated testing as the web team, and I was curious why. I resisted the temptation to think that I would be the hero who would help them step up their testing, because I quickly realized what a ridiculously arrogant idea that would be. Big Nerd Ranch is one of the most well-respected iOS consultancies I know, so it would be foolish for me to assume I would show up and save the day.
+At the start of 2017 I spent six months on Big Nerd Ranch's iOS team. I knew the iOS team didn't have quite the same level of automated testing as the web team, and I was curious why. I resisted the temptation to think that I would be the hero who would help them step up their testing, because I quickly realized what a ridiculously arrogant idea that would be. Big Nerd Ranch is one of the most well-respected iOS consultancies I know, so it would be foolish for me to assume I would show up and save the day.
 
 I asked quite a few members of the iOS team why there wasn't as much testing in iOS as on the web. They had a lot of helpful observations, so I wanted to put them to the test to see if I would be convinced. Sure enough, after two projects and several attempts on my part, I became convinced that in the context of the iOS apps BNR builds, the cost/benefit ratio of testing is much more costly than on the web. (I'll write more about why this is in a future post.)
 
@@ -70,7 +70,7 @@ From my experience on the iOS team, I learned to be more [context-sensitive][con
 
 So it's not a matter of everyone being at different points on the same path. We are working in different contexts, and we learn and work in different ways. I can't say for sure that, for example, an iOS developer needs to first do more testing and then all their problems will be solved. The other person always has far more information than I do about themselves and their context. They have to figure out their answers for themselves. My role is to get to know them, do my best to understand them and their context, share my own experiences, and let them decide if something seems worth trying.
 
-In this post I've been summarizing what I've learned as "kindness," but I think a more precise word would be "respect." At the start of my journey, my self-sufficient view carried an implicit judgment of anyone who had not been able to pull themselves up by their own bootstraps. But each time my core belief changed I gained more respect from people: that they may have expertise, beginner insights, or even a different perspective. I moved from judging them to giving them the freedom to figure things out for themselves, and I learned how to engage with them in a way that encouraged that freedom.
+In this post I've been summarizing what I've learned as "kindness," but I think a more precise word would be "respect." At the start of my journey, my self-sufficient view carried an implicit judgment of anyone who had not been able to pull themselves up by their own bootstraps. But each time my core belief changed I gained more respect for people: that they may have expertise, beginner insights, or even a different perspective. I moved from judging them to giving them the freedom to figure things out for themselves, and I learned how to engage with them in a way that encouraged that freedom.
 
 ## Where I Go From Here
 
