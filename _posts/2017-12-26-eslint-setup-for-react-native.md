@@ -8,7 +8,7 @@ I installed ESLint by running `yarn add --dev eslint babel-eslint`
 
 Then I set up the initial ESLint settings by running `./node_modules/.bin/eslint --init` and giving the following answers:
 
-- Use the [Airbnb style guide](https://github.com/airbnb/javascript), because I’ve heard good things about it.
+- Use the [Airbnb style guide](https://github.com/airbnb/javascript), because I like that it’s detailed and includes some React recommendations.
 - Indicated I use React.
 - Went with JavaScript for the config file format. (Hooray for comments!)
 
@@ -18,13 +18,11 @@ Then, set up an NPM script in `package.json` to run the linter:
    "scripts": {
      "start": "node node_modules/react-native/local-cli/cli.js start",
      "test": "jest",
-+    "lint": "eslint **/*.js"
++    "lint": "eslint *.js **/*.js"
    },
 ```
 
-(You'll have to find a pattern to match all your JS files. This only matches ones in subdirectories, not the root.)
-
-For some reason after this I had to `yarn install` again. Maybe because `eslint --init` installs stuff with `npm` instead, so Yarn's lockfile was not updated to indicate it's accessible.
+After this I had to `yarn install` again. This is likely because `eslint --init` installs stuff with `npm` instead, so Yarn's lockfile was not updated to indicate it's accessible.
 
 I had to make the following manual additions to the generated `.eslintrc.js` file:
 
