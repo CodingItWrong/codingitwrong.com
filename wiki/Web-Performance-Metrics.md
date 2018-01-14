@@ -7,8 +7,9 @@ title: Web Performance Metrics
 * Time to first byte
 * Time to first paint
 * Time to DOM content loaded
-* Time to first meaningful paint
-* Time to first interactive
+* Time to first meaningful paint/time to first contentful paint
+* Time to first [meaningful] interaction
+* App-specific ones
 
 ## Perceived Metrics
 

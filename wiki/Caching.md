@@ -2,6 +2,8 @@
 title: Caching
 ---
 
+For quicker second load and for preparation for offline support
+
 * Browser cache
 	* Controlled by cache-related response headers
 	* https://jakearchibald.com/2016/caching-best-practices/

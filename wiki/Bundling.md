@@ -7,8 +7,9 @@ title: Bundling
 	* Sass static import
 	* ES6 static import
 * Inlining images in CSS as data URLs
-* Inlining CSS and scripts in HTML
+* Inlining critical path CSS in HTML
 	* Use this especially for critical assets requires to get the page looking good
+	* Not scripts tho?
 * Image sprites
 	* Data URLs preferred now?
 

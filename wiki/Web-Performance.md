@@ -2,6 +2,12 @@
 title: Web Performance
 ---
 
+Targets
+
+- Cable: speed index 1000
+- 3G: 3000
+- Repeat: asap
+
 * [Critical Rendering Path](Critical-Rendering-Path)
 * [Web Performance Metrics](Web-Performance-Metrics)
 

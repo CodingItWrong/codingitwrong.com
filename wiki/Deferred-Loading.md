@@ -2,9 +2,9 @@
 title: Deferred Loading
 ---
 
-## Post-Render Loading
+## Post-Render Loading, hydration
 
-Unblock rendering for optimal user experience. But beware the uncanny valley of non-interactive pages!
+Unblock rendering for optimal user experience. But beware the uncanny valley of non-interactive pages! Gap events
 
 * async attribute
     * Load order not guaranteed, so one script can’t depend on another
