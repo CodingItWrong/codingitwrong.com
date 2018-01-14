@@ -123,3 +123,4 @@ Resources that helped me get this working:
 
 * <https://coderwall.com/p/p3bj2a/cloning-from-github-in-vagrant-using-ssh-agent-forwarding>
 * <https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/>
+* <https://stackoverflow.com/questions/23935138/cannot-clone-private-repo-from-vagrant-provision-file>
