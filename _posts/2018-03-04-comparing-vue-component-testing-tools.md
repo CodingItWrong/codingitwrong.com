@@ -65,7 +65,7 @@ describe('NewMessageForm.vue', () => {
 });
 ```
 
-Interacting with form elements with Vue unit test is a bit cumbersome. For clicks we can just call click(), but entering text is harder:
+Interacting with form elements with Vue unit test is a bit cumbersome. Vue instances expose the `$el` property, which points to the root DOM element of the component. This allows us to programmatically interact with form elements just like we can in basic DOM scripting. For clicks we can just call `click()`, but entering text is harder:
 
 ```js
 let messageField = vm.$el.querySelector("[data-test='messageText']");
@@ -77,13 +77,13 @@ messageField.dispatchEvent(new window.Event('input'));
 
 There are a few things that make this complex:
 
-- Know to use an input event instead of a change event
-- Set the value of the element separately from issuing the event
-- Create a new input Event and pass it to dispatchEvent(), rather than calling an input() method directly
+- Know to use an "input" event instead of a "change" event (which is more typical in DOM scripting)
+- Set the `value` property of the element separately from issuing the event
+- Create a new "input" Event and pass it to `dispatchEvent()`, rather than calling an event-specific method directly
 
-I couldn't find a reference to any of this in the Vue unit test docs. It may be obvious to someone more experienced in front end development than me, but there are many developers that this won’t help.
+I couldn't find a reference to any of this in the Vue unit test docs. It's likely that it's obvious to someone more experienced in front end development than me, but a big part of Vue's appeal is to newer frontend developers, and this won't help them.
 
-Also, because Vue unit tests don’t handle asynchrony for us, we have to know to manually call Vue.nextTick() to wait for the DOM to be updated.
+Also, because Vue unit tests don’t handle asynchrony for us, we have to know to manually call `Vue.nextTick()` to wait for the DOM to be updated.
 
 ## vue-test-utils
 
@@ -120,7 +120,7 @@ describe('NewMessageForm.vue via vue-test-utils', () => {
 });
 ```
 
-Issuing events is a bit simpler in Vue-test-utils: it handles asynchrony for us, so we don’t need to manually call anything. And trigger() is a nice consistent interface to trigger any kind of event.
+Issuing events is a bit simpler in Vue Test Utils: it handles asynchrony for us, so we don’t need to manually call anything. And `trigger()` is a nice consistent interface to trigger any kind of event.
 
 ```js
 let messageField = wrapper.find("[data-test='messageText']");
@@ -128,9 +128,9 @@ messageField.element.value = 'New message';
 messageField.trigger('input');
 ```
 
-But setting the value on the text field is a bit *more* indirect. We have to know to retrieve the element from the wrapper.
+But setting the value on the text field is actually a bit *more* indirect. We have to know to retrieve the element from the wrapper.
 
-Another thing that’s nice about Vue-test-utils is the emitted object that exposes events emitted by the component. That makes it clear how you can test events, and encourages that kind of testing:
+Another thing that’s nice about Vue Test Utils is the `emitted()` method that exposes events emitted by the component. That makes it clear how you can test events, and encourages that kind of testing:
 
 ```
 expect(wrapper.emitted().save.length).to.eq(1);
