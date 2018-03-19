@@ -42,7 +42,13 @@ Run the Doorkeeper installation generator:
 bin/rails generate doorkeeper:install
 ```
 
-This will install several files you'll need to run Doorkeeper. One of these files is a migration, creating the following tables:
+This will install several files you'll need to run Doorkeeper. Next, run the Doorkeeper Active Record migration generator:
+
+```sh
+rails generate doorkeeper:migration
+```
+
+This will generate a new migration which creates the following tables:
 
 - `oauth_applications` - Tracks different client applications that can access your API. We won't need to use this for this tutorial.
 - `oauth_access_grants` - Tracks users' access to use different `oauth_applications`. We won't need to use this for this tutorial.
