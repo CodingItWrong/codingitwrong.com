@@ -29,6 +29,12 @@ Install the `ember-orbit` addon:
 # ember install ember-orbit
 ```
 
+Ember-Orbit replaces Ember Data, so you should remove it:
+
+```sh
+# npm uninstall ember-orbit --save
+```
+
 We're going to be using Orbit to store data to a JSON API and an IndexedDB database, so we need to add npm packages to support both of these:
 
 ```sh
@@ -124,7 +130,7 @@ export default Controller.extend({
 });
 ```
 
-Note that the way we access the model is also different: instead of Ember Data's `createRecord()`, we use Orbit's `addRecord()`. Note that we also include the type of the record in the object literal, rather than passing it as the first parameter.
+Note that the way we access the model is also different: instead of Ember Data's `createRecord()`, we use Orbit's `addRecord()`. Also, there’s no `.save()` step: we’ll add persistence in a different way. Note that we also include the type of the record in the object literal, rather than passing it as the first parameter.
 
 At this point, if you run your app, you should see that you can add messages to the list:
 
@@ -158,11 +164,9 @@ export default {
 };
 ```
 
-Note that we need to override `Orbit.fetch`; otherwise we'll get an error.
+Note that we need to override `Orbit.fetch`; otherwise we'll get an error. This is due to a bug in Ember-Orbit that is currently being fixed.
 
-QUESTION: WHY DOES BUILT-IN FETCH PRODUCE THE FOLLOWING ERROR? TypeError: Failed to execute 'fetch' on 'Window': Illegal invocation
-
-We need to add `ember-fetch` to the project:
+We need to add `ember-fetch` to the project so that that fix works:
 
 ```sh
 # ember install ember-fetch
@@ -276,7 +280,7 @@ export default {
 
 This says that before the local store is queried, pull from the remote store.
 
-If you reload your app, this isn't enough to get the data load working. We also need to sync the data. The data is pulled down from the server, but it's left in limbo; it isn't transferred into our store. CONFIRM THIS EXPLANATION IS CORRECT. We need a sync strategy to do that:
+If you reload your app, this isn't enough to get the data load working. We also need to sync the data. The data is pulled down from the server, but it's left in limbo; it isn't transferred into our store. We need a sync strategy to do that:
 
 `app/data-strategies/remote-sync.js`:
 
@@ -309,7 +313,7 @@ SCREENSHOT
 
 If we backed up our data locally in the browser, we would be able to load it even if the server wasn't reachable. (We could even use [the `ember-service-worker` addon](https://github.com/DockYard/ember-service-worker/) to allow our static assets to be loadable even when the device has no internet connection at all. We won’t get into that in this post, but give it a try on your own!)
 
-Ember-Orbit will allow us to store our data locally like that, using the IndexedDB browser technology. (There is also a Local Storage option you can fall back to. WHICH BROWSERS WOULD THIS BE USEFUL FOR?) We installed the NPM Orbit packages to support IndexedDB earlier.
+Ember-Orbit will allow us to store our data locally like that, using the IndexedDB browser technology. (There is also a Local Storage option you can fall back to, but the most common browsers in 2018 support IndexedDB, so you’re probably fine without Local Storage.) We installed the NPM Orbit packages to support IndexedDB earlier.
 
 First we'll create an IndexedDB store called "backup":
 
