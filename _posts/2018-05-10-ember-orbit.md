@@ -97,7 +97,7 @@ Next, let’s create the template for the route:
 
 `app/templates/index.hbs`:
 
-```hbs
+```html
 {% raw %}<form onsubmit={{action 'addMessage'}}>
   {{input value=newMessage}}
   <button type="submit">Add Message</button>
