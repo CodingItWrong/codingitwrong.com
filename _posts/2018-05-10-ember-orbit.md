@@ -19,25 +19,25 @@ Note that instead of using autoincrement integers for the primary keys, this API
 
 To get started on the frontend, create a new Ember app:
 
-```sh
+```
 # ember new offline-ember
 ```
 
 Install the `ember-orbit` addon:
 
-```sh
+```
 # ember install ember-orbit
 ```
 
 In our app, Ember-Orbit will fill the role that Ember Data does in standard Ember apps, so you should remove Ember Data:
 
-```sh
+```
 # npm uninstall ember-orbit --save
 ```
 
 We're going to be using Orbit to store data to a JSON API and an IndexedDB database, so we need to add npm packages to support both of these:
 
-```sh
+```
 # npm install --save @orbit/indexeddb \
                      @orbit/indexeddb-bucket \
                      @orbit/jsonapi
@@ -164,7 +164,7 @@ Note that we need to override `Orbit.fetch`; otherwise we'll get an error. This 
 
 We need to add `ember-fetch` to the project so that that fix works:
 
-```sh
+```
 # ember install ember-fetch
 ```
 
