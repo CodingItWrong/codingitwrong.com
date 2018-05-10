@@ -13,7 +13,7 @@ The example app we’ll build is the start of a messaging app. We'll build a fea
 
 The backend for our app will be a Rails API, [offline-api](https://github.com/CodingItWrong/offline-api). It’s set up following the pattern of ember-orbit’s [peeps-uuids example](https://github.com/cerebris/peeps-uuids). Follow the instructions in the readme to download and set it up. Run the API using the command `bin/rails s`.
 
-Note that instead of using autoincrement integers for the primary keys, this API uses UUIDs assigned by the frontend. Orbit is set up to handle IDs this way by default. This allows records to be created locally even when the backend isn’t accessible.
+Note that instead of using autoincrement integers for the primary keys, this API uses UUIDs assigned by the frontend. Orbit is set up to handle IDs this way by default. This allows multiple uses to create records locally even when the backend isn’t accessible, without ID conflicts.
 
 ## Installing Orbit
 
@@ -29,7 +29,7 @@ Install the `ember-orbit` addon:
 # ember install ember-orbit
 ```
 
-Ember-Orbit replaces Ember Data, so you should remove it:
+In our app, Ember-Orbit will fill the role that Ember Data does in standard Ember apps, so you should remove Ember Data:
 
 ```sh
 # npm uninstall ember-orbit --save
@@ -132,11 +132,7 @@ export default Controller.extend({
 
 Note that the way we access the model is also different: instead of Ember Data's `createRecord()`, we use Orbit's `addRecord()`. Also, there’s no `.save()` step: we’ll add persistence in a different way. Note that we also include the type of the record in the object literal, rather than passing it as the first parameter.
 
-At this point, if you run your app, you should see that you can add messages to the list:
-
-SCREENSHOT
-
-But if you refresh the page, they're gone. We need to get back up to parity with Ember Data's features: saving and loading records via an API.
+At this point, if you run your app, you should see that you can add messages to the list. But if you refresh the page, they're gone. We need to get back up to parity with Ember Data's features: saving and loading records via an API.
 
 One interesting thing to note: we’re going to add a lot of new files from here to incrementally improve the functionality of our data layer, but we won’t need to change the above files at all! This is the power of Orbit’s primitives: our business logic stays just the same (query the messages, add a message) but we change the configuration of what those concepts *mean*.
 
@@ -241,7 +237,7 @@ Now when you reload your app you'll see a few log entries immediately:
 - store beforeQuery
 - store query
 
-When you add a message, you'll see a number of more entries:
+When you add a message, you'll see a number of additional entries:
 
 - store beforeUpdate
 - remote beforePush
@@ -250,7 +246,7 @@ When you add a message, you'll see a number of more entries:
 - store transform
 - store update
 
-DETAILS ON WHAT EACH OF THESE MEANS SPECIFICALLY
+What each of these mean in detail are beyond the scope of this blog post, but in general you can see that data is being pushed to the remote server and updated in the local store.
 
 ## Pull and Sync: Querying Data from the Server
 
@@ -313,7 +309,7 @@ SCREENSHOT
 
 If we backed up our data locally in the browser, we would be able to load it even if the server wasn't reachable. (We could even use [the `ember-service-worker` addon](https://github.com/DockYard/ember-service-worker/) to allow our static assets to be loadable even when the device has no internet connection at all. We won’t get into that in this post, but give it a try on your own!)
 
-Ember-Orbit will allow us to store our data locally like that, using the IndexedDB browser technology. (There is also a Local Storage option you can fall back to, but the most common browsers in 2018 support IndexedDB, so you’re probably fine without Local Storage.) We installed the NPM Orbit packages to support IndexedDB earlier.
+Ember-Orbit will allow us to store our data locally like that, using the IndexedDB browser technology. (There is also a Local Storage option you can fall back to, but [the most common browsers in 2018 support IndexedDB](https://caniuse.com/#feat=indexeddb), so you’re probably fine without Local Storage.) We installed the NPM Orbit packages to support IndexedDB earlier.
 
 First we'll create an IndexedDB store called "backup":
 
@@ -325,7 +321,7 @@ import IndexedDBSource from '@orbit/indexeddb';
 export default {
   create(injections = {}) {
     injections.name = 'backup';
-    injections.namespace = 'my-app';
+    injections.namespace = 'messages';
     return new IndexedDBSource(injections);
   }
 };
@@ -420,15 +416,9 @@ To make it appear, the first thing we need to do is to make the remote-update st
  };
 ```
 
-Rerun the app and add a message, and it appears in the app.
-
-SCREENSHOT
-
-But this is **a lie**. This data isn't stored to the server-side API! This means that it won't be accessible on other devices, or to other users if the data is shared. And if the user clears their browser storage data, the data will be lost forever!
+Rerun the app and add a message, and it appears in the app. But this is **a lie**. This data isn't stored to the server-side API! This means that it won't be accessible on other devices, or to other users if the data is shared. And if the user clears their browser storage data, the data will be lost forever!
 
 Start the Rails API back up and reload the Ember app. The new message still appears locally. But let's check on the server as well. In a new terminal window, go to the API folder and run `bin/rails c`, then enter the command `Message.pluck(:text)`. The new message you added doesn't appear.
-
-SCREENSHOT
 
 This is kind of what we expect; it would be pretty advanced for an app to be able to keep track of updates made while offline and sync them up when it comes back online. But this is exactly what Orbit allows us to do!
 
@@ -445,7 +435,7 @@ import IndexedDBBucket from '@orbit/indexeddb-bucket';
 
 export default {
   create() {
-    return new IndexedDBBucket({ namespace: 'my-app-settings' });
+    return new IndexedDBBucket({ namespace: 'messages-bucket' });
   }
 };
 ```
@@ -474,8 +464,8 @@ Stop the Rails API. Reload the Ember app and create a new record. Start the Rail
 
 There are a few different places you can go from here.
 
-* Log truncation (WHAT DOES THIS ACCOMPLISH IN THIS CASE? I GET A NEW CONSOLE LOG ON EACH LOAD)
-* Error handling for when operations don't work
-* Informing the user in the UI when records aren't saved to the server, so they can be warned that they need to connect online eventually
+* Log truncation. This is a different concept than the console logs created by the EventLoggingStrategy; it relates to Orbit's internal logs of transformations that happen. This strategy will clear out transformation log entries once they've been processed by all sources. There's not really any reason _not_ to use this strategy.
+* Error handling for when operations don't work.
+* Informing the user in the UI when records aren't saved to the server, so they can be warned that they need to connect online eventually.
 
 With this framework of understanding, a good next step would be to read [the Orbit guides](http://orbitjs.com/v0.15/guide/) to understand these fundamental concepts more deeply.
