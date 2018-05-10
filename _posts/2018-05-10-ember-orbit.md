@@ -32,7 +32,7 @@ Install the `ember-orbit` addon:
 In our app, Ember-Orbit will fill the role that Ember Data does in standard Ember apps, so you should remove Ember Data:
 
 ```
-# npm uninstall ember-orbit --save
+# npm uninstall ember-data --save
 ```
 
 We're going to be using Orbit to store data to a JSON API and an IndexedDB database, so we need to add npm packages to support both of these:
