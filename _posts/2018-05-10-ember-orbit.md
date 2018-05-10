@@ -1,12 +1,12 @@
 ---
-title: Offline Data with Ember-Orbit
+title: Offline Data and Sync with Ember-Orbit
 ---
 
 [Orbit](http://orbitjs.com/) is a powerful library for data management, and [Ember-Orbit](https://github.com/orbitjs/ember-orbit) integrates it nicely with Ember. It allows you to set up sophisticated data flows among multiple sources--but how these work can be hard to understand when you're getting started. Let’s walk through setting up Ember-Orbit in a tiny app, to give us access to both read and write data while offline, then sync up when we come back online. Almost all the steps in this app follow what's in the official Orbit and Ember-Orbit getting started guides, but we'll also see concrete examples of what functionality each step adds to the app.
 
 The example app we’ll build is the start of a messaging app. We'll build a feature allowing us to send a new message and show it in a list:
 
-(SCREENSHOT)
+![screenshot of working messages app](/img/posts/ember-orbit/end-state.png)
 
 
 ## Setting Up the Backend
@@ -98,7 +98,7 @@ Next, let’s create the template for the route:
 `app/templates/index.hbs`:
 
 ```hbs
-<form onsubmit={{action 'addMessage'}}>
+{% raw %}<form onsubmit={{action 'addMessage'}}>
   {{input value=newMessage}}
   <button type="submit">Add Message</button>
 </form>
@@ -107,7 +107,7 @@ Next, let’s create the template for the route:
   {{#each model as |message|}}
     <li>{{message.text}}</li>
   {{/each}}
-</ul>
+</ul>{% endraw %}
 ```
 
 This template looks just like one we might have built in any Ember app. We create a form that binds a text value to the controller, and can be submitted to an action on the controller. The model we loaded in the route is an array of messages, which we display in a list.
@@ -214,7 +214,7 @@ export default Route.extend({
 
 Now if we run our app and check the network tab of our browser, every time we add a message we'll see an outgoing POST request to our API, and a 201 Created response:
 
-SCREENSHOT
+![screenshot of network panel with a 201 Created response](/img/posts/ember-orbit/201-created.png)
 
 ## EventLoggingStrategy: Console Output
 
@@ -234,17 +234,11 @@ export default {
 
 Now when you reload your app you'll see a few log entries immediately:
 
-- store beforeQuery
-- store query
+![console log entries when the app launches](/img/posts/ember-orbit/logs-on-launch.png)
 
 When you add a message, you'll see a number of additional entries:
 
-- store beforeUpdate
-- remote beforePush
-- remote transform
-- remote push
-- store transform
-- store update
+![console log entries when a message is saved](/img/posts/ember-orbit/logs-on-save.png)
 
 What each of these mean in detail are beyond the scope of this blog post, but in general you can see that data is being pushed to the remote server and updated in the local store.
 
@@ -305,7 +299,7 @@ Now we've replicated the functionality of Ember Data. It took some work to get t
 
 Right now our app requires us to be online; if the API server isn't reachable, the app won't even launch. To confirm this, stop the Rails API server by pressing control-C in the terminal that's running the Rails server. Reload your Ember app. You'll see a blank white screen and an error in the console.
 
-SCREENSHOT
+![error when launching the app and the backend is unavailable](/img/posts/ember-orbit/backend-error.png)
 
 If we backed up our data locally in the browser, we would be able to load it even if the server wasn't reachable. (We could even use [the `ember-service-worker` addon](https://github.com/DockYard/ember-service-worker/) to allow our static assets to be loadable even when the device has no internet connection at all. We won’t get into that in this post, but give it a try on your own!)
 
@@ -355,7 +349,7 @@ Start the API again with `bin/rails s`, then reload your Ember app. Check your I
 
 You should see your message data saved there.
 
-SCREENSHOT
+![browser IndexedDB inspector showing saved messages](/img/posts/ember-orbit/indexeddb-messages.png)
 
 It doesn't do us a lot of good yet, though. Stop the Rails API then reload your Ember app. You'll still get the same blank screen.
 
