@@ -144,28 +144,15 @@ To add features to our Orbit configuration, we’ll start with saving to the ser
 
 ```js
 import JSONAPISource from '@orbit/jsonapi';
-import Orbit from '@orbit/data';
-import fetch from 'fetch';
 
 export default {
   create(injections = {}) {
-    // Use `fetch` implementation from `ember-fetch`
-    Orbit.fetch = fetch;
-
     injections.name = 'remote';
     injections.host = 'http://localhost:3000';
 
     return new JSONAPISource(injections);
   }
 };
-```
-
-Note that we need to override `Orbit.fetch`; otherwise we'll get an error. This is due to a bug in Ember-Orbit that is currently being fixed.
-
-We need to add `ember-fetch` to the project so that that fix works:
-
-```
-# ember install ember-fetch
 ```
 
 Our `remote.js` adds the remote service, but it isn't automatically wired up to anything. We need to create a "strategy", a preconfigured Orbit object that configures multiple sources to talk to one another. Let's create a strategy that says that every time we update our in-memory store, we should update the remote store too:
