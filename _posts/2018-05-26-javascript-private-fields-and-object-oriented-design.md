@@ -10,6 +10,21 @@ Having this feature available in Babel has gotten me thinking about how we can u
 
 If you'd like to follow along with this coding exercise or see how to set up the Babel beta in a project, [see the sample code repo](https://github.com/CodingItWrong/private-fields).
 
+First, make sure you have Babel 7.0.0-beta.49 or above installed:
+
+```json
+{
+  ...
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.49",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.49",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.49",
+    "@babel/preset-env": "^7.0.0-beta.49",
+    ...
+  }
+}
+```
+
 Let’s say we have a simple module for loading blog posts from a web service:
 
 ```javascript
@@ -34,18 +49,18 @@ This module exports two functions:
 
 Let’s look at the fields on a blog post object:
 
-```javascript
+```json
 {
-  id: 42,
-  uniqueSlug: 'hello-world',
-  title: 'Hello World',
-  body: 'This is the body.',
+  "id": 42,
+  "uniqueSlug": "hello-world",
+  "title": "Hello World",
+  "body": "This is the body."
 }
 ```
 
 We have a numeric ID, a unique slug, title, and (after we request it separately) the body.
 
-![photo of colorful slug](img/posts/private-fields/unique-slug.jpg)
+![photo of colorful slug](/img/posts/private-fields/unique-slug.jpg)
 
 (Above: an extremely unique slug.)
 
