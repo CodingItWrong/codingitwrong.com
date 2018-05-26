@@ -2,7 +2,7 @@
 title: JavaScript Private Fields and Object-Oriented Design
 ---
 
-Babel beta 7.0.0-beta.49 has just been released, and with it [support for private fields](https://github.com/babel/babel/pull/7842). If you aren't familiar with the private fields proposal, check out [Alex Rauschmayer's overview of the private fields proposal](http://2ality.com/2017/07/class-fields.html).
+[Babel beta 7.0.0-beta.49](https://github.com/babel/babel/releases/tag/v7.0.0-beta.49) has just been released, and with it [support for private fields](https://github.com/babel/babel/pull/7842). If you aren't familiar with private fields/properties, check out [Alex Rauschmayer's overview of the private fields proposal](http://2ality.com/2017/07/class-fields.html).
 
 Having this feature available in Babel has gotten me thinking about how we can use private fields in our code and how they influence our designs. And I think the possibilities are pretty significant. To see why, let’s look at a scenario when we might want to refactor our code to private fields, and the impact it has. (Or you can just skip to the end for [the theory](#design-influences).)
 
