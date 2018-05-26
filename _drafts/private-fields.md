@@ -1,8 +1,12 @@
 # JavaScript Private Fields and Object-Oriented Design
 
-[Private fields have been merged to Babel master](https://github.com/babel/babel/pull/7842) and will be available in the next beta, 7.0.0-beta.48. This has gotten me thinking about how we can use private fields in our code and how they influence our designs. And I think the possibilities are pretty significant. To see why, let’s look at a scenario when we might want to refactor our code to private fields, and the impact it has. (Or you can just skip to the end for [the theory](#design-influences).)
+Babel beta 7.0.0-beta.49 has just been released, and with it [support for private fields](https://github.com/babel/babel/pull/7842). If you aren't familiar with the private fields proposal, check out [Alex Rauschmayer's overview of the private fields proposal](http://2ality.com/2017/07/class-fields.html).
+
+Having this feature available in Babel has gotten me thinking about how we can use private fields in our code and how they influence our designs. And I think the possibilities are pretty significant. To see why, let’s look at a scenario when we might want to refactor our code to private fields, and the impact it has. (Or you can just skip to the end for [the theory](#design-influences).)
 
 ## Refactoring to Private Fields
+
+If you'd like to follow along with this coding exercise or see how to set up the Babel beta in a project, [see the sample code repo](https://github.com/CodingItWrong/private-fields).
 
 Let’s say we have a simple module for loading blog posts from a web service:
 
@@ -59,9 +63,9 @@ class BlogPost {
 }
 ```
 
-When we instantiate it, we’ll pass in the plain object returned from the APU. We use Object.assign() to assign all the properties of that object to our new BlogPost.
+When we instantiate it, we’ll pass in the plain object returned from the API. We use `Object.assign()` to assign all the properties of that object to our new BlogPost.
 
-Next, we can create a private ID field and assign the ID to it instead of to a public property. We can do this with destructuring and the object rest operator:
+Next, we can declare a private ID field and assign the ID to it instead of to a public property. We can do this with destructuring and the object rest operator:
 
 ```javascript
 class BlogPost {
@@ -78,9 +82,9 @@ We extract the ID from the object and assign the rest of the attributes using `O
 
 Now we won’t accidentally use the ID elsewhere in our app. But our service still needs access to that field to download the body. How can we make that ID available?
 
-The private field is internal state of the BlogPost, so we can’t ask for it from the outside; doing so will result in an error during Babel transpilation. Instead, we need to allow the BlogPost to be responsible for what it does with its ID and who it shares it with. This means we need to add some behavior to the BlogPost class.
+The private field is internal state of the BlogPost, so we can’t ask for it from the outside. Attempting to access `post#id` isn't even valid syntax and will result in an `Unexpected character '#'` error during transpilation. Instead, we need to allow the `BlogPost` to be responsible for what it does with its ID and who it shares it with. This means we need to add some behavior to the `BlogPost` class.
 
-To solve this problem we can move the standalone `getBody()` function to be a method on `BlogPost` instead:
+To solve this problem we can move the standalone `getBody()` function and change it into a method on `BlogPost` instead:
 
 ```javascript
 class BlogPost {
@@ -93,14 +97,16 @@ class BlogPost {
 
   getBody() {
     return get(`blogPosts/${this.#id}`)
-      .then(response => this.body = response.body);
+      .then(response => {
+        this.body = response.body;
+      });
   }
 }
 ```
 
 Because this method is defined within the `BlogPost` class, it can access the `#id` private field using `this.#id`.
 
-With this, our app should be working, and our ID field should be protected. We can’t access it from just anywhere; the only code that can see the ID is the code the blog post chooses to share it with.
+With this, our app should be working, and our ID field should be protected. We can’t access it from just anywhere; the only code that can see the ID is `BlogPost` and code that `BlogPost` chooses to pass it to.
 
 Note that private fields don’t function as a security feature here: the ID is still totally visible to the end user in requests and responses. Even apart from this, it’s best not to treat *any* data on the frontend as safe from the user. If it needs to be secret, it should stay on the server. Private fields here are purely a code structuring mechanism.
 
@@ -108,13 +114,13 @@ Note that private fields don’t function as a security feature here: the ID is 
 
 Let’s think about how this use of private fields differs from typical JavaScript practice pre-private-fields, and why. This isn’t an introduction into this style of coding, or advocating that you should change to it. My goal is simply to describe how private fields provide a design force that can lead us there.
 
-Whenever you need to add some functionality to your app, you can either add a standalone function or a method on an object. In other languages, one of the main motivations for using methods is that they have access to private data on the object. But because JavaScript didn’t have private fields until now, this wasn’t an argument in favor of using methods.
+Whenever you need to add some functionality to your app, you can either add a standalone function or a method on an object. In many object-oriented languages, one of the main motivations for using methods is that they have access to private data on the object. But because JavaScript didn’t have private fields until now, this wasn’t an argument in favor of using methods.
 
-There was, however, a strong argument in favor of using standalone functions: JSON. It’s incredibly easy to parse JSON into JavaScript objects that have data but no methods. It’s more effort to copy that data into a new instance of a class that has methods on it. I think this cost with little benefit is one reason JavaScript has moved toward separating data and logic, which puts you in the functional programming camp. This is great! There are tons of advantages to this style. But like almost everything else in programming, it’s a tradeoff. Private fields balance the tradeoffs between styles a bit more, which may lead toward more developers adopting an object-oriented style in which data and logic are situated together.
+There was, however, a strong argument in favor of using standalone functions: JSON. It’s incredibly easy to parse JSON into JavaScript objects that have data but no methods. It’s more effort to copy that data into a new instance of a class that has methods on it. I think this cost with little benefit is one reason JavaScript has moved toward separating data and logic, which puts you in the functional programming camp. This is great! There are tons of advantages to this style. But like almost everything else in programming, it’s a tradeoff.
 
-We’ve seen this in our example code. Because our ID was a private field, external functions couldn’t access it. If we want to use the field (and otherwise we might as well just not store it) the class itself needed a method to access it. 
+Private fields balance the tradeoffs between styles by giving methods an advantage over standalone functions: providing private data that only methods on the object can access. This may lead toward more developers adopting an object-oriented style in which data and logic are situated together. We’ve seen this in our example code. Because our ID was a private field, external functions couldn’t access it. If we want to use the field (and if not, we might as well just not store it) the class itself needed a method to access it. 
 
-The private field ends up influencing us toward a “tell-don’t-ask” style of development. Instead of the service *asking* the blog post for its ID and then performing logic based on the response, we *tell* the blog post what we want it to do (load the body) and trust it to handle it. When your objects don’t have any behavior then all you can do is ask them for data, but when you add functionality you have the option of telling them to perform behavior as well.
+Our private field ended up influencing us toward a [“tell-don’t-ask”](https://pragprog.com/articles/tell-dont-ask) style of development. Instead of the service *asking* the blog post for its ID and then performing logic based on the response, we *tell* the blog post what we want it to do (load the body) and trust it to handle it. When your objects don’t have any behavior then all you can do is ask them for data, but when you add functionality you have the option of telling them to perform behavior as well.
 
 It’s not like keeping data private was impossible before private fields. A few different approaches are described in the [“Private Data for classes” section](http://exploringjs.com/es6/ch_classes.html#sec_private-data-for-classes) of Axel Rauschmayer’s _Exploring ES6_ (available free online). These approaches to implementing private data include using constructor function scope, property naming conventions, symbol keys, and WeakMaps. These are all possible, but they took a little work. And since separating data and behavior is a totally valid alternative way to structure your code, there was often little incentive to jump through these hoops.
 
