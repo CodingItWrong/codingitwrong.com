@@ -1,4 +1,6 @@
-# JavaScript Private Fields and Object-Oriented Design
+---
+title: JavaScript Private Fields and Object-Oriented Design
+---
 
 Babel beta 7.0.0-beta.49 has just been released, and with it [support for private fields](https://github.com/babel/babel/pull/7842). If you aren't familiar with the private fields proposal, check out [Alex Rauschmayer's overview of the private fields proposal](http://2ality.com/2017/07/class-fields.html).
 
@@ -43,7 +45,7 @@ Let’s look at the fields on a blog post object:
 
 We have a numeric ID, a unique slug, title, and (after we request it separately) the body.
 
-![photo of colorful slug](img/unique-slug.jpg)
+![photo of colorful slug](img/posts/private-fields/unique-slug.jpg)
 
 (Above: an extremely unique slug.)
 
@@ -70,7 +72,7 @@ Next, we can declare a private ID field and assign the ID to it instead of to a 
 ```javascript
 class BlogPost {
   #id;
-  
+
   constructor({ id, ...attributes }) {
     this.#id = id;
     Object.assign(this, attributes);
@@ -89,7 +91,7 @@ To solve this problem we can move the standalone `getBody()` function and change
 ```javascript
 class BlogPost {
   #id;
-  
+
   constructor({ id, ...attributes }) {
     this.#id = id;
     Object.assign(this, attributes);
@@ -118,7 +120,7 @@ Whenever you need to add some functionality to your app, you can either add a st
 
 There was, however, a strong argument in favor of using standalone functions: JSON. It’s incredibly easy to parse JSON into JavaScript objects that have data but no methods. It’s more effort to copy that data into a new instance of a class that has methods on it. I think this cost with little benefit is one reason JavaScript has moved toward separating data and logic, which puts you in the functional programming camp. This is great! There are tons of advantages to this style. But like almost everything else in programming, it’s a tradeoff.
 
-Private fields balance the tradeoffs between styles by giving methods an advantage over standalone functions: providing private data that only methods on the object can access. This may lead toward more developers adopting an object-oriented style in which data and logic are situated together. We’ve seen this in our example code. Because our ID was a private field, external functions couldn’t access it. If we want to use the field (and if not, we might as well just not store it) the class itself needed a method to access it. 
+Private fields balance the tradeoffs between styles by giving methods an advantage over standalone functions: providing private data that only methods on the object can access. This may lead toward more developers adopting an object-oriented style in which data and logic are situated together. We’ve seen this in our example code. Because our ID was a private field, external functions couldn’t access it. If we want to use the field (and if not, we might as well just not store it) the class itself needed a method to access it.
 
 Our private field ended up influencing us toward a [“tell-don’t-ask”](https://pragprog.com/articles/tell-dont-ask) style of development. Instead of the service *asking* the blog post for its ID and then performing logic based on the response, we *tell* the blog post what we want it to do (load the body) and trust it to handle it. When your objects don’t have any behavior then all you can do is ask them for data, but when you add functionality you have the option of telling them to perform behavior as well.
 
