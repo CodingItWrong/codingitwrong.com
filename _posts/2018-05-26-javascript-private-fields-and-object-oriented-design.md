@@ -10,16 +10,16 @@ Having this feature available in Babel has gotten me thinking about how we can u
 
 If you'd like to follow along with this coding exercise or see how to set up the Babel beta in a project, [see the sample code repo](https://github.com/CodingItWrong/private-fields).
 
-First, make sure you have Babel 7.0.0-beta.49 or above installed:
+First, make sure you have Babel 7.0.0-beta.49 or above installed (use an exact version since it's still in pre-release):
 
 ```json
 {
   ...
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.49",
-    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.49",
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.49",
-    "@babel/preset-env": "^7.0.0-beta.49",
+    "@babel/core": "7.0.0-beta.49",
+    "@babel/plugin-proposal-class-properties": "7.0.0-beta.49",
+    "@babel/plugin-proposal-object-rest-spread": "7.0.0-beta.49",
+    "@babel/preset-env": "7.0.0-beta.49",
     ...
   }
 }
