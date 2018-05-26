@@ -10,7 +10,7 @@ Having this feature available in Babel has gotten me thinking about how we can u
 
 If you'd like to follow along with this coding exercise or see how to set up the Babel beta in a project, [see the sample code repo](https://github.com/CodingItWrong/private-fields).
 
-First, make sure you have Babel 7.0.0-beta.49 or above installed:
+First, make sure you have Babel 7.0.0-beta.49 or above installed, as well as the `class-properties` plugin--this is what enables private fields:
 
 ```json
 {
