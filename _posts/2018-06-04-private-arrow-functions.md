@@ -1,6 +1,10 @@
-Private fields are now available in Babel 7.0.0-beta.49, but private methods are not yet available. But we can effectively implement private methods using private fields and arrow functions. Let's look at how, why it works, and how we might take advantage of them.
+---
+title: Simulating Private Methods with Arrow Functions
+---
 
-## Simulating Private Methods
+Private fields are now available in Babel 7.0.0-beta.49, but private methods are not yet available. But we can effectively simulate private methods by combining private fields and arrow functions. Let's look at how, why it works, and how we might take advantage of them.
+
+## How to Simulate Private Methods
 
 The [private methods proposal](https://github.com/tc39/proposal-private-methods) proposes a syntax for private methods that looks like this:
 
