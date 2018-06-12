@@ -62,7 +62,7 @@ To make these NPM packages available to your Ember app, add them to `ember-cli-b
 
 By default, Ember-Orbit creates an in-memory Store for holding data. This only runs as long as your app does, so you wouldn't want to use Orbit with only this Store set up in a real app. But it's useful for us to see what it does on its own.
 
-Let's start with defining the model for the message:
+Let's start with defining the model for the message. Create an `app/models/message.js` and add the following:
 
 ```js
 import {
@@ -87,7 +87,7 @@ import Route from '@ember/routing/route';
 export default Route.extend({
   model() {
     return this.store.liveQuery(q => q.findRecords('message'));
-  }
+  },
 });
 ```
 
@@ -151,7 +151,7 @@ export default {
     injections.host = 'http://localhost:3000';
 
     return new JSONAPISource(injections);
-  }
+  },
 };
 ```
 
@@ -175,7 +175,7 @@ export default {
 
       blocking: true,
     });
-  }
+  },
 };
 ```
 
@@ -215,7 +215,7 @@ import { EventLoggingStrategy } from '@orbit/coordinator';
 export default {
   create() {
     return new EventLoggingStrategy();
-  }
+  },
 };
 ```
 
@@ -251,7 +251,7 @@ export default {
 
       blocking: true,
     });
-  }
+  },
 };
 ```
 
@@ -274,7 +274,7 @@ export default {
 
       blocking: false,
     });
-  }
+  },
 };
 ```
 
@@ -304,7 +304,7 @@ export default {
     injections.name = 'backup';
     injections.namespace = 'messages';
     return new IndexedDBSource(injections);
-  }
+  },
 };
 ```
 
@@ -320,9 +320,9 @@ export default {
     return new SyncStrategy({
       source: 'store',
       target: 'backup',
-      blocking: true
+      blocking: true,
     });
-  }
+  },
 };
 ```
 
@@ -353,7 +353,7 @@ Making this change is as simple as reversing a boolean in our remote-request str
 -      blocking: true,
 +      blocking: false,
      });
-   }
+   },
  };
 ```
 
@@ -393,7 +393,7 @@ To make it appear, the first thing we need to do is to make the remote-update st
 -      blocking: true,
 +      blocking: false,
      });
-   }
+   },
  };
 ```
 
@@ -417,7 +417,7 @@ import IndexedDBBucket from '@orbit/indexeddb-bucket';
 export default {
   create() {
     return new IndexedDBBucket({ namespace: 'messages-bucket' });
-  }
+  },
 };
 ```
 
