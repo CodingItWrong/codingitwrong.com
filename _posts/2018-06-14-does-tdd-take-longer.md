@@ -1,6 +1,6 @@
-—-
+---
 title: Does Test-Driven Development Take Longer?
-—-
+---
 
 Recently a coworker asked me if Test-Driven Development (TDD) takes longer than not doing TDD. I’ve learned that the costs and benefits of testing vary in different environments. But at least in environments where TDD is a good fit, here are my thoughts:
 
