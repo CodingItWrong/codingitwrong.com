@@ -4,6 +4,10 @@ title: Offline Data and Sync with Ember-Orbit
 
 [Orbit](http://orbitjs.com/) is a powerful library for data management, and [Ember-Orbit](https://github.com/orbitjs/ember-orbit) integrates it nicely with Ember. It allows you to set up sophisticated data flows among multiple sources--but how these work can be hard to understand when you're getting started. Let’s walk through setting up Ember-Orbit in a tiny app, to give us access to both read and write data while offline, then sync up when we come back online. Almost all the steps in this app follow what's in the official Orbit and Ember-Orbit getting started guides, but we'll also see concrete examples of what functionality each step adds to the app. You can also download [the complete working Ember app](https://github.com/CodingItWrong/ember-orbit-tutorial).
 
+You can also watch a meetup talk version of this tutorial:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fA3fhFzF3Jc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 The example app we’ll build is the start of a messaging app. We'll build a feature allowing us to send a new message and show it in a list:
 
 ![screenshot of working messages app](/img/posts/ember-orbit/end-state.png)
