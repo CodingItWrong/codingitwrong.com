@@ -24,7 +24,7 @@ class MyClass {
 
 So, how do arrow functions allow us to simulate private methods? You may have used class property arrow functions before:
 
-```
+```javascript
 class MyClass {
   myValue = 42;
 
@@ -36,7 +36,7 @@ class MyClass {
 
 This isn't a special JS syntax; it's just assigning an arrow function to a class property. Like always, the arrow function preserves the value of `this`, so that when you call it, `this` points to the object it was created within. When you realize this, you may wonder, can I assign an arrow function to a private field? And can it still access other private fields on the class? The answer is yes! And the other answer is also yes!!
 
-```
+```javascript
 class MyClass {
   #myPrivateValue = 42;
 
