@@ -11,24 +11,24 @@ To see how quickly Rails allows us to create and deploy a web service to product
 # Getting Past the CRUD
 [Install the latest version of Ruby](https://www.ruby-lang.org/en/documentation/installation/) (2.5.1 as of this writing), then install Rails:
 
-```
-# gem install rails
+```sh
+$ gem install rails
 ```
 
 Create a new Rails app with `rails new`. We’ll pass in a few flags to remove features we don’t need, to keep our app as simple as possible:
 
-```
-# rails new simple-rails-api --api \
+```sh
+$ rails new simple-rails-api --api \
                              --skip-action-cable \
                              --skip-active-storage \
                              --skip-test 
-# cd simple-rails-api
+$ cd simple-rails-api
 ```
 
 Now let’s create our todo resource using the `rails generate scaffold` command, passing it the fields and types we want:
 
-```
-# rails generate scaffold todo title:string complete:boolean
+```sh
+$ rails generate scaffold todo title:string complete:boolean
 ```
 
 This creates everything we need to get started with todos:
@@ -40,25 +40,25 @@ This creates everything we need to get started with todos:
 
 Let's run that migration to update our database:
 
-```
-# rails db:migrate
+```sh
+$ rails db:migrate
 ```
 
 Next, let's insert a Todo record by hand. You don’t need to use a SQL database tool directly; you can use the `rails console`:
 
-```
-# rails console
+```sh
+$ rails console
 ```
 
 The Rails console lets you execute any arbitrary Ruby code you want. Run the following to create a todo:
 
-```
+```sh
 irb(main):001:0> Todo.create!(title: 'Create an API', complete: false)
 ```
 
 You’ll see some log output and then the following:
 
-```
+```sh
 => #<Todo id: 1, title: "Create an API", complete: false,
 created_at: "2018-07-01 10:42:49", updated_at: "2018-07-01 10:42:49">
 ```
@@ -71,8 +71,8 @@ A few notes on what we typed:
 
 Now let’s see what URLs were created for us by `generate resource`. Run `rails routes`:
 
-```
-# rails routes
+```sh
+$ rails routes
 
 Prefix Verb   URI Pattern          Controller#Action
  todos GET    /todos(.:format)     todos#index
@@ -85,8 +85,8 @@ Prefix Verb   URI Pattern          Controller#Action
 
 This is all we need to create, read, update, or delete todos. Let’s give them a try! Let’s start up our server:
 
-```
-# rails server
+```sh
+$ rails server
 ```
 
 Now go to  `http://localhost:3000/todos` in your browser. You should see JSON data returned (the way it’s formatted may vary depending on your browser):
@@ -175,8 +175,8 @@ Rerun the request. You’ll get a `422 Unprocessable Entity` response, with the 
 # Default Values
 Instead of making the `complete` field required, let’s set it to default to `false` if it isn’t specified. We can create another migration to update our database scheme to set the default value:
 
-```
-# rails generate migration set_default_todo_completed_to_false
+```sh
+$ rails generate migration set_default_todo_completed_to_false
 ```
 
 This creates a new empty migration file. Add this line to it:
@@ -219,7 +219,7 @@ Open the `Gemfile` at the root of your project. This file specifies dependencies
 In your Gemfile,  find this line:
 
 ```ruby
-# gem 'rack-cors'
+$ gem 'rack-cors'
 ```
 
 A gem is a Ruby package.  The `#` is Ruby's comment marker, so this dependency is commented out. Uncomment this line by removing `#`.
@@ -284,42 +284,42 @@ Now we're ready to deploy to production. [Heroku](https://www.heroku.com/) is a 
 
 Heroku allows you to deploy code using Git pushes. If you haven't already been committing your code to a Git repo, go ahead and do so:
 
-```
-# git init
-# git add .
-# git commit -m "Create app"
+```sh
+$ git init
+$ git add .
+$ git commit -m "Create app"
 ```
 
 [Sign up for a Heroku account](https://signup.heroku.com/?c=70130000001x9jFAAQ), [install the Heroku command line tools](https://devcenter.heroku.com/articles/heroku-cli#download-and-install), and log in:
 
-```
-# heroku login
+```sh
+$ heroku login
 ```
 
 Now it's time to create our Heroku app.
 
-```
-# heroku create
+```sh
+$ heroku create
 ```
 
 This will create an app on Heroku, assign it a (very) random name, and connect your local Rails app to it. To deploy:
 
-```
-# git push heroku master
+```sh
+$ git push heroku master
 ```
 
 This is just a normal git command; you're pushing your local master branch to the git remote named `heroku` that the `heroku create` command set up for you.
 
 You'll see a bunch of output, and if it succeeds, you'll see the following at the end:
 
-```
+```sh
 https://your-app-name.herokuapp.com/ deployed to Heroku
 ```
 
 Heroku doesn't automatically migrate your database, so we need to run the migrate command as we've been doing locally. To run a command in a Heroku app, prefix it with `heroku run`:
 
-```
-# heroku run rails db:migrate
+```sh
+$ heroku run rails db:migrate
 ```
 
 Now your app should be ready to access. Run your POST command against your production app URL and you should see a successful response!
