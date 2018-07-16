@@ -2,7 +2,7 @@
 title: Rails API Authorization
 ---
 
-In my previous post we [set up a simple Rails web service](http://codingitwrong.com/2018/07/02/rails-the-easiest-way-to-create-a-web-service.html) for todos. But to use it in production, we need some kind of authentication, or else anyone could mess up our data. Luckily, the [Doorkeeper](https://github.com/doorkeeper-gem/doorkeeper) gem makes it easy to add authentication to Rails apps using the OAuth 2 standard.
+In my previous post we [set up a simple Rails web service](http://codingitwrong.com/2018/07/02/rails-the-easiest-way-to-create-a-web-service.html) for todos. But to use it in production, we need some kind of authentication, or else anyone could mess up our data. Luckily, the [Doorkeeper](https://github.com/doorkeeper-gem/doorkeeper) gem makes it easy to add authentication to Rails APIs using the OAuth 2 standard.
 
 # Setting Up Password Authentication
 First we need to create a `User` model:
