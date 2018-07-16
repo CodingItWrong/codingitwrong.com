@@ -326,4 +326,4 @@ Now your app should be ready to access. Run your POST command against your produ
 
 # Next Steps
 
-In just a few minutes Rails allowed us to create a fully-functioning web service and deploy it to production. But there's one major thing missing: we need to secure it so not just anyone can change data. In my next post we’ll add password authentication to our API.
+In just a few minutes Rails allowed us to create a fully-functioning web service and deploy it to production. But there's one major thing missing: we need to secure it so not just anyone can change data. In my next post we’ll [add password authentication to our API](http://codingitwrong.com/2018/07/15/rails-apis-authorization.html).
