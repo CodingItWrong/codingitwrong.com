@@ -79,7 +79,7 @@ What if we could have an effectively "zero-configuration" data layer like that i
 ```js
 new Vuex.Store({
   modules: {
-    widgets: resourceStore('widgets', httpClient),
+    widgets: resourceModule('widgets', httpClient),
   },
 });
 ```
@@ -109,7 +109,7 @@ As I mentioned above, setting up a Vuex module to correspond to a resource is as
 ```js
 new Vuex.Store({
   modules: {
-    widgets: resourceStore('widgets', httpClient),
+    widgets: resourceModule({ name: 'widgets', httpClient }),
   },
 });
 ```
@@ -121,7 +121,7 @@ Since it's likely you'll be setting up modules for several resources, there's a 
 ```js
 new Vuex.Store({
   modules: {
-    ...mapResourceStores({
+    ...mapResourceModules({
       names: ['widgets', 'categories'],
       httpClient,
     }),
@@ -171,16 +171,16 @@ GET https://api.example.com/widgets
 How about when you want to display a single record? Well, if you know the record is already in the Vuex store, you can simply use the find getter:
 
 ```js
-const widget = this.$store.getters['widgets/find'](42);
+const widget = this.$store.getters['widgets/byId']({ id: 42 });
 console.log(widget);
 ```
 
-If the record is not yet in the store, you can request a single record with the `loadById` action, then use the `find` getter:
+If the record is not yet in the store, you can request a single record with the `loadById` action, then use the `byId` getter:
 
 ```js
 this.$store.dispatch('widgets/loadById', { id: 42 })
   .then(() => {
-    const widget = this.$store.getters['widgets/find'](42);
+    const widget = this.$store.getters['widgets/byId']({ id: 42 });
     console.log(widget);
   });
 ```
@@ -193,13 +193,13 @@ GET https://api.example.com/widgets/42
 
 Even if you do already have a local copy of the record, you can still dispatch the `loadById` action to ensure you have the latest data. Jake Archibald calls this [the “cache then network” strategy][cache-then-network]. Incidentally, this is the default approach Ember Data takes for most of its requests: if you have cached data then go ahead and display it, but always make a request to the server to get fresher data, and update it reactively when it is available.
 
-If you want to send filter parameters in the server request, use the `loadBy` action. Provide it an object with properties and values; they will be set as filter properties on the request.
+If you want to send filter parameters in the server request, use the `loadWhere` action. Provide it an object with properties and values; they will be set as filter properties on the request.
 
 ```js
 const filter = {
   category: 'whizbang',
 };
-this.$store.dispatch('widgets/loadBy', { filter });
+this.$store.dispatch('widgets/loadWhere', { filter });
 ```
 
 This will make a request with the filter options passed in the standard JSON API way:
@@ -214,9 +214,9 @@ To retrieve the matches results, pass the same filter criteria to the where gett
 const filter = {
   category: 'whizbang',
 };
-this.$store.dispatch('widgets/loadBy', { filter });
+this.$store.dispatch('widgets/loadWhere', { filter });
   .then(() => {
-    const widgets = this.$store.getters['widgets/where'](filter);
+    const widgets = this.$store.getters['widgets/where']({ filter });
     console.log(widgets);
   });
 ```
@@ -314,7 +314,7 @@ this.$store.dispatch('widgets/create', recordData);
 The `update` action takes a complete JSON API record; just update the attributes and relationships in place.
 
 ```js
-const widget = this.$store.getters['widgets/find'](42);
+const widget = this.$store.getters['widgets/byId']({ id: 42 });
 widget.attributes.title = 'Updated Title';
 this.$store.dispatch('widgets/update', widget);
 ```
