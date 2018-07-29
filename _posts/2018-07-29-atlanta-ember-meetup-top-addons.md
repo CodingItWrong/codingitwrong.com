@@ -4,6 +4,7 @@ title: "Atlanta Ember Meetup: Top Addons"
 
 At the Atlanta Ember meetup in July we talked about the addons we tend to use most commonly. There wasn't always a consensus, but here are the most common addons or categories. I've linked to their pages on [Ember Observer](https://www.emberobserver.com/) since it's the most comprehensive place to get information on Ember addons.
 
+- [ember-decorators](https://emberobserver.com/addons/ember-decorators) to use ES6 class syntax for your classes.
 - [ember-simple-auth](https://www.emberobserver.com/addons/ember-simple-auth) was used universally for authentication.
 - [ember-cli-mirage](https://www.emberobserver.com/addons/ember-cli-mirage) was popular for creating a fake API Server for testing.
 - [ember-cli-deploy](https://www.emberobserver.com/addons/ember-cli-deploy) was used by everyone except for one person using the [Heroku ember buildpack](https://github.com/heroku/heroku-buildpack-emberjs); Heroku has a different deployment mechanism, so it doesn't go through ember-cli-deploy.
