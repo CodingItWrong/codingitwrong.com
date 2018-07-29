@@ -9,6 +9,7 @@ Thanks to Chris, Geoff, Greg, and Patrick for contributing suggestions!
 - [ember-decorators](https://emberobserver.com/addons/ember-decorators) to use ES6 class syntax for your classes.
 - [ember-simple-auth](https://www.emberobserver.com/addons/ember-simple-auth) was used universally for authentication.
 - [ember-cli-mirage](https://www.emberobserver.com/addons/ember-cli-mirage) was popular for creating a fake API Server for testing.
+- [ember-sinon](https://emberobserver.com/addons/ember-sinon) for test doubles, whether with QUnit or Mocha.
 - [ember-cli-deploy](https://www.emberobserver.com/addons/ember-cli-deploy) was used by everyone except for one person using the [Heroku ember buildpack](https://github.com/heroku/heroku-buildpack-emberjs); Heroku has a different deployment mechanism, so it doesn't go through ember-cli-deploy.
 - [ember-moment](https://www.emberobserver.com/addons/ember-moment) was popular for date handling, as moment.js itself is across all of JavaScript.
 - [ember-changeset](https://www.emberobserver.com/addons/ember-changeset) allows form data entry without immediately updating models in the store.
