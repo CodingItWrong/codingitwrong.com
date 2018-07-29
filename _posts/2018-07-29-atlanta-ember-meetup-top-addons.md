@@ -8,7 +8,7 @@ At the Atlanta Ember meetup in July we talked about the addons we tend to use mo
 - [ember-simple-auth](https://www.emberobserver.com/addons/ember-simple-auth) was used universally for authentication.
 - [ember-cli-mirage](https://www.emberobserver.com/addons/ember-cli-mirage) was popular for creating a fake API Server for testing.
 - [ember-cli-deploy](https://www.emberobserver.com/addons/ember-cli-deploy) was used by everyone except for one person using the [Heroku ember buildpack](https://github.com/heroku/heroku-buildpack-emberjs); Heroku has a different deployment mechanism, so it doesn't go through ember-cli-deploy.
-- [ember-moment](https://www.emberobserver.com/addons/ember-moment) was popular for date handling, as it is across all of JavaScript.
+- [ember-moment](https://www.emberobserver.com/addons/ember-moment) was popular for date handling, as moment.js itself is across all of JavaScript.
 - [ember-changeset](https://www.emberobserver.com/addons/ember-changeset) allows form data entry without immediately updating models in the store.
 - Support for a stylesheet language, like [ember-cli-sass](https://www.emberobserver.com/addons/ember-cli-sass) or [ember-cli-less](https://www.emberobserver.com/addons/ember-cli-less)
 - A CSS framework addon: [ember-bootstrap](https://www.emberobserver.com/addons/ember-bootstrap) and [ember-paper](https://www.emberobserver.com/addons/ember-paper) were popular.
