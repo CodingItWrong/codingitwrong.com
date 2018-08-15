@@ -275,7 +275,7 @@ Hello, child!
 
 Now, say we want to display the contents of a post. Usually users would expect this to be on a separate route. Ember includes routing out of the box.
 
-Earlier we added `&lt;MyComponent /&gt;` to our `application/template.hbs` file. This file is the template that is always displayed no matter which route your app is on. To get `MyComponent` to display only on the "home page", generate an index route:
+Earlier we added `<MyComponent />` to our `application/template.hbs` file. This file is the template that is always displayed no matter which route your app is on. To get `MyComponent` to display only on the "home page", generate an index route:
 
 ```sh
 $ ember generate route index
