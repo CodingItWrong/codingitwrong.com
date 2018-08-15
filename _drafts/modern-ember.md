@@ -102,7 +102,7 @@ Next, let's pass in an argument to our component. Arguments are passed with an `
 In the component itself, we access that argument in the template using the `@` sigil as well. This makes it clear at the point of use that the data comes in as an argument:
 
 ```hbs
-{% raw %}Hello, {{@name}}!{% endraw %}
+Hello, {{@name}}!
 ```
 
 We can also store properties on the component itself and display them. (Properties are equivalent to state in React or data in Vue. They're called "properties" because they're just normal JavaScript object properties!) Open `src/ui/components/my-component/component.js`. Notice that the generated component uses an older `Component.extend({})` API. Let's use the newer ES6 class syntax instead. Replace the contents of the file with the following:
@@ -127,9 +127,9 @@ export default class MyComponent extends Component {
 And reference it in the template by name, with no `@`:
 
 ```hbs
-{% raw %}Hello, {{@name}}!
+Hello, {{@name}}!
 
-{{count}}{% endraw %}
+{{count}}
 ```
 
 ## Actions
@@ -157,11 +157,11 @@ Note that we use a `this.set()` method to update the value of the property. A li
 To call this action, add a button to the template:
 
 ```diff
-{% raw %} Hello, {{@name}}!
+ Hello, {{@name}}!
 
  {{count}}
 +
-+<button onclick={{action increment}}>Increment</button>{% endraw %}
++<button onclick={{action increment}}>Increment</button>
 ```
 
 ## Computed Properties
@@ -188,8 +188,8 @@ Components can also have computed properties. These are cached, and will be auto
 ```
 
 ```diff
-{% raw %}-Hello, {{@name}}!
-+Hello, {{uppercaseName}}!{% endraw %}
+-Hello, {{@name}}!
++Hello, {{uppercaseName}}!
 ```
 
 ## Nested Components
@@ -213,11 +213,11 @@ Hello, child!
 Then add it to the parent hbs file:
 
 ```diff
-{% raw %} {{count}}
+ {{count}}
 
  <button onclick={{action increment}}>Increment</button>
 +
-+<ChildComponent />{% endraw %}
++<ChildComponent />
 ```
 
 If you remove `ChildComponent` from this file and try adding it to `application/template.hbs` instead, you'll see an error in the browser console "Cannot find component child-component".
@@ -260,13 +260,13 @@ Next, initialize a `records` property and populate it in `didInsertElement()` - 
 Display it in the template:
 
 ```hbs
-{% raw %}Hello, child!
+Hello, child!
 
 {{#each records as |record|}}
   <p>
     {{record.title}}
   </p>
-{{/each}}{% endraw %}
+{{/each}}
 ```
 
 `#each` is a helper that loops through an array, and provides a variable to the nested markup.
@@ -296,9 +296,9 @@ Copy the component invocation from `application/template.hbs` and paste it into 
 Now replace the contents of `application.hbs` with the following:
 
 ```hbs
-{% raw %}<h1>My App!</h1>
+<h1>My App!</h1>
 
-{{outlet}}{% endraw %}
+{{outlet}}
 ```
 
 `outlet` is a helper that will output the contents of the specific route you're on. Reload your app and you should see the "My App" header as well as your parent and child component content.
@@ -363,7 +363,7 @@ export default class PostRoute extends Route {
 In the route's template, let's render a `PostDetail` component:
 
 ```hbs
-{% raw %}<PostDetail @post={{model}} />{% endraw %}
+<PostDetail @post={{model}} />
 ```
 
 Earlier we used quotes around an argument when passing a string. Now that we are passing an object instead, we need to use double-curlies.
@@ -377,22 +377,22 @@ $ ember generate component post-detail
 Then fill in its template:
 
 ```hbs
-{% raw %}<h3>{{@post.title}}</h3>
+<h3>{{@post.title}}</h3>
 
-<p>{{@post.body}}</p>{% endraw %}
+<p>{{@post.body}}</p>
 ```
 
 Now, back in our child component template, we can link our post titles to that route:
 
 ```diff
-{% raw %}{{#each records as |record|}}
+{{#each records as |record|}}
    <p>
 -    {{record.title}}
 +    {{#link-to "post" record.id}}
 +      {{record.title}}
 +    {{/link-to}}
   </p>
-{{/each}}{% endraw %}
+{{/each}}
 ```
 
 `link-to` is a helper that sets up a link to another route. We can pass a separate argument to it and it's filled in as the dynamic segment.
