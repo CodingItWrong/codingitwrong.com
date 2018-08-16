@@ -9,7 +9,7 @@ Ember has been undergoing a lot of development in the past year to add features 
 - Easy ES6 imports of NPM modules
 - Decorators for clear and expressive component implementations
 
-As part of the [#EmberJS2018](https://www.emberjs.com/blog/2018/05/02/ember-2018-roadmap-call-for-posts.html) initiative, I wanted to share a look at what it's like to develop in Ember with all of these in place.
+As part of the [#EmberJS2018](https://www.emberjs.com/blog/2018/05/02/ember-2018-roadmap-call-for-posts.html) initiative, I wanted to share a look at what it's like to develop in Ember with all of these in place. You can also [download the completed project](https://github.com/CodingItWrong/modern-ember) if you like.
 
 (You might also be interested in TypeScript; if so, check out [ember-cli-typescript](https://github.com/typed-ember/ember-cli-typescript) to see how easy it is to use with Ember.)
 
