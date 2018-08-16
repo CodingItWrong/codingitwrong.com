@@ -11,6 +11,8 @@ Ember has been undergoing a lot of development in the past year to add features 
 
 Let's take a look at what it's like to develop in Ember with all of these in place.
 
+(You might also be interested in TypeScript; if so, check out [ember-cli-typescript](https://github.com/typed-ember/ember-cli-typescript) to see how easy it is to use with Ember.)
+
 ## Project Setup
 
 To get the latest features, install `ember-cli` off the master branch:
