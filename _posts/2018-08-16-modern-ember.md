@@ -270,7 +270,7 @@ Display it in the template:
 ```hbs
 {% raw %}Hello, child!
 
-{{#each records as |record|}}
+{{#each this.records as |record|}}
   <p>
     {{record.title}}
   </p>
@@ -393,7 +393,7 @@ Then fill in its template:
 Now, back in our child component template, we can link our post titles to that route:
 
 ```diff
-{% raw %}{{#each records as |record|}}
+{% raw %}{{#each this.records as |record|}}
    <p>
 -    {{record.title}}
 +    {{#link-to "post" record.id}}
