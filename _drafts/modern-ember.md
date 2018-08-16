@@ -73,7 +73,7 @@ This will create a `src/ui/components/my-component` folder with the following fi
 
 - `component-test.js` - an automated test
 - `component.js` - the logic for the component
-- `template.bhs` - the markup for the component
+- `template.hbs` - the markup for the component
 
 Let's add a message to the component markup. Replace the contents with:
 
