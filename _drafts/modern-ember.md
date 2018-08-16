@@ -15,7 +15,7 @@ Let's take a look at what it's like to develop in Ember with all of these in pla
 
 ## Project Setup
 
-To get the latest features, install `ember-cli` off the master branch:
+To get the latest Ember features, install `ember-cli` off the master branch:
 
 ```
 $ npm install -g https://github.com/ember-cli/ember-cli.git
@@ -63,7 +63,7 @@ $ ember install ember-auto-import
 
 ## Components
 
-Let's start by creating a simple component. `ember-cli` will allow us to easily generate the files:
+With Ember you can jump right in to creating components without needing to look into other concepts yet. `ember-cli` will allow us to easily generate a component's files:
 
 ```sh
 $ ember generate component my-component
@@ -403,7 +403,7 @@ The links should be clickable and take you to the route with the right ID, and o
 
 ## Loading Data in a Service
 
-To actually share the data between components, we can put it in a service. The service can be injected into any component that needs it.
+To share data between components, we can put it in a service. The service can be injected into any component that needs it.
 
 Generate a new service:
 
