@@ -167,7 +167,7 @@ To call this action, add a button to the template:
 
  {{this.count}}
 +
-+<button onclick={{action increment}}>Increment</button>{% endraw %}
++<button onclick={{action this.increment}}>Increment</button>{% endraw %}
 ```
 
 ## Computed Properties
@@ -223,7 +223,7 @@ Then add it to the parent hbs file:
 ```diff
 {% raw %} {{this.count}}
 
- <button onclick={{action increment}}>Increment</button>
+ <button onclick={{action this.increment}}>Increment</button>
 +
 +<ChildComponent />{% endraw %}
 ```
