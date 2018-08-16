@@ -75,6 +75,8 @@ This will create a `src/ui/components/my-component` folder with the following fi
 - `component.js` - the logic for the component
 - `template.hbs` - the markup for the component
 
+Having separate files has the advantage that each file is a normal .js or .hbs file, but since they are in the same folder it's easy to switch between them.
+
 Let's add a message to the component markup. Replace the contents with:
 
 ```hbs
