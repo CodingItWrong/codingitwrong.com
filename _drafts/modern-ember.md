@@ -78,13 +78,13 @@ This will create a `src/ui/components/my-component` folder with the following fi
 Let's add a message to the component markup. Replace the contents with:
 
 ```hbs
-Hello!
+{% raw %}Hello!{% endraw %}
 ```
 
 Now we want to display the component. The main template file that renders the app is `src/routes/application/template.hbs`. We can just add the component in there. Delete the contents of the file and replace it with:
 
 ```hbs
-<MyComponent />
+{% raw %}<MyComponent />{% endraw %}
 ```
 
 Note that components don't need to be imported anywhere; they're automatically available in templates.
@@ -96,7 +96,7 @@ We can see this working by starting up the server with `ember serve`. Go to `htt
 Next, let's pass in an argument to our component. Arguments are passed with an `@` prefix:
 
 ```hbs
-<MyComponent @name="world" />
+{% raw %}<MyComponent @name="world" />{% endraw %}
 ```
 
 (Arguments are equivalent to props in React or Vue.)
@@ -104,7 +104,7 @@ Next, let's pass in an argument to our component. Arguments are passed with an `
 In the component itself, we access that argument in the template using the `@` sigil as well. This makes it clear at the point of use that the data comes in as an argument:
 
 ```hbs
-Hello, {{@name}}!
+{% raw %}Hello, {{@name}}!{% endraw %}
 ```
 
 We can also store properties on the component itself and display them. (Properties are equivalent to state in React or data in Vue. They're called "properties" because they're just normal JavaScript object properties!) Open `src/ui/components/my-component/component.js`. Notice that the generated component uses an older `Component.extend({})` API. Let's use the newer ES6 class syntax instead. Replace the contents of the file with the following:
@@ -129,9 +129,9 @@ export default class MyComponent extends Component {
 And reference it in the template by name, with no `@`:
 
 ```hbs
-Hello, {{@name}}!
+{% raw %}Hello, {{@name}}!
 
-{{count}}
+{{count}}{% endraw %}
 ```
 
 ## Actions
@@ -159,11 +159,11 @@ Note that we use a `this.set()` method to update the value of the property. A li
 To call this action, add a button to the template:
 
 ```diff
- Hello, {{@name}}!
+{% raw %} Hello, {{@name}}!
 
  {{count}}
 +
-+<button onclick={{action increment}}>Increment</button>
++<button onclick={{action increment}}>Increment</button>{% endraw %}
 ```
 
 ## Computed Properties
@@ -190,8 +190,8 @@ Components can also have computed properties. These are cached, and will be auto
 ```
 
 ```diff
--Hello, {{@name}}!
-+Hello, {{uppercaseName}}!
+{% raw %}-Hello, {{@name}}!
++Hello, {{uppercaseName}}!{% endraw %}
 ```
 
 ## Nested Components
@@ -209,17 +209,17 @@ Note that under the `src/ui/components/my-component` folder, it creates a subfol
 Add some content to its hbs file:
 
 ```hbs
-Hello, child!
+{% raw %}Hello, child!{% endraw %}
 ```
 
 Then add it to the parent hbs file:
 
 ```diff
- {{count}}
+{% raw %} {{count}}
 
  <button onclick={{action increment}}>Increment</button>
 +
-+<ChildComponent />
++<ChildComponent />{% endraw %}
 ```
 
 If you remove `ChildComponent` from this file and try adding it to `application/template.hbs` instead, you'll see an error in the browser console "Cannot find component child-component".
@@ -262,13 +262,13 @@ Next, initialize a `records` property and populate it in `didInsertElement()` - 
 Display it in the template:
 
 ```hbs
-Hello, child!
+{% raw %}Hello, child!
 
 {{#each records as |record|}}
   <p>
     {{record.title}}
   </p>
-{{/each}}
+{{/each}}{% endraw %}
 ```
 
 `#each` is a helper that loops through an array, and provides a variable to the nested markup.
@@ -292,15 +292,15 @@ This should create a folder `src/ui/routes/index` containing:
 Copy the component invocation from `application/template.hbs` and paste it into `index/template.hbs`:
 
 ```hbs
-<MyComponent @name="world"/>
+{% raw %}<MyComponent @name="world"/>{% endraw %}
 ```
 
 Now replace the contents of `application.hbs` with the following:
 
 ```hbs
-<h1>My App!</h1>
+{% raw %}<h1>My App!</h1>
 
-{{outlet}}
+{{outlet}}{% endraw %}
 ```
 
 `outlet` is a helper that will output the contents of the specific route you're on. Reload your app and you should see the "My App" header as well as your parent and child component content.
@@ -365,7 +365,7 @@ export default class PostRoute extends Route {
 In the route's template, let's render a `PostDetail` component:
 
 ```hbs
-<PostDetail @post={{model}} />
+{% raw %}<PostDetail @post={{model}} />{% endraw %}
 ```
 
 Earlier we used quotes around an argument when passing a string. Now that we are passing an object instead, we need to use double-curlies.
@@ -379,22 +379,22 @@ $ ember generate component post-detail
 Then fill in its template:
 
 ```hbs
-<h3>{{@post.title}}</h3>
+{% raw %}<h3>{{@post.title}}</h3>
 
-<p>{{@post.body}}</p>
+<p>{{@post.body}}</p>{% endraw %}
 ```
 
 Now, back in our child component template, we can link our post titles to that route:
 
 ```diff
-{{#each records as |record|}}
+{% raw %}{{#each records as |record|}}
    <p>
 -    {{record.title}}
 +    {{#link-to "post" record.id}}
 +      {{record.title}}
 +    {{/link-to}}
-  </p>
-{{/each}}
+   </p>
+ {{/each}}{% endraw %}
 ```
 
 `link-to` is a helper that sets up a link to another route. We can pass a separate argument to it and it's filled in as the dynamic segment.
