@@ -27,17 +27,14 @@ Create a new Ember app with flags for "module unification", an updated directory
 $ MODULE_UNIFICATION=true EMBER_CLI_MODULE_UNIFICATION=true ember new modern-ember
 ```
 
-We also need to configure an environment variable in `.ember-cli` to ensure that when we run `ember` commands they are configured for module unification too:
+Next let's set up some NPM scripts to pass the necessary environment variable to different commands:
 
 ```diff
-     Setting `disableAnalytics` to true will prevent any data from being sent.
-   */
--  "disableAnalytics": false
-+  "disableAnalytics": false,
-+  "environment": {
-+    "EMBER_CLI_MODULE_UNIFICATION": true
-+  }
-}
+     "lint:js": "eslint .",
+-    "start": "ember serve",
++    "generate": "EMBER_CLI_MODULE_UNIFICATION=true ember generate",
++    "start": "EMBER_CLI_MODULE_UNIFICATION=true ember serve",
+     "test": "ember test"
 ```
 
 In `package.json`, update the version of `ember-source` to the latest canary version as of this writing:
@@ -66,7 +63,7 @@ $ ember install ember-auto-import
 With Ember you can jump right in to creating components without needing to look into other concepts yet. `ember-cli` will allow us to easily generate a component's files:
 
 ```sh
-$ ember generate component my-component
+$ yarn generate component my-component
 ```
 
 This will create a `src/ui/components/my-component` folder with the following files:
@@ -207,7 +204,7 @@ Components can be nested inside one another in the filesystem, at which point th
 To see this in action, generate a child component:
 
 ```sh
-$ ember generate component my-component/child-component
+$ yarn generate component my-component/child-component
 ```
 
 Note that under the `src/ui/components/my-component` folder, it creates a subfolder `child-component`, containing the same test, component, and template files.
@@ -286,7 +283,7 @@ Now, say we want to display the contents of a post. Usually users would expect t
 Earlier we added `<MyComponent />` to our `application/template.hbs` file. This file is the template that is always displayed no matter which route your app is on. To get `MyComponent` to display only on the "home page", generate an index route:
 
 ```sh
-$ ember generate route index
+$ yarn generate route index
 ```
 
 This should create a folder `src/ui/routes/index` containing:
@@ -316,7 +313,7 @@ Now replace the contents of `application.hbs` with the following:
 To create a route for child pages, use Ember CLI again:
 
 ```sh
-$ ember generate route post
+$ yarn generate route post
 ```
 
 The `generate route` command modified the file `src/router.js`. Check the changes:
@@ -379,7 +376,7 @@ Earlier we used quotes around an argument when passing a string. Now that we are
 Generate this `PostDetail` component:
 
 ```sh
-$ ember generate component post-detail
+$ yarn generate component post-detail
 ```
 
 Then fill in its template:
@@ -414,7 +411,7 @@ To share data between components, we can put it in a service. The service can be
 Generate a new service:
 
 ```sh
-$ ember generate service posts
+$ yarn generate service posts
 ```
 
 This creates a `src/services` folder with the following files:
