@@ -93,7 +93,7 @@ Note that components don't need to be imported anywhere; they're automatically a
 
 We can see this working by starting up the server with `ember serve`. Go to `http://localhost:4200` and you should see the "Hello!" message. You can leave the server running.
 
-## Arguments and Props
+## Arguments and Properties
 
 Next, let's pass in an argument to our component. Arguments are passed with an `@` prefix:
 
@@ -130,12 +130,12 @@ export default class MyComponent extends Component {
 
 Ember uses plain object properties for data storage, rather than a framework-specific mechanism like a `state` or `data` object.
 
-And reference it in the template by name, with no `@`:
+And reference it in the template with a `this.` prefix, just as you would in JavaScript:
 
 ```hbs
 {% raw %}Hello, {{@name}}!
 
-{{count}}{% endraw %}
+{{this.count}}{% endraw %}
 ```
 
 ## Actions
@@ -165,7 +165,7 @@ To call this action, add a button to the template:
 ```diff
 {% raw %} Hello, {{@name}}!
 
- {{count}}
+ {{this.count}}
 +
 +<button onclick={{action increment}}>Increment</button>{% endraw %}
 ```
@@ -197,7 +197,7 @@ Note that computed properties use standard ES5 getters, along with a decorator t
 
 ```diff
 {% raw %}-Hello, {{@name}}!
-+Hello, {{uppercaseName}}!{% endraw %}
++Hello, {{this.uppercaseName}}!{% endraw %}
 ```
 
 ## Nested Components
@@ -221,7 +221,7 @@ Add some content to its hbs file:
 Then add it to the parent hbs file:
 
 ```diff
-{% raw %} {{count}}
+{% raw %} {{this.count}}
 
  <button onclick={{action increment}}>Increment</button>
 +
