@@ -128,6 +128,8 @@ export default class MyComponent extends Component {
 }
 ```
 
+Ember uses plain object properties for data storage, rather than a framework-specific mechanism like a `state` or `data` object.
+
 And reference it in the template by name, with no `@`:
 
 ```hbs
@@ -190,6 +192,8 @@ Components can also have computed properties. These are cached, and will be auto
    @action
    increment() {
 ```
+
+Note that computed properties use standard ES5 getters, along with a decorator to provide extra information to Ember on dependent data.
 
 ```diff
 {% raw %}-Hello, {{@name}}!
@@ -463,7 +467,7 @@ Now update the `ChildComponent` to inject the `Posts` service to get the data fr
  }
 ```
 
-Note that just by using the `@service` decorator on a property, Ember knows to inject the Posts service when it creates the component.
+Note that just by using the `@service` decorator on a property, Ember knows to inject the Posts service when it creates the component. There's no multi-step provider component process. Dependency injection also makes testing easier, because in a component test you can inject a fake service instead of the real one.
 
 ## Service State
 
