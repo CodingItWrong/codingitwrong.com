@@ -1,5 +1,6 @@
 ---
 title: The Two Paths of Rails Architecture
+tags: [rails]
 ---
 
 {% include posts/toc_rails_architecture.md %}

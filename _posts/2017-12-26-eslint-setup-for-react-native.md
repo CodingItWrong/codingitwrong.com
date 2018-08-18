@@ -1,5 +1,6 @@
 ---
 title: Setting Up ESLint in a React Native Project
+tags: [javascript]
 ---
 
 *Updated 2018-06-16: updated my rule overrides, improved config file formatting, and added a link to my eslint preset.*

@@ -1,5 +1,6 @@
 ---
 title: Modern Ember
+tags: [ember]
 ---
 
 Ember has been undergoing a lot of development in the past year to add features to make it easier to understand and allow it to take advantage of emerging JS ecosystem conventions. This includes:

@@ -1,5 +1,6 @@
 ---
 title: Reusable UIViews and UIViewControllers
+tags: [ios]
 ---
 
 The simplest way to use `UIView`s and `UIViewController`s is to drop them directly into storyboard files in Xcode's Interface Builder. But in more advanced apps you'll want to be able to reuse `UIView`s and `UIViewController`s. How can you do that while still taking advantage of Interface Builder for layout?
@@ -86,7 +87,7 @@ extension UIView {
     func pinToSuperviewEdges() {
         if let parentView = self.superview {
             self.translatesAutoresizingMaskIntoConstraints = false
-            
+
             NSLayoutConstraint.activate([
                 self.topAnchor.constraint(equalTo: parentView.topAnchor),
                 self.bottomAnchor.constraint(equalTo: parentView.bottomAnchor),

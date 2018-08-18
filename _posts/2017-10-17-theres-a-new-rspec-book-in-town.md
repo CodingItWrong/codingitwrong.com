@@ -1,5 +1,6 @@
 ---
 title: "There's a New RSpec Book In Town"
+tags: [ruby, testing]
 ---
 
 Working on Big Nerd Ranch's web team is where I first really got a feel for testing, and as I looked for a book that summarized their approach, _The RSpec Book_ was the best I found. It described a behavior-driven, outside-in, mock-based approach to testing. It's the book I recommended to anyone learning testing, regardless of their language.

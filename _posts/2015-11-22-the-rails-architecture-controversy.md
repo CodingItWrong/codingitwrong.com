@@ -1,5 +1,6 @@
 ---
 title: The Rails Architecture Controversy
+tags: [rails]
 ---
 
 {% include posts/toc_rails_architecture.md %}

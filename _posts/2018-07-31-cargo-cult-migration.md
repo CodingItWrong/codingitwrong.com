@@ -1,5 +1,6 @@
 ---
 title: "Cargo Cult Migration, or Why I’m Okay Being Left Behind"
+tags: [ember, ruby, rails, testing, oo]
 ---
 
 For a while I’ve been discouraged about the move in the software development industry away from some things I value:

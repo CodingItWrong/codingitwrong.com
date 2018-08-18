@@ -1,5 +1,6 @@
 ---
 title: Refactoring Patterns for Secondary Effects
+tags: [rails]
 ---
 
 {% include posts/toc_rails_architecture.md %}

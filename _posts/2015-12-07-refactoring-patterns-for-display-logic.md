@@ -1,5 +1,6 @@
 ---
 title: Refactoring Patterns for Display Logic
+tags: [rails]
 ---
 
 {% include posts/toc_rails_architecture.md %}

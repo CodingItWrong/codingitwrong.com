@@ -1,5 +1,6 @@
 ---
 title: Wait, my time with Rails just started!
+tags: [rails]
 ---
 
 I really enjoyed reading Piotr Solnica's post ["My time with Rails is up"](http://solnic.eu/2016/05/22/my-time-with-rails-is-up.html)—it helped crystallize a lot of thoughts I've been having about frameworks and design.

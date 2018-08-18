@@ -1,5 +1,6 @@
 ---
 title: How to Seed and Migrate Rails Data
+tags: [rails]
 ---
 
 There are a few things about setting up initial data and migrating existing data that aren't obvious in Rails. Here are some best practices I've picked up from a few different coworkers and articles.

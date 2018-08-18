@@ -1,5 +1,6 @@
 ---
 title: The Message-Based Approach to OOD
+tags: [oo]
 ---
 
 In software development I usually hear the phrase "calling a method", but have you ever heard the phrase "sending a message" instead? I first ran across it in Objective-C: you *send a message* to an object, and if it has a corresponding method, that method is executed. For a long time I couldn't tell the difference between thinking in terms of method calls vs. thinking in terms of messages, but as I've gotten into Extreme Programming circles, the difference has started to click. The message-based approach is about a particular view of object design.

@@ -1,5 +1,6 @@
 ---
 title: "vuex-jsonapi: A Zero-Config Data Layer"
+tags: [apis]
 ---
 
 Do you love writing similar web service client code over and over again for all the endpoints you access? Yeah me either. How many times have you written a Vuex module or a Redux reducer that looks more or less like this? (Warning: long code sample because that is the point!)

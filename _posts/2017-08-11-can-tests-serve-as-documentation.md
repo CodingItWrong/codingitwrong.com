@@ -1,5 +1,6 @@
 ---
 title: Can Tests Serve As Documentation?
+tags: [testing]
 ---
 
 When the benefits of testing are described, one of the points usually made is that the tests serve as documentation of the system. The idea as I understood it was that your tests could be readable enough that a new developer could literally read through them to learn the capabilities of the system. This idea was initially appealing to me, but I never saw any examples of developers doing this, and I heard more and more about making your _production_ code readable enough that it was its _own_ documentation.

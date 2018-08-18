@@ -1,5 +1,6 @@
 ---
 title: Single Responsibility Principle and the History of Rails Architecture
+tags: [rails, oo]
 ---
 
 {% include posts/toc_rails_architecture.md %}

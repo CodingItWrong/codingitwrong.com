@@ -1,5 +1,6 @@
 ---
 title: Rails API Authorization
+tags: [rails, apis]
 ---
 
 In my previous post we [set up a simple Rails web service](http://codingitwrong.com/2018/07/02/rails-the-easiest-way-to-create-a-web-service.html) for todos. But to use it in production, we need some kind of authentication, or else anyone could mess up our data. Luckily, the [Doorkeeper](https://github.com/doorkeeper-gem/doorkeeper) gem makes it easy to add authentication to Rails APIs using the OAuth 2 standard.
@@ -106,7 +107,7 @@ Here's what's going on here:
 - What object does the `doorkeeper_authorize!`  method exist on? The controller itself. Notice that we didn't need to inherit from a Doorkeeper controller or add a Doorkeeper mixin. Ruby is such a flexible language that allows methods to be added to existing classes. Doorkeeper actually adds the `doorkeeper_authorize!` method onto a Rails parent controller class, so it's automatically available on all your controllers.
 - The named parameter `except:` allows us to tell `before_action` which methods we *don’t* want it to apply to. In our case, we want to allow anonymous requests to the `index` and `show` actions, but protect all the others.
 
-Let's try out this protection. Send a `GET` request to `http://localhost:3000/todos` and it should succeed. 
+Let's try out this protection. Send a `GET` request to `http://localhost:3000/todos` and it should succeed.
 
 Now, send a `POST` request to it and it should fail with a `401 Unauthorized` response. Add the following header, including the `access_token` you received earlier in place of this access token:
 

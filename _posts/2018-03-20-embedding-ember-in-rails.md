@@ -1,5 +1,6 @@
 ---
 title: "Embedding Ember in Rails"
+tags: [ember, rails, apis]
 ---
 
 Webpacker allows you to run an Angular, React, or Vue app within Rails. But what about Ember? Since it's not built with Webpack we don't get integration out of the box. But here's the setup I've come to to run Ember within my Rails app.

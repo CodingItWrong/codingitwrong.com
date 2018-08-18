@@ -1,5 +1,6 @@
 ---
 title: Reading and Writing Dictionaries
+tags: [ios]
 ---
 
 When you need to store a dictionary, there are a few different options for doing so.

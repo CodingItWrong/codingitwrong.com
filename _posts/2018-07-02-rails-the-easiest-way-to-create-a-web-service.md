@@ -1,5 +1,6 @@
 ---
 title: "Rails: The Easiest Way to Create a Web Service"
+tags: [rails, apis]
 ---
 
 Whether you create frontends in JavaScript, Swift, Java, or Kotlin, there's a server-side framework for creating web service APIs in the same programming language you already use. It would seem like it’d be easiest for you to write your web service in the same language you use for your frontend.
@@ -21,7 +22,7 @@ Create a new Rails app with `rails new`. We’ll pass in a few flags to remove f
 $ rails new simple-rails-api --api \
                              --skip-action-cable \
                              --skip-active-storage \
-                             --skip-test 
+                             --skip-test
 $ cd simple-rails-api
 ```
 

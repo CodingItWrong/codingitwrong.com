@@ -1,5 +1,6 @@
 ---
 title: Changing iOS Behavior Between Debug and Release
+tags: [ios]
 ---
 
 Oftentimes you will want your app to behave slightly differently during development and at release. For example, you may want to perform more logging, or use hard-coded or staging environment data. How can you detect whether your app is running in Debug or Release mode?

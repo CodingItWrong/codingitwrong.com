@@ -1,5 +1,6 @@
 ---
 title: "Approaches to Testing: A Survey"
+tags: [testing]
 ---
 
 The last few months have been my first opportunity to do automated testing at my full-time job. As I've been trying to get the hang of it, my biggest question has been how many of each type to test to write: how many unit, integration, and acceptance tests. Turns out Folks Got Opinions™ on this! As I researched, I found at least four different approaches to testing, and they each provide different answers to a number of questions I had:
@@ -94,7 +95,7 @@ This approach started in London's XP Tuesdays meetup in response to what they pe
 
 Resources
 
-- *[Growing Object-Oriented Software, Guided by Tests][GOOS]*, considered by many to be the foundational articulation of Mockist TDD.  
+- *[Growing Object-Oriented Software, Guided by Tests][GOOS]*, considered by many to be the foundational articulation of Mockist TDD.
 - *[The RSpec Book][RB]*, an introduction to BDD, Mockist TDD, and Rails-specific tools for doing it.
 - "[Mocks Aren't Stubs][MAS]" blog post.
 - "[Classicist and Mockist TDD][CAM]" podcast episode.

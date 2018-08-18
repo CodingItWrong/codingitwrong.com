@@ -1,5 +1,6 @@
 ---
 title: Cocoa Touch Tips (Part 1 of Infinity)
+tags: [ios]
 ---
 
 Getting into iOS development, I'm running across all kinds of quirks, workarounds, and best practices. This blog seems like as good a place as any to put them. Here's a big first batch of them.
@@ -56,10 +57,10 @@ CATransaction.begin()
 CATransaction.setCompletionBlock {
     // what to do upon completion
 }
-    
+
 self.tableView.beginUpdates()
 // perform table updates
 self.tableView.endUpdates()
-    
+
 CATransaction.commit()
 ```

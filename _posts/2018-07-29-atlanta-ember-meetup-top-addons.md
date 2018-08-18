@@ -1,5 +1,6 @@
 ---
 title: "Atlanta Ember Meetup: Top Addons"
+tags: [ember]
 ---
 
 At the Atlanta Ember meetup in July we talked about the addons we tend to use most commonly. There wasn't always a consensus, but here are the most common addons or categories. I've linked to their pages on [Ember Observer](https://www.emberobserver.com/) since it's the most comprehensive place to get information on Ember addons.

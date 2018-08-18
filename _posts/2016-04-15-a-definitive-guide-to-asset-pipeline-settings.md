@@ -1,5 +1,6 @@
 ---
 title: A Definitive Guide to Asset Pipeline Settings
+tags: [rails]
 ---
 
 I ran across an issue in production recently where my Rails app assets weren't being served correctly through the Asset Pipeline. It brought back to my attention the fact that I didn't really understand how all of the Asset-Pipeline-related configuration settings work together.

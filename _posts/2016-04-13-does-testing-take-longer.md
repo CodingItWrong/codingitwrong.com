@@ -1,5 +1,6 @@
 ---
 title: Does Testing Take Longer?
+tags: [testing]
 ---
 
 It bothers me any time there are two different views on a topic and I don't know where I stand on it. Lately, I've been thinking about the question of whether writing automated tests makes your development time longer.

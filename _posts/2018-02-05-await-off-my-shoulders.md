@@ -1,5 +1,6 @@
 ---
 title: "Await Off My Shoulders: Enabling Async/Await in Webpack"
+tags: [javascript]
 ---
 
 I had a little trouble setting up `async`/`await` support in Webpack via the Babel Loader, so I wanted to write out what I found in case it helps anyone else.

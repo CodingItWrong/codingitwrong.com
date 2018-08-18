@@ -1,5 +1,6 @@
 ---
 title: Unit Tests Verify Your Understanding
+tags: [testing]
 ---
 
 In [The Deep Synergy Between Testability and Good Design](http://vimeo.com/15007792), Michael Feathers argues that unit tests are a way to understand your code. This got me thinking about something I read in [Growing Object-Oriented Software, Guided By Tests](http://www.informit.com/store/growing-object-oriented-software-guided-by-tests-9780321503626). When I checked, sure enough, it makes a similar point: while acceptance tests verify the _external_ quality of your system (does it function?), unit tests verify the _internal_ quality (including whether developers can understand the code).

@@ -1,5 +1,6 @@
 ---
 title: "Comparing Vue Component Testing Tools"
+tags: [testing]
 ---
 
 When you want to test your Vue components, there are a few different tools we can use:

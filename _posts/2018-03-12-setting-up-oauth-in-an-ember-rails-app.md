@@ -1,5 +1,6 @@
 ---
 title: "Setting Up OAuth in an Ember/Rails App"
+tags: [ember, rails, apis]
 ---
 
 Let’s see how to set up OAuth authentication between an Ember frontend and a Rails API backend. We’ll be using two popular packages to help with this integration: [Ember Simple Auth][ember-simple-auth] on the frontend and [Doorkeeper][doorkeeper] on the backend.

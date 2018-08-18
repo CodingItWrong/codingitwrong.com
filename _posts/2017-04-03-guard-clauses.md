@@ -1,5 +1,6 @@
 ---
 title: Picking a Guard Clause Form
+tags: [ruby, ios]
 ---
 
 Every time I have to write a [guard clause](http://wiki.c2.com/?GuardClause) I find myself thinking a lot about what form to write it in. This might just be obsession with detail, but it's _more_ obsession with detail than I have with other code constructs, so I think there's something to it. The whole point of a guard clause is readability: taking a special case and handling it quickly so you can get to the meat of the method. If we can find ways for guard clauses to more effectively disappear, our code will be better off. Ruby has a wide variety of ways you can write a guard clause, and Swift has one particular unique take. Let's look at some examples.

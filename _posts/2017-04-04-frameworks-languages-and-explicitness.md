@@ -1,5 +1,6 @@
 ---
 title: Frameworks, Languages, and Explicitness
+tags: [rails]
 ---
 
 We often evaluate different web frameworks in terms of how explicit or implicit they are. People who prefer implicitness call explicitness "boilerplate", and people who prefer explicitness call implicitness "magic". Either way, the focus is on evaluating the framework. But I think the programming language has a lot more influence on the explicitness of a framework than we give it credit. Certain kinds of implicitness aren't even possible in some languages. And the trends of a language towards explicitness or implicitness will tend to rub off on the framework.

@@ -1,5 +1,6 @@
 ---
 title: JavaScript Private Fields and Object-Oriented Design
+tags: [javascript, oo]
 ---
 
 [Babel beta 7.0.0-beta.49](https://github.com/babel/babel/releases/tag/v7.0.0-beta.49) has just been released, and with it [support for private fields](https://github.com/babel/babel/pull/7842). If you aren't familiar with private fields/properties, check out [Axel Rauschmayer's overview of the private fields proposal](http://2ality.com/2017/07/class-fields.html).

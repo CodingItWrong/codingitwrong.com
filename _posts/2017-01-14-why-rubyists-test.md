@@ -1,5 +1,6 @@
 ---
 title: Why Rubyists Test
+tags: [ruby testing]
 ---
 
 Ruby is known as a language where tests are expected. Why is that the case? This is a question I decided to ask old-time Rubyists and influential Rubyists, including DHH, Dave Astels, and Avdi Grimm. Here are the answers I got:
