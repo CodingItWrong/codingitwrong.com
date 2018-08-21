@@ -220,7 +220,7 @@ Open the `Gemfile` at the root of your project. This file specifies dependencies
 In your Gemfile,  find this line:
 
 ```ruby
-$ gem 'rack-cors'
+# gem 'rack-cors'
 ```
 
 A gem is a Ruby package.  The `#` is Ruby's comment marker, so this dependency is commented out. Uncomment this line by removing `#`.
