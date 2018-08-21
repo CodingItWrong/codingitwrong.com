@@ -2,14 +2,14 @@
 layout: page
 ---
 
-<ul class="post-list">
+<ul class="list-unstyled">
   {% for post in site.tags[page.tag] %}
-    <li class="h-entry">
+    <li class="h-entry mb-5">
       <span class="post-meta"><time class="dt-published" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time></span>
 
-      <h2>
+      <h3>
         <a class="post-link p-name u-url" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </h2>
+      </h3>
     </li>
   {% endfor %}
 </ul>
