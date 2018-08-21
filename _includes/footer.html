@@ -1,41 +1,32 @@
-<footer class="site-footer">
+<footer class="h-card bg-light py-5 text-muted">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
 
-  <div class="wrapper">
-
-    <h2 class="footer-heading">{{ site.title }}</h2>
-
-    <div class="footer-col-wrapper h-card">
-      <div class="footer-col footer-col-1">
-        <img src="/img/profile.jpg" alt="photo of Josh Justice" class="profile u-photo" />
-        <ul class="contact-list">
-          <li><a href="http://codingitwrong.com" class="p-name u-url">{{ site.owner }}</a></li>
-          <li><a href="mailto:{{ site.email }}" class="u-email">{{ site.email }}</a></li>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-lg-3">
+        <ul class="list-unstyled">
+          <li class="p-name">
+            {%- if site.author -%}
+              {{ site.author | escape }}
+            {%- else -%}
+              {{ site.title | escape }}
+            {%- endif -%}
+            </li>
+            {%- if site.email -%}
+            <li><a class="u-email text-muted" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+            {%- endif -%}
         </ul>
       </div>
 
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          {% if site.github_username %}
-          <li>
-            {% include icon-github.html username=site.github_username %}
-          </li>
-          {% endif %}
-
-          {% if site.twitter_username %}
-          <li>
-            {% include icon-twitter.html username=site.twitter_username %}
-          </li>
-          {% endif %}
-        </ul>
+      <div class="col-sm-6 col-lg-3">
+        {%- include social.html -%}
       </div>
 
-      <div class="footer-col footer-col-3">
-        <p>{{ site.description }}</p>
+      <div class="col-lg-6">
+        <p>{{- site.description | escape -}}</p>
       </div>
     </div>
 
   </div>
 
 </footer>
-
-{% include analytics.html %}
