@@ -38,13 +38,6 @@ Next let's set up some NPM scripts to pass the necessary environment variable to
      "test": "ember test"
 ```
 
-In `package.json`, update the version of `ember-source` to the latest canary version as of this writing:
-
-```diff
--    "ember-source": "https://s3.amazonaws.com/builds.emberjs.com/canary/shas/5431f71df060e7b5c82c05c300f40e9151d135e8.tgz",
-+    "ember-source": "https://s3.amazonaws.com/builds.emberjs.com/canary/shas/49e58e45604bd63ac1001cb491195c032c050053.tgz",
-```
-
 We will also want to add a few addons to give us some cutting-edge features.
 
 `ember-decorators` will allow us to use ES6 components and decorators:
