@@ -18,7 +18,7 @@ As part of the [#EmberJS2018](https://www.emberjs.com/blog/2018/05/02/ember-2018
 
 To get the latest Ember features, install `ember-cli` off the master branch:
 
-```
+```sh
 $ npm install -g https://github.com/ember-cli/ember-cli.git
 ```
 
