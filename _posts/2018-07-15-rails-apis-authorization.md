@@ -61,7 +61,7 @@ In `config/initializers/doorkeeper.rb`, paste the following inside the `Doorkeep
 
   resource_owner_from_credentials do
     User.find_by(email: params[:username])
-        &.authenticate, params[:password])
+       &.authenticate(params[:password]) || nil
   end
 ```
 
@@ -71,6 +71,7 @@ A few notes:
 
 - `params` is an object that acts like a hash or dictionary, allowing looking up values by a key using square brackets.
 - `&.` is Ruby's safe navigation operator, like `?.` in Swift or Kotlin. If the object it's used on is `nil` it will return `nil` instead of attempting to call the method, avoiding a `NoMethodError`.
+- `|| nil` ensures that if `.authenticate` returns `false`, a `nil` will be returned from the method instead. Doorkeeper expects a `nil` if a user is not authenticated.
 
 Start your `rails server`, or if it's already running, restart it. Doorkeeper should be working now. To test this out, in Postman, create a `POST` request to `http://localhost:3000/oauth/token`, with a "Body" type of `form-data` and key-value pairs:
 
