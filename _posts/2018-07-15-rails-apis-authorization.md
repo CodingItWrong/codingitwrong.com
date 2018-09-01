@@ -12,7 +12,7 @@ First we need to create a `User` model:
 $ rails generate model user email:string password_digest:string
 ```
 
-We'll use Rails' built-in `has_secure_password` functionality to store the password securely in the `password_digest` column. Add it to `app/models.user.rb`:
+We'll use Rails' built-in `has_secure_password` functionality to store the password securely in the `password_digest` column. Add it to `app/models/user.rb`:
 
 ```diff
  class User < ApplicationRecord
@@ -20,7 +20,7 @@ We'll use Rails' built-in `has_secure_password` functionality to store the passw
  end
 ```
 
-`has_secure_password` requires the the `bcrypt` gem, so uncomment in your `Gemfile`. Add the Doorkeeper gem while you're at it:
+`has_secure_password` requires the `bcrypt` gem, so uncomment in your `Gemfile`. Add the Doorkeeper gem while you're at it:
 
 ```diff
  # Use ActiveModel has_secure_password
