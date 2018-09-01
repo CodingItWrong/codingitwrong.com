@@ -20,7 +20,7 @@ We'll use Rails' built-in `has_secure_password` functionality to store the passw
  end
 ```
 
-`has_secure_password` requires the `bcrypt` gem, so uncomment in your `Gemfile`. Add the Doorkeeper gem while you're at it:
+`has_secure_password` requires the `bcrypt` gem, so uncomment it in your `Gemfile`. Add the Doorkeeper gem while you're at it:
 
 ```diff
  # Use ActiveModel has_secure_password
