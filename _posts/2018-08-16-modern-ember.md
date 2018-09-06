@@ -3,6 +3,8 @@ title: Modern Ember
 tags: [ember]
 ---
 
+*Updated 2018-09-06: updated to Ember CLI 3.4.1*
+
 Ember has been undergoing a lot of development in the past year to add features to make it easier to understand and allow it to take advantage of emerging JS ecosystem conventions. This includes:
 
 - A filesystem layout more conducive to component-based development
@@ -16,10 +18,17 @@ As part of the [#EmberJS2018](https://www.emberjs.com/blog/2018/05/02/ember-2018
 
 ## Project Setup
 
-To get the latest Ember features, install `ember-cli` off the master branch:
+If you aren't already using Ember, install `ember-cli`:
 
 ```sh
-$ npm install -g https://github.com/ember-cli/ember-cli.git
+$ npm install -g ember-cli
+```
+
+If you are already using Ember, ensure you have at least `ember-cli` version 3.4.1. If not, run the install command above.
+
+```sh
+$ ember --version
+ember-cli: 3.4.1
 ```
 
 Create a new Ember app with flags for "module unification", an updated directory structure:
@@ -27,6 +36,14 @@ Create a new Ember app with flags for "module unification", an updated directory
 ```sh
 $ MODULE_UNIFICATION=true EMBER_CLI_MODULE_UNIFICATION=true ember new modern-ember
 ```
+
+Next, in `package.json`, update the version of `ember-source` to the following canary version:
+
+```
+"ember-source": "https://s3.amazonaws.com/builds.emberjs.com/canary/shas/bc505f596c69d585d3f5b65dc50df6d802460bdb.tgz",
+```
+
+Run `npm install` to install that version of `ember-source`.
 
 Next let's set up some NPM scripts to pass the necessary environment variable to different commands:
 
