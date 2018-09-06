@@ -85,7 +85,7 @@ This will create a `src/ui/components/my-component` folder with the following fi
 
 Having separate files has the advantage that each file is a normal .js or .hbs file, but since they are in the same folder it's easy to switch between them.
 
-Let's add a message to the component markup. Replace the contents with:
+Let's add a message to the component markup. Replace the contents of `template.hbs` with:
 
 ```hbs
 {% raw %}Hello!{% endraw %}
@@ -99,7 +99,7 @@ Now we want to display the component. The main template file that renders the ap
 
 Note that components don't need to be imported anywhere; they're automatically available in templates.
 
-We can see this working by starting up the server with `ember serve`. Go to `http://localhost:4200` and you should see the "Hello!" message. You can leave the server running.
+We can see this working by starting up the server with `yarn start`. Go to `http://localhost:4200` and you should see the "Hello!" message. You can leave the server running.
 
 ## Arguments and Properties
 
@@ -246,7 +246,7 @@ In Ember you can load data the same way you would in any other framework. To see
 $ npm install --save axios
 ```
 
-You will need to restart your `ember serve` to get the package loaded.
+You will need to stop and rerun `yarn start` to get the package loaded.
 
 Update `src/ui/components/my-component/child-component/component.js` to use an ES6 class:
 
@@ -309,7 +309,7 @@ Copy the component invocation from `application/template.hbs` and paste it into 
 {% raw %}<MyComponent @name="world"/>{% endraw %}
 ```
 
-Now replace the contents of `application.hbs` with the following:
+Now replace the contents of `application/template.hbs` with the following:
 
 ```hbs
 {% raw %}<h1>My App!</h1>
