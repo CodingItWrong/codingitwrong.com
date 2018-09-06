@@ -18,7 +18,7 @@ As part of the [#EmberJS2018](https://www.emberjs.com/blog/2018/05/02/ember-2018
 
 ## Project Setup
 
-To get the latest Ember features, install `ember-cli` off the master branch; versions back to `3.4.0-beta.3` are known to work. The command below installs a specific commit that is known to be stable: (Currently all of the below will work on 3.4.1 stable, but module unification is really intended only to work on canary/master)
+To get the latest Ember features, install `ember-cli` off the master branch; versions back to `3.4.0-beta.3` are known to work. The command below installs a specific commit that is known to be stable: (Currently all of the below will work on 3.4.1 stable, but module unification is really intended only to be used canary/master, since it's experimental.)
 
 ```sh
 $ npm install -g ember-cli/ember-cli#8151542fdf7f572b77aee379998919ca249621df
