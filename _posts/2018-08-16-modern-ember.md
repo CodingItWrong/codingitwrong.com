@@ -39,8 +39,9 @@ $ MODULE_UNIFICATION=true EMBER_CLI_MODULE_UNIFICATION=true ember new modern-emb
 
 Next, in `package.json`, update the version of `ember-source` to the following canary version:
 
-```
-"ember-source": "https://s3.amazonaws.com/builds.emberjs.com/canary/shas/bc505f596c69d585d3f5b65dc50df6d802460bdb.tgz",
+```diff
+-"ember-source": "https://s3.amazonaws.com/builds.emberjs.com/canary/shas/5431f71df060e7b5c82c05c300f40e9151d135e8.tgz",
++"ember-source": "https://s3.amazonaws.com/builds.emberjs.com/canary/shas/bc505f596c69d585d3f5b65dc50df6d802460bdb.tgz",
 ```
 
 Run `npm install` to install that version of `ember-source`.
