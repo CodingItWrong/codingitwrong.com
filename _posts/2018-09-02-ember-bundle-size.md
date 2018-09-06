@@ -4,16 +4,18 @@ title: "The Size of Ember"
 
 There's sometimes a perception that Ember is huge and bloated. Is that correct? In Tom and Yehuda's 2018 EmberConf keynote they indicated that Ember can be slimmed down to 120 KB. But when running my Ember apps it seemed larger to me. I wanted to see for myself.
 
-![](/img/posts/ember-bundle-size/ember-120kb.png)
+![](/img/posts/ember-bundle-size/ember-120kb.jpg)
 
 Let's see how we can measure the size of our Ember app bundle, find out what's contributing to it, and slim it down as much as possible.
 
 ## Measuring Bundle Size
 
-Let's install `ember-cli` from master—we’ll need `3.4.0-beta` or newer for an extra option for slimming Ember down:
+Make sure you have `ember-cli` 3.4.1 or above installed.
 
 ```sh
-$ npm install -g https://github.com/ember-cli/ember-cli.git
+$ npm install -g ember-cli
+$ ember --version
+ember-cli: 3.4.1
 ```
 
 We'll also install a tool called [broccoli-concat-analyser](https://github.com/stefanpenner/broccoli-concat-analyser) to investigate our bundle size. [Broccoli](http://broccolijs.com/) is the build tool Ember uses. [broccoli-concat](https://github.com/broccolijs/broccoli-concat) is a Broccoli plugin that bundles multiple files together. And "analyser" is how British people spell "analyzer" ;-)
@@ -44,13 +46,13 @@ When the build finishes you should see sizes for the different files created. It
 ```
 Built project successfully. Stored in "dist/".
 File sizes:
+ - dist/assets/ember-bundle-size-781ce0d07d2d05e5a86dfb1a7f131f16.js: 4.62 KB (1.33 KB gzipped)
  - dist/assets/ember-bundle-size-d41d8cd98f00b204e9800998ecf8427e.css: 0 B
- - dist/assets/ember-bundle-size-e9e5eefbf060a5c028d536e0f88fa64b.js: 4.62 KB (1.33 KB gzipped)
+ - dist/assets/vendor-a45221a9eeb07b3b5a8039746fd68d27.js: 721.79 KB (189.95 KB gzipped)
  - dist/assets/vendor-d41d8cd98f00b204e9800998ecf8427e.css: 0 B
- - dist/assets/vendor-f1aa6e86bf44cbf85eb695fcd3018bf5.js: 720.72 KB (189.76 KB gzipped)
 ```
 
-`vendor.js` is what we care about here because it’s where the library code lives. It's 720 KB ungzipped (whew!), 189 KB gzipped. Now let's see what's contributing to that size.
+`vendor.js` is what we care about here because it’s where the library code lives. It's 721 KB ungzipped (whew!), 189 KB gzipped. Now let's see what's contributing to that size.
 
 At the root of your project you should see a `concat-stats-for` folder. Run `broccoli-concat-analyser ./concat-stats-for`. When it finishes processing, it should give you a `file:///` URL you can open in your browser.
 
