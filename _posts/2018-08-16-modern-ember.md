@@ -14,23 +14,14 @@ Ember has been undergoing a lot of development in the past year to add features 
 
 As part of the [#EmberJS2018](https://www.emberjs.com/blog/2018/05/02/ember-2018-roadmap-call-for-posts.html) initiative, I wanted to share a look at what it's like to develop in Ember with all of these in place. You can also [download the completed project](https://github.com/CodingItWrong/modern-ember) if you like.
 
-One important qualification: although the "module unification" layout is usable on the stable branch of `ember-cli`, it's behind a feature flag and is still experimental. I would strongly discourage you from using it yet for any substantial Ember project. The other features, though, are fair game!
-
 (You might also be interested in TypeScript; if so, check out [ember-cli-typescript](https://github.com/typed-ember/ember-cli-typescript) to see how easy it is to use with Ember.)
 
 ## Project Setup
 
-If you aren't already using Ember, install `ember-cli`:
+To get the latest Ember features, install `ember-cli` off the master branch; versions back to `3.4.0-beta.3` are known to work. The command below installs a specific commit that is known to be stable: (Currently all of the below will work on 3.4.1 stable, but module unification is really intended only to work on canary/master)
 
 ```sh
-$ npm install -g ember-cli
-```
-
-If you are already using Ember, ensure you have at least `ember-cli` version 3.4.1. If not, run the install command above.
-
-```sh
-$ ember --version
-ember-cli: 3.4.1
+$ npm install -g ember-cli/ember-cli#8151542fdf7f572b77aee379998919ca249621df
 ```
 
 Create a new Ember app with flags for "module unification", an updated directory structure:
@@ -38,15 +29,6 @@ Create a new Ember app with flags for "module unification", an updated directory
 ```sh
 $ MODULE_UNIFICATION=true EMBER_CLI_MODULE_UNIFICATION=true ember new modern-ember
 ```
-
-Next, in `package.json`, update the version of `ember-source` to the following canary version:
-
-```diff
--"ember-source": "https://s3.amazonaws.com/builds.emberjs.com/canary/shas/5431f71df060e7b5c82c05c300f40e9151d135e8.tgz",
-+"ember-source": "https://s3.amazonaws.com/builds.emberjs.com/canary/shas/bc505f596c69d585d3f5b65dc50df6d802460bdb.tgz",
-```
-
-Run `npm install` to install that version of `ember-source`.
 
 Next let's set up some NPM scripts to pass the necessary environment variable to different commands:
 
