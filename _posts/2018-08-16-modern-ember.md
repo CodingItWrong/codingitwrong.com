@@ -3,6 +3,7 @@ title: Modern Ember
 tags: [ember]
 ---
 
+*Updated 2018-09-19: updated to ember-decorators 2.5.0*
 *Updated 2018-09-06: updated to Ember CLI 3.4.1*
 
 Ember has been undergoing a lot of development in the past year to add features to make it easier to understand and allow it to take advantage of emerging JS ecosystem conventions. This includes:
@@ -102,23 +103,14 @@ In the component itself, we access that argument in the template using the `@` s
 {% raw %}Hello, {{@name}}!{% endraw %}
 ```
 
-We can also store properties on the component itself and display them. (Properties are equivalent to state in React or data in Vue. They're called "properties" because they're just normal JavaScript object properties!) Open `src/ui/components/my-component/component.js`. Notice that the generated component uses an older `Component.extend({})` API. Let's use the newer ES6 class syntax instead. Replace the contents of the file with the following:
+We can also store properties on the component itself and display them. (Properties are equivalent to state in React or data in Vue. They're called "properties" because they're just normal JavaScript object properties!) Open `src/ui/components/my-component/component.js` and add a property:
 
-```js
-import Component from '@ember/component';
+```diff
+ import Component from '@ember/component';
 
-export default class MyComponent extends Component {
-}
-```
-
-Now add a property:
-
-```js
-import Component from '@ember/component';
-
-export default class MyComponent extends Component {
-  count = 0;
-}
+ export default class MyComponentComponent extends Component {
++  count = 0;
+ }
 ```
 
 Ember uses plain object properties for data storage, rather than a framework-specific mechanism like a `state` or `data` object.
@@ -233,16 +225,7 @@ $ npm install --save axios
 
 You will need to stop and rerun `yarn start` to get the package loaded.
 
-Update `src/ui/components/my-component/child-component/component.js` to use an ES6 class:
-
-```js
-import Component from '@ember/component';
-
-export default class ChildComponent extends Component {
-}
-```
-
-Next, initialize a `records` property and populate it in `didInsertElement()` - this is a lifecycle hook that runs when the component is added to the DOM. We'll use [JSONPlaceholder](https://jsonplaceholder.typicode.com/) for some convenient JSON data:
+Next, in `src/ui/components/my-component/child-component/component.js`, initialize a `records` property and populate it in `didInsertElement()` - this is a lifecycle hook that runs when the component is added to the DOM. We'll use [JSONPlaceholder](https://jsonplaceholder.typicode.com/) for some convenient JSON data:
 
 ```diff
  import Component from '@ember/component';
@@ -328,16 +311,7 @@ Router.map(function() {
 });
 ```
 
-You can't access the `id` variable from just anywhere; the place that has access to it is a route class, `route.js`. Open it and replace its contents with an ES6 class:
-
-```js
-import Route from '@ember/routing/route';
-
-export default class PostRoute extends Route {
-}
-```
-
-A route's dynamic segments are passed to a method called `model()` if one is defined. Add it:
+You can't access the `id` variable from just anywhere; the place that has access to it is a route class, `route.js`. Open it. A route's dynamic segments are passed to a method called `model()` if one is defined. Add it:
 
 ```diff
  export default class PostRoute extends Route {
@@ -415,15 +389,6 @@ This creates a `src/services` folder with the following files:
 - `posts-test.js` - a test for the service
 - `posts.js` - the service class
 
-Then replace the contents of the generated file with an ES6 class:
-
-```js
-import Service from '@ember/service';
-
-export default class Posts extends Service {
-}
-```
-
 Add a `getAll()` method to the service that implements loading the data:
 
 ```diff
@@ -498,7 +463,7 @@ Now that the posts are cached, we can easily add a method to retrieve a single p
 
 Note that we call `getAll()` instead of accessing `this.posts` directly. This way, even if `getAll()` hasn't been called before, we'll be sure to retrieve them.
 
-Inject the service into the posts route and call it in the `model()` method to return the data:
+Inject the service into the post route and call it in the `model()` method to return the data:
 
 ```diff
  import Route from '@ember/routing/route';
