@@ -2,6 +2,15 @@
 title: Talks
 ---
 
+## Series
+
+<div class="row">
+  {% include video-thumbnail.html name="React Native TDD" url="https://www.youtube.com/playlist?list=PLXXnezSEtvNPZroRdvjhEVzOhURl572Lf" image="react-native-tdd.jpg" %}
+  {% include video-thumbnail.html name="Easy Backend APIs with Rails" url="https://thefrontier.bignerdranch.com/skill-packs/easy-backend-api-with-rails" image="rails-apis.jpg" %}
+</div>
+
+## Standalone
+
 <div class="row">
   {% include video-thumbnail.html name="A Minimum Viable Docker Server" url="https://youtu.be/u3yfekH1PWo" image="docker-yall.jpg" %}
   {% include video-thumbnail.html name="Extracting a React Component" url="https://youtu.be/Sth0bGfFOMw" image="react-component.jpg" %}
