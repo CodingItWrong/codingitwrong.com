@@ -134,6 +134,7 @@ Now you've got a working, authenticated Rails API. You barely had to write any c
 
 If this series has gotten you interested in how productive you can be with a Rails API, here are some next steps you can learn:
 
+- [Easy Backend APIs with Rails](https://thefrontier.bignerdranch.com/skill-packs/easy-backend-api-with-rails) - a 7-part screencast series I created walking you through setting up your Rails API more thoroughly. Sign up to get 14 days free access.
 - Rails features for [validations](http://guides.rubyonrails.org/active_record_validations.html) and [associations between models](http://guides.rubyonrails.org/association_basics.html).
 - More nuanced authorization rules with [the Pundit gem](https://github.com/varvet/pundit).
 - Testing Rails APIs with [rspec-rails](https://github.com/rspec/rspec-rails).
