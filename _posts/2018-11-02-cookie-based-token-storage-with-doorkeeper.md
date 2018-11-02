@@ -4,7 +4,7 @@ title: Cookie-Based Token Storage with Doorkeeper
 
 When a frontend webapp authenticates against an API, where should the access token be stored?
 
-When these access tokens are for a third-party service, the most secure solution is to store the third-party access token on the server, and control access to it with an application-specific access token. But this just moves the problem back a level. What do we do about our *application-specific* access tokens?
+When we're talking about API keys for a third-party service, the most secure solution is to store the API keys on the server, and control access to them with an access token for your application that is user-specific. But this just moves the problem back a level. What do we do about our *application-specific* access tokens?
 
 It's common practice to store it in browser local storage. But this is generally considered insecure because of the risk of Cross-Site Scripting (XSS) attacks. If a malicious third party can get JavaScript executed on your domain, it can steal the access tokens. Instead, it’s generally recommended to store access tokens in `HttpOnly` cookies that aren’t accessible via JavaScript. While it’s true that these cookies are potentially vulnerable to Cross-Site Request Forgery (CSRF) attacks, the risk of that can be mitigated. See Auth0's blog post ["Where to Store Tokens"](https://auth0.com/docs/security/store-tokens) for more information.
 
