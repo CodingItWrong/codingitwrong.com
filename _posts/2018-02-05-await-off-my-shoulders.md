@@ -45,7 +45,7 @@ And the following simple `async`/`await` code:
 
 ```js
 async function fetchPost() {
-  const response = await fetch('https://jsonplaceholder.typicode.com/posts/1')
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
   return response.json();
 }
 
