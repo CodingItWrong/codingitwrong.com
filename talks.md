@@ -13,7 +13,7 @@ title: Talks
 
 <div class="row">
   {% include video-thumbnail.html name="Test-Driven Development in React with Cypress" url="https://vimeo.com/298277470" image="tdd-react.jpg" %}
-  {% include video-thumbnail.html name="Test-Driven Development in Vue with Cypress" url="https://www.vuemastery.com/conferences/connect-tech-2018/" image="tdd-vue.jpg" %}
+  {% include video-thumbnail.html name="Test-Driven Development in Vue with Cypress" url="https://www.vuemastery.com/conferences/connect-tech-2018/Test-Driven-Development-in-Vue-with-Cypress/" image="tdd-vue.jpg" %}
   {% include video-thumbnail.html name="A Minimum Viable Docker Server" url="https://youtu.be/u3yfekH1PWo" image="docker-yall.jpg" %}
   {% include video-thumbnail.html name="Extracting a React Component" url="https://youtu.be/Sth0bGfFOMw" image="react-component.jpg" %}
   {% include video-thumbnail.html name="How I Learned to Stop Worrying and Love Development" url="https://youtu.be/CxO8VCdkrpU" image="worry.jpg" %}
