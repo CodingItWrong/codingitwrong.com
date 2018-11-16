@@ -2,7 +2,7 @@
 title: How XP Made Me a Better Person
 ---
 
-> If the “method” label is to be attached to XP/agile, it should be in terms of a method for producing better developers rather than a method for producing better software. Better software comes from, and only from, *better people.*
+> “If the “method” label is to be attached to XP/agile, it should be in terms of a method for producing better developers rather than a method for producing better software. Better software comes from, and only from, *better people.”*
 
 David West wrote the above in [_Object Thinking_][object-thinking] (emphasis mine). From the context, it seems that when he uses the phrase "better people" he means it simply as a synonym for "better developers." But it seems like it would also be a great phrase to capture something Kent Beck emphasized in [_Extreme Programming Explained_][xp-explained]:
 
