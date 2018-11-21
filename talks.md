@@ -5,7 +5,8 @@ title: Talks
 ## Series
 
 <div class="row">
-  {% include video-thumbnail.html name="React Native TDD" url="https://www.youtube.com/playlist?list=PLXXnezSEtvNPZroRdvjhEVzOhURl572Lf" image="react-native-tdd.jpg" %}
+  {% include video-thumbnail.html name="Test-Driven Development in React" url="https://www.youtube.com/playlist?list=PLXXnezSEtvNMlfJFd1Z2wilxymcOaVl9Q" image="react-tdd-series.jpg" %}
+  {% include video-thumbnail.html name="Test-Driven Development in React Native" url="https://www.youtube.com/playlist?list=PLXXnezSEtvNPZroRdvjhEVzOhURl572Lf" image="react-native-tdd.jpg" %}
   {% include video-thumbnail.html name="Easy Backend APIs with Rails" url="https://thefrontier.bignerdranch.com/skill-packs/easy-backend-api-with-rails" image="rails-apis.jpg" %}
 </div>
 
