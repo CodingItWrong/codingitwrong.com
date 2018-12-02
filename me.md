@@ -21,7 +21,7 @@ I've been writing software full-time for eleven years, working in technologies r
 
 ## Open-Source
 
-You can see a number of open-source libraries I've created at [my personal GitHub account](https://github.com/needbee?tab=repositories) and at [the team account for NPM Digital](https://github.com/npmweb).
+You can see a number of open-source libraries I've created at [my personal GitHub account](https://github.com/needbee?tab=repositories).
 
 ## Projects
 
@@ -68,6 +68,6 @@ An open-source system for registering people for volunteering opportunities.
 
 ## Personal Life
 
-I live in Atlanta, GA with my wife Jen, 2-year-old daughter Emily, and newborn Katherine.
+I live in Atlanta, GA with my wife Jen, 4-year-old daughter Emily, and 2-year-old daughter Katherine.
 
 My biggest hobby is video gaming. You can often find me [chasing Sephiroth](https://itunes.apple.com/us/app/final-fantasy-vii/id1021566244?mt=8), [wrecking bandits](http://borderlandsthegame.com/), [obeying Peter Dinklage](https://www.destinythegame.com/), and using [the Black Speech](https://www.shadowofmordor.com) or [my fus-ro-dah](http://www.elderscrolls.com/skyrim/).
