@@ -2,6 +2,8 @@
 title: Why You Should Sometimes Test "Implementation Details"
 ---
 
+*Update: removed a reference to Kent C. Dodds not addressing Redux connected components.*
+
 "Don't test implementation details" is a phrase that seemed straightforward to me at first, but is seeming less and less clear to me over time.
 
 It seems to me that some kinds of implementation details should not be tested. But other things that seem like implementation details, many of us agree you should test.
@@ -85,7 +87,7 @@ These aren’t arguments to not end-to-end test *at all*: you still want to have
 
 We’ve assessed whether or not to test implementation details at different levels of UI test. How does this question apply to testing the integration between components and state stores?
 
-This isn’t a topic Kent C. Dodds touches upon in much detail because he’s stated he doesn’t use Redux very frequently. But Jack Franklin and Edd Yerburgh have recommendations in the React and Vue ecosystems, respectively. Both recommend avoiding testing against your real state store, but they have two different recommendations for how to test, based on differences in how Redux and Vuex connect to components.
+Jack Franklin and Edd Yerburgh have recommendations in the React and Vue ecosystems, respectively. Both recommend avoiding testing against your real state store, but they have two different recommendations for how to test, based on differences in how Redux and Vuex connect to components.
 
 Redux connects to components by wrapping your component in a higher-order “connected component” that passes down props for state and actions. Because of this, Jack recommends avoiding testing your connected component (since all it does is wire things up to Redux) and just testing your non-connected component directly. In the test you can pass it the data it needs via React's usual props mechanism, and you can pass it mock functions in place of actions. Of course, you still need to ensure that the component is correctly connected to Redux; your end-to-end tests can cover this need.
 
