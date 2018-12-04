@@ -2,7 +2,7 @@
 title: Why You Should Sometimes Test "Implementation Details"
 ---
 
-*Update: removed a reference to Kent C. Dodds not addressing Redux connected components.*
+*Update: added a summary of Kent C. Dodds' views on testing Redux connected components.*
 
 "Don't test implementation details" is a phrase that seemed straightforward to me at first, but is seeming less and less clear to me over time.
 
@@ -83,23 +83,23 @@ While it's important to have *some* end-to-end tests, there are a number of prob
 
 These aren’t arguments to not end-to-end test *at all*: you still want to have some such tests to give you confidence that your entire application works together. But they *are* arguments for having fewer end-to-end tests and more integration or unit tests, in which case, as I argued above, you are in one sense testing implementation details of your application.
 
-## 4. Do test implementation details of component/state-store integration
+## 4. Maybe test implementation details of component/state-store integration
 
 We’ve assessed whether or not to test implementation details at different levels of UI test. How does this question apply to testing the integration between components and state stores?
 
-Jack Franklin and Edd Yerburgh have recommendations in the React and Vue ecosystems, respectively. Both recommend avoiding testing against your real state store, but they have two different recommendations for how to test, based on differences in how Redux and Vuex connect to components.
+In a [video about how to test Redux][kent-redux], Kent C. Dodds recommends considering the Redux store an implementation detail, and testing it by testing the components that are connected to it. In this approach, you would instantiate the real store and connect it to your component in the test. This approach is analogous to testing an entire component tree in integration.
 
-Redux connects to components by wrapping your component in a higher-order “connected component” that passes down props for state and actions. Because of this, Jack recommends avoiding testing your connected component (since all it does is wire things up to Redux) and just testing your non-connected component directly. In the test you can pass it the data it needs via React's usual props mechanism, and you can pass it mock functions in place of actions. Of course, you still need to ensure that the component is correctly connected to Redux; your end-to-end tests can cover this need.
+As you might imagine, there is an analogous approach for testing connected components in isolation as well. Jack Franklin and Edd Yerburgh have recommendations in the React and Vue ecosystems, respectively. Both recommend avoiding testing against your real state store, but they have two different recommendations for how to test, based on differences in how Redux and Vuex connect to components.
+
+Redux connects to components by wrapping your component in a higher-order “connected component” that passes down props for state and actions. Because of this, Jack recommends avoiding testing your connected component (since all it does is wire things up to Redux) and just testing your non-connected component directly. In the test you can pass it the data it needs via React's usual props mechanism, and you can pass it mock functions in place of actions. Of course, you still need to ensure that the component is correctly connected to Redux; this need can be covered either by your end-to-end tests or a few integration tests in the style Kent recommends.
 
 In Vuex, Vue.js’s state store, state isn’t connected to components via props; instead, the Vuex store is injected into your component, and you access data and dispatch actions through it. So, unlike with Redux, there is no “plain” component that has no knowledge of the state store. Because of this, Edd generally recommends creating a real Vuex store instance in tests—but not your application’s fully-configured Vuex store. Instead, it’s a test-specific store with only the hard-codex data and mock actions your test case needs. The strategy is the same as with Redux; the only difference is that the mechanism here requires a real Vuex store instance.
 
-Whether you’re working in Redux or Vuex, both of these these authors’ recommendations involve testing implementation details: we are testing which actions are dispatched, and the end user doesn’t care about that! The alternative, though, would be hooking up each of your component tests to the full global state store of your application, which might not be feasible or performant. At that point you’re edging toward doing a full end-to-end test of your application, and we’ve already seen the downsides of relying entirely on end-to-end tests.
-
-Thinking in terms of Edd’s “contract testing” concept, data provided by a store is one kind of input, and a dispatched action is one kind of output from a component. Testing these shouldn’t be that foreign a concept, because if you were writing a test for a component library and a component could take a passed-in function prop, you would need to test that that function is called at the appropriate time. This approach simply applies the same thinking to dispatched actions.
+Whether you’re working in Redux or Vuex, both of these these authors’ recommendations involve testing implementation details: we are testing which actions are dispatched, and the end user doesn’t care about that! But thinking in terms of Edd’s “contract testing” concept, data provided by a store is one kind of input, and a dispatched action is one kind of output from a component. Testing these shouldn’t be that foreign a concept, because if you were writing a test for a component library and a component could take a passed-in function prop, you would need to test that that function is called at the appropriate time. This approach simply applies the same thinking to dispatched actions.
 
 ## 5. Maybe test implementation details of the state store
 
-If we aren’t testing our state store integrated with our components, how *should* we test it?
+If we decide *not* to test our state store in integration with our components, how *should* we test it?
 
 If you've used Redux you’ve probably tested individual reducer and action creator functions directly, ensuring each one produces the correct output based on the input passed to it. This is one way to test Vuex store functions as well. But this is the extreme of testing implementation details: it confirms the behavior of each function, but it doesn’t ensure that they work together correctly. The rest of your app doesn’t care about how these different functions within your state store interact; all it cares about is that when the right commands are executed, the right data comes out the other end. And tests of individual functions don't ensure this. For example, maybe an asynchronous action creator dispatches actions that don’t make the changes to the state that you expect. Or maybe a Vuex mutation function sets a value in one state field, but then a getter function expects to read it from a _different_ state field.
 
@@ -126,7 +126,7 @@ This review of different parts of frontend apps should make it clear that “don
 * Don't test implementation details of individual components (methods and state)
 * Maybe test the implementation details of a component tree, maybe not (shallow rendering vs. mounted)
 * Do test the implementation details of your app as a whole (component tests instead of just end-to-end tests)
-* Do test the implementation details of how components communicate with a state store (instead of connecting to the real store)
+* Maybe test the implementation details of how components communicate with a state store (instead of connecting to the real store)
 * Maybe test the implementation details of a Vuex store/module, maybe not (individual functions vs. the full store)
 
 So it seems like if someone asks you "should you test the implementation?" it's difficult to answer until you ask "which implementation do you mean?"
@@ -142,3 +142,4 @@ I'm always interested in learning from different approaches to testing, so I'd l
 [jbrains-post]: https://blog.thecodewhisperer.com/permalink/integrated-tests-are-a-scam
 [kent-integration]: https://blog.kentcdodds.com/write-tests-not-too-many-mostly-integration-5e8c7fff591c
 [kent-implementation]: https://blog.kentcdodds.com/testing-implementation-details-ccb8d269586
+[kent-redux]: https://www.youtube.com/watch?v=h7ukDItVN_o
