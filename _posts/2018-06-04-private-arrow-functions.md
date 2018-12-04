@@ -109,7 +109,7 @@ This is a pretty typical method to retrieve data from an API. It goes through a 
 3. If the request succeeds, it converts the response data to a format appropriate for the rest of the app; in this case, instantiating a `Comment`.
 4. If the request fails, it checks the response status and throws an appropriate application-specific Error.
 
-This method isn't too bad to take in, but it's procedural. All the details of what to do are included. It's hard to quickly see what it's doing at a glace. MORE DETAIL ON THIS
+This method isn't too bad to take in, but it's procedural. All the details of what to do are included. It's hard to quickly see what it's doing at a glace.
 
 Let's try going through a few different refactorings and see if they improve things.
 
@@ -276,7 +276,7 @@ Now, let's evaluate this solution. It's more lines of code, and for an example t
 
 One of the biggest benefits of our final solution is that it splits up the code into several levels of abstraction:
 
-- At a high level, the `BlogPost.postComment()` method simply delegates to the `SendPostComment` method object; there's a nontrivial operation here that is nonessential for understanding the `BlogPost` class.
+- At a high level, the `BlogPost.postComment()` method simply delegates to the `CommentSender` method object; there's a nontrivial operation here that is nonessential for understanding the `BlogPost` class.
 - At a medium level, `CommentSender.send()` shows us the steps at a glance: we compute a URL and a request payload, we post it, and we handle either the response or the error.
 - At a low level, the private field arrow function for each of these operations shows the details of how each step works.
 
