@@ -13,6 +13,7 @@ title: Talks
 ## Standalone
 
 <div class="row">
+  {% include video-thumbnail.html name="Frontend Testing Like a Rubyist" url="https://devchat.tv/ruby-rogues/rr-391-frontend-testing-like-a-rubyist-with-josh-justice/" image="ruby-rogues.jpg" %}
   {% include video-thumbnail.html name="Test-Driven Development in React with Cypress" url="https://vimeo.com/298277470" image="tdd-react.jpg" %}
   {% include video-thumbnail.html name="Test-Driven Development in Vue with Cypress" url="https://www.vuemastery.com/conferences/connect-tech-2018/Test-Driven-Development-in-Vue-with-Cypress/" image="tdd-vue.jpg" %}
   {% include video-thumbnail.html name="A Minimum Viable Docker Server" url="https://youtu.be/u3yfekH1PWo" image="docker-yall.jpg" %}
