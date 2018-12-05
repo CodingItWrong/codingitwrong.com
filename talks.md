@@ -5,20 +5,64 @@ title: Talks
 ## Series
 
 <div class="row">
-  {% include video-thumbnail.html name="Test-Driven Development in React" url="https://www.youtube.com/playlist?list=PLXXnezSEtvNMlfJFd1Z2wilxymcOaVl9Q" image="react-tdd-series.jpg" %}
-  {% include video-thumbnail.html name="Test-Driven Development in React Native" url="https://www.youtube.com/playlist?list=PLXXnezSEtvNPZroRdvjhEVzOhURl572Lf" image="react-native-tdd.jpg" %}
-  {% include video-thumbnail.html name="Easy Backend APIs with Rails" url="https://thefrontier.bignerdranch.com/skill-packs/easy-backend-api-with-rails" image="rails-apis.jpg" %}
+  {% include video-thumbnail.html
+    name="Test-Driven Development in React"
+    image="react-tdd-series.jpg"
+    url="https://www.youtube.com/playlist?list=PLXXnezSEtvNMlfJFd1Z2wilxymcOaVl9Q"
+  %}
+  {% include video-thumbnail.html
+    name="Test-Driven Development in React Native"
+    image="react-native-tdd.jpg"
+    url="https://www.youtube.com/playlist?list=PLXXnezSEtvNPZroRdvjhEVzOhURl572Lf"
+  %}
+  {% include video-thumbnail.html
+    name="Easy Backend APIs with Rails"
+    image="rails-apis.jpg"
+    url="https://thefrontier.bignerdranch.com/skill-packs/easy-backend-api-with-rails"
+  %}
 </div>
 
 ## Standalone
 
 <div class="row">
-  {% include video-thumbnail.html name="Frontend Testing Like a Rubyist" url="https://devchat.tv/ruby-rogues/rr-391-frontend-testing-like-a-rubyist-with-josh-justice/" image="ruby-rogues.jpg" %}
-  {% include video-thumbnail.html name="Test-Driven Development in React with Cypress" url="https://vimeo.com/298277470" image="tdd-react.jpg" %}
-  {% include video-thumbnail.html name="Test-Driven Development in Vue with Cypress" url="https://www.vuemastery.com/conferences/connect-tech-2018/Test-Driven-Development-in-Vue-with-Cypress/" image="tdd-vue.jpg" %}
-  {% include video-thumbnail.html name="A Minimum Viable Docker Server" url="https://youtu.be/u3yfekH1PWo" image="docker-yall.jpg" %}
-  {% include video-thumbnail.html name="Extracting a React Component" url="https://youtu.be/Sth0bGfFOMw" image="react-component.jpg" %}
-  {% include video-thumbnail.html name="How I Learned to Stop Worrying and Love Development" url="https://youtu.be/CxO8VCdkrpU" image="worry.jpg" %}
-  {% include video-thumbnail.html name="Offline Data and Sync with Ember-Orbit" url="https://youtu.be/fA3fhFzF3Jc" image="ember-orbit.jpg" %}
-  {% include video-thumbnail.html name="Outside-in Testing in Rails" url="https://youtu.be/fXlLbhuIc34" image="tdd-rails.jpg" %}
+  {% include video-thumbnail.html
+    name="Frontend Testing Like a Rubyist"
+    image="ruby-rogues.jpg"
+    url="https://devchat.tv/ruby-rogues/rr-391-frontend-testing-like-a-rubyist-with-josh-justice/"
+  %}
+  {% include video-thumbnail.html
+    name="Test-Driven Development in React with Cypress"
+    image="tdd-react.jpg"
+    url="https://vimeo.com/298277470"
+  %}
+  {% include video-thumbnail.html
+    name="Test-Driven Development in Vue with Cypress"
+    image="tdd-vue.jpg"
+    url="https://www.vuemastery.com/conferences/connect-tech-2018/Test-Driven-Development-in-Vue-with-Cypress/"
+  %}
+  {% include video-thumbnail.html
+    name="A Minimum Viable Docker Server"
+    image="docker-yall.jpg"
+    url="https://youtu.be/u3yfekH1PWo"
+  %}
+  {% include video-thumbnail.html
+    name="Extracting a React Component"
+    image="react-component.jpg"
+    url="https://youtu.be/Sth0bGfFOMw"
+  %}
+  {% include video-thumbnail.html
+    name="How I Learned to Stop Worrying and Love Development"
+    image="worry.jpg"
+    url="https://youtu.be/CxO8VCdkrpU"
+  %}
+  {% include video-thumbnail.html
+    name="Offline Data and Sync with Ember-Orbit"
+    image="ember-orbit.jpg"
+    url="https://youtu.be/fA3fhFzF3Jc"
+  %}
+  {% include video-thumbnail.html
+    name="Outside-in Testing in Rails"
+    image="tdd-rails.jpg"
+    url="https://youtu.be/fXlLbhuIc34"
+  %}
 </div>
