@@ -3,7 +3,7 @@ title: Modern Ember
 tags: [ember]
 ---
 
-*Updated 2018-12-13: updated to use ember-cli-create, and reference Octane.*
+*Updated 2018-12-23: updated to use ember-cli-create, and reference Octane.*
 
 Ember has been undergoing a lot of development in the past year to add features to make it easier to understand and allow it to take advantage of emerging JS ecosystem conventions. This includes:
 
