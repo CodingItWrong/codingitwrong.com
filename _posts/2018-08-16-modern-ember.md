@@ -3,8 +3,7 @@ title: Modern Ember
 tags: [ember]
 ---
 
-*Updated 2018-09-19: updated to ember-decorators 2.5.0*
-*Updated 2018-09-06: updated to Ember CLI 3.4.1*
+*Updated 2018-12-13: updated to use ember-cli-create, and reference Octane.*
 
 Ember has been undergoing a lot of development in the past year to add features to make it easier to understand and allow it to take advantage of emerging JS ecosystem conventions. This includes:
 
@@ -13,43 +12,49 @@ Ember has been undergoing a lot of development in the past year to add features 
 - Easy ES6 imports of NPM modules
 - Decorators for clear and expressive component implementations
 
-As part of the [#EmberJS2018](https://www.emberjs.com/blog/2018/05/02/ember-2018-roadmap-call-for-posts.html) initiative, I wanted to share a look at what it's like to develop in Ember with all of these in place. You can also [download the completed project](https://github.com/CodingItWrong/modern-ember) if you like.
+Some of these features are already available in the stable release of Ember, and others will land as part of the upcoming [Ember Octane](https://github.com/emberjs/rfcs/blob/26c4d83fb66568e1087a05818fb39a307ebf8da8/text/0000-roadmap-2018.md#ember-octane) edition, planned to be released at EmberConf 2019. But we can get a preview of these features today! As part of the [#EmberJS2018](https://www.emberjs.com/blog/2018/05/02/ember-2018-roadmap-call-for-posts.html) initiative, I wanted to share a look at what it's like to develop in Ember with all of these modern features in place. You can also [download the completed project](https://github.com/CodingItWrong/modern-ember) if you like.
 
 (You might also be interested in TypeScript; if so, check out [ember-cli-typescript](https://github.com/typed-ember/ember-cli-typescript) to see how easy it is to use with Ember.)
 
 ## Project Setup
 
-To get the latest Ember features, install `ember-cli` off the master branch; versions back to `3.4.0-beta.3` are known to work. The command below installs a specific commit that is known to be stable: (Currently all of the below will work on 3.4.1 stable, but module unification is really intended only to be used canary/master, since it's experimental.)
+To get the latest Ember features, we can use `ember-cli-create` to create an "Octane" project, using features from the upcoming edition of Ember. First, install `ember-cli-create` version 0.0.4 or above:
 
 ```sh
-$ npm install -g ember-cli/ember-cli#8151542fdf7f572b77aee379998919ca249621df
+$ npm install -g ember-cli-create
 ```
 
-Create a new Ember app with flags for "module unification", an updated directory structure:
+Then, create a new project:
 
 ```sh
-$ MODULE_UNIFICATION=true EMBER_CLI_MODULE_UNIFICATION=true ember new modern-ember
+$ ember-cli-create modern-ember
 ```
 
-Next let's set up some NPM scripts to pass the necessary environment variable to different commands:
-
-```diff
-     "lint:js": "eslint .",
--    "start": "ember serve",
-+    "generate": "EMBER_CLI_MODULE_UNIFICATION=true ember generate",
-+    "start": "EMBER_CLI_MODULE_UNIFICATION=true ember serve",
-     "test": "ember test"
-```
-
-We will also want to add a few addons to give us some cutting-edge features.
-
-`ember-decorators` will allow us to use ES6 components and decorators:
+You'll be presented with a menu:
 
 ```sh
-$ ember install ember-decorators
+? What kind of ember project you want to create? (Use arrow keys)
+❯ Beginner
+  -> If you are new to ember, use this!
+  Ember App
+  -> Regular ember app wo/ welcome page
+  Ember Addon
+  -> Regular ember addon
+  Octane
+  -> MU, Decorators, Sparkles, ...
+  Octane + TS
+  -> Fuel up your Octane with Type-Power!
+  Glimmer
+  -> Create a glimmer project
+  Glimmer WebComponent
+  -> Create a web component with glimmer
+  Manual...
+  -> Run this wizard on your own, select your needs
 ```
 
-And `ember-auto-import` will allow us to import NPM packages that aren't Ember addons:
+For our purposes we'll choose `Octane`. Next, accept the default folder name. The installation script will take a few minutes to run.
+
+Finally, we also want to manually add one more addon. `ember-auto-import` will allow us to import NPM packages that aren't Ember addons:
 
 ```sh
 $ ember install ember-auto-import
@@ -60,7 +65,7 @@ $ ember install ember-auto-import
 With Ember you can jump right in to creating components without needing to look into other concepts yet. `ember-cli` will allow us to easily generate a component's files:
 
 ```sh
-$ yarn generate component my-component
+$ ember generate component my-component
 ```
 
 This will create a `src/ui/components/my-component` folder with the following files:
@@ -85,7 +90,7 @@ Now we want to display the component. The main template file that renders the ap
 
 Note that components don't need to be imported anywhere; they're automatically available in templates.
 
-We can see this working by starting up the server with `yarn start`. Go to `http://localhost:4200` and you should see the "Hello!" message. You can leave the server running.
+We can see this working by starting up the server with `ember serve`. Go to `http://localhost:4200` and you should see the "Hello!" message. You can leave the server running.
 
 ## Arguments and Properties
 
@@ -192,7 +197,7 @@ Components can be nested inside one another in the filesystem, at which point th
 To see this in action, generate a child component:
 
 ```sh
-$ yarn generate component my-component/child-component
+$ ember generate component my-component/child-component
 ```
 
 Note that under the `src/ui/components/my-component` folder, it creates a subfolder `child-component`, containing the same test, component, and template files.
@@ -223,7 +228,7 @@ In Ember you can load data the same way you would in any other framework. To see
 $ npm install --save axios
 ```
 
-You will need to stop and rerun `yarn start` to get the package loaded.
+You will need to stop and rerun `ember serve` to get the package loaded.
 
 Next, in `src/ui/components/my-component/child-component/component.js`, initialize a `records` property and populate it in `didInsertElement()` - this is a lifecycle hook that runs when the component is added to the DOM. We'll use [JSONPlaceholder](https://jsonplaceholder.typicode.com/) for some convenient JSON data:
 
@@ -240,6 +245,8 @@ Next, in `src/ui/components/my-component/child-component/component.js`, initiali
 +  }
  }
 ```
+
+Note that we can use `async/await` - it's enabled by default in Ember's Babel config.
 
 Display it in the template:
 
@@ -262,7 +269,7 @@ Now, say we want to display the contents of a post. Usually users would expect t
 Earlier we added `<MyComponent />` to our `application/template.hbs` file. This file is the template that is always displayed no matter which route your app is on. To get `MyComponent` to display only on the "home page", generate an index route:
 
 ```sh
-$ yarn generate route index
+$ ember generate route index
 ```
 
 This should create a folder `src/ui/routes/index` containing:
@@ -289,10 +296,10 @@ Now replace the contents of `application/template.hbs` with the following:
 
 ## Creating Another Route
 
-To create a route for child pages, use Ember CLI again:
+To create a route for child pages, use Ember CLI again. As you can tell, in Ember we use `ember generate` a lot; you can use `ember g` as a shortcut:
 
 ```sh
-$ yarn generate route post
+$ ember g route post
 ```
 
 The `generate route` command modified the file `src/router.js`. Check the changes:
@@ -338,7 +345,7 @@ export default class PostRoute extends Route {
 In the route's template, let's render a `PostDetail` component:
 
 ```hbs
-{% raw %}<PostDetail @post={{model}} />{% endraw %}
+{% raw %}<PostDetail @post={{this.model}} />{% endraw %}
 ```
 
 Earlier we used quotes around an argument when passing a string. Now that we are passing an object instead, we need to use double-curlies.
@@ -346,7 +353,7 @@ Earlier we used quotes around an argument when passing a string. Now that we are
 Generate this `PostDetail` component:
 
 ```sh
-$ yarn generate component post-detail
+$ ember g component post-detail
 ```
 
 Then fill in its template:
@@ -381,7 +388,7 @@ To share data between components, we can put it in a service. The service can be
 Generate a new service:
 
 ```sh
-$ yarn generate service posts
+$ ember g service posts
 ```
 
 This creates a `src/services` folder with the following files:
@@ -402,8 +409,6 @@ Add a `getAll()` method to the service that implements loading the data:
 +  }
 }
 ```
-
-Note that we can use `async/await` - it's enabled by default in Ember's Babel config.
 
 Now update the `ChildComponent` to inject the `Posts` service to get the data from there instead of using Axios directly:
 
