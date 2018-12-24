@@ -12,7 +12,7 @@ Ember has been undergoing a lot of development in the past year to add features 
 - Easy ES6 imports of NPM modules
 - Decorators for clear and expressive component implementations
 
-Some of these features are already available in the stable release of Ember, and others will land as part of the upcoming [Ember Octane](https://github.com/emberjs/rfcs/blob/26c4d83fb66568e1087a05818fb39a307ebf8da8/text/0000-roadmap-2018.md#ember-octane) edition, planned to be released at EmberConf 2019. But we can get a preview of these features today! As part of the [#EmberJS2018](https://www.emberjs.com/blog/2018/05/02/ember-2018-roadmap-call-for-posts.html) initiative, I wanted to share a look at what it's like to develop in Ember with all of these modern features in place. You can also [download the completed project](https://github.com/CodingItWrong/modern-ember) if you like.
+Some of these features are already available in the stable release of Ember, and others will land as part of the upcoming [Ember Octane](https://github.com/emberjs/rfcs/blob/26c4d83fb66568e1087a05818fb39a307ebf8da8/text/0000-roadmap-2018.md#ember-octane) edition. But we can get a preview of these features today! As part of the [#EmberJS2018](https://www.emberjs.com/blog/2018/05/02/ember-2018-roadmap-call-for-posts.html) initiative, I wanted to share a look at what it's like to develop in Ember with all of these modern features in place. You can also [download the completed project](https://github.com/CodingItWrong/modern-ember) if you like.
 
 (You might also be interested in TypeScript; if so, check out [ember-cli-typescript](https://github.com/typed-ember/ember-cli-typescript) to see how easy it is to use with Ember.)
 
@@ -52,7 +52,9 @@ You'll be presented with a menu:
   -> Run this wizard on your own, select your needs
 ```
 
-For our purposes we'll choose `Octane`. Next, accept the default folder name. The installation script will take a few minutes to run.
+For our purposes we'll choose `Octane`. It's important to be aware, though, that this will install a canary build of Ember, so it's not a good idea to use these settings for production applications.
+
+Next, accept the default folder name. The installation script will take a few minutes to run.
 
 Finally, we also want to manually add one more addon. `ember-auto-import` will allow us to import NPM packages that aren't Ember addons:
 
