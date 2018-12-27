@@ -20,7 +20,7 @@ Narrowing this definition of "shipping" allowed me to focus on the most interest
 ## Embrace Productivity Features
 By "productivity features" I mean two things: abstractions and conventions.
 
-An **abstraction** is roughly when you can work with higher-level concepts instead of implementation details. The app is built with [React Native][react-native], which is already an abstraction on top of iOS and Android; you can create an app with components that I would say are simpler than their underlying counterparts. Using a third-party component library like [React Native Elements][rn-elements] allows you to work at an even higher level of abstraction. For example, instead of having to decide how to style `View`s, `Text` elements, and `TouchableHighlight`s to simulate an iOS table view, you can use a `List` with `ListItem`s. You can say _what_ you want to show instead of _how_ you want to show it.
+An **abstraction** is roughly when you can work with higher-level concepts instead of implementation details. The app is built with [React Native][react-native], which is already an abstraction on top of iOS and Android; you can create an app with components that I would say are simpler than their underlying counterparts. [Expo][expo] takes this one step further by wrapping React Native so that you don't have to interface with iOS and Android IDEs directly. Then, using a third-party component library like [React Native Elements][rn-elements] allows you to write your application at an even higher level of abstraction. For example, instead of having to decide how to style `View`s, `Text` elements, and `TouchableHighlight`s to simulate an iOS table view, you can use a `List` with `ListItem`s. You can say _what_ you want to show instead of _how_ you want to show it.
 
 When you need to build a web service for your app, It can be easy for JavaScript developers to reach for Express.js, but Express operates at a low level of abstraction. You have to wire up routes manually, choose a database library and handle querying yourself, etc. For all my side projects (and all the professional projects I can) I use [Ruby on Rails][rails] for building APIs; even though it’s not written in JavaScript, I think the time it takes to get familiar with Ruby is more than made up by the time you save with all the abstractions Rails offers. In particular, I use the [`JSONAPI::Resources`][jsonapi-resources] library. All I have to do is tell Rails what database tables and fields I have, then tell `JSONAPI::Resources` what data I want to expose publicly, and all the details of setting up routes, performing validations, and executing SQL are handled for me. (You can learn more about [how to build web services with Rails][rails-api-screencasts] in a screencast series I created on The Frontier. It’s a paid site, but you can get a 45-day free trial with code CODINGITWRONG.)
 
@@ -64,6 +64,7 @@ There’s some advice out there that says to persist no matter what, and never q
 
 [bible-reading-native]: https://github.com/CodingItWrong/bible-reading-native
 [docker-yall]: https://youtu.be/u3yfekH1PWo
+[expo]: https://expo.io
 [fullstack-episode]: http://www.fullstackradio.com/101
 [json-api]: https://jsonapi.org/
 [jsonapi-resources]: http://jsonapi-resources.com/
