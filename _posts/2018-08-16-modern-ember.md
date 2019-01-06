@@ -24,6 +24,12 @@ To get the latest Ember features, we can use `ember-cli-create` to create an "Oc
 $ npm install -g ember-cli-create
 ```
 
+If you don't already have the main Ember CLI installed, add it as well:
+
+```sh
+$ npm install -g ember-cli
+```
+
 Then, create a new project:
 
 ```sh
