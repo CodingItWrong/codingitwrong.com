@@ -60,13 +60,7 @@ You'll be presented with a menu:
 
 For our purposes we'll choose `Octane`. It's important to be aware, though, that this will install a canary build of Ember, so it's not a good idea to use these settings for production applications.
 
-Next, accept the default folder name. The installation script will take a few minutes to run.
-
-Finally, we also want to manually add one more addon. `ember-auto-import` will allow us to import NPM packages that aren't Ember addons:
-
-```sh
-$ ember install ember-auto-import
-```
+Next, accept the default folder name. The installation script will take a few minutes to run. When it finishes, we're all set!
 
 ## Components
 
