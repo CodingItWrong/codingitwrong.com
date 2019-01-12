@@ -1,3 +1,18 @@
+@media (min-width: 992px) {
+  .container {
+    max-width: 740px;
+  }
+}
+
+article.post {
+  font-family: serif;
+  font-size: 21px;
+}
+
+.highlight {
+  font-size: 1rem;
+}
+
 img {
   max-width: 100%;
   max-height: 173px;
