@@ -81,3 +81,7 @@ footer a:hover {
   background-color: inherit;
   text-decoration: underline;
 }
+
+.token.selector, .token.attr-name, .token.string, .token.char, .token.builtin, .token.inserted {
+  color: rgb(222, 255, 0);
+}
