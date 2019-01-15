@@ -20,7 +20,7 @@ port: 4001
 
 # Build settings
 markdown: kramdown
-theme: minima
+theme: jekyll-theme-codingitwrong
 plugins:
   - jekyll-feed
 
