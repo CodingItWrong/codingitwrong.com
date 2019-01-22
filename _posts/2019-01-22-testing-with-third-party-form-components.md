@@ -28,7 +28,7 @@ Let's look at how a few different Material Design libraries render and how we ca
 
 ## Vuetify
 
-In Vuetify a text field component is written like this:
+In Vuetify, for Vue.js, a text field component is written like this:
 
 ```html
 <v-text-field
@@ -67,19 +67,19 @@ By contrast, the `class` is applied to the outermost `<div>`. This makes sense f
 cy.get(".myfield").type("By class");
 ```
 
-Cypress gives us an error:
+Cypress gives us the error I mentioned earlier:
 
 ```sh
 CypressError: cy.type() failed because it requires a valid typeable element
 ```
 
-Instead, we need to ask for the `input` element *inside* the element with class `.myfield`:
+This is because `.myfield` is the `div`, not the `input`, and you can't type into a `div`. Instead, we need to ask for the `input` element *inside* the element with class `.myfield`:
 
 ```js
 cy.get(".myfield input").type("By class and input element");
 ```
 
-Unfortunately, this means *your test is coupled to implementation details of a third-party component library*. If Vuetify is updated to apply the class to the `input` instead of the containing `div`, your tests will break. Luckily, if you use the `data-test` attribute I recommend it's applied to the `input` directly, so your tests avoid coupling to the third-party library.
+This works. Unfortunately, this means *your test is coupled to implementation details of a third-party component library*. If Vuetify is updated to apply the class to the `input` instead of the containing `div`, your tests will break. Luckily, if you use the `data-test` attribute I recommend it's applied to the `input` directly, so your tests avoid coupling to the third-party library.
 
 ## Material-UI
 
@@ -103,7 +103,7 @@ And here's the rendered DOM:
 </div>
 ```
 
-As before, the `id` is applied to the `input`, and the `class` is applied to the containing `div`. The `data-test` attribute is different, though: whereas with Vuetify it was applied to the `input`, in Material-UI the `data-test` attribute is applied to the containing div.
+As before, the `id` is applied to the `input`, and the `class` is applied to the containing `div`. The `data-test` attribute is different, though: whereas with Vuetify it was applied to the `input`, in Material-UI the `data-test` attribute is applied to the containing `div`.
 
 This means that for Material-UI it's only the ID field that you can select directly:
 
