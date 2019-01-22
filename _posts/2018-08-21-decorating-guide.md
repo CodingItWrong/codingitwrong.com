@@ -3,7 +3,7 @@ title: "Decorating Guide: Commonly-Used Ember Decorators"
 tags: [ember]
 ---
 
-*Updated 8/22: added brief explanations of each decorator.*
+*Updated 2019-01-22: updated for ember-decorators 5.0*
 
 `ember-decorators` offers a lot of different decorators to allow you to indicate metadata to Ember about your ES6 classes, properties, and methods. I find myself checking the documentation for these a lot, so I thought I'd combine all the common decorators I use in one place. First is a quick reference of all of their imports for easy copying-and-pasting, and then is an example of usage of each.
 
@@ -14,7 +14,7 @@ import { tagName } from '@ember-decorators/component';
 import { attr, belongsTo, hasMany } from '@ember-decorators/data';
 import { action, computed } from '@ember-decorators/object';
 import { filterBy, sort } from '@ember-decorators/object/computed';
-import { service } from '@ember-decorators/service';
+import { inject as service } from '@ember-decorators/service';
 ```
 
 ## Examples
@@ -86,11 +86,11 @@ export default class Bookmark extends Model {
 }
 ```
 
-- [`@service`][service] allows you to inject a service, by default using the name of the property as the service name to look up.
+- [`@inject`][inject] allows you to inject a dependency, by default using the name of the property as the dependency name to look up. One of the most common uses is to inject services. In that case, it's common practice to alias the director to `service` upon import, so that you can write `@service`;
 
 ```js
 import Route from '@ember/routing/route';
-import { service } from '@ember-decorators/service';
+import { inject as service } from '@ember-decorators/service';
 
 export default class IndexRoute extends Route {
   @service session;
@@ -109,6 +109,6 @@ export default class IndexRoute extends Route {
 [computed]: https://ember-decorators.github.io/ember-decorators/latest/docs/api/modules/@ember-decorators/object#computed
 [filterBy]: https://ember-decorators.github.io/ember-decorators/latest/docs/api/modules/@ember-decorators/object/computed#filterBy
 [hasMany]: https://ember-decorators.github.io/ember-decorators/latest/docs/api/modules/@ember-decorators/data#hasMany
-[service]: https://ember-decorators.github.io/ember-decorators/latest/docs/api/modules/@ember-decorators/service#service
+[inject]: https://ember-decorators.github.io/ember-decorators/docs/api/modules/@ember-decorators/service#inject
 [sort]: https://ember-decorators.github.io/ember-decorators/latest/docs/api/modules/@ember-decorators/object/computed#sort
 [tagName]: https://ember-decorators.github.io/ember-decorators/latest/docs/api/modules/@ember-decorators/component#tagName
