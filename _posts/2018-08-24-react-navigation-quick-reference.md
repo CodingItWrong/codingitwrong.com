@@ -2,21 +2,35 @@
 title: React Navigation Quick Reference
 ---
 
-When it comes to navigation libraries for React Native, I like [React Navigation](https://reactnavigation.org/) a lot. Their docs are great, but because I'm not in it every day I often find myself combing through their docs repeatedly to figure out how to use the same basic features. To save me (and hopefully you!) some time in the future, here's a combination of the code snippets from their docs I consult the most to get basic stack navigation working. (Imports omitted.)
+*Updated 2019-01-22: Updated to React Navigation 3.0*
 
-```jsx
-export default class App extends React.Component {
-  render() {
-    return <RootStack />;
-  }
-}
+
+When it comes to navigation libraries for React Native, I like [React Navigation](https://reactnavigation.org/) a lot. Their docs are great, but because I'm not in it every day I often find myself combing through their docs repeatedly to figure out how to use the same basic features. To save me (and hopefully you!) some time in the future, here's a combination of the code snippets from their docs I consult the most to get basic stack navigation working.
+
+Note that according to [this issue](https://github.com/react-navigation/react-navigation/issues/3326#issuecomment-392380151) it seems as though the navigator and screen components need to be defined in separate files.
+
+`App.js`
+
+```js
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+import HomeScreen from './HomeScreen';
+import DetailsScreen from './DetailsScreen';
 
 const RootStack = createStackNavigator({
   Home: HomeScreen,
   Details: DetailsScreen,
 });
 
-class HomeScreen extends React.Component {
+export default createAppContainer(RootStack);
+```
+
+`HomeScreen.js`
+
+```jsx
+import React from 'react';
+import { View, Text, Button } from 'react-native';
+
+export default class HomeScreen extends React.Component {
   static navigationOptions = {
     title: 'Home',
   };
@@ -38,8 +52,15 @@ class HomeScreen extends React.Component {
     );
   }
 }
+```
 
-class DetailsScreen extends React.Component {
+`DetailsScreen.js`
+
+```jsx
+import React from 'react';
+import { View, Text, Button } from 'react-native';
+
+export default class DetailsScreen extends React.Component {
   static navigationOptions = ({ navigation }) => {
     return {
       title: navigation.getParam('otherParam', 'A Nested Details Screen'),
