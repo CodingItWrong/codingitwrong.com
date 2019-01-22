@@ -1,5 +1,6 @@
 ---
 title: Why You Should Sometimes Test "Implementation Details"
+tags: [javascript, testing]
 ---
 
 *Update: added a summary of Kent C. Dodds' views on testing Redux connected components.*

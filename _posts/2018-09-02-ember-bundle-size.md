@@ -1,5 +1,6 @@
 ---
 title: "The Size of Ember"
+tags: [ember]
 ---
 
 There's sometimes a perception that Ember is huge and bloated. Is that correct? In Tom and Yehuda's 2018 EmberConf keynote they indicated that Ember can be slimmed down to 120 KB. But when running my Ember apps it seemed larger to me. I wanted to see for myself.

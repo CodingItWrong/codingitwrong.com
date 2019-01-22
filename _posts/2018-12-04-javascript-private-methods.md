@@ -1,5 +1,6 @@
 ---
 title: JavaScript Private Methods
+tags: [javascript]
 ---
 
 Earlier this year, when Babel support for private fields was released, I wrote a blog post showing [how to simulate private methods using private fields and arrow functions](/2018/06/04/private-arrow-functions.html). Now [in Babel 7.2.0 private method support proper has been released](https://babeljs.io/blog/2018/12/03/7.2.0), so I wanted to publish an updated version of that post demonstrating how to use private methods. (Note that there is still a place for private field arrow functions, for the same reason there is for class property arrow functions: `this` binding.) I also rename the refactoring "Replace Method with Method Object" to the name it's known by in Martin Fowler's newly-released [_Refactoring, 2nd Edition_](http://www.informit.com/store/refactoring-improving-the-design-of-existing-code-9780134757599?ranMID=24808): "Replace Function with Command".

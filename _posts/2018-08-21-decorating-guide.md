@@ -1,5 +1,6 @@
 ---
 title: "Decorating Guide: Commonly-Used Ember Decorators"
+tags: [ember]
 ---
 
 *Updated 8/22: added brief explanations of each decorator.*

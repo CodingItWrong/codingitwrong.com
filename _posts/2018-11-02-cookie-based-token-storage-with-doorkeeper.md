@@ -1,5 +1,6 @@
 ---
 title: Cookie-Based Token Storage with Doorkeeper
+tags: [ruby]
 ---
 
 When a frontend webapp authenticates against an API, where should the access token be stored?

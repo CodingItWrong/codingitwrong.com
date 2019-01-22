@@ -1,5 +1,6 @@
 ---
 title: New-Style Ember Testing with Mocha
+tags: [ember, testing]
 ---
 
 Here's a walkthrough of setting up my preferred Ember testing stack, getting all the following tools to play nicely together:

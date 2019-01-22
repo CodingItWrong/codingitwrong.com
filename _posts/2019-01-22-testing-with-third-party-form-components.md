@@ -1,5 +1,6 @@
 ---
 title: Testing with Third Party Form Components
+tags: [testing, javascript]
 ---
 
 I got a great question via e-mail about how to test your app when you're using a third-party form component library. In my tutorials I recommend putting a `data-test` attribute on your `<input>` elements to select them by:
