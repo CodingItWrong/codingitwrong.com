@@ -3,6 +3,8 @@ title: New-Style Ember Testing with Mocha
 tags: [ember, testing]
 ---
 
+*Updated 2019-01-25: updated to use `ember-mocha` directly.*
+
 Here's a walkthrough of setting up my preferred Ember testing stack, getting all the following tools to play nicely together:
 
 - [New-style Ember tests][new-ember-tests] with async/await and no jQuery
@@ -13,8 +15,10 @@ Here's a walkthrough of setting up my preferred Ember testing stack, getting all
 To start out, since Mocha will take the place of QUnit, we want to remove QUnit-related packages first:
 
 ```sh
-$ yarn remove ember-cli-qunit qunit-dom
+$ yarn remove ember-cli-qunit ember-qunit qunit-dom
 ```
+
+(You might only have `ember-cli-qunit` or only `ember-qunit`; the above command should cover either case.)
 
 We also want to remove some QUnit-specific code from our `tests/test-helper.js` file:
 
@@ -29,30 +33,13 @@ We also want to remove some QUnit-specific code from our `tests/test-helper.js` 
 -start();
 ```
 
-Next, we install the `ember-cli-mocha` addon. When prompted about overwriting `tests/test-helper.js`, say no. (If you overwrite it, old-style tests will still work, but new-style tests will give you the error "owner.visit is not a function".)
+Next, we install the `ember-mocha` addon:
 
 ```sh
-$ ember install ember-cli-mocha
-Yarn: Installed ember-cli-mocha
-installing ember-cli-mocha
-? Overwrite tests/test-helper.js? No, skip
-  create tests/helpers/destroy-app.js
-  create tests/helpers/resolver.js
-  create tests/helpers/start-app.js
-  overwrite tests/test-helper.js
-  install package ember-cli-chai
-Yarn: Installed ember-cli-chai@^0.4.0
-  remove Skipping uninstall because no matching package is installed.
-Installed addon package.
+$ ember install ember-mocha
 ```
 
-Then, we want to update to a newer version of `ember-mocha` that what was installed, to enable the new testing API:
-
-```sh
-$ yarn add --dev ember-mocha@^0.14.0
-```
-
-There's also a newer version of `ember-cli-chai`, and it'll be necessary for us to add `sinon-chai` later. Even if you're not using `sinon-chai`, it's always a good idea to be on the latest version.
+We also want to add `ember-cli-chai` to get access to Chai, an assertion framework:
 
 ```sh
 $ ember install ember-cli-chai
@@ -69,35 +56,38 @@ You'll see the following test generated:
 ```js
 {% raw %}import { expect } from 'chai';
 import { describe, it } from 'mocha';
-import { setupComponentTest } from 'ember-mocha';
+import { setupRenderingTest } from 'ember-mocha';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
 describe('Integration | Component | my-component', function() {
-  setupComponentTest('my-component', {
-    integration: true
-  });
+  setupRenderingTest();
 
-  it('renders', function() {
+  it('renders', async function() {
     // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.on('myAction', function(val) { ... });
-    // Template block usage:
-    // this.render(hbs`
-    //   {{#my-component}}
-    //     template content
-    //   {{/my-component}}
-    // `);
+    // Handle any actions with this.set('myAction', function(val) { ... });
 
-    this.render(hbs`{{my-component}}`);
-    expect(this.$()).to.have.length(1);
+    await render(hbs`{{my-component}}`);
+
+    expect(this.element.textContent.trim()).to.equal('');
+
+    // Template block usage:
+    await render(hbs`
+      {{#my-component}}
+        template block text
+      {{/my-component}}
+    `);
+
+    expect(this.element.textContent.trim()).to.equal('template block text');
   });
 });{% endraw %}
 ```
 
-This is using Mocha and Chai, and it passes. But it's using an older style of test, where `render()` is called on the `this` context, and elements are retrieved using jQuery.
+This is using Mocha and Chai, and it passes.
 
-Let's customize our component and then update to the new-style of rendering test. First, let's just drop a "Hello, world!" message into the component's template:
+Let's customize our component and add a bit more substantial of an assertion to test it. First, let's just drop a "Hello, world!" message into the component's template:
 
-```hbs
+```html
 <div class="welcome">Hello, world!</div>
 ```
 
@@ -106,34 +96,36 @@ Now, make the following changes to the component test:
 ```diff
 {% raw %} import { expect } from 'chai';
  import { describe, it } from 'mocha';
--import { setupComponentTest } from 'ember-mocha';
-+import { setupRenderingTest } from 'ember-mocha';
+ import { setupRenderingTest } from 'ember-mocha';
+-import { render } from '@ember/test-helpers';
 +import { render, find } from '@ember/test-helpers';
  import hbs from 'htmlbars-inline-precompile';
 
- describe('Integration | Component | my-component', function() {
--  setupComponentTest('my-component', {
--    integration: true
--  });
-+  setupRenderingTest();
+ describe('Integration | Component | my-component', fu
+nction() {
+   setupRenderingTest();
 
--  it('renders', function() {
-+  it('renders', async function() {
-...
--    this.render(hbs`{{my-component}}`);
--    expect(this.$()).to.have.length(1);
-+    await render(hbs`{{my-component}}`);
+
+   it('renders', async function() {
+-    // Set any properties with this.set('myProperty', 'value');
+-    // Handle any actions with this.set('myAction', function(val) { ... });
+-
+     await render(hbs`{{my-component}}`);
+-
+-    expect(this.element.textContent.trim()).to.equal('');
+-
+-    // Template block usage:
+-    await render(hbs`
+-      {{#my-component}}
+-        template block text
+-      {{/my-component}}
+-    `);
+-
+-    expect(this.element.textContent.trim()).to.equal('template block text');
 +    expect(find('.welcome').textContent).to.include('Hello, world!');
    });
  });{% endraw %}
 ```
-
-Notice the following differences:
-
-- We call `setupRenderingTest()` instead of `setupComponentTest()`.
-- The test is an `async` function, and we use an `await` keyword with the `render()` function. This means that the `render()` function returns a promise, and we pause execution of the test until the promise settles.
-- `render()` is a function imported from `@ember/test-helpers` instead of a method on the `this` context.
-- Instead of using jQuery via `this.$` to access DOM elements, we call the imported `find()` function to do so.
 
 Run the tests with `ember test` and they should pass.
 
@@ -212,7 +204,7 @@ We call `sinon.spy()` to create a spy function, then we pass it in to the compon
 We can do even better on the assertions for Sinon, too, though. Add `sinon-chai`:
 
 ```sh
-$ yarn add sinon-chai
+$ yarn add --dev sinon-chai
 ```
 
 Now change the assertion like so:
@@ -277,33 +269,53 @@ And replace the route's template `app/templates/index.hbs` with this:
 </ul>{% endraw %}
 ```
 
-For some reason, with this testing setup generating an acceptance test doesn't work for me--no file is created. But this is okay, because the setup of the test needs to be pretty different than the generated file would be anyway. Let's create an acceptance test by hand. Create `tests/acceptance/mirage-test.js` and add the following contents:
+Next, generate an acceptance test:
 
-```js
-import { describe, it } from 'mocha';
-import { expect } from 'chai';
-import { visit, find } from '@ember/test-helpers';
-import { setupApplicationTest } from 'ember-mocha';
-import setupMirage from 'ember-cli-mirage/test-support/setup-mirage';
-
-describe('mirage', function() {
-  let hooks = setupApplicationTest();
-  setupMirage(hooks);
-
-  it('allows creating models', async function() {
-    let widget = server.create('widget', {
-      name: 'Awesome Widget',
-    });
-
-    await visit('/');
-
-    let widgets = find('.widget');
-    expect(widgets).to.contain.text(widget.name);
-  });
-});
+```sh
+$ ember generate acceptance-test mirage
 ```
 
-Notice how `setupMirage()` is called with `setupApplicationTest()`: we save the return value of `setupApplicationTest()` to a variable, then pass it as an argument to `setupMirage()`.
+To set up the test to work with Mirage, make the following changes:
+
+```diff
+ import { describe, it } from 'mocha';
+ import { expect } from 'chai';
+ import { setupApplicationTest } from 'ember-mocha';
+-import { visit, currentURL } from '@ember/test-helpers';
++import { visit, find } from '@ember/test-helpers';
++import setupMirage from 'ember-cli-mirage/test-support/setup-mirage';
+
+ describe('Acceptance | mirage', function() {
+-  setupApplicationTest();
++  let hooks = setupApplicationTest();
++  setupMirage(hooks);
+```
+
+Notice how we save the return value of `setupApplicationTest()` to a variable, then pass it as an argument to `setupMirage()`.
+
+Then replace the existing `it()` with the following:
+
+```js
+it('allows creating models', async function() {
+  let widget = server.create('widget', {
+    name: 'Awesome Widget',
+  });
+
+  await visit('/');
+
+  let widgets = find('.widget');
+  expect(widgets).to.contain.text(widget.name);
+});
+```
+Finally, set up the Mirage route to serve the widget endpoint. Add the following to `mirage/config.js`:
+
+```diff
+ export default function() {
++  this.get('/widgets');
+ }
+```
+
+Run `ember test` again and your acceptance test should pass.
 
 With that, all our testing tools are set up and working together: Mocha, Chai, Sinon, Mirage, and Ember's new testing APIs. Give them a try and see what you think!
 
