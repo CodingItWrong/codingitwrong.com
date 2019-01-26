@@ -101,8 +101,7 @@ Now, make the following changes to the component test:
 +import { render, find } from '@ember/test-helpers';
  import hbs from 'htmlbars-inline-precompile';
 
- describe('Integration | Component | my-component', fu
-nction() {
+ describe('Integration | Component | my-component', function() {
    setupRenderingTest();
 
 
