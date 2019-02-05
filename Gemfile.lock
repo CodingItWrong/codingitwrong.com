@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/codingitwrong/jekyll-theme-codingitwrong.git
-  revision: ef1b12430a34404d44c5ded8d0e76a95eb90160e
+  revision: 92b0680a6964e343336bba56198c20750cd2aaf8
   branch: master
   specs:
     jekyll-theme-codingitwrong (0.1.0)
