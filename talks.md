@@ -29,6 +29,12 @@ title: Talks
 
 <div class="row">
   {% include video-thumbnail.html
+    name="React Native Testing"
+    image="react-native-radio.jpg"
+    venue="React Native Radio podcast"
+    url="https://devchat.tv/react-native-radio/react-native-testing-feat-josh-justice-of-big-nerd-ranch/"
+  %}
+  {% include video-thumbnail.html
     name="Frontend Testing Like a Rubyist"
     image="ruby-rogues.jpg"
     venue="Ruby Rogues podcast"
