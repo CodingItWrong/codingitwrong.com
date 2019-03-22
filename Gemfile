@@ -7,6 +7,6 @@ gem "jekyll", "~> 3.8.5"
 gem "jekyll-theme-codingitwrong", github: "codingitwrong/jekyll-theme-codingitwrong", branch: "master"
 
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.11"
+  gem "jekyll-feed", "~> 0.12"
   gem "jekyll-seo-tag"
 end
