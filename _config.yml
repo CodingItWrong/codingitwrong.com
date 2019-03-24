@@ -38,11 +38,6 @@ defaults:
     values:
       layout: "post"
       author: Josh Justice
-  -
-    scope:
-      path: "wiki"
-    values:
-      layout: "wiki"
 
 kramdown:
   input: GFM
