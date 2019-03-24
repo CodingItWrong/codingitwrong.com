@@ -29,6 +29,12 @@ title: Talks
 
 <div class="row">
   {% include video-thumbnail.html
+    name="My Ruby Story"
+    image="my-ruby-story.jpg"
+    venue="My Ruby Story podcast"
+    url="https://devchat.tv/my-ruby-story/mrs-080-josh-justice/"
+  %}
+  {% include video-thumbnail.html
     name="React Native Testing"
     image="react-native-radio.jpg"
     venue="React Native Radio podcast"
