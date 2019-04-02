@@ -2,27 +2,11 @@
 title: How XP Made Me a Better Person
 ---
 
-<div class="card mb-3">
-  <div class="card-body">
-    <blockquote class="blockquote mb-0">
-      <p class="mb-0">
-        If the “method” label is to be attached to XP/agile, it should be in terms of a method for producing better developers rather than a method for producing better software. Better software comes from, and only from, *better people.”
-      </p>
-    </blockquote>
-  </div>
-</div>
+> If the “method” label is to be attached to XP/agile, it should be in terms of a method for producing better developers rather than a method for producing better software. Better software comes from, and only from, *better people.”
 
 David West wrote the above in [_Object Thinking_][object-thinking] (emphasis mine). From the context, it seems that when he uses the phrase "better people" he means it simply as a synonym for "better developers." But it seems like it would also be a great phrase to capture something Kent Beck emphasized in [_Extreme Programming Explained_][xp-explained]:
 
-<div class="card mb-3">
-  <div class="card-body">
-    <blockquote class="blockquote mb-0">
-      <p class="mb-0">
-        XP is my attempt to reconcile humanity and productivity in my own practice of software development and to share that reconciliation. I had begun to notice that *the more humanely I treated myself and others,* the more productive we all became.
-      </p>
-    </blockquote>
-  </div>
-</div>
+> XP is my attempt to reconcile humanity and productivity in my own practice of software development and to share that reconciliation. I had begun to notice that *the more humanely I treated myself and others,* the more productive we all became.
 
 When I think about people who treat themselves and others more humanely, "better people" sums it up nicely.
 

@@ -57,18 +57,9 @@ Which view should you take? I'd recommend watching the video of their discussion
 
 Next let’s consider whether “don’t test implementation details” applies to our end-to-end-tests. A few days ago, Dan Abramov tweeted this:
 
-<div class="card mb-3">
-  <div class="card-body">
-    <blockquote class="blockquote mb-0">
-      <p class="mb-0">
-        How to know if a test sucks? You changed something that wouldn’t be observable to the user of your app/library, but the test broke and you had to fix the test.
-      </p>
-      <footer class="blockquote-footer">
-        <a href="https://twitter.com/dan_abramov/status/1065663012541992963">@dan_abramov, Nov 30</a>
-      </footer>
-    </blockquote>
-  </div>
-</div>
+> How to know if a test sucks? You changed something that wouldn’t be observable to the user of your app/library, but the test broke and you had to fix the test.
+>
+> <a href="https://twitter.com/dan_abramov/status/1065663012541992963">@dan_abramov, Nov 30</a>
 
 Dan doesn't draw a distinction between “app” and “library” here, but the testing for these two would likely look significantly different. If you're building a frontend component library, the "outside edge" of your system is the exported components. In this case we would write tests for component trees, and so Dan’s advice aligns with Kent’s: render component trees fully to avoid breakage that wouldn’t be observable to the user of our app. But we’ve seen that there's also an argument to be made for shallow rendering, in which case an internal change *could* break the tests. So there isn’t universal agreement with the sentiment that such tests suck.
 
@@ -108,15 +99,7 @@ In this approach of testing individual state store functions, you need to rely o
 
 With Vuex, on the other hand, there *is* an alternate way to test your stores that decouples you from its implementation details. As Edd Yerburgh writes in [_Testing Vue.js Applications_][edd-book] (emphasis mine):
 
-<div class="card mb-3">
-  <div class="card-body">
-    <blockquote class="blockquote mb-0">
-      <p class="mb-0">
-        There are two approaches to unit testing a store. We can either test each of the parts separately, or we can <em>combine them together and run tests against a running store instance</em>. Both testing approaches have benefits and drawbacks…
-      </p>
-    </blockquote>
-  </div>
-</div>
+> There are two approaches to unit testing a store. We can either test each of the parts separately, or we can <em>combine them together and run tests against a running store instance</em>. Both testing approaches have benefits and drawbacks…
 
 If you want to test your Vuex store module as a whole, you can simply instantiate it in a test. You can dispatch an action which commits a mutation, then check that a getter function returns the value you expect. This approach allows the mutations and state storage to be an implementation detail. As a result, you get confidence that all your store's functions work together correctly, and you can change the state storage without refactoring any tests. If something goes wrong, you can get feedback that is more closely related to the store, which can make it easier to debug.
 
