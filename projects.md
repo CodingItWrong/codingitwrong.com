@@ -27,6 +27,6 @@ title: Projects
 
 - [Ember](https://github.com/CodingItWrong/emberup)
 - [Rails webapp](https://github.com/CodingItWrong/rails-template)
-- [Rails web service](https://github.com/CodingItWrong/api-template) - with JSON:API and OAuth 2
+- [Rails web service](https://github.com/CodingItWrong/apiup) - with JSON:API and OAuth 2
 - [React](https://github.com/CodingItWrong/reactup)
 - [React Native](https://github.com/CodingItWrong/nativeup)
