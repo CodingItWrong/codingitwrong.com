@@ -1,5 +1,5 @@
 ---
-title: Open Source
+title: Projects
 ---
 
 ## Web Sites
