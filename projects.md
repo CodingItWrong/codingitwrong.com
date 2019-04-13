@@ -5,6 +5,7 @@ title: Projects
 ## Web Sites
 
 * [learntdd.in](https://learntdd.in) - learn Test-Driven Development in the framework of your choice.
+* [RailsAPI.dev](https://railsapi.dev) - learn how to create JSON APIs efficiently with the powerful features of Ruby on Rails
 * [ReactNativeTesting.io](https://reactnativetesting.io) - learn unit, component, and end-to-end testing for React Native
 
 ## Open-Source Libraries
