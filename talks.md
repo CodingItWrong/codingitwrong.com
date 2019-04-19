@@ -29,6 +29,12 @@ title: Talks
 
 <div class="row">
   {% include video-thumbnail.html
+    name="Ruby Testing Podcast"
+    image="ruby-testing-podcast.jpg"
+    venue="Ruby Testing Podcast"
+    url="http://www.rubytestingpodcast.com/josh-justice"
+  %}
+  {% include video-thumbnail.html
     name="My Ruby Story"
     image="my-ruby-story.jpg"
     venue="My Ruby Story podcast"
