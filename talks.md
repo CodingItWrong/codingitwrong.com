@@ -6,6 +6,12 @@ title: Talks
 
 <div class="row">
   {% include video-thumbnail.html
+    name="Full-Stack Development with Ember.js and Rails"
+    image="ember-rails.jpg"
+    venue="Twitch"
+    url="https://www.youtube.com/playlist?list=PLXXnezSEtvNPcZHqzXhrL1-7JkrbIR6qF"
+  %}
+  {% include video-thumbnail.html
     name="Test-Driven Development in React"
     image="react-tdd-series.jpg"
     venue="Twitch"
