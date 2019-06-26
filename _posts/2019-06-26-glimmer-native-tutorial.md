@@ -1,5 +1,5 @@
 ---
-title: Glimmer-Native Tutorial
+title: Getting Started With Glimmer-Native
 ---
 
 [NativeScript](https://www.nativescript.org/) is a platform for building truly native mobile apps using a variety of different web frameworks. Up until now Angular and Vue.js have been your options--but now the [Glimmer-Native](https://github.com/bakerac4/glimmer-native) project gives you the option to build native apps with [Glimmer.js](https://glimmerjs.com/) as well! Glimmer-Native is currently in alpha, and input from the community is welcomed to help it get built out.
