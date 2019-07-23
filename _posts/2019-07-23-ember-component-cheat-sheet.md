@@ -214,6 +214,7 @@ export default Component.extend({
 ## Ember 3.10
 
 - Decorators, enabling class components
+- Angle-bracket builtins (Input, Textarea, LinkTo)
 
 Note: generators do not create components as ES6 classes by default; they continue to create them with `Component.extend()`. But this guide illustrates the new class syntax that's available.
 
@@ -268,15 +269,19 @@ export default class NewPersonFormClass extends Component {
 
 #### Component Template
 
-```hbs
-{% raw %}<form onsubmit={{action this.save}} ...attributes>
+<div class="language-hbs highlighter-rouge">
+<div class="highlight">
+<pre class="highlight language-hbs" data-line="3-4"><code class="language-hbs">{% raw %}<form onsubmit={{action this.save}} ...attributes>
   <p>{{@prompt}}</p>
   <Input type="text" placeholder="First Name" @value={{this.firstName}} />
   <Input type="text" placeholder="Last Name" @value={{this.lastName}} />
   <p>{{this.fullName}}</p>
   <button type="submit">Save</button>
 </form>{% endraw %}
-```
+</code></pre>
+</div>
+</div>
+
 
 ## Ember 3.11
 
