@@ -8,6 +8,8 @@ This post shows a simple component for displaying a form for entering a person's
 
 Note that since Ember follows semver and so breaking changes are only made in a major release, none of the old APIs for components have gone away; newer APIs have been added while the old are retained as well. This post shows the latest-and-greatest APIs as they're added.
 
+If you'd like more information about how any of these features work, check out Jen Weber's [Ember Components Museum](https://jenweber.github.io/the-ember-components-museum/versions/master/).
+
 - [Ember 3.0](#ember-30)
 - [Ember 3.1](#ember-31)
 - [Ember 3.4](#ember-34)
