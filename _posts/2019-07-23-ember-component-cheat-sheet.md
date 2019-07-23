@@ -345,7 +345,7 @@ export default class NewPersonFormClass extends Component {
   <Input type="text" placeholder="First Name" @value={{this.firstName}} />
   <Input type="text" placeholder="Last Name" @value={{this.lastName}} />
   <p>{{this.fullName}}</p>
-  <button type="submit">Save</button>
+  &lt;button type="submit"&gt;Save&lt;/button&gt;
 </form>{% endraw %}
 </code></pre>
 </div>
