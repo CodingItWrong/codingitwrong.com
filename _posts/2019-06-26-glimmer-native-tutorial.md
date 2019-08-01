@@ -2,6 +2,8 @@
 title: Getting Started With Glimmer-Native
 ---
 
+*Updated 2019-8-1: updated for Glimmer-Native 0.0.5*
+
 [NativeScript](https://www.nativescript.org/) is a platform for building truly native mobile apps using a variety of different web frameworks. Up until now Angular and Vue.js have been your options--but now the [Glimmer-Native](https://github.com/bakerac4/glimmer-native) project gives you the option to build native apps with [Glimmer.js](https://glimmerjs.com/) as well! Glimmer-Native is currently in alpha, and input from the community is welcomed to help it get built out.
 
 Let's give Glimmer-Native a try building the traditional todo list app!
@@ -260,14 +262,14 @@ export default class NewTodoForm extends Component {
   }
 
   addTodo() {
-    const { onAdd } = this.__owner__.args
+    const { onAdd } = this.args
     onAdd(this.newTodoLabel)
     this.newTodoLabel = ''
   }
 }
 ```
 
-The `addTodo` is a bit different than before, though. This component doesn't have access to the `todos` list or the `newTodoId`, so we can't create the todo itself here. Instead, we take a passed-in action argument and pass the label to it instead. In Glimmer for the web component arguments are accessible on `this.args`, but temporarily in Glimmer-Native 0.0.3 they're available on `this.__owner__.args` instead. It's an alpha; these things happen! :-)
+The `addTodo` is a bit different than before, though. This component doesn't have access to the `todos` list or the `newTodoId`, so we can't create the todo itself here. Instead, we take a passed-in action argument and pass the label to it instead. In Glimmer component arguments are accessible on `this.args`.
 
 Let's update `TodoGlimmerNative/template.hbs` to use `NewTodoForm`, passing the action to it:
 
@@ -339,7 +341,9 @@ Create a `TodoList/template.hbs` file and copy over the loop:
     justifyContent="space-between"
     alignItems="center"
   >
-    <Label text={{todo.label}} />
+    <Label
+      text={{todo.label}}
+    />
     <Button
       text="Complete"
       {{on "tap" (action completeTodo todo)}}
@@ -355,7 +359,7 @@ Next, create the corresponding `TodoList/component.ts` file and add the followin
 ```javascript
 import Component from '@glimmer/component';
 
-export default class TodoGlimmerNative extends Component {
+export default class TodoList extends Component {
   completeTodo(todo) {
     const { onComplete } = this.__owner__.args
     onComplete(todo)
@@ -365,7 +369,7 @@ export default class TodoGlimmerNative extends Component {
 
 When the `completeTodo` action is called, we just call the passed-in `onComplete` action argument.
 
-Finally, update `TodoGlimmerNative/component.hbs` to call `TodoList` and pass that action:
+Finally, update `TodoGlimmerNative/template.hbs` to call `TodoList` and pass that action:
 
 ```diff
 {% raw %} <StackLayout>
@@ -398,11 +402,11 @@ When the app reloads, confirm you can still complete todos.
 
 Now that our app is functioning, let's apply a little bit of styling. We add classes to the components we want to style.
 
-In `NewTodoList/component.hbs`:
+In `NewTodoForm/template.hbs`:
 
 ```diff
 {% raw %} <TextView
-   hint="New Todo!"
+   hint="New Todo"
 +  class="new-todo-text"
    text={{this.newTodoLabel}}
    {{on "textChange" (action handleChangeText)}}
@@ -414,12 +418,13 @@ In `NewTodoList/component.hbs`:
  />{% endraw %}
 ```
 
-Then, in `TodoList/component.hbs`:
+Then, in `TodoList/template.hbs`:
 
 ```diff
 {% raw %}   <FlexboxLayout
      flexDirection="row"
      justifyContent="space-between"
+     alignItems="center"
 +    class="todo-row"
    >
      <Label
