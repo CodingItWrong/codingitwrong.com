@@ -110,7 +110,7 @@ Next, let's add the ability to add new todos to the list. Add a few form element
 
 ```diff
 {% raw %} <StackLayout>
-+  <TextView
++  <TextField
 +    hint="New Todo"
 +    text={{this.newTodoLabel}}
 +    {{on "textChange" (action handleChangeText)}}
@@ -128,7 +128,7 @@ Next, let's add the ability to add new todos to the list. Add a few form element
  </StackLayout>{% endraw %}
 ```
 
-The `TextView` will allow us to input a label for the todo. We read its text value from the `newTodoLabel` property, then we call a `handleChangeText` action when it's changed, to store its value.
+The `TextField` will allow us to input a label for the todo. We read its text value from the `newTodoLabel` property, then we call a `handleChangeText` action when it's changed, to store its value.
 
 The `Button` will indicate that we're ready to add the todo, and it calls an `addTodo` action.
 
@@ -236,7 +236,7 @@ First, let's make a `NewTodoForm` component for the text field and Add button. C
 Add `NewTodoForm/template.hbs` and copy over the relevant components:
 
 ```handlebars
-{% raw %}<TextView
+{% raw %}<TextField
   hint="New Todo"
   text={{this.newTodoLabel}}
   {{on "textChange" (action handleChangeText)}}
@@ -276,7 +276,7 @@ Let's update `TodoGlimmerNative/template.hbs` to use `NewTodoForm`, passing the 
 ```diff
 {% raw %} <StackLayout>
 +  <NewTodoForm @onAdd={{action addTodo}} />
--  <TextView
+-  <TextField
 -    hint="New Todo"
 -    text={{this.newTodoLabel}}
 -    {{on "textChange" (action handleChangeText)}}
@@ -405,7 +405,7 @@ Now that our app is functioning, let's apply a little bit of styling. We add cla
 In `NewTodoForm/template.hbs`:
 
 ```diff
-{% raw %} <TextView
+{% raw %} <TextField
    hint="New Todo"
 +  class="new-todo-text"
    text={{this.newTodoLabel}}
