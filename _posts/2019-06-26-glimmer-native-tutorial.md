@@ -361,7 +361,7 @@ import Component from '@glimmer/component';
 
 export default class TodoList extends Component {
   completeTodo(todo) {
-    const { onComplete } = this.__owner__.args
+    const { onComplete } = this.args
     onComplete(todo)
   }
 }
