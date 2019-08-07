@@ -6,6 +6,8 @@ In my writing and workshop about React Native testing, I demonstrate component t
 
 It’s pretty strong. By contrast, on the web I'm *somewhat* in favor of the analogous React Testing Library over Enzyme. But on React Native I'm *strongly* in favor of React Native Testing Library (RNTL) over Enzyme. Here's why.
 
+Thanks to Daniel Black for asking this question on Twitter!
+
 ## Support
 Enzyme is primarily a library for testing React. Although it also supports React Native, the latter has always been a second-class citizen in Enzyme. To get it working you have to follow [complex instructions](https://airbnb.io/enzyme/docs/guides/react-native.html), including either using [a fork of a mocking library](https://github.com/RealOrangeOne/react-native-mock) or a complex jsdom setup. Setting up RNTL, by contrast, is just `yarn add --dev react-native-testing-library` and you're done.
 
