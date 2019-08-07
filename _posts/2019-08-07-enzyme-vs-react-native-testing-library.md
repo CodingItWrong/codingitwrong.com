@@ -129,5 +129,7 @@ Between these different pros and cons, the topic of support is the strongest arg
 
 The topics of full mounting and testing the contract are more debatable. Some would argue that it’s better to shallow mount and to test methods directly. There are pretty strong arguments in favor of testing the contract instead (Dan Abramov and Edd Yerburgh, as cited), so I would recommend doing so unless you’re strongly convinced that you need to test at a lower level. When it comes to full mounting vs. shallow mounting, there are different views. I've just seen full mounting work out better in React Native in particular.
 
+If you'd like to learn more, check out an [episode of React Native Radio interviewing Michał Pierzchała](https://devchat.tv/react-native-radio/rnr-124-testing-libraries-with-micha%C5%82-pierzcha%C5%82a/), the creator of RNTL. One of the things he discusses is tradeoffs between it and Enzyme.
+
 [enzyme]: https://airbnb.io/enzyme/
 [rntl]: https://callstack.github.io/react-native-testing-library/
