@@ -360,7 +360,7 @@ export default class NewPersonFormClass extends Component {
 ```hbs
 {% raw %}<NewPersonForm
   @prompt="Enter a new person's name"
-  @onSave={{fn this.handleSave}}
+  @onSave={{this.handleSave}}
   class="my-stylish-form"
 />{% endraw %}
 ```
