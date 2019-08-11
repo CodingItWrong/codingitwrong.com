@@ -285,7 +285,7 @@ export default class NewPersonFormClass extends Component {
 
 ## Ember 3.11
 
-- on and fn helpers
+- `on` and `fn` helpers
 
 #### Component Invocation
 
@@ -293,7 +293,7 @@ export default class NewPersonFormClass extends Component {
 <div class="highlight">
 <pre class="highlight language-hbs" data-line="3"><code class="language-hbs">{% raw %}<NewPersonForm
   @prompt="Enter a new person's name"
-  @onSave={{fn this.handleSave}}
+  @onSave={{this.handleSave}}
   class="my-stylish-form"
 />{% endraw %}
 </code></pre>
