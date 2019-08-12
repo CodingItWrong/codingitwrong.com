@@ -201,7 +201,7 @@ Next, in `app/components/my-component.js`, initialize a `records` property and p
 Display it in the template:
 
 ```diff
-{% raw %} <button onclick={{action this.increment}}>Increment</button>
+{% raw %} <button {{on 'click' this.increment}}>Increment</button>
 
 +{{#each this.records as |record|}}
 +  <p>
