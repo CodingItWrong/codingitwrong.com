@@ -3,88 +3,58 @@ title: Modern Ember
 tags: [ember]
 ---
 
-*Updated 2018-12-23: updated to use ember-cli-create, and reference Octane.*
+*Updated 2019-08-12: updated to use `octane-app-blueprint`.*
 
-Ember has been undergoing a lot of development in the past year to add features to make it easier to understand and allow it to take advantage of emerging JS ecosystem conventions. This includes:
+Ember has been undergoing a lot of development recently to add features to make it easier to understand and allow it to take advantage of emerging JS ecosystem conventions. This includes:
 
-- A filesystem layout more conducive to component-based development
 - Angle bracket syntax for components
 - Easy ES6 imports of NPM modules
 - Decorators for clear and expressive component implementations
+- Tracked properties to automatically rerender components and recompute derived data
+- Co-locating component templates and classes for easy development
 
-Some of these features are already available in the stable release of Ember, and others will land as part of the upcoming [Ember Octane](https://github.com/emberjs/rfcs/blob/26c4d83fb66568e1087a05818fb39a307ebf8da8/text/0000-roadmap-2018.md#ember-octane) edition. But we can get a preview of these features today! As part of the [#EmberJS2018](https://www.emberjs.com/blog/2018/05/02/ember-2018-roadmap-call-for-posts.html) initiative, I wanted to share a look at what it's like to develop in Ember with all of these modern features in place. You can also [download the completed project](https://github.com/CodingItWrong/modern-ember) if you like.
-
-(You might also be interested in TypeScript; if so, check out [ember-cli-typescript](https://github.com/typed-ember/ember-cli-typescript) to see how easy it is to use with Ember.)
+Some of these features are already available in the stable release of Ember, and others will land as part of the upcoming [Ember Octane](https://emberjs.com/editions/octane/) edition. But we can try them all today as part of the Octane preview! Let's look at what it's like to develop in Ember with all of these modern features in place. You can also [download the completed project](https://github.com/CodingItWrong/modern-ember) if you like.
 
 ## Project Setup
 
-To get the latest Ember features, we can use `ember-cli-create` to create an "Octane" project, using features from the upcoming edition of Ember. First, install `ember-cli-create` version 0.0.4 or above:
-
-```sh
-$ npm install -g ember-cli-create
-```
-
-If you don't already have the main Ember CLI installed, add it as well:
+To get the latest Ember features, we can use `ember-cli` to create a project using the Octane blueprint. First, make sure `ember-cli` is installed:
 
 ```sh
 $ npm install -g ember-cli
 ```
 
-Then, create a new project:
+Then, create a new project with the Octane blueprint:
 
 ```sh
-$ ember-cli-create modern-ember
+$ ember new modern-ember -b @ember/octane-app-blueprint
 ```
 
-You'll be presented with a menu:
+It's important to be aware that this will install a canary build of Ember, so it's not a good idea to use these settings for production applications.
 
-```sh
-? What kind of ember project you want to create? (Use arrow keys)
-❯ Beginner
-  -> If you are new to ember, use this!
-  Ember App
-  -> Regular ember app wo/ welcome page
-  Ember Addon
-  -> Regular ember addon
-  Octane
-  -> MU, Decorators, Sparkles, ...
-  Octane + TS
-  -> Fuel up your Octane with Type-Power!
-  Glimmer
-  -> Create a glimmer project
-  Glimmer WebComponent
-  -> Create a web component with glimmer
-  Manual...
-  -> Run this wizard on your own, select your needs
-```
-
-For our purposes we'll choose `Octane`. It's important to be aware, though, that this will install a canary build of Ember, so it's not a good idea to use these settings for production applications.
-
-Next, accept the default folder name. The installation script will take a few minutes to run. When it finishes, we're all set!
+The installation process will take a few minutes to run. When it finishes, we're all set!
 
 ## Components
 
 With Ember you can jump right in to creating components without needing to look into other concepts yet. `ember-cli` will allow us to easily generate a component's files:
 
 ```sh
-$ ember generate component my-component
+$ ember generate component MyComponent
 ```
 
-This will create a `src/ui/components/my-component` folder with the following files:
+This will create the following files:
 
-- `component-test.js` - an automated test
-- `component.js` - the logic for the component
-- `template.hbs` - the markup for the component
+- `app/components/my-component.hbs` - the markup for the component
+- `tests/integation/components/my-component-test.js` - an automated test. Ember automatically adds tests alongside files it generates, but we won't be looking into testing as part of this tutorial.
 
-Having separate files has the advantage that each file is a normal .js or .hbs file, but since they are in the same folder it's easy to switch between them.
+Note that the component file is a [Handlebars](https://handlebarsjs.com/) file, which is just for output. If we need to add logic to the component, it will go in a separate JavaScript file, but this file isn't generated by default. Having separate files has the advantage that each file is a normal .js or .hbs file.
 
-Let's add a message to the component markup. Replace the contents of `template.hbs` with:
+Let's add a message to the component markup. Replace the contents of `my-component.hbs` with:
 
 ```hbs
 {% raw %}Hello!{% endraw %}
 ```
 
-Now we want to display the component. The main template file that renders the app is `src/routes/application/template.hbs`. We can just add the component in there. Delete the contents of the file and replace it with:
+Now we want to display the component. The main template file that renders the app is `app/templates/application.hbs`. We can just add the component in there. Delete the contents of the file and replace it with:
 
 ```hbs
 {% raw %}<MyComponent />{% endraw %}
@@ -104,25 +74,29 @@ Next, let's pass in an argument to our component. Arguments are passed with an `
 
 (Arguments are equivalent to props in React or Vue.)
 
-In the component itself, we access that argument in the template using the `@` sigil as well. This makes it clear at the point of use that the data comes in as an argument:
+In the component template itself, we access that argument using the `@` sigil as well. This makes it clear at the point of use that the data comes in as an argument:
 
 ```hbs
 {% raw %}Hello, {{@name}}!{% endraw %}
 ```
 
-We can also store properties on the component itself and display them. (Properties are equivalent to state in React or data in Vue. They're called "properties" because they're just normal JavaScript object properties!) Open `src/ui/components/my-component/component.js` and add a property:
+So far, this component is a stateless *template-only component*. The only data it has access to is what's passed into it.
 
-```diff
- import Component from '@ember/component';
+If we want the component to store its own data as well, we can add a JavaScript backing class for the component. This will allow us to store properties on the component itself and display them. (Properties are equivalent to state in React or data in Vue. They're called "properties" because they're just normal JavaScript object properties!)
 
- export default class MyComponentComponent extends Component {
-+  count = 0;
- }
+Create a file `app/components/my-component.js` and add the following:
+
+```javascript
+import Component from '@glimmer/component';
+
+export default class MyComponentComponent extends Component {
+  count = 0;
+}
 ```
 
 Ember uses plain object properties for data storage, rather than a framework-specific mechanism like a `state` or `data` object.
 
-And reference it in the template with a `this.` prefix, just as you would in JavaScript:
+You can reference this property in the template with a `this.` prefix, just as you would in JavaScript:
 
 ```hbs
 {% raw %}Hello, {{@name}}!
@@ -136,21 +110,21 @@ To update the data, we can implement an action on the component. We use a decora
 
 ```diff
  import Component from '@ember/component';
-+import {
-+  action,
-+} from '@ember-decorators/object';
++import { tracked } from '@glimmer/tracking';
++import { action } from '@ember/object';
 
  export default class MyComponent extends Component {
-   count = 0;
+-  count = 0;
++  @tracked count = 0;
 +
 +  @action
 +  increment() {
-+    this.set('count', this.count + 1);
++    this.count += 1;
 +  }
  }
 ```
 
-Note that we use a `this.set()` method to update the value of the property. A little bit like React's `this.setState()`, this indicates to Ember that a data item has changed, so it can rerender the template.
+By tagging a property with the `@tracked` decorator, we indicate to Ember that the component should be rerendered when it is changed--for example, when we increment it by 1 here.
 
 To call this action, add a button to the template:
 
@@ -159,68 +133,37 @@ To call this action, add a button to the template:
 
  {{this.count}}
 +
-+<button onclick={{action this.increment}}>Increment</button>{% endraw %}
++<button {{on 'click' this.increment}}>Increment</button>{% endraw %}
 ```
 
 ## Computed Properties
 
-Components can also have computed properties. These are cached, and will be automatically recomputed when their dependent data changes.
+Components can also have computed properties, implemented as normal ES5 getters. These are cached, and will be automatically recomputed when the `@tracked` properties they depend upon change.
 
 ```diff
- import Component from '@ember/component';
- import {
-   action,
-+  computed,
- } from '@ember-decorators/object';
+ import Component from '@glimmer/component';
+ import { tracked } from '@glimmer/tracking';
+ import { action } from '@ember/object';
 
  export default class MyComponent extends Component {
-   count = 0;
+   @tracked count = 0;
 
-+  @computed('name')
 +  get uppercaseName() {
-+    return this.name.toUpperCase();
++    return this.args.name.toUpperCase();
 +  }
 +
    @action
    increment() {
 ```
 
-Note that computed properties use standard ES5 getters, along with a decorator to provide extra information to Ember on dependent data.
+Note that in the component the `@name` argument is available as `this.args.name`. Arguments aren't placed directly on `this` to ensure that they won't collide with properties or actions on the component instance itself.
+
+Then we update our template to pull from the computed property. Just like other properties, computed properties are accessed with the `this.` prefix to indicate that it's a property of the component instance.
 
 ```diff
 {% raw %}-Hello, {{@name}}!
 +Hello, {{this.uppercaseName}}!{% endraw %}
 ```
-
-## Nested Components
-
-Components can be nested inside one another in the filesystem, at which point they are only available to be used inside their parent component.
-
-To see this in action, generate a child component:
-
-```sh
-$ ember generate component my-component/child-component
-```
-
-Note that under the `src/ui/components/my-component` folder, it creates a subfolder `child-component`, containing the same test, component, and template files.
-
-Add some content to its hbs file:
-
-```hbs
-{% raw %}Hello, child!{% endraw %}
-```
-
-Then add it to the parent hbs file:
-
-```diff
-{% raw %} {{this.count}}
-
- <button onclick={{action this.increment}}>Increment</button>
-+
-+<ChildComponent />{% endraw %}
-```
-
-If you remove `ChildComponent` from this file and try adding it to `application/template.hbs` instead, you'll see an error in the browser console "Cannot find component child-component".
 
 ## Using NPM Packages
 
@@ -230,36 +173,41 @@ In Ember you can load data the same way you would in any other framework. To see
 $ npm install --save axios
 ```
 
-You will need to stop and rerun `ember serve` to get the package loaded.
+Note that you don't need to stop and rerun `ember serve` to get the package loaded; it'll pick it up automatically.
 
-Next, in `src/ui/components/my-component/child-component/component.js`, initialize a `records` property and populate it in `didInsertElement()` - this is a lifecycle hook that runs when the component is added to the DOM. We'll use [JSONPlaceholder](https://jsonplaceholder.typicode.com/) for some convenient JSON data:
+Next, in `app/components/my-component.js`, initialize a `records` property and populate it in the `constructor()` - this is the normal ES6 class constructor that runs when the instance is initialized. We'll use [JSONPlaceholder](https://jsonplaceholder.typicode.com/) for some convenient JSON data:
 
 ```diff
- import Component from '@ember/component';
+ import { action } from '@ember/object';
 +import axios from 'axios';
 
- export default class ChildComponent extends Component {
-+  records = [];
+ export default class MyComponentComponent extends Component {
+   @tracked count = 0;
++  @tracked records = [];
 +
-+  async didInsertElement() {
-+    const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
-+    this.set('records', response.data);
++  constructor(owner, args) {
++    super(owner, args);
++
++    axios
++      .get('https://jsonplaceholder.typicode.com/posts')
++      .then(response => {
++        this.records = response.data;
++      });
 +  }
- }
-```
 
-Note that we can use `async/await` - it's enabled by default in Ember's Babel config.
+   get uppercaseName() {
+```
 
 Display it in the template:
 
-```hbs
-{% raw %}Hello, child!
+```diff
+{% raw %} <button onclick={{action this.increment}}>Increment</button>
 
-{{#each this.records as |record|}}
-  <p>
-    {{record.title}}
-  </p>
-{{/each}}{% endraw %}
++{{#each this.records as |record|}}
++  <p>
++    {{record.title}}
++  </p>
++{{/each}}{% endraw %}
 ```
 
 `#each` is a helper that loops through an array, and provides a variable to the nested markup.
@@ -274,19 +222,19 @@ Earlier we added `<MyComponent />` to our `application/template.hbs` file. This 
 $ ember generate route index
 ```
 
-This should create a folder `src/ui/routes/index` containing:
+This should create the following files
 
-- `route-test.js` - a test
-- `route.js` - the route class
-- `template.hbs` - the route markup
+- `app/routes/index.js` - the route class
+- `app/templates/index.hbs` - the route markup
+- a test file
 
-Copy the component invocation from `application/template.hbs` and paste it into `index/template.hbs`:
+Copy the component invocation from `app/templates/application.hbs` and paste it into `index.hbs`:
 
 ```hbs
 {% raw %}<MyComponent @name="world"/>{% endraw %}
 ```
 
-Now replace the contents of `application/template.hbs` with the following:
+Now replace the contents of `app/templates/application.hbs` with the following:
 
 ```hbs
 {% raw %}<h1>My App!</h1>
@@ -294,17 +242,17 @@ Now replace the contents of `application/template.hbs` with the following:
 {{outlet}}{% endraw %}
 ```
 
-`outlet` is a helper that will output the contents of the specific route you're on. Reload your app and you should see the "My App" header as well as your parent and child component content.
+`outlet` is a helper that will output the contents of the specific route you're on. Reload your app and you should see the "My App" header as well as your `MyComponent` content.
 
 ## Creating Another Route
 
-To create a route for child pages, use Ember CLI again. As you can tell, in Ember we use `ember generate` a lot; you can use `ember g` as a shortcut:
+Let's create a route for individual posts, using Ember CLI again. As you can tell, in Ember we use `ember generate` a lot; you can use `ember g` as a shortcut:
 
 ```sh
 $ ember g route post
 ```
 
-The `generate route` command modified the file `src/router.js`. Check the changes:
+The `generate route` command modified the file `app/router.js`. Check the changes:
 
 ```js
 Router.map(function() {
@@ -320,7 +268,7 @@ Router.map(function() {
 });
 ```
 
-You can't access the `id` variable from just anywhere; the place that has access to it is a route class, `route.js`. Open it. A route's dynamic segments are passed to a method called `model()` if one is defined. Add it:
+You can't access the `id` variable from just anywhere; the place that has access to it is a route class, `app/routes/post.js`. Open it. A route's dynamic segments are passed to a method called `model()` if one is defined. Add it:
 
 ```diff
  export default class PostRoute extends Route {
@@ -344,18 +292,18 @@ export default class PostRoute extends Route {
 }
 ```
 
-In the route's template, let's render a `PostDetail` component:
+In the route's template `app/templates/post.hbs`, let's render a `PostDetail` component:
 
 ```hbs
 {% raw %}<PostDetail @post={{this.model}} />{% endraw %}
 ```
 
-Earlier we used quotes around an argument when passing a string. Now that we are passing an object instead, we need to use double-curlies.
+Earlier we used quotes around an argument when passing a hard-coded string, like you would for HTML attributes. When we want to pass any other JavaScript type or a dynamic value (such as the object stored in `this.model` here) we need to use double-curlies.
 
 Generate this `PostDetail` component:
 
 ```sh
-$ ember g component post-detail
+$ ember g component PostDetail
 ```
 
 Then fill in its template:
@@ -366,20 +314,22 @@ Then fill in its template:
 <p>{{@post.body}}</p>{% endraw %}
 ```
 
-Now, back in our child component template, we can link our post titles to that route:
+This component is stateless so we won't need a backing JavaScript class. Nice and simple!
+
+Now, back in `my-component.hbs`, we can link our post titles to that route:
 
 ```diff
 {% raw %}{{#each this.records as |record|}}
    <p>
 -    {{record.title}}
-+    {{#link-to "post" record.id}}
++    <LinkTo @route="post" @model={{record.id}}>
 +      {{record.title}}
-+    {{/link-to}}
++    </LinkTo>
    </p>
  {{/each}}{% endraw %}
 ```
 
-`link-to` is a helper that sets up a link to another route. We can pass a separate argument to it and it's filled in as the dynamic segment.
+`LinkTo` is a built-in component that sets up a link to another route. We can pass a separate argument to it and it's filled in as the dynamic segment.
 
 The links should be clickable and take you to the route with the right ID, and our fake data will be shown.
 
@@ -393,10 +343,10 @@ Generate a new service:
 $ ember g service posts
 ```
 
-This creates a `src/services` folder with the following files:
+This creates the following files:
 
-- `posts-test.js` - a test for the service
-- `posts.js` - the service class
+- `app/services/posts.js` - the service class
+- a test file
 
 Add a `getAll()` method to the service that implements loading the data:
 
@@ -404,49 +354,66 @@ Add a `getAll()` method to the service that implements loading the data:
  import Service from '@ember/service';
 +import axios from 'axios';
 
- export default class Posts extends Service {
+ export default class PostsService extends Service {
 +  async getAll() {
-+    const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
++    const response = await axios.get(
++      'https://jsonplaceholder.typicode.com/posts'
++    );
 +    return response.data;
 +  }
 }
 ```
 
-Now update the `ChildComponent` to inject the `Posts` service to get the data from there instead of using Axios directly:
+Note that we can use `async/await` - it's enabled by default in Ember's Babel config.
+
+Now update `MyComponent` to inject the `Posts` service to get the data from there instead of using Axios directly:
 
 ```diff
- import Component from '@ember/component';
+ import { action } from '@ember/object';
 -import axios from 'axios';
-+import { service } from '@ember-decorators/service';
++import { inject as service } from '@ember/service';
 
- export default class ChildComponent extends Component {
+ export default class MyComponentComponent extends Component {
 +  @service posts;
 +
-   records = [];
+   @tracked count = 0;
+   @tracked records = [];
 
-   async didInsertElement() {
--    const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
--    this.set('records', response.data);
-+    this.set('records', await this.posts.getAll());
+   constructor(owner, args) {
+     super(owner, args);
+
+-    axios
+-      .get('https://jsonplaceholder.typicode.com/posts')
+-      .then(response => {
+-        this.records = response.data;
+-      });
++    this.posts.getAll().then(posts => {
++      this.records = posts;
++    });
    }
- }
+
+   get uppercaseName() {
 ```
 
-Note that just by using the `@service` decorator on a property, Ember knows to inject the Posts service when it creates the component. There's no multi-step provider component process. Dependency injection also makes testing easier, because in a component test you can inject a fake service instead of the real one.
+Note that just by using the `@service` decorator on a property, Ember knows to inject the Posts service when it creates the component. There's no multi-step provider component process. This "dependency injection" approach also makes testing easier, because in a component test you can inject a fake service instead of the real one.
 
 ## Service State
 
 To avoid having to re-retrieve the post when we go to the detail page, let's cache the post data in the service.
 
 ```diff
- export default class Posts extends Service {
+ export default class PostsService extends Service {
 +  posts = null;
 +
    async getAll() {
--    const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
+-    const response = await axios.get(
+-      'https://jsonplaceholder.typicode.com/posts'
+-    );
 -    return response.data
 +    if (this.posts === null) {
-+      const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
++      const response = await axios.get(
++        'https://jsonplaceholder.typicode.com/posts'
++      );
 +      this.posts = response.data;
 +    }
 +
@@ -468,13 +435,13 @@ Now that the posts are cached, we can easily add a method to retrieve a single p
  }
 ```
 
-Note that we call `getAll()` instead of accessing `this.posts` directly. This way, even if `getAll()` hasn't been called before, we'll be sure to retrieve them.
+Note that we call `this.getAll()` instead of accessing `this.posts` directly. This way, even if `getAll()` hasn't been called before, we'll be sure to retrieve them.
 
 Inject the service into the post route and call it in the `model()` method to return the data:
 
 ```diff
  import Route from '@ember/routing/route';
-+import { service } from '@ember-decorators/service';
++import { inject as service } from '@ember/service';
 
  export default class PostRoute extends Route {
 +  @service posts;
@@ -493,6 +460,6 @@ Now, go to the root of your app, click a blog post link, and you should be taken
 
 ## Conclusion
 
-We've looked at Ember's module unification file layout, angle bracket syntax, ES6 classes and decorators, and auto importing of NPM modules. These changes remove some of the incidental differences between Ember and other frameworks, as well as some legacy cruft from before components were the mental model and before ES6 classes existed. Put together, they give Ember a very modern feel.
+We've looked at a lot of Ember's new features: angle bracket syntax, template co-location, ES6 classes and decorators, tracked properties, auto importing of NPM modules. These changes remove some of the incidental differences between Ember and other frameworks, as well as some legacy cruft from before components were the mental model and before ES6 classes existed. Put together, they give Ember a very modern feel.
 
 If you're interested in a framework that gives you a reliable upgrade path as the web evolves, that takes care of implementation details so you can focus on your application's business logic, and that values creating addons so you don't have to reinvent the wheel, there are a lot of great reasons to check out Ember.
