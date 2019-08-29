@@ -55,7 +55,7 @@ fetchPost('https://google.com')
 
 The `env` preset results in the `async`/`await` code transpiling successfully. But when you try to run it in-browser, you get this error:
 
-```
+```sh
 ReferenceError: regeneratorRuntime is not defined
 ```
 
@@ -72,11 +72,11 @@ At first I tried importing it at the top of my script:
 ```diff
 +import('babel-polyfill');
 +
-async function fetchPost() {
+ async function fetchPost() {
 ...
 ```
 
-But I still got the same error. What fixed it was including 'babel-polyfill' in the list of endpoints, rather than importing it. This may be related to the requirement for the polyfill to be loaded as early as possible, before *any* other code:
+But I still got the same error. What fixed it was including 'babel-polyfill' in the list of entry points, rather than importing it. This may be related to the requirement for the polyfill to be loaded as early as possible, before *any* other code:
 
 ```diff
  entry: {
