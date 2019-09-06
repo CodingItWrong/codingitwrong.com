@@ -133,7 +133,7 @@ To call this action, add a button to the template:
 
  {{this.count}}
 +
-+<button {{on 'click' this.increment}}>Increment</button>{% endraw %}
++<button {{on "click" this.increment}}>Increment</button>{% endraw %}
 ```
 
 ## Computed Properties
@@ -201,7 +201,7 @@ Next, in `app/components/my-component.js`, initialize a `records` property and p
 Display it in the template:
 
 ```diff
-{% raw %} <button {{on 'click' this.increment}}>Increment</button>
+{% raw %} <button {{on "click" this.increment}}>Increment</button>
 
 +{{#each this.records as |record|}}
 +  <p>
