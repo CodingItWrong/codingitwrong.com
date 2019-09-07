@@ -109,7 +109,7 @@ You can reference this property in the template with a `this.` prefix, just as y
 To update the data, we can implement an action on the component. We use a decorator to indicate that a method is available as an action.
 
 ```diff
- import Component from '@ember/component';
+ import Component from '@glimmer/component';
 +import { tracked } from '@glimmer/tracking';
 +import { action } from '@ember/object';
 
