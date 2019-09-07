@@ -3,7 +3,7 @@ title: Modern Ember
 tags: [ember]
 ---
 
-*Updated 2019-08-12: updated to use `octane-app-blueprint`.*
+*Updated 2019-09-07: updated to reference that the Ember beta is used.*
 
 Ember has been undergoing a lot of development recently to add features to make it easier to understand and allow it to take advantage of emerging JS ecosystem conventions. This includes:
 
@@ -29,7 +29,7 @@ Then, create a new project with the Octane blueprint:
 $ ember new modern-ember -b @ember/octane-app-blueprint
 ```
 
-It's important to be aware that this will install a canary build of Ember, so it's not a good idea to use these settings for production applications.
+It's important to be aware that this will install a beta build of Ember. Octane is feature-complete and moving toward a stable release, but it would still be a good idea to be cautious when deciding whether to use the Octane Preview for a production application.
 
 The installation process will take a few minutes to run. When it finishes, we're all set!
 
