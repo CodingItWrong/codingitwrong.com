@@ -89,7 +89,7 @@ Create a file `app/components/my-component.js` and add the following:
 ```javascript
 import Component from '@glimmer/component';
 
-export default class MyComponentComponent extends Component {
+export default class MyComponent extends Component {
   count = 0;
 }
 ```
@@ -181,7 +181,7 @@ Next, in `app/components/my-component.js`, initialize a `records` property and p
  import { action } from '@ember/object';
 +import axios from 'axios';
 
- export default class MyComponentComponent extends Component {
+ export default class MyComponent extends Component {
    @tracked count = 0;
 +  @tracked records = [];
 +
@@ -373,7 +373,7 @@ Now update `MyComponent` to inject the `Posts` service to get the data from ther
 -import axios from 'axios';
 +import { inject as service } from '@ember/service';
 
- export default class MyComponentComponent extends Component {
+ export default class MyComponent extends Component {
 +  @service posts;
 +
    @tracked count = 0;
