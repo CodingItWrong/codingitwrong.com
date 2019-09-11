@@ -2,7 +2,6 @@
 title: '"Once It Compiles, It Usually Works"'
 ---
 
-# Correctness
 > Statically-typed functional languages…have a property that exists almost nowhere else: once it compiles, it usually works first try.
 
 — [Real problems with functional languages, and their influence on Dark](https://medium.com/darklang/real-problems-with-functional-languages-efe668c5264a?__s=pxqoavsrvatr67fsqxnn)
