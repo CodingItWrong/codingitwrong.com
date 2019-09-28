@@ -16,7 +16,6 @@ url: "https://codingitwrong.com" # the base hostname & protocol for your site
 twitter_username: CodingItWrong
 github_username:  CodingItWrong
 google_analytics: 'UA-70453424-1'
-port: 4001
 
 # Build settings
 markdown: kramdown
