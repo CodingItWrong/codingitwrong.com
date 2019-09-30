@@ -3,7 +3,7 @@ title: Modern Ember
 tags: [ember]
 ---
 
-*Updated 2019-09-07: updated to reference that the Ember beta is used.*
+*Updated 2019-09-30: updated for Ember 3.13.*
 
 Ember has been undergoing a lot of development recently to add features to make it easier to understand and allow it to take advantage of emerging JS ecosystem conventions. This includes:
 
@@ -17,21 +17,40 @@ Some of these features are already available in the stable release of Ember, and
 
 ## Project Setup
 
-To get the latest Ember features, we can use `ember-cli` to create a project using the Octane blueprint. First, make sure `ember-cli` is installed:
+To get the latest Ember features, we can use `ember-cli` to create a project using the Octane blueprint. First, make sure `ember-cli` 3.13 or higher is installed:
 
 ```sh
 $ npm install -g ember-cli
+$ ember --version
+ember-cli: 3.13.1
 ```
 
-Then, create a new project with the Octane blueprint:
+Then, create a new Ember project:
 
 ```sh
-$ ember new modern-ember -b @ember/octane-app-blueprint
+$ ember new modern-ember
+$ cd modern-ember
 ```
 
-It's important to be aware that this will install a beta build of Ember. Octane is feature-complete and moving toward a stable release, but it would still be a good idea to be cautious when deciding whether to use the Octane Preview for a production application.
+Next, enable the Octane Preview by running the following command:
 
-The installation process will take a few minutes to run. When it finishes, we're all set!
+```sh
+$ npx @ember/octanify
+```
+
+Next we need to add a few additional packages. First, `@glimmer/component`, Octane's new component library:
+
+```sh
+$ npm install --save-dev @glimmer/component@^0.14.0-alpha.13
+```
+
+Second, `ember-auto-import`, to allow working with any NPM package:
+
+```sh
+$ npm install --save-dev ember-auto-import
+```
+
+Other than the Glimmer Component package, all the Octane Preview features are released on the stable branch of Ember, behind a feature flag. This means you should be set to use the Octane Preview in production, with potentially some minor hiccups.
 
 ## Components
 
@@ -84,14 +103,20 @@ So far, this component is a stateless *template-only component*. The only data i
 
 If we want the component to store its own data as well, we can add a JavaScript backing class for the component. This will allow us to store properties on the component itself and display them. (Properties are equivalent to state in React or data in Vue. They're called "properties" because they're just normal JavaScript object properties!)
 
-Create a file `app/components/my-component.js` and add the following:
+Generate a JavaScript class for your component:
 
-```javascript
-import Component from '@glimmer/component';
+```sh
+$ ember generate component-class MyComponent
+```
 
-export default class MyComponent extends Component {
-  count = 0;
-}
+This creates the file `app/components/my-component.js`. Open it and add the following:
+
+```diff
+ import Component from '@glimmer/component';
+
+ export default class MyComponent extends Component {
++  count = 0;
+ }
 ```
 
 Ember uses plain object properties for data storage, rather than a framework-specific mechanism like a `state` or `data` object.
