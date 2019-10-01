@@ -5,7 +5,7 @@ tags: [ember]
 
 *Updated 2019-09-30: updated for Ember 3.13.*
 
-Ember has been undergoing a lot of development recently to add features to make it easier to understand and allow it to take advantage of emerging JS ecosystem conventions. This includes:
+Over the last year, Ember has been undergoing a lot of development as part of the upcoming [Ember Octane](https://emberjs.com/editions/octane/) edition to add features to make it easier to understand and allow it to take advantage of emerging JS ecosystem conventions. This includes:
 
 - Angle bracket syntax for components
 - Easy ES6 imports of NPM modules
@@ -13,11 +13,11 @@ Ember has been undergoing a lot of development recently to add features to make 
 - Tracked properties to automatically rerender components and recompute derived data
 - Co-locating component templates and classes for easy development
 
-Some of these features are already available in the stable release of Ember, and others will land as part of the upcoming [Ember Octane](https://emberjs.com/editions/octane/) edition. But we can try them all today as part of the Octane preview! Let's look at what it's like to develop in Ember with all of these modern features in place. You can also [download the completed project](https://github.com/CodingItWrong/modern-ember) if you like.
+Most of these features have recently landed behind a feature flag in Ember 3.13. Let's look at what it's like to develop in Ember with these Octane Preview features enabled. You can also [download the completed project](https://github.com/CodingItWrong/modern-ember) if you like.
 
 ## Project Setup
 
-To get the latest Ember features, we can use `ember-cli` to create a project using the Octane blueprint. First, make sure `ember-cli` 3.13 or higher is installed:
+To create a new Ember project, make sure `ember-cli` 3.13 or higher is installed:
 
 ```sh
 $ npm install -g ember-cli
