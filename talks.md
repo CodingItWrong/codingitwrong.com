@@ -35,6 +35,12 @@ title: Talks
 
 <div class="row">
   {% include video-thumbnail.html
+    name="New Solutions to Old Testing Problems"
+    image="new-solutions.jpg"
+    venue="Assert(js) 2019"
+    url="https://youtu.be/OwbgFbr83Jk"
+  %}
+  {% include video-thumbnail.html
     name="Ruby Testing Podcast"
     image="ruby-testing-podcast.jpg"
     venue="Ruby Testing Podcast"
