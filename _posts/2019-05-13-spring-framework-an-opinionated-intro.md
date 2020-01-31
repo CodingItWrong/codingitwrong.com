@@ -25,15 +25,15 @@ Next go to <https://start.spring.io> -- this is Spring Initializr, a tool to hel
 
 - Project: Gradle Project
 - Language: Java
-- Spring Boot: 2.2.0 M2
-- Project Metadata: enter whatever you like
+- Spring Boot: 2.2.4
+- Project Metadata: for Artifact, enter "video-games"
 - Dependencies: Search for and add the following:
   - Web
   - JPA
   - PostgreSQL
   - Lombok
 
-Click "Generate Project" to download a zip file of your project. Expand it and put it somewhere you like. Next, open IntelliJ and you should see the Welcome screen. Click "Import Project". Navigate to the `video-games` folder you created, then choose the `build.gradle` file and Open it. Keep all the defaults and click OK, and after a few screens the project should open in IntelliJ. A build process will run to download all the dependencies.
+Click "Generate" to download a zip file of your project. Expand it and put it somewhere you like. Next, open IntelliJ and you should see the Welcome screen. Click "Import Project". Navigate to the `video-games` folder you created, then choose the `build.gradle` file and Open it. Keep all the defaults and click OK, and after a few screens the project should open in IntelliJ. A build process will run to download all the dependencies.
 
 Now we're set to start creating our web service.
 
@@ -92,7 +92,7 @@ This defines a class with three fields: an integer ID, the name of the game, and
 
 ## Repository
 
-Next, we'll create the repository class that allows us to read from and write to the database. This is actually going to be really trivial. Create another New > Java Class, enter the name `GameRepository`, and choose Kind: Interface. Then make it extend from the following:
+Next, we'll create the repository that allows us to read from and write to the database. This is actually going to be really trivial. Create another New > Java Class, enter the name `GameRepository`, and choose Kind: Interface. Then make it extend from the following:
 
 ```java
 package com.codingitwrong.tutorial.springbootvideogames;
@@ -219,7 +219,7 @@ Tomcat started on port(s): 8080 (http) with context path ''
 Started SpringBootVideoGamesApplication in 5.835 seconds (JVM running for 7.221)
 ```
 
-Let's interact with our web service using the [Postman][postman] API client. Download and start Postman. Create a new POST request to `http://localhost:8080/games/`. From the Body tab, choose "raw", then "JSON (application/json)", then enter something like the following:
+Let's interact with our web service using the [Postman][postman] API client. Download and start Postman. Create a new POST request to `http://localhost:8080/games/`. From the Body tab, choose "raw", then "JSON", then enter something like the following:
 
 ```json
 {
