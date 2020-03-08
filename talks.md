@@ -1,5 +1,6 @@
 ---
 title: Talks
+permalink: /talks/
 ---
 
 ## Series

@@ -1,5 +1,6 @@
 ---
 title: Books
+permalink: /books/
 ---
 
 These are the top books on programming I've read. Each has majorly improved my quality of life as a programmer.
