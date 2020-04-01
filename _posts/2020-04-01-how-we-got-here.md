@@ -9,8 +9,8 @@ As of March 27, [reported US cases of COVID-19 surpassed every other country in 
 This is a record of the role President Donald Trump played in bringing this about. I plan on keeping it up-to-date with the most significant facts; please feel free to send any (or any corrections) along to me at [@CodingItWrong](https://twitter.com/CodingItWrong) or virus[at]codingitwrong[dot]com.
 
 Did "nobody see this coming?" No, there's plenty that the Trump administration could have done to better prepare:
-- 2018: Trump disbanded the National Security Council pandemic unit. [[link]](https://abcnews.go.com/Politics/wireStory/trump-disbanded-nsc-pandemic-unit-experts-praised-69594177)
-- Sep 2019: White House economists published a study about the devastating economic effect of a pandemic. [[link]](https://www.nytimes.com/2020/03/31/business/coronavirus-economy-trump.html)
+- 2018: the Trump administration disbanded the National Security Council pandemic unit. [[link]](https://abcnews.go.com/Politics/wireStory/trump-disbanded-nsc-pandemic-unit-experts-praised-69594177)
+- Sep 2019: White House economists published a study about the devastating death toll and economic effect of a pandemic. [[link]](https://www.nytimes.com/2020/03/31/business/coronavirus-economy-trump.html)
 * Dec 2019: China informed the World Health Organization about the coronavirus; the CDC was informed on January 3 at the latest. [[link]](https://twitter.com/SethAbramson/status/1241864649139785730)
 - Jan: The US and South Korea detected their first case on the same day, but South Korea is far ahead of the US on testing. [[link]](https://www.reuters.com/article/us-health-coronavirus-testing-specialrep/special-report-how-korea-trounced-u-s-in-race-to-test-people-for-coronavirus-idUSKBN2153BW)
 - Jan: the US was aware of containment measures China was already taking, but took no similar action. [[link]](https://twitter.com/isgoodrum/status/1241897993608945671)
@@ -19,12 +19,12 @@ Did "nobody see this coming?" No, there's plenty that the Trump administration c
 
 Trump actively downplayed the severity of the virus throughout February and March:
 - Feb 24: "Very much under control". [[link]](https://twitter.com/realDonaldTrump/status/1232058127740174339)
-- Feb 27: we have 15 people, within a few days it will be zero. [[link]](https://twitter.com/jaketapper/status/1243314620737236992)
+- Feb 27: we have 15 people, within a few days it will be close to zero. [[link]](https://twitter.com/jaketapper/status/1243314620737236992)
 - Mar 4: denies WHO death rate, suggests it's fine to go to work, compares to the flu. [[link]](https://twitter.com/atrupar/status/1235411751950221312)
 - Mar 9: more die from the common flu annually. Nothing is shut down, life goes on. [[link]](https://twitter.com/realDonaldTrump/status/1237027356314869761)
 - Mar 18: insists he always treated the coronavirus very seriously. [[link]](https://twitter.com/realDonaldTrump/status/1240243188708839424)
 
-Refused to answer journalists' questions about the virus:
+Ridiculed journalists instead of answering their questions about the virus:
 * "Don't be a cutie-pie." [[link]](https://twitter.com/KenDilanianNBC/status/1243672477844324352)
 * "No one is talking about this except you, which doesn't surprise me…I'm not hearing it." [[link]](https://twitter.com/Yamiche/status/1241056026872426496)
 * "I say you're a terrible reporter." [[link]](https://twitter.com/kylegriffin1/status/1241042158569676800)
@@ -33,7 +33,7 @@ Treated the pandemic as reality TV:
 - Bragged about the ratings of the briefings. [[link]](https://twitter.com/realDonaldTrump/status/1244320570315018240)
 - "Incredibly interesting…everybody is going crazy, they're going crazy, they can't get enough of it." [[link]](https://twitter.com/atrupar/status/1245134235964452866)
 
-Gave medical advice to take unapproved hydroxychloroquine and azithromycin:
+Gave medical advice to take unapproved hydroxychloroquine and azithromycin to treat COVID-19:
 * <https://twitter.com/DrJenGunter/status/1241404043555041280>
 * May be life-threatening. [[link]](https://twitter.com/tedlieu/status/1241411870189182976)
 * Resulted in a man dying and his wife going to the ICU. [[link]](http://bannerhealth.mediaroom.com/chloroquinephosphate)
@@ -59,5 +59,5 @@ Minimized the need for medical supplies, encouraged states to get them themselve
 * White House admits allocating aid based on which states matter to Trump's re-election. [[link]](https://twitter.com/dgordon52/status/1245097304065019905)
 
 Summary of the US handling of the pandemic:
-- "Mishandled to a substantially worse degree than what every health expert I've spoken with had feared." [[link]](https://twitter.com/triketora/status/1242870447936602113)
+- "America has mishandled to a substantially worse degree than what every health expert I've spoken with had feared." [[link]](https://twitter.com/triketora/status/1242870447936602113)
 - The worst US intelligence failure. [[link]](https://twitter.com/MicahZenko/status/1242886012331843587)
