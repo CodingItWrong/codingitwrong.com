@@ -2,8 +2,6 @@
 title: "How We Got Here: Trump's Mishandling of the Coronavirus Pandemic"
 ---
 
-*(Hopefully it doesn't need to be said, but despite this being published on April 1, this is no joke. The state of handling the coronavirus pandemic in the US is deadly serious.)*
-
 As of March 27, [reported US cases of COVID-19 surpassed every other country in the world](https://twitter.com/jaketapper/status/1243314620737236992). Our [rate of growth of cases is higher](https://twitter.com/Laurie_Garrett/status/1243296025651154951) too.
 
 This is a record of the role President Donald Trump played in bringing this about. I plan on keeping it up-to-date with the most significant facts; please feel free to send any (or any corrections) along to me at [@CodingItWrong](https://twitter.com/CodingItWrong) or virus[at]codingitwrong[dot]com.
