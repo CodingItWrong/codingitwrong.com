@@ -57,7 +57,3 @@ Minimized the need for medical supplies, encouraged states to get them themselve
 * "Be appreciative." [[link]](https://twitter.com/cspan/status/1243668061795860481)
 * Refuses medical equipment to Michigan despite repeated respectful requests. [[link]](https://twitter.com/GovWhitmer/status/1243362096118521856)
 * White House admits allocating aid based on which states matter to Trump's re-election. [[link]](https://twitter.com/dgordon52/status/1245097304065019905)
-
-Summary of the US handling of the pandemic:
-- "America has mishandled to a substantially worse degree than what every health expert I've spoken with had feared." [[link]](https://twitter.com/triketora/status/1242870447936602113)
-- The worst US intelligence failure. [[link]](https://twitter.com/MicahZenko/status/1242886012331843587)
