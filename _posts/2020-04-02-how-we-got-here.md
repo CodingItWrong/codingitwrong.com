@@ -8,13 +8,16 @@ As of March 27, [reported US cases of COVID-19 surpassed every other country in 
 This is a record of the role President Donald Trump played in bringing this about. I plan on keeping it up-to-date with the most significant facts; please feel free to send any (or any corrections) along to me at [@CodingItWrong](https://twitter.com/CodingItWrong) or virus[at]codingitwrong[dot]com.
 
 Did "nobody see this coming?" No, there's plenty that the Trump administration could have done to better prepare:
+- 2018: a CDC conference warned of not being prepared for the possibility of a future pandemic [[link]](https://news.yahoo.com/two-years-before-coronavirus-cdc-warned-of-a-coming-pandemic-090054010.html)
 - 2018: the Trump administration disbanded the National Security Council pandemic unit. [[link]](https://abcnews.go.com/Politics/wireStory/trump-disbanded-nsc-pandemic-unit-experts-praised-69594177)
 - Sep 2019: White House economists published a study about the devastating death toll and economic effect of a pandemic. [[link]](https://www.nytimes.com/2020/03/31/business/coronavirus-economy-trump.html)
 * Dec 2019: China informed the World Health Organization about the coronavirus; the CDC was informed on January 3 at the latest. [[link]](https://twitter.com/SethAbramson/status/1241864649139785730)
 - Jan: The US and South Korea detected their first case on the same day, but South Korea is far ahead of the US on testing. [[link]](https://www.reuters.com/article/us-health-coronavirus-testing-specialrep/special-report-how-korea-trounced-u-s-in-race-to-test-people-for-coronavirus-idUSKBN2153BW)
 - Jan: the US was aware of containment measures China was already taking, but took no similar action. [[link]](https://twitter.com/isgoodrum/status/1241897993608945671)
 - Jan 28: Elizabeth Warren issued a plan for dealing with the Coronavirus. [[link]](https://www.cnbc.com/2020/01/28/elizabeth-warren-releases-public-health-plan-amid-coronavirus-outbreak.html)
+- Jan 29: Joe Biden warned Trump's policies leave the US unprepared for the pandemic [[link]](https://www.usatoday.com/story/opinion/2020/01/27/coronavirus-donald-trump-made-us-less-prepared-joe-biden-column/4581710002/)
 - Jan and Feb: US intelligent reports warned about a likely pandemic. [[link]](https://www.washingtonpost.com/national-security/us-intelligence-reports-from-january-and-february-warned-about-a-likely-pandemic/2020/03/20/299d8cda-6ad5-11ea-b5f1-a5a804158597_story.html)
+- Feb 3: Army warned Trump administration that 150,000 could die from the coronavirus [[link]](https://www.rawstory.com/2020/04/army-warned-trump-administration-on-feb-3-that-up-to-150000-americans-could-die-from-covid-19/)
 
 Trump actively downplayed the severity of the virus throughout February and March:
 - Feb 24: "Very much under control". [[link]](https://twitter.com/realDonaldTrump/status/1232058127740174339)
