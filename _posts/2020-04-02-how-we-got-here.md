@@ -35,6 +35,7 @@ Gave medical advice to take unapproved hydroxychloroquine and azithromycin to tr
 * <https://twitter.com/DrJenGunter/status/1241404043555041280>
 * May be life-threatening. [[link]](https://twitter.com/tedlieu/status/1241411870189182976)
 * Resulted in a man dying and his wife going to the ICU. [[link]](http://bannerhealth.mediaroom.com/chloroquinephosphate)
+* Trump has a personal financial interest in a company that makes hydroxychloroquine [[link]](https://twitter.com/atrupar/status/1247350512078532610)
 
 Suppresses criticism:
 * Interrupting White House meetings that challenge the facts as he sees them. [[link]](https://twitter.com/joelockhart/status/1242204717926830092)
