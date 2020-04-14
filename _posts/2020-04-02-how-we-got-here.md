@@ -7,7 +7,7 @@ As of March 27, [reported US cases of COVID-19 surpassed every other country in 
 
 This is a record of the role President Donald Trump played in bringing this about. I plan on keeping it up-to-date with the most significant facts; please feel free to send any (or any corrections) along to me at [@CodingItWrong](https://twitter.com/CodingItWrong) or virus[at]codingitwrong[dot]com.
 
-Did "nobody see this coming?" No, there's plenty that the Trump administration could have done to better prepare:
+Did "nobody see this coming?" No, there's plenty that the Trump administration could have done to better prepare. [[Summary by NY Times]](https://www.nytimes.com/2020/04/11/us/politics/coronavirus-trump-response.html)
 - 2018: a CDC conference warned of not being prepared for the possibility of a future pandemic [[link]](https://news.yahoo.com/two-years-before-coronavirus-cdc-warned-of-a-coming-pandemic-090054010.html)
 - 2018: the Trump administration disbanded the National Security Council pandemic unit. [[link]](https://abcnews.go.com/Politics/wireStory/trump-disbanded-nsc-pandemic-unit-experts-praised-69594177)
 - Sep 2019: White House economists published a study about the devastating death toll and economic effect of a pandemic. [[link]](https://www.nytimes.com/2020/03/31/business/coronavirus-economy-trump.html)
