@@ -4,6 +4,8 @@ title: "Tweaking UI Behavior with Ember Data Queries"
 
 There are a lot of things I like about Ember.js, but Ember Data is my favorite part. Ember Data with a JSON:API backend are an order of magnitude less work than any other data layer I've seen. A lot works out of the box--but it still sometimes requires tweaking to get it to work just the way you like. Let's look at how a simple todo list can present some surprising requirements, and how we can implement them with Ember Data.
 
+You can also check out [the full application repo](https://github.com/CodingItWrong/surely-ember) if you like.
+
 ## The Query
 
 I'm building a todo list application called Surely.
