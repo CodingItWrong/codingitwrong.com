@@ -1,8 +1,8 @@
 ---
-title: JavaScript Promises Quick Reference
+title: JavaScript Promises Primer
 ---
 
-Here's a quick reference about how to use Promises in JavaScript.
+Here's a quick overview of how to use Promises in JavaScript.
 
 Say we have a set of functions that make calls to a web service and return the data via Promises.
 
