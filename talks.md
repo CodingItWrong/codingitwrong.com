@@ -34,7 +34,17 @@ permalink: /talks/
 
 ## Standalone
 
+{% comment %}
+Max pixel width of images 468 @1x
+{% endcomment %}
+
 <div class="row">
+  {% include video-thumbnail.html
+    name="A Practical Getting-Started Guide to Accessibility"
+    image="a11y.jpg"
+    venue="ReactATL"
+    url="https://youtu.be/5ZqBFZsLmLM"
+  %}
   {% include video-thumbnail.html
     name="New Solutions to Old Testing Problems"
     image="new-solutions.jpg"
