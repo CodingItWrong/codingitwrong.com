@@ -62,7 +62,19 @@ getRestaurant()
   });
 ```
 
-Returning a Promise you make yourself isn't that useful, because, as we saw previously, you can just return the value directly. What *is* useful is calling another function that returns a Promise, and passing that Promise along.
+Returning a Promise you make yourself isn't that useful, because, as we saw previously, you can just return the value directly. What *is* useful is calling a nested function that returns a Promise. You might be tempted to chain another nested `.then()` call on it:
+
+```js
+getRestaurant()
+  .then(restaurant => {
+    getSpecialDish(restaurant)
+      .then(dish => {
+        console.log(dish); // Sushi Place Special Roll
+      });
+  });
+```
+
+This works fine, but one of the big benefits of Promises is you can flatten this structure. If you return the result of the inner function that returns a Promise, then the outer Promise resolves to the inner Promise's resolved value. So you can chain a second `.then()` after the first:
 
 ```js
 getRestaurant()
