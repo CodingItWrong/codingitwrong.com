@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem "jekyll", "~> 3.9.0"
 gem "jekyll-theme-codingitwrong", github: "codingitwrong/jekyll-theme-codingitwrong", branch: "master"
+gem "kramdown-parser-gfm"
 
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.15"
