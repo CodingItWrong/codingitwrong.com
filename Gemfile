@@ -3,7 +3,7 @@ source "https://rubygems.org"
 
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-gem "jekyll", "~> 3.9.0"
+gem "jekyll", "~> 4.1.1"
 gem "jekyll-theme-codingitwrong", github: "codingitwrong/jekyll-theme-codingitwrong", branch: "master"
 gem "kramdown-parser-gfm"
 
