@@ -261,7 +261,7 @@ To call this action on the route, we can use the `send()` method to specify the 
 ```html
 {% raw %}<TodoList
   @todo={{this.filteredTodos}}
-  @onReload={{action send 'refreshModel'}}
+  @onReload={{action send "refreshModel"}}
 />{% endraw %}
 ```
 
@@ -395,7 +395,7 @@ Our route template provides the form to add a new todo, and passes the todos tha
 
 <TodoList
   @todos={{this.sortedTodos}}
-  @onRefresh={{action send 'refreshModel'}}
+  @onRefresh={{action send "refreshModel"}}
 />{% endraw %}
 ```
 
