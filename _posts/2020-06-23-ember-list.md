@@ -226,7 +226,7 @@ We add a Reload button to the `TodoList` component, which will trigger an action
 
 ```html
 {% raw %}<TodoList
-  @todo={{this.filteredTodos}}
+  @todos={{this.filteredTodos}}
   @onReload={{this.myCoolAction}}
 />{% endraw %}
 ```
@@ -260,7 +260,7 @@ To call this action on the route, we can use the `send()` method to specify the 
 
 ```html
 {% raw %}<TodoList
-  @todo={{this.filteredTodos}}
+  @todos={{this.filteredTodos}}
   @onReload={{action send "refreshModel"}}
 />{% endraw %}
 ```
