@@ -760,6 +760,88 @@ contentSchedulingPairs() {
 ```
 
 ## Review
+Let's take a look at the final code:
+
+```js
+function schedulingsGroupedByStudent(day) {
+  return new SchedulingGrouper(day).groups();
+}
+
+class SchedulingGrouper {
+  constructor(day) {
+    this.day = day;
+  }
+
+  groups() {
+    return this.students().map(student =>
+      new StudentSchedulingGrouper(this.day, student).group(),
+    );
+  }
+
+  students() {
+    return sortBy(
+      uniq([
+        ...this.day.studentDays.map(property('student')),
+        ...this.day.schedulings.map(property('student')),
+      ]),
+      'name',
+    );
+  }
+}
+
+class StudentSchedulingGrouper {
+  constructor(day, student) {
+    this.day = day;
+    this.student = student;
+  }
+
+  group() {
+    return {
+      student: this.student,
+      studentDay: this.studentDay(),
+      contentSchedulingPairs: this.contentSchedulingPairs(),
+    };
+  }
+
+  studentDay() {
+    return this.day.studentDays.find(
+      matchesProperty('student.id', this.student.id),
+    );
+  }
+
+  contents() {
+    return this.studentDay()?.contentDay?.contents ?? [];
+  }
+
+  contentSchedulingPairs() {
+    return uniqBy(
+      [
+        // schedulings must come first so uniqBy prefers them
+        ...this.contentSchedulingPairsFromSchedulings(),
+        ...this.contentSchedulingPairsFromContents(),
+      ],
+      property('content.id'),
+    );
+  }
+
+  contentSchedulingPairsFromSchedulings() {
+    return this.day.schedulings
+      .filter(matchesProperty('student.id', this.student.id))
+      .map(scheduling => ({
+        content: scheduling.content,
+        scheduling,
+      }));
+  }
+
+  contentSchedulingPairsFromContents() {
+    return this.contents().map(content => ({
+      content,
+      scheduling: null,
+    }));
+  }
+}
+```
+
 Now each of our methods is pretty simple; the longest one is eight lines, including a comment. Our tests are still passing, so we know it works. Let’s see if this helps us understand our code:
 
 - Our externally-facing API is still the `schedulingsGroupedByStudent()` function.
