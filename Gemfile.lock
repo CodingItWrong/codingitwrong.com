@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/codingitwrong/jekyll-theme-codingitwrong.git
-  revision: 7a970611ef970f9b80dc4cd4e00429f9b0b2d37b
+  revision: 825895210263a2d1c9871caaa32b27e2c24723ee
   branch: master
   specs:
     jekyll-theme-codingitwrong (0.1.0)
@@ -56,7 +56,7 @@ GEM
     mercenary (0.4.0)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
-    public_suffix (4.0.5)
+    public_suffix (4.0.6)
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
