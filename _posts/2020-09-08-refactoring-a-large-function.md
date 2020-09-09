@@ -75,7 +75,7 @@ A lot of us are used to writing functions this long and complex, including me. B
 First I make sure it's thoroughly covered by unit tests, so I can make changes to it with confidence. Next, I think about what approach to take.
 
 ## Replace Function With Command
-The easiest way to split up a large function is to use the Extract Function refactoring. But there is a lot of data flying around, so if I extracted functions I would need to pass the same repeated arguments to them. Instead, I’ll use Replace Function with Command. This involves replacing a function with a class, and has the benefit of allowing multiple methods to access data via instance properties without needing to pass them as arguments. (Now, some JavaScript developers aren’t a fan of ECMAScript class syntax or behavior; in a part-two blog post I’ll perform the same refactoring, but using closure scope instead of classes, with some tradeoffs.)
+The easiest way to split up a large function is to use the Extract Function refactoring. But there is a lot of data flying around, so if I extracted functions in the same scope I would need to pass the same repeated arguments to them. Instead, I’ll use Replace Function with Command. This involves replacing a function with a class, and has the benefit of allowing multiple methods to access data via instance properties without needing to pass them as arguments. (Now, some JavaScript developers aren’t a fan of ECMAScript class syntax or behavior; [in a part-two blog post](/2020/09/08/refactoring-a-large-function-part-2.html) I’ll perform the same refactoring, but using closure scope instead of classes, with some tradeoffs.)
 
 To perform the Replace Function with Command refactoring, first I create a new class to hold the functionality:
 
@@ -853,4 +853,4 @@ Now each of our methods is pretty simple; the longest one is eight lines, includ
 
 This a nice stepwise way we can understand the functionality here. We don’t need to read a whole long function and try to understand the intent of each step. We have created methods that give names to each concept. And because we’re using class instances instead of standalone functions, we don’t need to pass a lot of arguments to the methods; they have access to instance properties and to call other methods to get the information they need.
 
-As I mentioned before, you don’t need to use classes to decompose your code in this way; you can also do it using JavaScript scope and nested functions. In my next post we’ll go through this refactoring sequence again using that alternative approach.
+As I mentioned before, you don’t need to use classes to decompose your code in this way; you can also do it using JavaScript scope and nested functions. In [my next post](/2020/09/08/refactoring-a-large-function-part-2.html) we’ll go through this refactoring sequence again using that alternative approach.
