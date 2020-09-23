@@ -52,6 +52,12 @@ Max pixel width of images 468 @1x
     url="https://youtu.be/OwbgFbr83Jk"
   %}
   {% include video-thumbnail.html
+    name="Using Webpacker with Rails"
+    image="webpacker.jpg"
+    venue="Atlanta Ruby User Group"
+    url="https://youtu.be/HwqtrlRspc8"
+  %}
+  {% include video-thumbnail.html
     name="Ruby Testing Podcast"
     image="ruby-testing-podcast.jpg"
     venue="Ruby Testing Podcast"
