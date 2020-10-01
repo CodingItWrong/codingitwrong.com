@@ -170,19 +170,6 @@ export default class ApplicationAdapter extends JSONAPIAdapter {
 }
 ```
 
-In `config/environment.js`, configure Ember Data to point to the API's location, `http://localhost:3000`, for the API:
-
-```diff
- if (environment === 'development') {
-   // ENV.APP.LOG_RESOLVER = true;
-   // ENV.APP.LOG_ACTIVE_GENERATION = true;
-   // ENV.APP.LOG_TRANSITIONS = true;
-   // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-   // ENV.APP.LOG_VIEW_LOOKUPS = true;
-+  ENV.apiHost = 'http://localhost:3000';
- }
-```
-
 Generate a todo model:
 
 ```bash
@@ -226,14 +213,14 @@ $ ember g component-class NewTodoForm
 Add the following to `app/components/new-todo-form.hbs`:
 
 ```handlebars
-<form {{on 'submit' this.add}}>
+{% raw %}<form {{on 'submit' this.add}}>
   <Input
     @value={{this.name}}
     type="text"
     placeholder="New Todo"
   />
   <button type="submit">Add</button>
-</form>
+</form>{% endraw %}
 ```
 
 And replace the contents of `app/components/new-todo-form.js` with this:
@@ -285,9 +272,9 @@ export default class IndexRoute extends Route {
 In `app/templates/index.js`, create an instance of each component:
 
 ```handlebars
-<NewTodoForm />
+{% raw %}<NewTodoForm />
 
-<TodoList @todos={{@model}} />
+<TodoList @todos={{@model}} />{% endraw %}
 ```
 
 ## Trying It Out
@@ -406,7 +393,9 @@ Next, let's create an Action Cable connection:
    constructor(...args) {
      super(...args);
 +
-+    this.cable = ActionCable.createConsumer('ws://localhost:3000/cable');
++    this.cable = ActionCable.createConsumer(
++      'ws://localhost:3000/cable'
++    );
    }
  }
 ```
@@ -419,7 +408,9 @@ Next, we need to subscribe to the `TodosChannel` specifically:
  constructor(...args) {
    super(...args);
 
-   this.cable = ActionCable.createConsumer('ws://localhost:3000/cable');
+   this.cable = ActionCable.createConsumer(
+     'ws://localhost:3000/cable'
+   );
 
 +  this.cable.subscriptions.create('TodosChannel', {
 +    connected: () => {
