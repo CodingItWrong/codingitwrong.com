@@ -6,6 +6,12 @@ WebSockets provide a way for client apps to receive live updates from the server
 
 Let's take a look at adding WebSockets to an Ember app backed by Rails. We'll use Ember Data on the frontend, [JSONAPI::Resources](https://jsonapi-resources.com) on the backend, and Rails' [Action Cable](https://guides.rubyonrails.org/action_cable_overview.html) for the WebSocket communication.
 
+You'll need the following installed:
+
+- Node
+- Ruby
+- [Postgres](https://postgresapp.com/)
+
 ## Setting Up the Backend
 
 Create a new Rails app in API mode with a Postgres database:
