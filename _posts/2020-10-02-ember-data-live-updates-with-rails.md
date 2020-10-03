@@ -8,9 +8,9 @@ Let's take a look at adding live updates to an Ember app that uses Ember Data. F
 
 You'll need the following installed:
 
-* [Node.js](https://nodejs.org/)
 * [Ruby](https://www.ruby-lang.org/en/)
-- [Postgres](https://postgresapp.com/)
+* [Postgres](https://postgresapp.com/)
+* [Node.js](https://nodejs.org/)
 * [Ember CLI](https://guides.emberjs.com/release/getting-started/quick-start/#toc_install-ember)
 
 ## Setting Up the Backend
