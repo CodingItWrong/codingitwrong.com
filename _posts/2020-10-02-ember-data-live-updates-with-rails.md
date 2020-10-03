@@ -1,5 +1,5 @@
 ---
-title: Ember Data Live Updates with Rails
+title: Ember Data Live Updates with WebSockets
 ---
 
 WebSockets provide a way for client apps to receive live updates from the server as data is changed by other users, or by the same user in a different tab or on a different device. WebSockets are a low-level technology, but by building on top of high-level abstractions like JSON:API we can get started adding live updates to our app fairly quickly.
