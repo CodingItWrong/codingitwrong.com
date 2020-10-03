@@ -4,7 +4,7 @@ title: Ember Data Live Updates with WebSockets
 
 WebSockets provide a way for client apps to receive live updates from the server as data is changed by other users, or by the same user in a different tab or on a different device. WebSockets are a low-level technology, but by building on top of high-level abstractions like JSON:API we can get started adding live updates to our app fairly quickly.
 
-Let's take a look at adding WebSockets to an Ember app backed by Rails. We'll use Ember Data on the frontend, [JSONAPI::Resources](https://jsonapi-resources.com) on the backend, and Rails' [Action Cable](https://guides.rubyonrails.org/action_cable_overview.html) for the WebSocket communication.
+Let's take a look at adding live updates to an Ember app that uses Ember Data. For this blog post we'll use a Rails API with [Action Cable](https://guides.rubyonrails.org/action_cable_overview.html) for the WebSocket communication. In the [example repo](https://github.com/CodingItWrong/ember-data-live-updates) you can also find an example with Express and standard WebSockets. Similar patterns would apply with other backends, such as [Golang WebSockets](https://godoc.org/golang.org/x/net/websocket) or [Phoenix channels](https://hexdocs.pm/phoenix/channels.html).
 
 You'll need the following installed:
 
