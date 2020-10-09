@@ -1,5 +1,5 @@
 ---
-title: Cypress Code Smells
+title: Identifying Code Smells in Cypress
 ---
 
 User automation tests are intended to closely replicate a real user interacting with your app, and Cypress purports to be even more realistic than past testing tools. But when using Cypress with a modern frontend framework like React or Vue, you will probably run into cases where the app works fine in manual testing but fails in a Cypress test. The test may fail consistently, or intermittently, or may succeed locally but fail on CI (sometimes or always). But regardless, the app works reliably in manual testing but sometimes fails in Cypress tests.
