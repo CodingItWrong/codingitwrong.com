@@ -22,7 +22,7 @@ I've been writing software full-time since 2004, working in technologies ranging
 
 ## Open-Source
 
-You can see a number of open-source libraries I've created at [my personal GitHub account](https://github.com/needbee?tab=repositories).
+You can see a number of open-source libraries I've created at [my personal GitHub account](https://github.com/codingitwrong).
 
 ## Projects
 
