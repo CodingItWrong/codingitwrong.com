@@ -1,5 +1,6 @@
 ---
 title: Hey, I'm Josh.
+permalink: /me/
 ---
 
 ## About Me
