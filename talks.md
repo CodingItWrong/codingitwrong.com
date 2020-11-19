@@ -24,12 +24,6 @@ permalink: /talks/
     venue="Twitch"
     url="https://www.youtube.com/playlist?list=PLXXnezSEtvNPZroRdvjhEVzOhURl572Lf"
   %}
-  {% include video-thumbnail.html
-    name="Easy Backend APIs with Rails"
-    image="rails-apis.jpg"
-    venue="The Frontier"
-    url="https://thefrontier.bignerdranch.com/skill-packs/easy-backend-api-with-rails"
-  %}
 </div>
 
 ## Standalone
