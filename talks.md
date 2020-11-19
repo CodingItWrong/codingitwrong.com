@@ -40,6 +40,12 @@ Max pixel width of images 468 @1x
 
 <div class="row">
   {% include video-thumbnail.html
+    name="Using Code Smells to Fix Flaky Tests in Cypress"
+    image="code-smells.jpg"
+    venue="Cypress"
+    url="https://youtu.be/JlBCdRlvPWk"
+  %}
+  {% include video-thumbnail.html
     name="A Practical Getting-Started Guide to Accessibility"
     image="a11y.jpg"
     venue="ReactATL"
