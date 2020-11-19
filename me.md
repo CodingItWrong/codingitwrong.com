@@ -9,7 +9,7 @@ Did you know what you wanted to be when you grew up? Ever since Melissa Joan Har
 
 ## Experience
 
-I've been writing software full-time for eleven years, working in technologies ranging from Java to PHP to Ruby to Objective-C. I've built many small and large web applications, including e-commerce systems, wikis, and intelligent search algorithms. I work anywhere between implementing and styling rich UIs back through building robust database schemas and web service client/server architectures.
+I've been writing software full-time since 2004, working in technologies ranging from Java to PHP to Ruby to Objective-C. I've built many small and large web applications, including e-commerce systems, wikis, and intelligent search algorithms. I work anywhere between implementing and styling rich UIs back through building robust database schemas and web service client/server architectures.
 
 ## My Passions
 
@@ -69,6 +69,6 @@ An open-source system for registering people for volunteering opportunities.
 
 ## Personal Life
 
-I live in Atlanta, GA with my wife Jen, 4-year-old daughter Emily, and 2-year-old daughter Katherine.
+I live in Atlanta, GA with my wife Jen and children Emily, Katherine, and James.
 
 My biggest hobby is video gaming. You can often find me [chasing Sephiroth](https://itunes.apple.com/us/app/final-fantasy-vii/id1021566244?mt=8), [wrecking bandits](http://borderlandsthegame.com/), [obeying Peter Dinklage](https://www.destinythegame.com/), and using [the Black Speech](https://www.shadowofmordor.com) or [my fus-ro-dah](http://www.elderscrolls.com/skyrim/).
