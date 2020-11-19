@@ -70,24 +70,6 @@ Max pixel width of images 468 @1x
     url="http://www.rubytestingpodcast.com/josh-justice"
   %}
   {% include video-thumbnail.html
-    name="My Ruby Story"
-    image="my-ruby-story.jpg"
-    venue="My Ruby Story podcast"
-    url="https://devchat.tv/my-ruby-story/mrs-080-josh-justice/"
-  %}
-  {% include video-thumbnail.html
-    name="React Native Testing"
-    image="react-native-radio.jpg"
-    venue="React Native Radio podcast"
-    url="https://devchat.tv/react-native-radio/react-native-testing-feat-josh-justice-of-big-nerd-ranch/"
-  %}
-  {% include video-thumbnail.html
-    name="Frontend Testing Like a Rubyist"
-    image="ruby-rogues.jpg"
-    venue="Ruby Rogues podcast"
-    url="https://devchat.tv/ruby-rogues/rr-391-frontend-testing-like-a-rubyist-with-josh-justice/"
-  %}
-  {% include video-thumbnail.html
     name="Test-Driven Development in React with Cypress"
     image="tdd-react.jpg"
     venue="connect.tech conference"
