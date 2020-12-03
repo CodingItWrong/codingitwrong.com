@@ -7,7 +7,7 @@ These are the top books on programming I've read. Each has majorly improved my q
 
 Links take you to InformIT, a distributor where you can buy physical books or DRM-free ebooks.
 
-*The links below are affiliate links: if you purcahse through them I make a little money without any cost to you. If you'd rather not use these links, feel free to search for these books at your preferred bookseller. I recommend InformIT for DRM-free ebooks.*
+*The links below are affiliate links: if you purchase through them I make a little money without any cost to you. If you'd rather not use these links, feel free to search for these books at your preferred bookseller. I recommend InformIT for DRM-free ebooks.*
 
 <ul class="media-list d-none d-md-block">
 
