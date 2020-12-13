@@ -1,14 +1,16 @@
-<div class="card mb-3 mr-3">
-  <div class="card-body">
-    <a
-      href="{{ include.link }}"
-      title="{{ include.service }}: {{ include.handle }}"
-      target="_blank"
-      rel="noreferrer noopener"
-      class="d-flex flex-row flex-md-column align-items-center p-2"
-    >
-      <img src="/img/logos/{{ include.image }}.png" alt="{{ include.service }} logo" class="follow-logo m-3" />
-      {{ include.handle }}
-    </a>
+<div class="col-12 col-sm-4 mb-3">
+  <div class="card">
+    <div class="card-body">
+      <a
+        href="{{ include.link }}"
+        title="{{ include.service }}: {{ include.handle }}"
+        target="_blank"
+        rel="noreferrer noopener"
+        class="d-flex flex-row flex-sm-column align-items-center p-2"
+      >
+        <img src="/img/logos/{{ include.image }}.png" alt="{{ include.service }} logo" class="follow-logo m-3" />
+        {{ include.handle }}
+      </a>
+    </div>
   </div>
 </div>
