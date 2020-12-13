@@ -4,7 +4,30 @@ layout: default
 
 <div class="home">
 
-  <h2 class="page-heading">Posts</h2>
+  <h2>Follow Me</h2>
+
+  <div class="d-flex flex-column flex-md-row mb-5">
+    {% include follow-link.html
+      service="Twitter"
+      image="twitter"
+      handle="@CodingItWrong"
+      link="https://twitter.com/CodingItWrong"
+    %}
+    {% include follow-link.html
+      service="Twitch"
+      image="twitch"
+      handle="CodingItWrong"
+      link="https://www.twitch.tv/codingitwrong/"
+    %}
+    {% include follow-link.html
+      service="YouTube"
+      image="youtube"
+      handle="CodingItWrong"
+      link="https://www.youtube.com/channel/UCa-4tbLDX_lmq2f40L0paZw"
+    %}
+  </div>
+
+  <h2>Posts</h2>
 
   <ul class="list-unstyled">
     {% for post in site.posts %}
