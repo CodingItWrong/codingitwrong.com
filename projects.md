@@ -19,8 +19,10 @@ permalink: /projects/
 
 ## Project Templates
 
-- [Ember](https://github.com/CodingItWrong/emberup)
-- [Rails webapp](https://github.com/CodingItWrong/rails-template)
-- [Rails web service](https://github.com/CodingItWrong/apiup) - with JSON:API and OAuth 2
-- [React](https://github.com/CodingItWrong/reactup)
-- [React Native](https://github.com/CodingItWrong/nativeup)
+* [apiup](https://github.com/CodingItWrong/apiup) - Rails API with JSON:API and OAuth 2
+* [babelup](https://github.com/CodingItWrong/babelup) - transpiled JavaScript
+* [emberup](https://github.com/CodingItWrong/emberup)
+* [nativeup](https://github.com/CodingItWrong/nativeup) - React Native
+* [nodeup](https://github.com/CodingItWrong/nodeup) - untranspiled, suitable for Node server apps
+* [railsup](https://github.com/CodingItWrong/rails-template)
+* [reactup](https://github.com/CodingItWrong/reactup)
