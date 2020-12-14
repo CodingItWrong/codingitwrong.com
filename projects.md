@@ -12,7 +12,10 @@ permalink: /projects/
 
 ## Open-Source Apps
 
-* [Firehose](https://github.com/CodingItWrong/firehose) - host your own bookmarking service like Pocket
+* [Surely](https://github.com/CodingItWrong/surely-ember) - todo app
+* [Firehose](https://github.com/CodingItWrong/firehose) - bookmarking
+* [Slapdash](https://github.com/CodingItWrong/slapdash) - public markdown notes
+* [Ideas](https://github.com/CodingItWrong/ideas-ember) - cross-linked notes
 
 ## Project Templates
 
