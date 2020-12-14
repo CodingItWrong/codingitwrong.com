@@ -9,6 +9,7 @@ permalink: /projects/
 * [LearnTDD.in](https://learntdd.in) - learn Test-Driven Development in the framework of your choice.
 * [Rails APIs](https://railsapi.codingitwrong.com) - learn how to create JSON APIs efficiently with the powerful features of Ruby on Rails
 * [ReactNativeTesting.io](https://reactnativetesting.io) - learn unit, component, and end-to-end testing for React Native
+* [HowToJSONAPI.com](https://howtojsonapi.com) - getting started with the JSON:API standard in various frontend frameworks and backend languages
 
 ## Open-Source Apps
 
