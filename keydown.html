@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Keydown</title>
+  </head>
+  <body>
+    <h1>Sanity Check</h1>
+    <p>Please make sure the cursor is in the text input below and then press the return key.</p>
+    <input type="text" id="input" />
+    <div id="output">
+    </div>
+
+    <script>
+      document.getElementById('input').addEventListener('keydown', e => {
+        console.log(e);
+        const outputElement = document.getElementById('output');
+        if (e.keyCode === 13) {
+          outputElement.innerHTML = 'Keycode is present and correctly 13, all is right in the world.';
+        } else if (e.keyCode) {
+          outputElement.innerHTML = `Keycode is ${e.keyCode}; are you sure you pressed the return key?`;
+        } else {
+          outputElement.innerHTML = 'Keycode is missing and it is time to give up on writing software.';
+        }
+      });
+    </script>
+  </body>
+</html>
