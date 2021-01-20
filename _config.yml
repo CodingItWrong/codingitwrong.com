@@ -13,7 +13,6 @@ description: > # this means to ignore newlines until "baseurl:"
   Full-stack developer for sufficiently small definitions of stack. Work for Big Nerd Ranch. This site is a bit more serious; visit my Twitter account for sarcasm over 9000.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://codingitwrong.com" # the base hostname & protocol for your site
-twitter_username: CodingItWrong
 github_username:  CodingItWrong
 mastodon:
   -
