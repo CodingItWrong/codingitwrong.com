@@ -4,8 +4,10 @@
       <a
         href="{{ include.link }}"
         title="{{ include.service }}: {{ include.handle }}"
-        target="_blank"
-        rel="noreferrer noopener"
+        {% if include.sametab != true %}
+          target="_blank"
+          rel="noreferrer noopener"
+        {% endif %}
         class="d-flex flex-row flex-sm-column align-items-center p-2"
       >
         <img src="/img/logos/{{ include.image }}.png" alt="{{ include.service }} logo" class="follow-logo m-3" />
