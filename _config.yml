@@ -10,7 +10,7 @@ title: CodingItWrong.com
 author: Josh Justice
 email: me@codingitwrong.com
 description: > # this means to ignore newlines until "baseurl:"
-  Full-stack developer for sufficiently small definitions of stack. Work for Big Nerd Ranch. This site is a bit more serious; visit my Twitter account for sarcasm over 9000.
+  Full-stack developer for sufficiently small definitions of stack. Work for Big Nerd Ranch.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://codingitwrong.com" # the base hostname & protocol for your site
 github_username:  CodingItWrong
