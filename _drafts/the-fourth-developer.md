@@ -18,6 +18,7 @@ Let's add a few additional assumptions:
 
 - Most of the time developers are modifying or extending existing code, rather than adding totally new code.
 - PR reviews are thorough, not just looking for obvious errors or code style, but really understanding the code.
+- PR reviews are the main time developers are getting familiar with code. They are not regularly reading through other code to the same level of thoroughness as in PR reviews.
 
 With these assumptions added, we can now pinpoint exactly when adding developers starts to cause a problem. **Specifically, the team is hindered more than they’re helped at the moment when you add a fourth developer.**
 
