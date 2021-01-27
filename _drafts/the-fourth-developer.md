@@ -107,3 +107,5 @@ If, on the other hand, you accept the premise that unfamiliar code is a problem,
 2. You could arrange your system so it can be built by teams of three developers max. This may seem impossible, but there are a few different ways: by using high-level abstractions to minimize the code that needs to be written, by focusing on building the most important features one at a time, or by splitting up the system into smaller self-contained pieces.
 
 These approaches have all been discussed at length elsewhere better than they could be summarized here. But the surprising thing may be how early you need to reach for those approaches. They aren’t for when your team has reached a dozen developers. Impacts on the quality of your app happen at a precise moment: when you add a fourth developer. And even if your team is three or fewer developers now, if there is a chance you'll add a fourth developer in the future, the code you're writing now is what you'll be building on. If you don't mitigate the code-unfamiliarity problem now, you might not be ready for the fourth developer.
+
+*Thanks to Nate Sottek, Jeremy Sherman, and Bryan Lindsey for review and input.*
