@@ -29,6 +29,8 @@ As our goal, let’s say that **for every change to the code, we want someone wh
 
 When you are a **solo developer** on a project, you're familiar with all of the code. This means a high level of quality for whatever you’re working on, although of course the limitations on output for a solo developer are clear.
 
+Over time, your memory of code fades, so you don't have perfect familiarity of all the code you've ever worked on. For simplicity of analysis, we'll set aside the impact of memory on code familiarity for most of this post, then bring it back in at the end to account for it.
+
 When you have a **team of two developers,** each is still familiar with all of the code, because for each chunk of it, you either wrote it or reviewed it. This means you’ll still have a high level of quality in the code you write.
 
 What about a **team of three developers**? If you think about it, it becomes clear that for every PR of new code, either the author or the reviewer will be familiar with that code. Here's why we can conclude this.
@@ -63,6 +65,8 @@ How should we assess the code added by the four-developer case? Three developers
 **By adding a fourth developer, for every bit of familiar, well-understood, fits-with-the-system code you add, you’re adding *twice as much* unfamiliar, less-understood, clutters-up-the-system code.**
 
 The change from three developers to four is drastic. We went from three developers adding *no* unfamiliar code, to a fourth developer adding *twice as much* unfamiliar code as familiar. In a very real sense it's one step forward, two steps back. This is probably very surprising to hear; it was to me.
+
+But is this difference mitigated by the fact that your familiarity with code fades over time? It's true that that means that in the three-developer case you don't have *perfect* familiarity with all the code. But it still means that your *only* unfamiliarity comes from fading memory, whereas with a fourth developer you're adding twice as much code that you've *never seen* right from the beginning. The difference in familiarity is still drastic.
 
 ## How Can This Be?
 If you’re not sure how this math can be correct, let's think about the cases that lead to it.
