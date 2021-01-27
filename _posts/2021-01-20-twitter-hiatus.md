@@ -12,6 +12,6 @@ As much as I enjoy Twitter, this is no big sacrifice since I don't get my liveli
 
 You can always find all the ways to reach me on the homepage of [CodingItWrong.com](https://codingitwrong.com). They include:
 
-* I'll be blogging here. If you'd like to follow my posts and aren't already using RSS I put together a page of [recommended RSS tools](/rss). I've added a comment system so you can reply to posts on the site, and I'll be checking those comments and replying.
+* I'll be blogging here. If you'd like to follow my posts and aren't already using RSS I put together a page of [recommended RSS tools](/rss.html). I've added a comment system so you can reply to posts on the site, and I'll be checking those comments and replying.
 * I set up a [personal Gitter chat room](https://gitter.im/codingitwrong/Lobby) if anyone would like to chat more directly.
 * You can always email me using my email address in the site footer.
