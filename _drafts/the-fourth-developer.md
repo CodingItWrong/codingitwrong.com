@@ -12,7 +12,26 @@ To assess this, let's assume the following project setup:
 
 In this scenario, then the amount of useful code delivered increases linearly with the number of developers. Two developers deliver two units of code, three deliver three, etc. The amount of time needed for PR review doesn’t increase, because no matter how many developers you have, if each one reviews just one other developer’s code, everyone gets a review. (I don’t include the one-developer case in this list because one developer isn’t doing any code review, so they have more time to write code and their output isn’t directly comparable.)
 
-But the linear increase of output doesn’t increase indefinitely. At some point, the amount of useful code added slows down, even to the point of the team being less productive than before the last developer was added. And I think this point is far earlier than almost any of us realize.
+But the linear increase of output doesn’t increase indefinitely. At some point, the amount of useful code added slows down, even to the point of the team being less productive than before the last developer was added. This is a widely-understood phenomenon. What isn't so widely understood is at what point the slowdown happens; I think it's far earlier than almost any of us realize.
+
+## On Familiarity
+
+This post's assessment of at what point slowdown happens rests on two major assumptions. Let's examine them.
+
+First, **code quality will make or break a project.** It's not enough to have code that works without bugs or errors. Code that is difficult to understand, fragile, and difficult to change will be a disaster for your project. Over time your delivery of features will be slower, less consistent, and buggy. A lot has been written about the importance of code quality, so if you aren't yet convinced, check out
+<a href="https://click.linksynergy.com/link?id=JlUaUff9Alw&offerid=145238.2754839&type=2&murl=https%3A%2F%2Fwww.informit.com%2Ftitle%2F9780134757599"><em>Refactoring</em></a>,
+<a href="https://click.linksynergy.com/link?id=JlUaUff9Alw&offerid=145238.2461762&type=2&murl=https%3A%2F%2Fwww.informit.com%2Ftitle%2F9780134456478"><em>Practical Object-Oriented Design</em></a>,
+or
+<a href="https://click.linksynergy.com/link?id=JlUaUff9Alw&offerid=145238.163529&type=2&murl=https%3A%2F%2Fwww.informit.com%2Ftitle%2F9780134769042"><em>Smalltalk Best Practice Patterns</em></a>.
+If you still aren't convinced that code quality matters, there's no reason to read the rest of this post.
+
+Second, **when you aren't familiar with the codebase, the code you write is significantly lower quality.** Code quality is contextual. You can write a new function that looks great on its own, but if it uses patterns and names different from the rest of the app, duplicates existing functionality, violates assumptions, and can't easily be integrated into the rest of the app, that's low-quality code. And it’s not just minor friction: code that doesn’t fit has a snowball effect that majorly increases fragility and slows development over time.
+
+Put these two assumptions together and we can draw a conclusion: **familiarity with the codebase will make or break your project**, because it has a significant impact on code quality.
+
+This conclusion suggests a goal: **for every change to the code, we want someone who is familiar with the pre-existing code involved:** that is, either writing the code or reviewing it before merge. Having someone familiar involved increases quality, because it minimizes our chance of introducing bugs, duplicating functionality, or just writing code that fits poorly with the existing code.
+
+## A Fourth Developer Adds Unfamiliar Code
 
 Let's add a few additional assumptions:
 
@@ -20,12 +39,9 @@ Let's add a few additional assumptions:
 - PR reviews are thorough, not just looking for obvious errors or code style, but really understanding the code.
 - PR reviews are the main time developers are getting familiar with code. They are not regularly reading through other code to the same level of thoroughness as in PR reviews.
 
-With these assumptions added, we can now pinpoint exactly when adding developers starts to cause a problem. **Specifically, the team is hindered more than they’re helped at the moment when you add a fourth developer.**
+With these assumptions added, we can now pinpoint exactly when adding developers starts to cause a problem. **Specifically, the team's familiarity with the code is significantly hindered at the moment when you add a fourth developer.**
 
-## A Fourth Developer Adds Unfamiliar Code
-How can I make such a specific claim? It’s based on the logistics of being familiar with the code you’re working on. It’s significantly easier to add functionality when you're familiar with the code you're modifying or extending: you’re more productive and the result is more reliable. And three developers will be significantly more familiar with the codebase than four. Let’s see why.
-
-As our goal, let’s say that **for every change to the code, we want someone who is familiar with the pre-existing code involved:** that is, either writing the code or reviewing it before merge. Having someone familiar involved increases quality, because it minimizes our chance of introducing bugs, duplicating functionality, or just writing code that fits poorly with the existing code. How well can we succeed at this with different team sizes?
+How can I make such a specific claim? It’s based on the logistics of being familiar with the code you’re working on. Let’s see why.
 
 When you are a **solo developer** on a project, you're familiar with all of the code. This means a high level of quality for whatever you’re working on, although of course the limitations on output for a solo developer are clear.
 
@@ -64,7 +80,7 @@ How should we assess the code added by the four-developer case? Three developers
 
 **By adding a fourth developer, for every bit of familiar, well-understood, fits-with-the-system code you add, you’re adding *twice as much* unfamiliar, less-understood, clutters-up-the-system code.**
 
-The change from three developers to four is drastic. We went from three developers adding *no* unfamiliar code, to a fourth developer adding *twice as much* unfamiliar code as familiar. In a very real sense it's one step forward, two steps back. This is probably very surprising to hear; it was to me.
+The change from three developers to four is drastic. We went from three developers adding *no* unfamiliar code, to a fourth developer adding *twice as much* unfamiliar code as familiar. In a sense it's one step forward, two steps back. This is probably very surprising to hear; it was to me.
 
 But is this difference mitigated by the fact that your familiarity with code fades over time? It's true that that means that in the three-developer case you don't have *perfect* familiarity with all the code. But it still means that your *only* unfamiliarity comes from fading memory, whereas with a fourth developer you're adding twice as much code that you've *never seen* right from the beginning. The difference in familiarity is still drastic.
 
