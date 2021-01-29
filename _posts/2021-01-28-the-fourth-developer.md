@@ -4,7 +4,7 @@ title: 'The Fourth Developer'
 
 In our software development process we want more value: more useful software delivered. The first technique we tend to reach for is to add more developers to the team. How well does this work?
 
-To assess this, let's assume the following project setup:
+There are a lot of factors involved, so let's think through it for one set of assumptions:
 
 - We’re talking about multiple developers on a single codebase where any developer can work in any area of the code. No siloing by programming language or feature.
 - All developers on the team have the same skill level and are fully onboarded onto the project.
@@ -32,13 +32,13 @@ This conclusion suggests a goal: **for every change to the code, we want someone
 
 ## A Fourth Developer Adds Unfamiliar Code
 
-Let's add a few additional assumptions:
+Let's add a few additional assumptions to further refine the scenario:
 
 - Most of the time developers are modifying or extending existing code, rather than adding totally new code.
 - PR reviews are thorough, not just looking for obvious errors or code style, but really understanding the code.
 - PR reviews are the main time developers are getting familiar with code. They are not regularly reading through other code to the same level of thoroughness as in PR reviews.
 
-With these assumptions added, we can now pinpoint exactly when adding developers starts to cause a problem. **Specifically, the team's familiarity with the code is significantly hindered at the moment when you add a fourth developer.**
+There are a lot of different factors that impact developer familiarity with code. But with these assumptions added, we can pinpoint one specific moment where there is a significant drop in the team's familiarity with the code. **Specifically, the team's familiarity with the code is significantly hindered at the moment when you add a fourth developer.**
 
 How can I make such a specific claim? It’s based on the logistics of being familiar with the code you’re working on. Let’s see why.
 
@@ -128,6 +128,6 @@ Here are the responses I would recommend:
 <li><strong>You could arrange your system so it can be built by teams of three developers max.</strong> This may seem impossible, but there are a few different ways: by using high-level abstractions to minimize the code that needs to be written, by focusing on building the most important features one at a time, or by splitting up the system into smaller self-contained pieces.</li>
 </ol>
 
-These two approaches have been discussed at length elsewhere better than they could be summarized here. But the surprising thing may be how early you need to reach for those approaches. They aren’t for when your team has reached a dozen developers. Impacts on the quality of your app happen at a precise moment: when you add a fourth developer. And even if your team is three or fewer developers now, if there is a chance you'll add a fourth developer in the future, the code you're writing now is what you'll be building on. If you take the code-familiarity problem seriously now and mitigate it, you'll be ready for if and when you add the fourth developer--or you may find that you don't need them after all.
+These two approaches have been discussed at length elsewhere better than they could be summarized here. But the surprising thing may be how early you need to reach for those approaches. They aren’t for when your team has reached a dozen developers. There is a specific impact of team growth on code familiarity at a precise moment: when you add a fourth developer. And even if your team is three or fewer developers now, if there is a chance you'll add a fourth developer in the future, the code you're writing now is what you'll be building on. If you take the code-familiarity problem seriously now and mitigate it, you'll be ready for if and when you add the fourth developer--or you may find that you don't need them after all.
 
-*Thanks to Nate Sottek, Jeremy Sherman, and Bryan Lindsey for review and input.*
+*Thanks to Bryan Lindsey, Jeremy Sherman, Nate Sottek, and Ron Jeffries for review and input.*
