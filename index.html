@@ -6,6 +6,13 @@ layout: default
 
   <div class="row mb-5">
     {% include follow-link.html
+      service="Mastodon"
+      image="mastodon"
+      handle="@codingitwrong@mastodon.technology"
+      description="Social"
+      link="https://mastodon.technology/@codingitwrong"
+    %}
+    {% include follow-link.html
       service="RSS"
       image="rss"
       handle="CodingItWrong.com"
@@ -20,13 +27,15 @@ layout: default
       description="Chat"
       link="https://gitter.im/codingitwrong/Lobby"
     %}
-    {% include follow-link.html
-      service="Twitch"
-      image="twitch"
-      handle="CodingItWrong"
-      description="Streaming"
-      link="https://www.twitch.tv/codingitwrong/"
-    %}
+    {% comment %}
+      {% include follow-link.html
+        service="Twitch"
+        image="twitch"
+        handle="CodingItWrong"
+        description="Streaming"
+        link="https://www.twitch.tv/codingitwrong/"
+      %}
+    {% endcomment %}
     {% include follow-link.html
       service="YouTube"
       image="youtube"
