@@ -49,8 +49,6 @@ From that menu, choose the “Workspace” option. A text entry window will appe
 
 Next we’re going to install [Morphic Designer](https://www.hpi.uni-potsdam.de/hirschfeld/trac/SqueakCommunityProjects/wiki/designer), a tool for visually creating user interfaces. Here are the instructions to install and run Morphic Designer from their home page.
 
-(*Note:* if you have trouble with connections timing out while following the instructions below, and you're on macOS, you can download [a Squeak 5.3 image with Morphic Designer pre-installed](/downloads/squeak-5.3-with-morphic-designer.dmg.zip).)
-
 First, paste the following code into the workspace:
 
 ```smalltalk
