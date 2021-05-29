@@ -54,7 +54,7 @@ First, paste the following code into the workspace:
 ```smalltalk
 (Installer mc http: 'http://www.hpi.uni-potsdam.de/hirschfeld/squeaksource/')
    project: 'MetacelloRepository';
-   install: 'ConfigurationOfDesigner'.
+   install: 'ConfigurationOfDesigner'
 ```
 
 Select all of it, then right-click on the window. Choose “do it (d)” to execute that code.
@@ -64,7 +64,7 @@ Select all of it, then right-click on the window. Choose “do it (d)” to exec
 A window with a progress bar will appear. When it disappears, replace the code in the Workspace with the following:
 
 ```smalltalk
-(Smalltalk at: #ConfigurationOfDesigner) load.
+(Smalltalk at: #ConfigurationOfDesigner) load
 ```
 
 Once again, select all of it then right-click on the window and choose “do it (d)”. (The keyboard shortcut to execute code in a Workspace on macOS is Command-D; if you’re running Squeak on another OS it’s probably something similar.) This time a window with several progress bars will appear.
