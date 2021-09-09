@@ -2,7 +2,7 @@
 title: Problems that Static Typing Doesn't Solve
 ---
 
-*Thanks to Shozo Hatta for [translating this post into Japanese](https://techracho.bpsinc.jp/hachi8833/2021_09_08/111318).*
+*Thanks to hachi8833 for [translating this post into Japanese](https://techracho.bpsinc.jp/hachi8833/2021_09_08/111318).*
 
 The blog post [“Better typing in Ruby”](https://brandur.org/nanoglyphs/015-ruby-typing#ruby-typing) by Brandur Leach describes the situation at Stripe from which their Sorbet static type checker emerged, as well as the benefits it provides to them. In doing so, it brought up a number of points that I've seen in the past that cause me to have a moderate view of the benefits of static typing. The post mentions problems in the Stripe codebase that static type checking helps to mitigate. But static types don't *solve* those issues; their continued existence is likely to cause other costs.
 
