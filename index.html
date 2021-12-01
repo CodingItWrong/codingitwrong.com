@@ -6,43 +6,43 @@ layout: default
 
   <div class="row mb-5">
     {% include follow-link.html
-      service="Mastodon"
-      image="mastodon"
-      handle="@codingitwrong@mastodon.technology"
-      description="Social"
-      link="/mastodon.html"
-      sametab=true
+    service="Mastodon"
+    image="mastodon"
+    handle="@codingitwrong@mastodon.technology"
+    description="Social"
+    link="/mastodon.html"
+    sametab=true
     %}
     {% include follow-link.html
-      service="RSS"
-      image="rss"
-      handle="CodingItWrong.com"
-      description="Posts"
-      link="/rss.html"
-      sametab=true
+    service="RSS"
+    image="rss"
+    handle="CodingItWrong.com"
+    description="Posts"
+    link="/rss.html"
+    sametab=true
     %}
     {% include follow-link.html
-      service="Gitter"
-      image="gitter"
-      handle="CodingItWrong"
-      description="Chat"
-      link="https://gitter.im/codingitwrong/Lobby"
+    service="Gitter"
+    image="gitter"
+    handle="CodingItWrong"
+    description="Chat"
+    link="https://gitter.im/codingitwrong/Lobby"
     %}
     {% comment %}
-      {% include follow-link.html
-        service="Twitch"
-        image="twitch"
-        handle="CodingItWrong"
-        description="Streaming"
-        link="https://www.twitch.tv/codingitwrong/"
-      %}
+    {% include follow-link.html
+    service="Twitch"
+    image="twitch"
+    handle="CodingItWrong"
+    description="Streaming"
+    link="https://www.twitch.tv/codingitwrong/"
+    %}
     {% endcomment %}
     {% include follow-link.html
-      service="YouTube"
-      image="youtube"
-      handle="CodingItWrong"
-      description="Videos"
-      link="https://www.youtube.com/channel/UCa-4tbLDX_lmq2f40L0paZw"
+    service="YouTube"
+    image="youtube"
+    handle="CodingItWrong"
+    description="Videos"
+    link="https://www.youtube.com/channel/UCa-4tbLDX_lmq2f40L0paZw"
     %}
   </div>
 
@@ -50,16 +50,17 @@ layout: default
 
   <ul class="list-unstyled">
     {% for post in site.posts %}
-      <li class="h-entry mb-5">
-        <span class="post-meta"><time class="dt-published" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time></span>
+    <li class="h-entry mb-5">
+      <span class="post-meta"><time class="dt-published" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date |
+          date: "%b %-d, %Y" }}</time></span>
 
-        <h3>
-          <a class="post-link p-name u-url" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h3>
-      </li>
+      <h3>
+        <a class="post-link p-name u-url" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </h3>
+    </li>
     {% endfor %}
   </ul>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+  <p class="rss-subscribe">subscribe <a href="{{ " /feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
 </div>
