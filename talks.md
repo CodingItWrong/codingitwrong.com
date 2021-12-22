@@ -34,6 +34,18 @@ Max pixel width of images 468 @1x
 
 <div class="row">
   {% include video-thumbnail.html
+    name="TDDing a React Native responsive design library"
+    image="style-queries.jpg"
+    venue="Twitch"
+    url="https://youtu.be/9j2uTeIJlBo"
+  %}
+  {% include video-thumbnail.html
+    name="Building an App for Mobile and Web with Expo"
+    image="expo-web.jpg"
+    venue="ReactATL"
+    url="https://youtu.be/IolJZ9XtUW8"
+  %}
+  {% include video-thumbnail.html
     name="Using Code Smells to Fix Flaky Tests in Cypress"
     image="code-smells.jpg"
     venue="Cypress"
