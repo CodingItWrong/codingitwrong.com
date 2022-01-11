@@ -34,6 +34,12 @@ Max pixel width of images 468 @1x
 
 <div class="row">
   {% include video-thumbnail.html
+    name="Modifiable Software Systems: Smalltalk and HyperCard"
+    image="modifiable-systems.png"
+    venue="LIVE 2021"
+    url="https://liveprog.org/live-2021/User-Modifiable-Software-Smalltalk-and-HyperCard.mp4"
+  %}
+  {% include video-thumbnail.html
     name="TDDing a React Native responsive design library"
     image="style-queries.jpg"
     venue="Twitch"
