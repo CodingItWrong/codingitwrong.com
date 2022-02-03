@@ -34,6 +34,12 @@ Max pixel width of images 468 @1x
 
 <div class="row">
   {% include video-thumbnail.html
+    name="Sustainable Learning"
+    image="sustainable-learning.jpg"
+    venue="ReactATL"
+    url="https://youtu.be/AxTc6TZ-LhY"
+  %}
+  {% include video-thumbnail.html
     name="Modifiable Software Systems: Smalltalk and HyperCard"
     image="modifiable-systems.png"
     venue="LIVE 2021"
