@@ -9,7 +9,7 @@ I'm hoping the details will help convince and equip others to make the change th
 Here are the changes I've made so far:
 
 - [Browser: Chrome -> Firefox](#browser)
-- [Ebooks: Apple Books -> InformIT and Kindle](#ebooks)
+- [Ebooks: Apple Books -> DRM-Free Providers and Kindle](#ebooks)
 - [Editor: Atom -> Sublime Text](#editor)
 - [Email: Apple Mail -> Fastmail](#email)
 - [Image Editing: Photoshop -> Gimp](#images)
@@ -25,7 +25,7 @@ Here are the changes I've made so far:
 Like most other web users, I used Chrome for a long time. But the last thing I want to do is for Google to know everything I do online. Instead, I switched to [Firefox](https://getfirefox.com). I don't want Microsoft or Apple to know what I'm doing either. There are some concerns about Firefox monetizing and recently getting into talks with Meta, so I may consider a non-business-based browser fork in the future. But browsers with less adoption have less compatibility with tools I need like 1Password.
 
 <a name="ebooks"></a>
-# Ebooks: Apple Books -> InformIT and Kindle
+# Ebooks: Apple Books -> DRM-Free Providers and Kindle
 
 I do a lot of reading on my phone in spare moments. Apple Books is locked into Apple platforms. By contrast, DRM-free ebook providers provide books in multiple formats, including .epub (Apple Books, maybe others), .mobi (Kindle), and .pdf (platform-agnostic). [InformIT](https://www.informit.com/) is a great provider of programming books from many publishers, and they provide ebooks DRM-free. [Pragmatic Programmer](https://pragprog.com/) is one popular publisher that offers DRM-free ebooks as well. If I want a book that's only available from Apple Books and Kindle, I prefer Kindle since it can run on more than just Apple platforms.
 
