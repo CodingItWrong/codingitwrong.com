@@ -10,18 +10,21 @@ permalink: /talks/
     name="Full-Stack Development with Ember.js and Rails"
     image="ember-rails.jpg"
     venue="Twitch"
+    date="Feb-Apr, 2019"
     url="https://www.youtube.com/playlist?list=PLXXnezSEtvNPcZHqzXhrL1-7JkrbIR6qF"
   %}
   {% include video-thumbnail.html
     name="Test-Driven Development in React"
     image="react-tdd-series.jpg"
     venue="Twitch"
+    date="Oct-Nov, 2018"
     url="https://www.youtube.com/playlist?list=PLXXnezSEtvNMlfJFd1Z2wilxymcOaVl9Q"
   %}
   {% include video-thumbnail.html
     name="Test-Driven Development in React Native"
     image="react-native-tdd.jpg"
     venue="Twitch"
+    date="Jul-Sep, 2018"
     url="https://www.youtube.com/playlist?list=PLXXnezSEtvNPZroRdvjhEVzOhURl572Lf"
   %}
 </div>
@@ -37,96 +40,105 @@ Max pixel width of images 468 @1x
     name="Sustainable Learning"
     image="sustainable-learning.jpg"
     venue="ReactATL"
+    date="Jan 18, 2022"
     url="https://youtu.be/AxTc6TZ-LhY"
-  %}
-  {% include video-thumbnail.html
-    name="Modifiable Software Systems: Smalltalk and HyperCard"
-    image="modifiable-systems.png"
-    venue="LIVE 2021"
-    url="https://liveprog.org/live-2021/User-Modifiable-Software-Smalltalk-and-HyperCard.mp4"
   %}
   {% include video-thumbnail.html
     name="TDDing a React Native responsive design library"
     image="style-queries.jpg"
     venue="Twitch"
+    date="Dec 20, 2021"
     url="https://youtu.be/9j2uTeIJlBo"
   %}
   {% include video-thumbnail.html
     name="Building an App for Mobile and Web with Expo"
     image="expo-web.jpg"
     venue="ReactATL"
+    date="Dec 1, 2021"
     url="https://youtu.be/IolJZ9XtUW8"
+  %}
+  {% include video-thumbnail.html
+    name="Modifiable Software Systems: Smalltalk and HyperCard"
+    image="modifiable-systems.png"
+    venue="LIVE 2021"
+    date="Oct 19, 2021"
+    url="https://liveprog.org/live-2021/User-Modifiable-Software-Smalltalk-and-HyperCard.mp4"
   %}
   {% include video-thumbnail.html
     name="Using Code Smells to Fix Flaky Tests in Cypress"
     image="code-smells.jpg"
     venue="Cypress"
+    date="Nov 18, 2020"
     url="https://youtu.be/JlBCdRlvPWk"
   %}
   {% include video-thumbnail.html
     name="A Practical Getting-Started Guide to Accessibility"
     image="a11y.jpg"
     venue="ReactATL"
+    date="Jul 21, 2020"
     url="https://youtu.be/5ZqBFZsLmLM"
   %}
   {% include video-thumbnail.html
     name="New Solutions to Old Testing Problems"
     image="new-solutions.jpg"
     venue="Assert(js) 2019"
+    date="Sep 12, 2019"
     url="https://youtu.be/OwbgFbr83Jk"
   %}
   {% include video-thumbnail.html
     name="Using Webpacker with Rails"
     image="webpacker.jpg"
     venue="Atlanta Ruby User Group"
+    date="Aug 14, 2019"
     url="https://youtu.be/HwqtrlRspc8"
-  %}
-  {% include video-thumbnail.html
-    name="Ruby Testing Podcast"
-    image="ruby-testing-podcast.jpg"
-    venue="Ruby Testing Podcast"
-    url="http://www.rubytestingpodcast.com/josh-justice"
   %}
   {% include video-thumbnail.html
     name="Test-Driven Development in React with Cypress"
     image="tdd-react.jpg"
     venue="connect.tech conference"
+    date="Oct 18, 2018"
     url="https://vimeo.com/298277470"
   %}
   {% include video-thumbnail.html
     name="Test-Driven Development in Vue with Cypress"
     image="tdd-vue.jpg"
     venue="connect.tech conference"
+    date="Oct 18, 2018"
     url="https://www.vuemastery.com/conferences/connect-tech-2018/Test-Driven-Development-in-Vue-with-Cypress/"
-  %}
-  {% include video-thumbnail.html
-    name="A Minimum Viable Docker Server"
-    image="docker-yall.jpg"
-    venue="Atlanta Ruby User Group"
-    url="https://youtu.be/u3yfekH1PWo"
-  %}
-  {% include video-thumbnail.html
-    name="Extracting a React Component"
-    image="react-component.jpg"
-    venue="Big Nerd Ranch webinar"
-    url="https://youtu.be/Sth0bGfFOMw"
-  %}
-  {% include video-thumbnail.html
-    name="How I Learned to Stop Worrying and Love Development"
-    image="worry.jpg"
-    venue="Atlanta Ruby User Group"
-    url="https://youtu.be/CxO8VCdkrpU"
   %}
   {% include video-thumbnail.html
     name="Offline Data and Sync with Ember-Orbit"
     image="ember-orbit.jpg"
     venue="Atlanta Ember Meetup"
+    date="Jun 1, 2018"
     url="https://youtu.be/fA3fhFzF3Jc"
+  %}
+  {% include video-thumbnail.html
+    name="Extracting a React Component"
+    image="react-component.jpg"
+    venue="Big Nerd Ranch webinar"
+    date="May 4, 2018"
+    url="https://youtu.be/Sth0bGfFOMw"
+  %}
+  {% include video-thumbnail.html
+    name="A Minimum Viable Docker Server"
+    image="docker-yall.jpg"
+    venue="Atlanta Ruby User Group"
+    date="Jan 9, 2018"
+    url="https://youtu.be/u3yfekH1PWo"
+  %}
+  {% include video-thumbnail.html
+    name="How I Learned to Stop Worrying and Love Development"
+    image="worry.jpg"
+    venue="Atlanta Ruby User Group"
+    date="Jun 6, 2017"
+    url="https://youtu.be/CxO8VCdkrpU"
   %}
   {% include video-thumbnail.html
     name="Outside-in Testing in Rails"
     image="tdd-rails.jpg"
     venue="Atlanta Ruby User Group"
+    date="Jun 8, 2016"
     url="https://youtu.be/fXlLbhuIc34"
   %}
 </div>
