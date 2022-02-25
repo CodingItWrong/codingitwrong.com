@@ -4,7 +4,7 @@ title: "Building for Mobile and Web with Expo"
 
 We're rewriting the frontend of a link-saving app in [Expo](https://expo.dev/), a framework built on top of React Native. This will allow us to run the same codebase on Android, iOS, and the web.
 
-## [Today's Stream](https://www.twitch.tv/codingitwrong) - Feb 25, 2022
+## [Today's Stream](https://www.twitch.tv/codingitwrong) - Feb 25, 2022, 4 pm ET
 
 Today is our first session on this project and we'll be focusing on setup. We'll set up:
 
