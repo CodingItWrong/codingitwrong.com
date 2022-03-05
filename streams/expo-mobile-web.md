@@ -8,21 +8,28 @@ We're rewriting the frontend of a link-saving app in [Expo](https://expo.dev/), 
   <a href="https://www.twitch.tv/codingitwrong">
     <img src="/img/logos/twitch.png" alt="Twitch logo" class="stream-logo" />
     Next Stream</a>
-  - Session 2 - Fri, Mar 4, 2022 - 4 pm ET
+  - Session 3 - Fri, Mar 11, 2022 - 4 pm ET
 </h2>
 
 In this stream we'll:
 
-- Wrap up dark mode support by getting our placeholder pages displaying correctly in dark mode
-- Setting up URLs and links for React Navigation
-- Displaying the navigation drawer persistently on large screens and collapse on small
-- Deploying the web app on [Netlify](https://www.netlify.com/)
-- Deploying the iOS app on TestFlight
+- Finish configuring our iOS app for testing on devices with Apple TestFlight
+- Implement login to our existing backend
+- Implement our first feature, displaying a list of links that have been saved and allowing opening them in the browser
 
-If we have time left over, we'll get working on our first feature: login.
+## [Session 2 - Mar 4, 2022](https://www.youtube.com/watch?v=utW8qME38mQ&list=PLXXnezSEtvNPlwbFvG3NzJAW5ikYsG2Lh&index=2)
 
+In this session we:
 
-## [Session 1 - Feb 25, 2022](https://youtu.be/VSZEfQx-byg)
+- Looked at the GitHub issue for a bug in react-native-reanimated we found last time, and confirmed the latest version of the library fixes it
+- Updated the status bar color to match the color scheme
+- Styled our screen background to respond to dark mode
+- Configured the sidebar to be persistent on large screen sizes and collapse on small
+- Deployed the web app successfully to Netlify
+- Submitted the iOS build to Apple
+- Got URLs updating to match the screen we've navigated to
+
+## [Session 1 - Feb 25, 2022](https://www.youtube.com/watch?v=VSZEfQx-byg&list=PLXXnezSEtvNPlwbFvG3NzJAW5ikYsG2Lh)
 
 In this session we made it as far as setting up:
 
