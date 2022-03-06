@@ -9,6 +9,7 @@ permalink: /projects/
 * [LearnTDD.in](https://learntdd.in) - learn Test-Driven Development in the framework of your choice.
 * [ReactNativeTesting.io](https://reactnativetesting.io) - learn unit, component, and end-to-end testing for React Native
 * [HowToJSONAPI.com](https://howtojsonapi.com) - getting started with the JSON:API standard in various frontend frameworks and backend languages
+* [User-Modifiable Software](https://usermodifiable.software/) - examining Smalltalk and HyperCard as systems that empower users to modify their software
 * [Rails APIs](https://railsapi.codingitwrong.com) - learn how to create JSON APIs efficiently with the powerful features of Ruby on Rails
 
 ## Open-Source Apps
