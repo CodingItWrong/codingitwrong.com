@@ -7,15 +7,22 @@ We're rewriting the frontend of a link-saving app in [Expo](https://expo.dev/), 
 <h2>
   <a href="https://www.twitch.tv/codingitwrong">
     <img src="/img/logos/twitch.png" alt="Twitch logo" class="stream-logo" />
-    Next Stream</a>
-  - Session 3 - Fri, Mar 11, 2022 - 4 pm ET
+    Next Stream</a> - Fri, Mar 18, 2022 - 4 pm ET
 </h2>
 
 In this stream we'll:
 
-- Finish configuring our iOS app for testing on devices with Apple TestFlight
-- Implement login to our existing backend
+- Finish sign in, including applying responsive design to the sign in page and fixing a flash when starting the app
 - Implement our first feature, displaying a list of links that have been saved and allowing opening them in the browser
+- Write automated tests for these features
+
+## [Session 3 - Mar 11, 2022](https://www.youtube.com/watch?v=BNHXwHAec18&list=PLXXnezSEtvNPlwbFvG3NzJAW5ikYsG2Lh&index=3)
+
+In this session we:
+
+- Finished deploying the app to iOS with TestFlight
+- Customized app icons and metadata on web and iOS
+- Made good progress toward sign in, including the screen, access token storage, and sidebar changes.
 
 ## [Session 2 - Mar 4, 2022](https://www.youtube.com/watch?v=utW8qME38mQ&list=PLXXnezSEtvNPlwbFvG3NzJAW5ikYsG2Lh&index=2)
 
