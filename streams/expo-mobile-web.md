@@ -7,14 +7,25 @@ We're rewriting the frontend of a link-saving app in [Expo](https://expo.dev/), 
 <h2>
   <a href="https://www.twitch.tv/codingitwrong">
     <img src="/img/logos/twitch.png" alt="Twitch logo" class="stream-logo" />
-    Next Stream</a> - Fri, Mar 18, 2022 - 4 pm ET
+    Next Stream</a> - Fri, Mar 25, 2022 - 4 pm ET
 </h2>
 
 In this stream we'll:
 
-- Finish sign in, including applying responsive design to the sign in page and fixing a flash when starting the app
-- Implement our first feature, displaying a list of links that have been saved and allowing opening them in the browser
-- Write automated tests for these features
+- Talk about why to prefer component state over a React Context for storing data
+- Test our Unread page functionality with React Native Testing Library
+- Set up Dependabot for automatic dependency updates
+- Implement the next-highest-priority Unread page features: marking read, adding a link, and deleting a link
+
+## [Session 4 - Mar 18, 2022](https://www.youtube.com/watch?v=qVIAcX7GG0Y&list=PLXXnezSEtvNPlwbFvG3NzJAW5ikYsG2Lh&index=4)
+
+In this session we:
+
+- Fixed a bug where the app flashed the Sign In screen when we're already signed in
+- Set up the app to connect to the production backend
+- Finished styling the Sign In screen
+- Set up the API client for the JSON:API backend
+- Set up the Unread page displaying links from the backend and opening them in the browser
 
 ## [Session 3 - Mar 11, 2022](https://www.youtube.com/watch?v=BNHXwHAec18&list=PLXXnezSEtvNPlwbFvG3NzJAW5ikYsG2Lh&index=3)
 
