@@ -38,7 +38,7 @@ Max pixel width of images 468 @1x
 <div class="row">
   {% include video-thumbnail.html
     name="Building an Expo App for Mobile and Web"
-    image="TBD.jpg"
+    image="rnradio-expo.jpg"
     venue="React Native Radio"
     date="Mar 18, 2022"
     url="https://www.reactnativeradio.com/episodes/rnr-229-building-an-expo-app-for-mobile-and-web-with-josh-justice"
