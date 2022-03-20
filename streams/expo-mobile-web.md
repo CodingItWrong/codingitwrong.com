@@ -27,6 +27,11 @@ In this session we:
 - Set up the API client for the JSON:API backend
 - Set up the Unread page displaying links from the backend and opening them in the browser
 
+Links:
+
+- [JSON:API](https://jsonapi.org)
+- [`@codingitwrong/jsonapi-client`](https://github.com/codingitwrong/jsonapi-client#readme)
+
 ## [Session 3 - Mar 11, 2022](https://www.youtube.com/watch?v=BNHXwHAec18&list=PLXXnezSEtvNPlwbFvG3NzJAW5ikYsG2Lh&index=3)
 
 In this session we:
@@ -35,17 +40,26 @@ In this session we:
 - Customized app icons and metadata on web and iOS
 - Made good progress toward sign in, including the screen, access token storage, and sidebar changes.
 
+Links:
+
+- [`expo-secure-store`](https://docs.expo.dev/versions/latest/sdk/securestore/)
+
 ## [Session 2 - Mar 4, 2022](https://www.youtube.com/watch?v=utW8qME38mQ&list=PLXXnezSEtvNPlwbFvG3NzJAW5ikYsG2Lh&index=2)
 
 In this session we:
 
-- Looked at the GitHub issue for a bug in react-native-reanimated we found last time, and confirmed the latest version of the library fixes it
+- Looked at [the GitHub issue for a bug](https://github.com/software-mansion/react-native-reanimated/issues/3026) in react-native-reanimated we found last time, and confirmed the latest version of the library fixes it
 - Updated the status bar color to match the color scheme
 - Styled our screen background to respond to dark mode
 - Configured the sidebar to be persistent on large screen sizes and collapse on small
 - Deployed the web app successfully to Netlify
 - Submitted the iOS build to Apple
 - Got URLs updating to match the screen we've navigated to
+
+Links:
+
+- [React Navigation: Configuring Links](https://reactnavigation.org/docs/configuring-links)
+- [Netlify](https://www.netlify.com)
 
 ## [Session 1 - Feb 25, 2022](https://www.youtube.com/watch?v=VSZEfQx-byg&list=PLXXnezSEtvNPlwbFvG3NzJAW5ikYsG2Lh)
 
