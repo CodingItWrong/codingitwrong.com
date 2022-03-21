@@ -110,6 +110,8 @@ This conversation has been simplified to make it easier to follow. In reality I 
 
 Sure enough, storing data in local state within the screen we were on was plenty performant enough, and we had no need to make it more complex.
 
+I think one of the reasons Taylor wanted to avoid Contexts was because we had found that Contexts made writing tests more complex, because they're a kind of indirect dependency. If a component handles its own state, it's more self-contained and easier to test.
+
 ## Takeaways
 
 So my journey for a default data layer ends where it began: loading data for a screen or page each time you access it, storing that data locally, and discarding and reloading it when needed. A lot like server-rendered web pages. There were some things that the architecture of server-rendered pages gave us quite nicely. Rich clients still add a lot of value, and building more sophisticated data interactions can make sense in some cases. But there is almost always a tradeoff for that complexity, so they aren't a good fit for a default data layer.
@@ -118,7 +120,7 @@ Specifically, here's what I would recommend:
 
 - If you're building an app just to experiment or for personal use, especially if you don't have server-side development experience, just go ahead and use Firebase. You probably won't run into any downsides with it.
 - If you have a custom backend, prefer local state as the default approach. It's good enough for many cases.
-- If you need to share data across the application, or if you need to cache data locally for reading, that is fairly easy to add.
+- If you need to share data across the application, or if you need to cache data locally for reading, add it. The downside is that your tests will probably get more complex and harder to understand as a result.
 - If you're considering anything more advanced--offline writes, syncs, or pushes--then think hard about the value it adds. Is it important enough that it's worth taking on significantly more complexity? If so, you'll need to weigh the different options to see which has the right tradeoffs for you.
 
 This doesn't mean this will be my answer forever. New paradigms continue to be explored. The streaming HTML approach, pioneered by Phoenix LiveView and adopted by Laravel Livewire and Rails Hotwire, has interesting possibilities. React Server Components do as well. Both of them are different kinds of moves away from having a data transfer layer and client storage, preferring instead to transfer HTML in the former case and React components in the latter. It remains to be seen how these paradigms will shift what default data layer approach is optimal for the default case.
