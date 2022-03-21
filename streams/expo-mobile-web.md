@@ -15,7 +15,8 @@ In this stream we'll:
 - Talk about why to prefer component state over a React Context for storing data
 - Test our Unread page functionality with React Native Testing Library
 - Set up Dependabot for automatic dependency updates
-- Implement the next-highest-priority Unread page features: marking read, adding a link, and deleting a link
+- Check how accessible our app is to screen readers
+- Implement the next-highest-priority Unread page feature: marking read
 
 ## [Session 4 - Mar 18, 2022](https://www.youtube.com/watch?v=qVIAcX7GG0Y&list=PLXXnezSEtvNPlwbFvG3NzJAW5ikYsG2Lh&index=4)
 
