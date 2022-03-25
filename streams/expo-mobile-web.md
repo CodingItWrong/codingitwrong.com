@@ -12,8 +12,8 @@ We're rewriting the frontend of a link-saving app in [Expo](https://expo.dev/), 
 
 In this stream we'll:
 
-- Talk about why to prefer component state over a React Context for storing data
 - Test our Unread page functionality with React Native Testing Library
+- Talk about why to prefer component state over a React Context for storing data
 - Set up Dependabot for automatic dependency updates
 - Check how accessible our app is to screen readers
 - Implement the next-highest-priority Unread page feature: marking read
