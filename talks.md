@@ -7,6 +7,13 @@ permalink: /talks/
 
 <div class="row">
   {% include video-thumbnail.html
+    name="Building for Mobile and Web with Expo"
+    image="expo-web-series.jpg"
+    venue="Twitch"
+    date="Feb 2022 - present"
+    url="/streams/expo-mobile-web"
+  %}
+  {% include video-thumbnail.html
     name="Full-Stack Development with Ember.js and Rails"
     image="ember-rails.jpg"
     venue="Twitch"
