@@ -7,16 +7,27 @@ We're rewriting the frontend of a link-saving app in [Expo](https://expo.dev/), 
 <h2>
   <a href="https://www.twitch.tv/codingitwrong">
     <img src="/img/logos/twitch.png" alt="Twitch logo" class="stream-logo" />
-    Next Stream</a> - Fri, Mar 25, 2022 - 4 pm ET
+    Next Stream</a> - Wed, Mar 30, 2022 - 1 pm ET
 </h2>
 
 In this stream we'll:
 
-- Test our Unread page functionality with React Native Testing Library
-- Talk about why to prefer component state over a React Context for storing data
-- Set up Dependabot for automatic dependency updates
-- Check how accessible our app is to screen readers
-- Implement the next-highest-priority Unread page feature: marking read
+- Update our "mark read" test to confirm that the menu is hidden
+- Fix warnings in the test output
+- Refactor our code by extracting child components
+- Check the screen reader/Voice Control accessibility of our new components
+- Hide the link from the list after marking it as read
+- Test-drive our next features: adding and deleting links
+
+## [Session 5 - Mar 25, 2022](https://www.youtube.com/watch?v=wln9_z9LEfU&list=PLXXnezSEtvNPlwbFvG3NzJAW5ikYsG2Lh&index=5)
+
+In this session we:
+
+- Reviewed "end-to-end" testing options and made a case for "screen tests" in React Native Testing Library
+- Tested our pre-existing code that displays links from the backend
+- Set up Dependabot to do automatic dependency updates
+- Talked about screen reader and Voice Control accessibility
+- Made progress on implementing and testing our next feature: marking a link as read
 
 ## [Session 4 - Mar 18, 2022](https://www.youtube.com/watch?v=qVIAcX7GG0Y&list=PLXXnezSEtvNPlwbFvG3NzJAW5ikYsG2Lh&index=4)
 
