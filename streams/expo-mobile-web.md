@@ -7,17 +7,22 @@ We're rewriting the frontend of a link-saving app in [Expo](https://expo.dev/), 
 <h2>
   <a href="https://www.twitch.tv/codingitwrong">
     <img src="/img/logos/twitch.png" alt="Twitch logo" class="stream-logo" />
-    Next Stream</a> - Wed, Mar 30, 2022 - 1 pm ET
+    Next Stream</a> - Fri, Apr 1, 2022 - 4 pm ET
 </h2>
 
 In this stream we'll:
 
-- Update our "mark read" test to confirm that the menu is hidden
-- Fix warnings in the test output
-- Refactor our code by extracting child components
-- Check the screen reader/Voice Control accessibility of our new components
-- Hide the link from the list after marking it as read
-- Test-drive our next features: adding and deleting links
+- Implement adding a link, our last major feature that lives on the Unread Links screen
+- Implement the Edit Link screen to see how to use and test separate Stack Navigator screens
+- If we have time, add test coverage to our lower-level utility code to ensure it's covered
+
+## [Session 6 - Mar 30, 2022](https://www.youtube.com/watch?v=xCcZJ7bQFQA&list=PLXXnezSEtvNPlwbFvG3NzJAW5ikYsG2Lh&index=6)
+
+In this session we:
+
+- Finished our mark-read feature by removing a read bookmark from the list, confirming the menu is dismissed, and fixing some test warnings
+- Implemented deleting a bookmark via test-driven development
+- Refactored by extracting components, removing duplication, and improving names
 
 ## [Session 5 - Mar 25, 2022](https://www.youtube.com/watch?v=wln9_z9LEfU&list=PLXXnezSEtvNPlwbFvG3NzJAW5ikYsG2Lh&index=5)
 
