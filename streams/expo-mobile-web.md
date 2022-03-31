@@ -12,7 +12,7 @@ We're rewriting the frontend of a link-saving app in [Expo](https://expo.dev/), 
 
 In this stream we'll:
 
-- Implement adding a link, our last major feature that lives on the Unread Links screen
+- Implement refreshing the list of links, including handling a mobile/web behavior difference
 - Implement the Edit Link screen to see how to use and test separate Stack Navigator screens
 - If we have time, add test coverage to our lower-level utility code to ensure it's covered
 
