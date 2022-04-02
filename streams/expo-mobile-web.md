@@ -7,14 +7,21 @@ We're rewriting the frontend of a link-saving app in [Expo](https://expo.dev/), 
 <h2>
   <a href="https://www.twitch.tv/codingitwrong">
     <img src="/img/logos/twitch.png" alt="Twitch logo" class="stream-logo" />
-    Next Stream</a> - Fri, Apr 1, 2022 - 4 pm ET
+    Next Stream</a> - Fri, Apr 8, 2022 - 4 pm ET
 </h2>
 
 In this stream we'll:
 
-- Implement refreshing the list of links, including handling a mobile/web behavior difference
 - Implement the Edit Link screen to see how to use and test separate Stack Navigator screens
 - If we have time, add test coverage to our lower-level utility code to ensure it's covered
+
+## [Session 7 - Apr 1, 2022](https://www.youtube.com/watch?v=rQ6zNXlAYHs&list=PLXXnezSEtvNPlwbFvG3NzJAW5ikYsG2Lh&index=7)
+
+In this session we:
+
+- Implement refreshing the list of links, including handling a mobile/web behavior difference
+- Implemented navigating to a detail screen where we'll add editing next time, and showed how to test navigation within RNTL
+- Extracted some components into files with the help of our thorough tests
 
 ## [Session 6 - Mar 30, 2022](https://www.youtube.com/watch?v=xCcZJ7bQFQA&list=PLXXnezSEtvNPlwbFvG3NzJAW5ikYsG2Lh&index=6)
 
