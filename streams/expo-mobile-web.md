@@ -19,7 +19,7 @@ In this stream we'll:
 
 In this session we:
 
-- Implement refreshing the list of links, including handling a mobile/web behavior difference
+- Implemented refreshing the list of links, including handling a mobile/web behavior difference
 - Implemented navigating to a detail screen where we'll add editing next time, and showed how to test navigation within RNTL
 - Extracted some components into files with the help of our thorough tests
 
