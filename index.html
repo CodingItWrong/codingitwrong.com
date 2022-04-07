@@ -6,6 +6,27 @@ layout: default
 
   <div class="row mb-5">
     {% include follow-link.html
+    service="YouTube"
+    image="youtube"
+    handle="CodingItWrong"
+    description="Videos"
+    link="https://www.youtube.com/channel/UCa-4tbLDX_lmq2f40L0paZw"
+    %}
+    {% include follow-link.html
+    service="Twitch"
+    image="twitch"
+    handle="CodingItWrong"
+    description="Streaming"
+    link="https://www.twitch.tv/codingitwrong/"
+    %}
+    {% include follow-link.html
+    description="OSS"
+    service="GitHub"
+    handle="CodingItWrong"
+    image="github"
+    link="https://github.com/CodingItWrong"
+    %}
+    {% include follow-link.html
     service="Mastodon"
     image="mastodon"
     handle="@codingitwrong@mastodon.technology"
@@ -21,27 +42,6 @@ layout: default
     link="https://www.linkedin.com/in/jjustice/"
     %}
     {% include follow-link.html
-    service="Twitch"
-    image="twitch"
-    handle="CodingItWrong"
-    description="Streaming"
-    link="https://www.twitch.tv/codingitwrong/"
-    %}
-    {% include follow-link.html
-    service="YouTube"
-    image="youtube"
-    handle="CodingItWrong"
-    description="Videos"
-    link="https://www.youtube.com/channel/UCa-4tbLDX_lmq2f40L0paZw"
-    %}
-    {% include follow-link.html
-    description="OSS"
-    service="GitHub"
-    handle="CodingItWrong"
-    image="github"
-    link="https://github.com/CodingItWrong"
-    %}
-    {% include follow-link.html
     service="RSS"
     image="rss"
     handle="CodingItWrong.com"
@@ -49,6 +49,7 @@ layout: default
     link="/rss.html"
     sametab=true
     %}
+
     {% comment %}
     {% include follow-link.html
     service="Gitter"
