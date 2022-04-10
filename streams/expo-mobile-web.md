@@ -2,7 +2,7 @@
 title: "Building for Mobile and Web with Expo"
 ---
 
-In this eight-part series we rewrite a link-saving app in Expo, a framework built on top of React Native. This allows us to run the same codebase on Android, iOS, and the web. You can find the repo here: https://github.com/CodingItWrong/firehose-expo
+In this eight-part series we rewrite a link-saving app in Expo, a framework built on top of React Native. This allows us to run the same codebase on Android, iOS, and the web. The repo is on GitHub at [CodingItWrong/firehose-expo](https://github.com/CodingItWrong/firehose-expo).
 
 The app we're rewriting the frontend for is [Firehose](https://github.com/CodingItWrong/firehose-api), an open-source link-saving app. The backend of the app is a JSON:API written in Ruby on Rails.
 
