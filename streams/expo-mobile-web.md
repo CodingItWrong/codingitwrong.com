@@ -2,18 +2,17 @@
 title: "Building for Mobile and Web with Expo"
 ---
 
-We're rewriting the frontend of a link-saving app in [Expo](https://expo.dev/), a framework built on top of React Native. This will allow us to run the same codebase on Android, iOS, and the web. You can find the work-in-progress repo here: [firehose-expo](https://github.com/CodingItWrong/firehose-expo).
+In this series we rewrite a link-saving app in Expo, a framework built on top of React Native. This allows us to run the same codebase on Android, iOS, and the web. You can find the repo here: https://github.com/CodingItWrong/firehose-expo
 
-<h2>
-  <a href="https://www.twitch.tv/codingitwrong">
-    <img src="/img/logos/twitch.png" alt="Twitch logo" class="stream-logo" />
-    Next Stream</a> - Fri, Apr 8, 2022 - 4 pm ET
-</h2>
+## [Session 8 - Apr 8, 2022](https://www.youtube.com/watch?v=2Dd8vtfVmTs&list=PLXXnezSEtvNPlwbFvG3NzJAW5ikYsG2Lh&index=8)
 
-In this stream we'll:
+In this session we:
 
-- Implement the Edit Link screen to see how to use and test separate Stack Navigator screens
-- If we have time, add test coverage to our lower-level utility code to ensure it's covered
+- Implemented basic functionality of the edit screen
+- Showed how to write a screen test for a screen that receives a navigation param
+- Refactored edit screen visuals with confidence from passing tests
+- Implemented responsive button layouts using the react-native-style-queries library
+- Removed duplicative provider setup in tests
 
 ## [Session 7 - Apr 1, 2022](https://www.youtube.com/watch?v=rQ6zNXlAYHs&list=PLXXnezSEtvNPlwbFvG3NzJAW5ikYsG2Lh&index=7)
 
