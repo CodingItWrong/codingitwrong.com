@@ -13,6 +13,7 @@ permalink: /projects/
 * [LearnTDD.in](https://learntdd.in) - learn test-driven development in the framework of your choice
 * [Rails APIs](/railsapis/) - learn how to create JSON APIs efficiently with the powerful features of Ruby on Rails
 * [ReactNativeTesting.io](https://reactnativetesting.io) - learn unit, component, and end-to-end testing for React Native
+* [TestDrivenReact.com](https://testdrivenreact.com) - links to a variety of resources on learning test-driven development in the React ecosystem
 * [User-Modifiable Software](https://usermodifiable.software/) - examining Smalltalk and HyperCard as systems that empower users to modify their software
 
 ## Open-Source Apps
