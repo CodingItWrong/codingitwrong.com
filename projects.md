@@ -22,6 +22,7 @@ permalink: /projects/
 
 * [apiup](https://github.com/CodingItWrong/apiup) - Rails API with JSON:API and OAuth 2
 * [babelup](https://github.com/CodingItWrong/babelup) - transpiled JavaScript
+* [docup](https://github.com/CodingItWrong/docup) - Docusaurus web site
 * [emberup](https://github.com/CodingItWrong/emberup)
 * [nativeup](https://github.com/CodingItWrong/nativeup) - React Native
 * [nodeup](https://github.com/CodingItWrong/nodeup) - untranspiled, suitable for Node server apps
