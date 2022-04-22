@@ -17,7 +17,6 @@ permalink: /projects/
 * [Surely](https://github.com/CodingItWrong/surely-expo) - todo app
 * [Firehose](https://github.com/CodingItWrong/firehose-expo) - bookmarking
 * [Slapdash](https://github.com/CodingItWrong/slapdash) - public markdown notes
-* [Ideas](https://github.com/CodingItWrong/ideas-ember) - cross-linked notes
 
 ## Project Templates
 
