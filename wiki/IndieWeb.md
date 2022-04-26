@@ -1,3 +1,0 @@
-
-
-[Microformats](Microformats)
