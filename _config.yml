@@ -18,7 +18,7 @@ mastodon:
   -
     username: CodingItWrong
     instance: mastodon.technology
-google_analytics: 'UA-70453424-1'
+google_analytics: 'G-B9G24QHNZH'
 
 # Build settings
 markdown: kramdown
