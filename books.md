@@ -3,6 +3,10 @@ title: Books
 permalink: /books/
 ---
 
+{% comment %}
+IMPORTANT: when adding books, add them both to the mobile and non-mobile sections
+{% endcomment %}
+
 ## The Book I Wrote
 
 <ul class="media-list d-none d-md-block">
@@ -15,6 +19,17 @@ permalink: /books/
 %}
 
 </ul>
+
+<div class="d-block d-md-none">
+
+{% include book-mobile.html
+  title="Outside-In React Development: A TDD Primer"
+  image="outside-in-react.png"
+  description="Learn how to build React apps using outside-in test-driven development, including end-to-end tests with Cypress and unit tests with Jest and React Testing Library. Includes an extended exercise building two application features. See how outside-in TDD leads to a thorough test suite, better regression safety, and a faster development speed."
+  link='<a href="https://leanpub.com/outside-in-react-development">Outside-In React Development: A TDD Primer</a>'
+%}
+
+</div>
 
 ## Other Books I Recommend
 
