@@ -3,6 +3,21 @@ title: Books
 permalink: /books/
 ---
 
+## The Book I Wrote
+
+<ul class="media-list d-none d-md-block">
+
+{% include book-row.html
+  title="Outside-In React Development: A TDD Primer"
+  image="outside-in-react.png"
+  description="Learn how to build React apps using outside-in test-driven development, including end-to-end tests with Cypress and unit tests with Jest and React Testing Library. Includes an extended exercise building two application features. See how outside-in TDD leads to a thorough test suite, better regression safety, and a faster development speed."
+  link='<a href="https://leanpub.com/outside-in-react-development">Outside-In React Development: A TDD Primer</a>'
+%}
+
+</ul>
+
+## Other Books I Recommend
+
 These are the top books on programming I've read. Each has majorly improved my quality of life as a programmer.
 
 Links take you to InformIT, a distributor where you can buy physical books or DRM-free ebooks.
