@@ -44,6 +44,13 @@ Max pixel width of images 468 @1x
 
 <div class="row">
   {% include video-thumbnail.html
+    name="Exploring React Native Testing Library"
+    image="rnlive.jpg"
+    venue="React Native Live"
+    date="Jun 11, 2022"
+    url="https://youtu.be/TbgRlD_E7bc"
+  %}
+  {% include video-thumbnail.html
     name="Building an Expo App for Mobile and Web"
     image="rnradio-expo.jpg"
     venue="React Native Radio"
