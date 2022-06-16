@@ -44,6 +44,13 @@ Max pixel width of images 468 @1x
 
 <div class="row">
   {% include video-thumbnail.html
+    name="Getting Started with Outside-In React Development"
+    image="outsidein.jpg"
+    venue="Twitch"
+    date="Jun 15, 2022"
+    url="https://youtu.be/0qwpHM-UvYw"
+  %}
+  {% include video-thumbnail.html
     name="Exploring React Native Testing Library"
     image="rnlive.jpg"
     venue="React Native Live"
