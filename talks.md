@@ -10,7 +10,7 @@ permalink: /talks/
     name="Building for Mobile and Web with Expo"
     image="expo-web-series.jpg"
     venue="Twitch"
-    date="Feb 2022 - present"
+    date="Feb-Apr 2022"
     url="/streams/expo-mobile-web"
   %}
   {% include video-thumbnail.html
