@@ -17,21 +17,21 @@ permalink: /talks/
     name="Full-Stack Development with Ember.js and Rails"
     image="ember-rails.jpg"
     venue="Twitch"
-    date="Feb-Apr, 2019"
+    date="Feb-Apr 2019"
     url="https://www.youtube.com/playlist?list=PLXXnezSEtvNPcZHqzXhrL1-7JkrbIR6qF"
   %}
   {% include video-thumbnail.html
     name="Test-Driven Development in React"
     image="react-tdd-series.jpg"
     venue="Twitch"
-    date="Oct-Nov, 2018"
+    date="Oct-Nov 2018"
     url="https://www.youtube.com/playlist?list=PLXXnezSEtvNMlfJFd1Z2wilxymcOaVl9Q"
   %}
   {% include video-thumbnail.html
     name="Test-Driven Development in React Native"
     image="react-native-tdd.jpg"
     venue="Twitch"
-    date="Jul-Sep, 2018"
+    date="Jul-Sep 2018"
     url="https://www.youtube.com/playlist?list=PLXXnezSEtvNPZroRdvjhEVzOhURl572Lf"
   %}
 </div>
