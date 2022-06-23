@@ -121,6 +121,13 @@ Max pixel width of images 468 @1x
     url="https://youtu.be/HwqtrlRspc8"
   %}
   {% include video-thumbnail.html
+    name="Detox Testing React Native Itself"
+    image="detox-testing-rn.jpg"
+    venue="Twitch"
+    date="Dec 7, 2018"
+    url="https://youtu.be/G357I8Xfe3Q"
+  %}
+  {% include video-thumbnail.html
     name="Test-Driven Development in React with Cypress"
     image="tdd-react.jpg"
     venue="connect.tech conference"
