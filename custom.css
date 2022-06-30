@@ -8,3 +8,17 @@
   width: 40px;
   height: 40px;
 }
+
+.profile-pic {
+  display: block;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 600px) {
+  .profile-pic {
+    float: right;
+    margin: 0 0 10px 10px;
+  }
+}

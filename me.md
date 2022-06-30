@@ -3,6 +3,8 @@ title: Hey, I'm Josh.
 permalink: /me/
 ---
 
+<img src="/img/profile.jpg" title="Profile of Josh Justice" class="profile-pic" />
+
 ## About Me
 
 Did you know what you wanted to be when you grew up? Ever since Melissa Joan Hart made video games about her annoying little brother on _Clarissa Explains It All_, I knew I wanted to be a software developer. I love that I get the chance to do that all week. Software development, not making games about Melissa Joan Hart's brother.
