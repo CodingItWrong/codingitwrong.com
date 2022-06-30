@@ -16,7 +16,12 @@ permalink: /projects/
 * [Rails APIs](/railsapis/) - learn how to create JSON APIs efficiently with the powerful features of Ruby on Rails
 * [User-Modifiable Software](https://usermodifiable.software/) - examining Smalltalk and HyperCard as systems that empower users to modify their software
 
-## Open-Source Apps
+## Open Source Libraries
+
+* [react-native-style-queries](https://github.com/bignerdranch/BNR-react-native-style-queries) - React Native responsive design with an API inspired by CSS media queries
+* [@codingitwrong/jsonapi-client](https://github.com/CodingItWrong/jsonapi-client/) - a zero-configuration client library for JSON:API backends
+
+## Open Source Apps
 
 * [Surely](https://github.com/CodingItWrong/surely-expo) - a todo app available on iOS and Web, built with React Native Web
 * [Firehose](https://github.com/CodingItWrong/firehose-expo) - a bookmarking app available on iOS and Web, built with React Native Web
