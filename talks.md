@@ -90,7 +90,7 @@ Max pixel width of images 468 @1x
     image="modifiable-systems.png"
     venue="LIVE 2021"
     date="Oct 19, 2021"
-    url="https://liveprog.org/live-2021/User-Modifiable-Software-Smalltalk-and-HyperCard.mp4"
+    url="https://youtu.be/x-FkNd5DkOQ"
   %}
   {% include video-thumbnail.html
     name="Using Code Smells to Fix Flaky Tests in Cypress"
