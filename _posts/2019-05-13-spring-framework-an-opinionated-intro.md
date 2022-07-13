@@ -19,7 +19,7 @@ To make it easier, here's a more opinionated tutorial. We'll build a RESTful JSO
 
 Download and install the latest version of [IntelliJ IDEA][intellij]--be sure to choose the free Community edition rather than the paid Ultimate edition.
 
-Downoad a copy of [PostgreSQL][postgres] as well--on macOS, an especially easy option is [Postgres.app][postgres.app]. You'll need a Postgres client to connect to the database as well. A nice free macOS GUI client is [Postico][postico]. Start your Postgres server, then connect to it and create a database named `springboot_videogames`.
+Download a copy of [PostgreSQL][postgres] as well--on macOS, an especially easy option is [Postgres.app][postgres.app]. You'll need a Postgres client to connect to the database as well. A nice free macOS GUI client is [Postico][postico]. Start your Postgres server, then connect to it and create a database named `springboot_videogames`.
 
 Next go to <https://start.spring.io> -- this is Spring Initializr, a tool to help configure starter Spring projects. Choose the following:
 
@@ -105,7 +105,7 @@ public interface GameRepository extends CrudRepository<Game, Integer> {
 
 This says that we want a repository of `Game`s with the IDs being `Integer`s. We don't actually need to implement this interface; Spring will handle that for us!
 
-Rather than tell you the methods `CrudRepository` provides to us, let's demonstate them by jumping straight into using them.
+Rather than tell you the methods `CrudRepository` provides to us, let's demonstrate them by jumping straight into using them.
 
 ## Controller
 
