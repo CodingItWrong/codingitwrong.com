@@ -25,12 +25,15 @@ Next go to <https://start.spring.io> -- this is Spring Initializr, a tool to hel
 
 - Project: Gradle Project
 - Language: Java
-- Spring Boot: 2.2.4
-- Project Metadata: for Artifact, enter "video-games"
+- Spring Boot: 2.7.1
+- Project Metadata
+  - Artifact: "video-games"
+  - Java: choose the version of Java you have installed
+  - Leave other settings as-is
 - Dependencies: Search for and add the following:
-  - Web
-  - JPA
-  - PostgreSQL
+  - Spring Web
+  - Spring Data JPA
+  - PostgreSQL Driver
   - Lombok
 
 Click "Generate" to download a zip file of your project. Expand it and put it somewhere you like. Next, open IntelliJ and you should see the Welcome screen. Click "Import Project". Navigate to the `video-games` folder you created, then choose the `build.gradle` file and Open it. Keep all the defaults and click OK, and after a few screens the project should open in IntelliJ. A build process will run to download all the dependencies.
