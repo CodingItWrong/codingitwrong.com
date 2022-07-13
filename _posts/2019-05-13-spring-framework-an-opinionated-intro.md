@@ -200,8 +200,6 @@ Game update(@RequestBody Game newGame, @PathVariable Integer id) {
 
 If a game with the passed-in ID is found, we update its fields and save it; if it's not found, we throw an exception.
 
-You'll notice errors for the getters and setters for name and release year. This is because we're relying on Lombok to generate those accessors, but IntelliJ doesn't know it's going to do so. We can fix this by adding a Lombok plugin to IntelliJ. From the "IntelliJ IDEA" menu, choose "Preferences…", then click "Plugins", then "Marketplace". Search for Lombok. Install it, then click "Restart IDE". IntelliJ will hold off on fully highlighting your file while it runs an Indexing operation. When it finishes, you'll get a warning from the Lombok plugin that it requires an Annotation Processing feature to be enabled. Click on the notice, then click the link for "Settings > Build > Compiler > Annotation Processors". Check the checkbox next to "Enable annotation processing", then click "OK" to save the settings. Now syntax highlighting should be fully enabled on your file, and IntelliJ should recognize the getters and setters as fine. Pretty nice!
-
 Finally, let's add a delete endpoint:
 
 ```java
