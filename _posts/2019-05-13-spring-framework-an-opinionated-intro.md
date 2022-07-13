@@ -36,7 +36,7 @@ Next go to <https://start.spring.io> -- this is Spring Initializr, a tool to hel
   - PostgreSQL Driver
   - Lombok
 
-Click "Generate" to download a zip file of your project. Expand it and put it somewhere you like. Next, open IntelliJ and you should see the Welcome screen. Click "Import Project". Navigate to the `video-games` folder you created, then choose the `build.gradle` file and Open it. Keep all the defaults and click OK, and after a few screens the project should open in IntelliJ. A build process will run to download all the dependencies.
+Click "Generate" to download a zip file of your project. Expand it and put it somewhere you like. Next, open IntelliJ and you should see the Welcome screen. From the "File" menu, choose "New" > "Project from Existing Sources…". Navigate to the `video-games` folder you created, then choose the `build.gradle` file and Open it. Choose "Trust Project". The project should open in IntelliJ. A build process will run to download all the dependencies.
 
 Now we're set to start creating our web service.
 
