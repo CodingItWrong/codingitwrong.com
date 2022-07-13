@@ -47,17 +47,16 @@ First, let's configure out database connection. Open the `src/main/resources/app
 ```properties
 spring.jpa.hibernate.ddl-auto=create
 spring.datasource.url=jdbc:postgresql://localhost:5432/springboot_videogames
-spring.datasource.username=postgres
+spring.datasource.username=YOUR-USERNAME
 spring.datasource.password=
-spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults = false
-spring.jpa.database-platform=org.hibernate.dialect.PostgreSQL9Dialect
 ```
+
+Replace YOUR-USERNAME with the correct Postgres username. If you're using Postgres.app on Mac, the username is your system username on your Mac.
 
 Here's what these do:
 
-- `spring.jpa.hibernate.ddl-auto=create` tells the Hibernate ORM to automatically create the database for us. Warning: this seems to drop and recreate the database upon starting the app!
+- `spring.jpa.hibernate.ddl-auto=create` tells the Hibernate ORM to automatically create the database for us. **Warning:** this seems to drop and recreate the database upon starting the app!
 - The `spring.datasource` entries specify the connection info for the database. These values should work for the Postgres.app defaults; if you have a different setup, you may need to customize them.
-- The other two `spring.jpa` values work around [an error when connecting to Postgres from Spring](https://vkuzel.com/spring-boot-jpa-hibernate-atomikos-postgresql-exception).
 
 ## Model Class
 
