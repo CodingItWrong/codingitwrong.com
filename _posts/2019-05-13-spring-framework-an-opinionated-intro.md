@@ -2,6 +2,8 @@
 title: "Spring Framework: An Opinionated Intro"
 ---
 
+*Updated July 13, 2022 for Java 18, Spring Boot 2.7.1, and IntelliJ 2022.1.3*
+
 Spring Framework offers a lot of powerful features for making web apps simply, but you have to wade through some complexity to find those features. For example, try starting a Spring tutorial and seeing the following Choose Your Own Adventure:
 
 * You can start from scratch or download the starter project.
