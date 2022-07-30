@@ -13,7 +13,7 @@ IMPORTANT: when adding books, add them both to the mobile and non-mobile section
 
 {% include book-row.html
   title="Outside-In React Development: A TDD Primer"
-  image="outside-in-react.png"
+  image="outside-in-react.jpg"
   description="Learn how to build React apps using outside-in test-driven development, including end-to-end tests with Cypress and unit tests with Jest and React Testing Library. Includes an extended exercise building two application features. See how outside-in TDD leads to a thorough test suite, better regression safety, and a faster development speed."
   link='<a href="https://leanpub.com/outside-in-react-development">Outside-In React Development: A TDD Primer</a>'
 %}
@@ -24,7 +24,7 @@ IMPORTANT: when adding books, add them both to the mobile and non-mobile section
 
 {% include book-mobile.html
   title="Outside-In React Development: A TDD Primer"
-  image="outside-in-react.png"
+  image="outside-in-react.jpg"
   description="Learn how to build React apps using outside-in test-driven development, including end-to-end tests with Cypress and unit tests with Jest and React Testing Library. Includes an extended exercise building two application features. See how outside-in TDD leads to a thorough test suite, better regression safety, and a faster development speed."
   link='<a href="https://leanpub.com/outside-in-react-development">Outside-In React Development: A TDD Primer</a>'
 %}

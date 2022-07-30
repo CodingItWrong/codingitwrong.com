@@ -7,7 +7,7 @@ title: "Stream: Outside-In React Development"
 <ul class="media-list">
   <li class="media my-4">
     <div class="pull-left mr-3">
-      <a href="https://leanpub.com/outside-in-react-development/c/ciwtwitch"><img src="/img/books/outside-in-react.png" alt="{{ include.title }}" /></a>
+      <a href="https://leanpub.com/outside-in-react-development/c/ciwtwitch"><img src="/img/books/outside-in-react.jpg" alt="{{ include.title }}" /></a>
     </div>
     <div class="media-body">
       <p>
