@@ -44,6 +44,13 @@ Max pixel width of images 468 @1x
 
 <div class="row">
   {% include video-thumbnail.html
+    name="Interview About Outside-In React Development: A TDD Primer"
+    image="frontmatter.png"
+    venue="Leanpub Frontmatter Podcast"
+    date="Aug 26, 2022"
+    url="https://leanpub.com/podcasts/frontmatter/josh-justice-26-08-22"
+  %}
+  {% include video-thumbnail.html
     name="Getting Started with Outside-In React Development"
     image="outsidein.jpg"
     venue="Twitch"
