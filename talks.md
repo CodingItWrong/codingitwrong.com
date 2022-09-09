@@ -3,6 +3,55 @@ title: Talks
 permalink: /talks/
 ---
 
+{% comment %}
+Max pixel width of images 468 @1x
+{% endcomment %}
+
+## Upcoming
+
+<div class="row">
+  {% include video-thumbnail.html
+    name="Workshop: Building for Web and Mobile with Expo"
+    image="react-advanced-london-2022.png"
+    venue="React Advanced London (virtual)"
+    date="Oct 27, 2022"
+    url="https://reactadvanced.com/workshops-3h"
+    length="3 hours"
+  %}
+  {% include video-thumbnail.html
+    name="Workshop: Introduction to React Native Testing Library"
+    image="react-advanced-london-2022.png"
+    venue="React Advanced London (virtual)"
+    date="Oct 28, 2022"
+    url="https://reactadvanced.com/workshops-3h"
+    length="3 hours"
+  %}
+  {% include video-thumbnail.html
+    name="Workshop: Testing React Apps with React Testing Library and Cypress"
+    image="connect.tech-2022.png"
+    venue="connect.tech (in-person in Atlanta, GA)"
+    date="Nov 7, 2022"
+    url="https://2022.connect.tech/session?id=376496"
+    length="full day"
+  %}
+  {% include video-thumbnail.html
+    name="Workshop: Building for Web and Mobile with Expo"
+    image="react-day-berlin-2022.png"
+    venue="React Day Berlin (virtual)"
+    date="Dec 6, 2022"
+    url="https://reactday.berlin/workshops-3h"
+    length="3 hours"
+  %}
+  {% include video-thumbnail.html
+    name="Workshop: Designing Effective Tests with React Testing Library"
+    image="react-day-berlin-2022.png"
+    venue="React Day Berlin (virtual)"
+    date="Dec 7, 2022"
+    url="https://reactday.berlin/workshops-3h"
+    length="3 hours"
+  %}
+</div>
+
 ## Series
 
 <div class="row">
@@ -37,10 +86,6 @@ permalink: /talks/
 </div>
 
 ## Standalone
-
-{% comment %}
-Max pixel width of images 468 @1x
-{% endcomment %}
 
 <div class="row">
   {% include video-thumbnail.html

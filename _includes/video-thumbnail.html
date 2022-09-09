@@ -6,12 +6,13 @@
           <img src="/img/videos/{{ include.image }}" alt="{{ include.name }}" />
         </a>
       </div>
-      <h5 class="card-title mt-1">
+      <h5 class="card-title mt-1 font-weight-bold">
         <a href="{{ include.url }}">{{ include.name }}</a>
       </h5>
       <div class="card-text">
         {{ include.venue }}<br/>
-        {{ include.date }}
+        {{ include.date }}<br/>
+        {{ include.length }}
       </div>
     </div>
   </div>
