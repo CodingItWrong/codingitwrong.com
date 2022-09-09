@@ -1,6 +1,8 @@
 ---
-title: Talks
-permalink: /talks/
+title: Speaking
+permalink: /speaking/
+redirect_from:
+  - /talks/
 ---
 
 {% comment %}
