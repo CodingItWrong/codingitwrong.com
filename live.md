@@ -4,8 +4,6 @@ title: "CodingIt.Live on Twitch"
 
 <i>Tuesdays at 5:00 pm Eastern</i>
 
-<p>Let's try out tools and techniques to make apps easier to build and evolve! A particular focus on testing and on web and mobile app development in React Native, and JavaScript.</p>
-
 <h3>
   <a href="https://twitch.tv/codingitwrong/">
     <img src="/img/logos/twitch.png" alt="Twitch logo" class="stream-logo" />
@@ -19,3 +17,11 @@ title: "CodingIt.Live on Twitch"
     Watch past recordings on YouTube
   </a>
 </h3>
+
+<br />
+
+<h2>Current Series: Adding Code Coverage with React Native Testing Library</h2>
+
+<i>Starts Tue Sep 6, 2022<i>
+
+<p>Let's look at one of my open-source Expo apps, Surely. It has pretty good test coverage of entire screens, but not a lot of tests of smaller components and modules. Let's try to increase that coverage. Along the way, you'll learn ways to test tough-to-test components, ways to think about what to isolate from, and pros and cons to adding tests of smaller bits of code.</p>
