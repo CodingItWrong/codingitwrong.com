@@ -1,5 +1,7 @@
 ---
 title: "CodingIt.Live on Twitch"
+redirect_from:
+  - /stream/
 ---
 
 <i>Tuesdays at 5:00 pm Eastern</i>
