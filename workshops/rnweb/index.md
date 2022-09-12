@@ -655,6 +655,121 @@ const styleQueries = {
 };
 ```
 
-STOPPED HERE
+Now let's update `HomeRoot` to use it:
+
+```diff
+ import {createNativeStackNavigator} from '@react-navigation/native-stack';
+-import {Pressable} from 'react-native';
+-import {Text} from 'react-native-paper';
++import {Button, Text} from 'react-native-paper';
+ import CustomNavigationBar from './components/CustomNavigationBar';
+ import CustomNavigationDrawer from './components/CustomNavigationDrawer';
+ import ScreenBackground from './components/ScreenBackground';
+ import CenterColumn from './components/CenterColumn';
++import ButtonGroup from './components/ButtonGroup';
+
+ function HomeRoot() {
+   const navigation = useNavigation();
+@@ -14,9 +14,16 @@ function HomeRoot() {
+     <ScreenBackground>
+       <CenterColumn>
+         <Text>HomeRoot</Text>
+-        <Pressable onPress={() => navigation.navigate('HomeDetail')}>
+-          <Text>Go to Detail</Text>
+-        </Pressable>
++        <ButtonGroup>
++          <Button mode="outlined">Other Button</Button>
++          <Button mode="outlined">Third Button</Button>
++          <Button
++            mode="contained"
++            onPress={() => navigation.navigate('HomeDetail')}
++          >
++            <Text>Go to Detail</Text>
++          </Button>
++        </ButtonGroup>
+       </CenterColumn>
+     </ScreenBackground>
+   );
+```
+
+What about the drawer? With all the screen space on a large screen, it would be nice to keep it visible all the time. Here's how we can do that.
+
+First, let's make a function that tells us which breakpoint we're at. In `breakpoints.js`:
+
+```diff
++import {useWindowDimensions} from 'react-native';
++
+ export const breakpointMedium = 429;
++export const breakpointLarge = 600;
++
++export const large = 'large';
++export const medium = 'medium';
++
++const breakpointForWidth = width => (width >= breakpointLarge ? large : medium);
++
++export function useBreakpoint() {
++  const {width} = useWindowDimensions();
++  return breakpointForWidth(width);
++}
+```
+
+Next, we'll configure the drawer to be either permanent or not depending on the breakpoint. In `Navigation.js`:
+
+```diff
+ import ButtonGroup from './components/ButtonGroup';
++import {large, useBreakpoint} from './breakpoints';
+
+ function HomeRoot() {
+   const navigation = useNavigation();
+@@ -89,6 +90,9 @@ const Other = () => (
+ const Drawer = createDrawerNavigator();
+
+ function NavigationContents() {
++  const breakpoint = useBreakpoint();
++  const drawerTypeForBreakpoint = breakpoint === large ? 'permanent' : 'back';
++
+   // not sure why useLegacyImplementation is needed; isn't in my other apps
+   return (
+     <Drawer.Navigator
+...
+       initialRouteName="Home"
+       screenOptions={{
+         headerShown: false,
++        drawerType: drawerTypeForBreakpoint,
+       }}
+       drawerContent={props => <CustomNavigationDrawer {...props} />}
+     >
+```
+
+This keeps the drawer present. As a final touch, let's hide the drawer toggle button when it's permanently shown. In `CustomNavigationBar.js`:
+
+```diff
+ import {Appbar} from 'react-native-paper';
++import {large, useBreakpoint} from '../breakpoints';
+
+ export default function CustomNavigationBar({navigation, options, back}) {
++  const breakpoint = useBreakpoint();
++  const showDrawerToggle = breakpoint !== large;
++
+   return (
+     <Appbar.Header>
+...
+       <Appbar.Content title={options.title} />
++      {showDrawerToggle && (
+         <Appbar.Action
+           testID="toggle-navigation-button"
+           accessibilityLabel="Menu"
+           icon="menu"
+           onPress={navigation.toggleDrawer}
+         />
++      )}
+     </Appbar.Header>
+   );
+ }
+```
+
+## Platform-Specific Functionality
+
+TODO
 
 {% endraw %}
