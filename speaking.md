@@ -91,6 +91,13 @@ Max pixel width of images 468 @1x
 
 <div class="row">
   {% include video-thumbnail.html
+    name="Getting Better All the Time: How to Escape Bad Code"
+    image="gettingbetter.jpg"
+    venue="React Native EU"
+    date="Sep 1, 2022"
+    url="https://youtu.be/XKiE4AFjk9s"
+  %}
+  {% include video-thumbnail.html
     name="Interview About Outside-In React Development: A TDD Primer"
     image="frontmatter.png"
     venue="Leanpub Frontmatter Podcast"
