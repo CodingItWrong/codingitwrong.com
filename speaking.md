@@ -54,7 +54,7 @@ Max pixel width of images 468 @1x
   %}
 </div>
 
-## Series
+## Featured Series
 
 <div class="row">
   {% include video-thumbnail.html
@@ -63,13 +63,6 @@ Max pixel width of images 468 @1x
     venue="Twitch"
     date="Feb-Apr 2022"
     url="/streams/expo-mobile-web"
-  %}
-  {% include video-thumbnail.html
-    name="Full-Stack Development with Ember.js and Rails"
-    image="ember-rails.jpg"
-    venue="Twitch"
-    date="Feb-Apr 2019"
-    url="https://www.youtube.com/playlist?list=PLXXnezSEtvNPcZHqzXhrL1-7JkrbIR6qF"
   %}
   {% include video-thumbnail.html
     name="Test-Driven Development in React"
@@ -180,6 +173,13 @@ Max pixel width of images 468 @1x
     venue="Atlanta Ruby User Group"
     date="Aug 14, 2019"
     url="https://youtu.be/HwqtrlRspc8"
+  %}
+    {% include video-thumbnail.html
+    name="SERIES: Full-Stack Development with Ember.js and Rails"
+    image="ember-rails.jpg"
+    venue="Twitch"
+    date="Feb-Apr 2019"
+    url="https://www.youtube.com/playlist?list=PLXXnezSEtvNPcZHqzXhrL1-7JkrbIR6qF"
   %}
   {% include video-thumbnail.html
     name="Detox Testing React Native Itself"
