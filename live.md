@@ -24,6 +24,6 @@ redirect_from:
 
 <h2>Current Series: Adding Code Coverage with React Native Testing Library</h2>
 
-<i>Starts Tue Sep 6, 2022<i>
+<i>Ongoing since Sep 2022<i>
 
 <p>Let's look at one of my open-source Expo apps, Surely. It has pretty good test coverage of entire screens, but not a lot of tests of smaller components and modules. Let's try to increase that coverage. Along the way, you'll learn ways to test tough-to-test components, ways to think about what to isolate from, and pros and cons to adding tests of smaller bits of code.</p>
