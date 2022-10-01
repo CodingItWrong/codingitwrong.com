@@ -772,4 +772,16 @@ This keeps the drawer present. As a final touch, let's hide the drawer toggle bu
 
 TODO
 
+## Resources
+
+- Libraries
+  - [React Native for Web](https://github.com/necolas/react-native-web)
+  - [Expo - Developing for Web](https://docs.expo.dev/workflow/web/)
+  - [React Navigation](https://reactnavigation.org/)
+  - [React Native Paper](https://reactnativepaper.com/)
+- [Workshop Discord channel](LINK HERE)
+- [Example mobile/web app: surelytodo.com](https://surelytodo.com)
+- [Test Double - React and React Native consultants](https://testdouble.com)
+- [The Instructor - Josh Justice](https://codingitwrong.com)
+
 {% endraw %}
