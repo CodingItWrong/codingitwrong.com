@@ -22,8 +22,17 @@ redirect_from:
 
 <br />
 
-<h2>Current Series: Adding Code Coverage with React Native Testing Library</h2>
+<h2>Current Series: React Native Testing</h2>
 
 <i>Ongoing since Sep 2022<i>
 
-<p>Let's look at one of my open-source Expo apps, Surely. It has pretty good test coverage of entire screens, but not a lot of tests of smaller components and modules. Let's try to increase that coverage. Along the way, you'll learn ways to test tough-to-test components, ways to think about what to isolate from, and pros and cons to adding tests of smaller bits of code.</p>
+<p>
+  Let's explore topics around testing in React Native together! We'll mostly be working in real open-source apps I maintain. We'll add test coverage, figure out how to test tricky cases, update to new testing APIs, and try out alternative ways to test to see the pros and cons.
+</p>
+
+<h3>
+  <a href="https://discord.gg/jVXCxZPF6f">
+    <img src="/img/logos/discord.png" alt="Discord logo" class="stream-logo" />
+    Chat about the stream on Discord
+  </a>
+</h3>
