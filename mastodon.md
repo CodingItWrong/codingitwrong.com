@@ -2,7 +2,7 @@
 title: Mastodon
 ---
 
-**tl;dr: follow me on Mastodon at [@CodingItWrong@mastodon.technology](https://mastodon.technology/@CodingItWrong)**
+**tl;dr: follow me on Mastodon at [@CodingItWrong@tdd.social](https://tdd.social/@CodingItWrong)**
 
 Mastodon is an open-source social network. It's a microblogging platform and so most closely modeled after Twitter.
 
@@ -12,8 +12,7 @@ If you'd like to create a Mastodon account, you need to choose an instance. You 
 
 Here are my suggestions on how to find an instance:
 
-* If you're a programmer, go with [mastodon.technology](https://mastodon.technology).
-* If not, check the [Mastodon instance list](https://joinmastodon.org/communities) to see if one jumps out at you as interesting.
+* Check the [Mastodon instance list](https://joinmastodon.org/communities) to see if one jumps out at you as interesting.
 * If none of them does, [mastodon.online](https://mastodon.online) is a good default choice. It's run by the developers of Mastodon itself.
 
 Mastodon has a built-in web client that works well on desktop and mobile. You can ask around for recommendations for native mobile app clients, but for my uses on iOS I've found that the web client works best.

@@ -17,7 +17,7 @@ github_username:  CodingItWrong
 mastodon:
   -
     username: CodingItWrong
-    instance: mastodon.technology
+    instance: tdd.social
 google_analytics: 'G-B9G24QHNZH'
 
 # Build settings

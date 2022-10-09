@@ -64,6 +64,8 @@ I used Google Docs until I started getting concerned about Google's privacy viol
 
 I used to be a very heavy Twitter user, and lighter on Facebook. But because of their documented use of surveillance, behavior manipulation, and lack of moderation of harmful content, I deleted my Facebook account, and stopped using Twitter. Instead, I switched to Mastodon, an open-source social network. Mastodon has different servers and clients; I use the [mastodon.technology](https://mastodon.technology) server and the [Toot!](https://apps.apple.com/us/app/toot/id1229021451) iOS client. To get updates from news sources that don't have Mastodon accounts, I use [Feedly](https://feedly.com/) to follow RSS feeds.
 
+**UPDATE:** in 2022 the mastodon.technology instance shut down, and I started a personal instance at https://tdd.social
+
 <a name="video"></a>
 # Video Editing: iMovie -> Kdenlive
 
