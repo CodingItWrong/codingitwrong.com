@@ -2,16 +2,59 @@
 title: Building for Web and Mobile with Expo
 ---
 
-<https://docs.expo.dev/get-started/create-a-new-app/>
+Presented at React Advanced London 2022
+
+## Introduction
+
+This page will take you through the full workshop exercise. You can also download [the finished repository](https://github.com/CodingItWrong/rnweb-workshop-app), but I recommend working through the exercise to get a better feel for how the libraries and customizations work together.
 
 {% raw %}
+## Requirements
+
+- [Node](https://nodejs.org/)
+- [Yarn 1.x](https://classic.yarnpkg.com/en/docs/install)
+- A way to run the Expo app. One of:
+  - A physical Android or iOS device
+  - [Android Studio](https://developer.android.com/studio/) for the Android Emulator
+  - [Xcode](https://developer.apple.com/xcode/) for the iOS Simulator
+
+## Creating the App
+
+To begin, create a new Expo app with this command:
+
 ```bash
-$ yarn create expo-app expo-workshop-app
+$ yarn create expo-app rnweb-workshop-app
 ```
+
+When the process completes, you should see "Your project is ready!"
+
+Confirm the app runs:
+
+```bash
+$ cd rnweb-workshop-app
+$ yarn start
+```
+
+Then press A or I on the keyboard to open in the iOS Simulator or Android Emulator, respectively.
 
 ## RN Web
 
-If you try to run web you get warned to install the following:
+Expo is actually *almost* preconfigured to run on the web out of the box.
+
+Press W on the keyboard to open it on the web. You will get a warning:
+
+```text
+It looks like you're trying to use web support but don't have the required
+dependencies installed.
+
+Please install react-native-web@~0.18.7, react-dom@18.0.0,
+@expo/webpack-config@^0.17.0 by running:
+
+npx expo install react-native-web@~0.18.7 react-dom@18.0.0 \
+  @expo/webpack-config@^0.17.0
+```
+
+Let's install those. Press ctrl-C to quit Expo, then run the following command:
 
 ```bash
 $ npx expo install react-native-web@~0.18.7 \
@@ -19,28 +62,40 @@ $ npx expo install react-native-web@~0.18.7 \
                    @expo/webpack-config@^0.17.0
 ```
 
+Once those are installed, run `yarn start` again, then press W. The app should open on the web.
+
 ## ESLint and Prettier
 
+Now that we have the app running on the web, before we do anything else I wnat to set up ESLint and Prettier for code formatting and linting.
+
 ```bash
-$ yarn add --dev eslint \
-                 @react-native-community/eslint-config \
-                 prettier
+$ yarn add --dev @react-native-community/eslint-config \
+                 eslint \
+                 prettier \
+                 typescript
 ```
 
+(We won't be using TypeScript directly; it's just needed as a dependency based on some configuration of our other dependencies.)
+
+Create an `.eslintrc.js` file at the root of your project and add:
+
 ```js
-// .eslintrc.js
 module.exports = {
   root: true,
   extends: '@react-native-community',
   rules: {
     'react/jsx-uses-react': 'off',
+    'react/no-unstable-nested-components': ['warn', {allowAsProps: true}],
     'react/react-in-jsx-scope': 'off',
   },
 };
 ```
 
+(If you're curious, the `react/no-unstable-nested-components` rule configuration prevents a warning when we define React Navigation stack headers in the way the docs recommend.)
+
+Then a `.prettierrc.js` file and add:
+
 ```js
-// .prettierrc.js
 module.exports = {
   arrowParens: 'avoid',
   bracketSpacing: false,
@@ -49,13 +104,34 @@ module.exports = {
 };
 ```
 
+Add a `lint` script to your `package.json`:
+
+```diff
+ "scripts": {
+   "start": "expo start",
+   "android": "expo start --android",
+   "ios": "expo start --ios",
+-  "web": "expo start --web"
++  "web": "expo start --web",
++  "lint": "eslint ."
+ },
+```
+
+Autoformat the current files to match the settings:
+
+```bash
+$ yarn lint --fix
+```
+
 ## React Navigation
+
+The first thing we'll set up is navigation. We'll use React Navigation, the most popular navigation library for React Native. It has great web support as well.
 
 Add the dependencies for React Navigation, including both the drawer and stack navigator:
 
 ```bash
-$ yarn add @react-navigation/native \
-           @react-navigation/drawer \
+$ yarn add @react-navigation/drawer \
+           @react-navigation/native \
            @react-navigation/native-stack
 $ npx expo install react-native-gesture-handler \
                    react-native-reanimated \
@@ -63,7 +139,7 @@ $ npx expo install react-native-gesture-handler \
                    react-native-safe-area-context
 ```
 
-We will also need to configure Babel to support the Reanimated library:
+We will also need to configure Babel to support the Reanimated library. Make the following change in `babel.config.js`:
 
 ```diff
    return {
@@ -72,7 +148,9 @@ We will also need to configure Babel to support the Reanimated library:
    };
 ```
 
-Create a file `src/Navigation.js`. First, let's create a few sample screens to navigate between:
+Now that our project is set up for navigation, let's begin configuring our navigation structure.
+
+Create a `src` folder and, inside it, a `Navigation.js` file. First, let's create a few sample screens to navigate between:
 
 ```jsx
 import {useNavigation} from '@react-navigation/native';
@@ -165,6 +243,10 @@ To finish up this file for now, we wrap it in a `NavigationContainer` in a separ
 -import {useNavigation} from '@react-navigation/native';
 +import {NavigationContainer, useNavigation} from '@react-navigation/native';
 ...
+       <Drawer.Screen name="Other" component={Other} />
+     </Drawer.Navigator>
+   );
+ }
 +export default function Navigation() {
 +  // IMPORTANT: NavigationContainer needs to not rerender too often or
 +  // else Safari and Firefox error on too many history API calls. Put
@@ -193,11 +275,13 @@ export default function App() {
 }
 ```
 
+Open the app on mobile and on web. See how we can drill down into screens and switch between different stacks. Now, there are two title bars which doesn't look good. We'll address that once we start customizing our navigation components.
+
 ## URLs
 
-On the web we expect each screen to correspond to a URL. URLs can be useful for deep linking into screens of the app as well.
+Before we move on to theming, though, let's talk about URLs. Notice how on the web the app has the same URL no matter what screen we're on. On the web we expect each screen to correspond to a URL. URLs can be useful for deep linking into screens of the app as well.
 
-Set up the linking mapping in `Navigation.js`:
+In `Navigation.js`, add the following configuration object:
 
 ```js
 const linking = {
@@ -232,14 +316,38 @@ Configure the `NavigationContainer` with it:
    );
 ```
 
-TODO is `initialRouteName` needed in component or linking config?
+Click around the app and notice the URLs change as we expect.
+
+Try reloading the browser tab when you're on a screen other than the home screen. Note that you're taken to the screen you expect.
+
+Try reloading when you're on `/home/detail`, though. There's a problem: there's no back button! There's no way to get to the home screen. Why is this?
+
+The reason is that stacks don't automatically have a "starting" screen. If you navigate to the details screen, that's where you begin in that stack.
+
+To fix this, configure an `initialRouteName` in the linking config for the home stack:
+
+```diff
+ screens: {
+   Home: {
+     path: '/',
++    initialRouteName: 'HomeRoot',
+     screens: {
+       HomeRoot: '',
+       HomeDetail: 'home/detail',
+```
+
+Try reloading `/home/detail` again. Now you should see the back button and be able to get back to the home screen.
 
 # RN Paper
+
+With our navigation working, it's time to make our app look awesome. There are a lot of different ways to style a React Native app.
+
+In this workshop we're going to use React Native Paper. I've found that it has great support for both mobile and web. Version 5 of Paper is currently in release candidate stage; we're going to go ahead and use it to make sure you're set for the future. It's nice and stable.
 
 Add the Paper dependency:
 
 ```bash
-$ yarn add react-native-paper@5.0.0-rc.4
+$ yarn add react-native-paper@5.0.0-rc.6
 ```
 
 Next, wrap the app with the Paper provider:
@@ -291,21 +399,28 @@ export default function CustomNavigationDrawer({...navProps}) {
 }
 ```
 
-Now configure the drawer to use it:
+Now configure the drawer to use it in `Navigation.js`:
 
 ```diff
 +import CustomNavigationDrawer from './components/CustomNavigationDrawer';
 
- function HomeRoot() {
-   const navigation = useNavigation();
+ const linking = {
 ...
-       screenOptions={{
-         headerShown: false,
-       }}
+ function NavigationContents() {
+   return (
+-    <Drawer.Navigator useLegacyImplementation>
++    <Drawer.Navigator
++      useLegacyImplementation
 +      drawerContent={props => <CustomNavigationDrawer {...props} />}
-     >
++    >
        <Drawer.Screen name="Home" component={Home} />
+       <Drawer.Screen name="Other" component={Other} />
+     </Drawer.Navigator>
+   );
+ }
 ```
+
+Reload the app and open the drawer. Check out how we have a material design look and feel. We're going to adjust it later once we customize our Material Design theme.
 
 Next, the header. Create a file `src/components/CustomNavigationBar.js`. Add the following:
 
@@ -317,16 +432,14 @@ export default function CustomNavigationBar({navigation, options, back}) {
     <Appbar.Header>
       {back ? (
         <Appbar.BackAction
-          testID="back-button"
           onPress={navigation.goBack}
           accessibilityLabel="Back"
         />
       ) : null}
       <Appbar.Content title={options.title} />
       <Appbar.Action
-        testID="toggle-navigation-button"
-        accessibilityLabel="Menu"
         icon="menu"
+        accessibilityLabel="Menu"
         onPress={navigation.toggleDrawer}
       />
     </Appbar.Header>
@@ -366,23 +479,20 @@ Now configure each Stack Navigator to use this header component:
 We also configure the drawer's own header not to show, since our custom navigation bar handles it:
 
 ```diff
-   return (
--    <Drawer.Navigator useLegacyImplementation initialRouteName="Home">
-+    <Drawer.Navigator
-+      useLegacyImplementation
-+      initialRouteName="Home"
-+      screenOptions={{
-+        headerShown: false,
-+      }}
-+    >
-       <Drawer.Screen name="Home" component={Home} />
-       <Drawer.Screen name="Other" component={Other} />
-     </Drawer.Navigator>
+ <Drawer.Navigator
+   useLegacyImplementation
++  screenOptions={{
++    headerShown: false,
++  }}
+   drawerContent={props => <CustomNavigationDrawer {...props} />}
+ >
 ```
+
+Load up the app. See how there is only one header bar now, and it has a Material look. We can press the right-hand icon to toggle the drawer. And if we're on a detail screen there is a back arrow to go back to the initial screen.
 
 ## Dark Mode
 
-React Native Paper supports dark mode, but by default Expo doesn't allow switching the app to dark mode. We can change that in `app.json`:
+Switch your computer and Simulator/Emulator to dark mode. Note that on the web the navigation bar and drawer buttons switch to dark mode, but not on mobile. By default Expo doesn't allow switching the mobile apps to dark mode. We can change that in `app.json`:
 
 ```diff
      "icon": "./assets/icon.png",
@@ -391,25 +501,28 @@ React Native Paper supports dark mode, but by default Expo doesn't allow switchi
      "splash": {
 ```
 
-Our RN Paper components change to dark mode, but some of our other components do not. First, backgrounds. Let's add a `ScreenBackground` component that supports dark mode:
+Save and reload the app on mobile. You should see the same dark mode styling there.
+
+Our next problem is that our RN Paper components change to dark mode, but some of our other components do not. We need to customize them to respect dark mode settings.
+
+First, backgrounds. Let's add a `ScreenBackground` component that supports dark mode:
 
 ```jsx
 import {View} from 'react-native';
-import {withTheme} from 'react-native-paper';
+import {useTheme} from 'react-native-paper';
 
-function ScreenBackground({theme, style, children}) {
+export default function ScreenBackground({style, children}) {
+  const theme = useTheme();
   const baseStyle = {flex: 1, backgroundColor: theme.colors.background};
   return <View style={[baseStyle, style]}>{children}</View>;
 }
-
-export default withTheme(ScreenBackground);
 ```
 
-Let's use this for all our screens:
+Let's use this for all our screens in `Navigation.js`:
 
 ```diff
 +import ScreenBackground from './components/ScreenBackground';
-
+...
  function HomeRoot() {
    const navigation = useNavigation();
    return (
@@ -450,69 +563,71 @@ Let's use this for all our screens:
 Now our backgrounds change color but our text doesn't. The `Text` component from Paper will help:
 
 ```diff
- import {createNativeStackNavigator} from '@react-navigation/native-stack';
+ import {NavigationContainer, useNavigation} from '@react-navigation/native';
 -import {Pressable, Text} from 'react-native';
 +import {Pressable} from 'react-native';
 +import {Text} from 'react-native-paper';
- import CustomNavigationBar from './components/CustomNavigationBar';
+ import {createDrawerNavigator} from '@react-navigation/drawer';
 ```
 
-But now our drawer doesn't change. Let's add that support:
+Now our text looks good.
+
+Next, take a look at the drawer. Its background doesn't change either. Let's add that support:
 
 ```diff
  import {DrawerContentScrollView} from '@react-navigation/drawer';
 -import {Drawer} from 'react-native-paper';
-+import {Drawer, withTheme} from 'react-native-paper';
++import {Drawer, useTheme} from 'react-native-paper';
 
--function CustomNavigationDrawer({...navProps}) {
-+function CustomNavigationDrawer({theme, ...navProps}) {
+ function CustomNavigationDrawer({...navProps}) {
    const {state, navigation} = navProps;
-
-   const isSelected = index => index === state.index;
-
++  const theme = useTheme();
++
 +  const scrollViewStyle = {
 +    backgroundColor: theme.colors.background,
 +  };
-+
+
+   const isSelected = index => index === state.index;
+
    return (
 -    <DrawerContentScrollView {...navProps}>
 +    <DrawerContentScrollView style={scrollViewStyle} {...navProps}>
        {state.routes.map((route, index) => (
          <Drawer.Item
            key={route.key}
-...
-   );
- }
-
--export default CustomNavigationDrawer;
-+export default withTheme(CustomNavigationDrawer);
 ```
 
 ## Theme Color
 
-This looks good, but the theme also looks exactly like every other RN Paper app out there. To give our app a more unique identity, we can set a custom primary theme color.
+This looks good, but the theme also looks exactly like every other RN Paper app out there. Here's how we can do it.
 
-There's one complication: if we want to customize the theme, then we need to handle light and dark mode switching ourselves. Here's how. Create a file `src/useTheme.js` and add the following:
+React Native Paper v5 supports two different versions of the Material Design spec: the older Material Design 2, and the newer Material You. It defaults to Material You.
+
+If we want to stick with Material You, we have to customize a number of different colors in the theme. But if we're willing to fall back to Material Design 2, we can just set one primary color, and our design will be set. For this exercise, we'll do the latter.
+
+If we use the built-in theme we get light and dark mode switching automatically, but since we're customizing the theme we will need to handle the switching ourselves.
+
+Create a file `src/useCustomTheme.js` and add the following:
 
 ```js
 import {useColorScheme} from 'react-native';
 import {MD2DarkTheme, MD2LightTheme} from 'react-native-paper';
 
-export default function useTheme() {
+export default function useCustomTheme() {
   const colorScheme = useColorScheme() ?? 'light';
   const baseTheme = colorScheme === 'dark' ? MD2DarkTheme : MD2LightTheme;
   return baseTheme;
 }
 ```
 
-Now use this to set the theme on the provider:
+Now use this to set the theme on the provider in `App.js`:
 
 ```diff
  import {Provider as PaperProvider} from 'react-native-paper';
-+import useTheme from './src/useTheme';
++import useCustomTheme from './src/useCustomTheme';
 
  export default function App() {
-+  const theme = useTheme();
++  const theme = useCustomTheme();
 +
    return (
 -    <PaperProvider>
@@ -520,7 +635,9 @@ Now use this to set the theme on the provider:
        <StatusBar style="auto" />
 ```
 
-So far, everything looks just the same. But now let's set that theme color. You can pick any vibrant color. Here's what I chose:
+If you look in the app, the look has changed. This is Material Design 2.
+
+But now let's set that theme color. You can pick any vibrant color. Here's what I chose:
 
 ```diff
  import {MD2DarkTheme, MD2LightTheme} from 'react-native-paper';
@@ -544,13 +661,13 @@ So far, everything looks just the same. But now let's set that theme color. You 
  }
 ```
 
-Now note that we have a custom color and we still support light and dark mode.
+Pull up the app again and try switching between light and dark mode to see our custom color in action.
 
 ## Responsive Design
 
 Let's take a look at a few ways we can make our app look good at different sizes.
 
-First, the content area is pretty wide. Let's make it a centered column that hsa a maximum width. Let's create a component for this, `src/components/CenterColumn.js`. Add the following:
+First, in a large viewport like the web on desktop, the content area is pretty wide. Let's make it a centered column that hsa a maximum width. Let's create a component for this, `src/components/CenterColumn.js`. Add the following:
 
 ```jsx
 import {StyleSheet, View} from 'react-native';
@@ -618,7 +735,9 @@ Let's center the content on all the screens:
  );
 ```
 
-What about more complex situations? Let's say we want to put buttons above one another on small screens but put them next to each other on large screens. On the web you can accomplish this with media queries and breakpoints, but that's not built in to React Native. But I've created this library to help with that:
+What about more complex situations? Let's say we want to put buttons above one another on small screens but put them next to each other on large screens. On the web you can accomplish this with media queries and breakpoints, but that's not built in to React Native. There are a lot of styling libraries for React Native, and some of them may provide built in breakpoint support.
+
+If you don't already have a breakpoint option, I created a tiny library to help with this:
 
 ```bash
 $ yarn add react-native-style-queries
@@ -659,7 +778,7 @@ Now let's update `HomeRoot` to use it:
 
 ```diff
  import {createNativeStackNavigator} from '@react-navigation/native-stack';
--import {Pressable} from 'react-native';
+ import {Pressable} from 'react-native';
 -import {Text} from 'react-native-paper';
 +import {Button, Text} from 'react-native-paper';
  import CustomNavigationBar from './components/CustomNavigationBar';
@@ -692,7 +811,9 @@ Now let's update `HomeRoot` to use it:
    );
 ```
 
-What about the drawer? With all the screen space on a large screen, it would be nice to keep it visible all the time. Here's how we can do that.
+Note how the buttons are laid out. We could add padding to them to space them apart.
+
+Another responsive feature that would be the nice relates to the drawer. With all the screen space on a large screen, it would be nice to keep it visible all the time. Here's how we can do that.
 
 First, let's make a function that tells us which breakpoint we're at. In `breakpoints.js`:
 
@@ -702,10 +823,19 @@ First, let's make a function that tells us which breakpoint we're at. In `breakp
  export const breakpointMedium = 429;
 +export const breakpointLarge = 600;
 +
-+export const large = 'large';
++export const small = 'small';
 +export const medium = 'medium';
++export const large = 'large';
 +
-+const breakpointForWidth = width => (width >= breakpointLarge ? large : medium);
++function breakpointForWidth(width) {
++  if (width >= breakpointLarge) {
++    return large;
++  } else if (width >= breakpointMedium) {
++    return medium;
++  } else {
++    return small;
++  }
++}
 +
 +export function useBreakpoint() {
 +  const {width} = useWindowDimensions();
@@ -726,7 +856,7 @@ Next, we'll configure the drawer to be either permanent or not depending on the 
 
  function NavigationContents() {
 +  const breakpoint = useBreakpoint();
-+  const drawerTypeForBreakpoint = breakpoint === large ? 'permanent' : 'back';
++  const drawerType = breakpoint === large ? 'permanent' : 'back';
 +
    // not sure why useLegacyImplementation is needed; isn't in my other apps
    return (
@@ -735,13 +865,15 @@ Next, we'll configure the drawer to be either permanent or not depending on the 
        initialRouteName="Home"
        screenOptions={{
          headerShown: false,
-+        drawerType: drawerTypeForBreakpoint,
++        drawerType,
        }}
        drawerContent={props => <CustomNavigationDrawer {...props} />}
      >
 ```
 
-This keeps the drawer present. As a final touch, let's hide the drawer toggle button when it's permanently shown. In `CustomNavigationBar.js`:
+This keeps the drawer present on large viewports. Try narrowing the browser window and notice how the drawer disappears when you go narrower and reappears when you go wider.
+
+As a final touch, let's hide the drawer toggle button when it's permanently shown. In `CustomNavigationBar.js`:
 
 ```diff
  import {Appbar} from 'react-native-paper';
@@ -757,9 +889,8 @@ This keeps the drawer present. As a final touch, let's hide the drawer toggle bu
        <Appbar.Content title={options.title} />
 +      {showDrawerToggle && (
          <Appbar.Action
-           testID="toggle-navigation-button"
-           accessibilityLabel="Menu"
            icon="menu"
+           accessibilityLabel="Menu"
            onPress={navigation.toggleDrawer}
          />
 +      )}
