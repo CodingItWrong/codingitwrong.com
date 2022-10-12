@@ -901,12 +901,12 @@ As a final touch, let's hide the drawer toggle button when it's permanently show
 
 ## Platform-Specific Functionality
 
-TODO
+To learn more about conditionals based on whether you are on web or mobile, or separate module implementations for web, see [Web-specific code in the React Native Web docs](https://necolas.github.io/react-native-web/docs/multi-platform/#web-specific-code).
 
 ## Resources
 
 - Libraries
-  - [React Native for Web](https://github.com/necolas/react-native-web)
+  - [React Native for Web](https://necolas.github.io/react-native-web/docs/)
   - [Expo - Developing for Web](https://docs.expo.dev/workflow/web/)
   - [React Navigation](https://reactnavigation.org/)
   - [React Native Paper](https://reactnativepaper.com/)
