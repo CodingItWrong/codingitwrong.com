@@ -862,6 +862,7 @@ To learn more about conditionals based on whether you are on web or mobile, or s
   - [React Native Paper](https://reactnativepaper.com/)
 - [Workshop Discord channel](LINK HERE)
 - [Example mobile/web app: surelytodo.com](https://surelytodo.com)
+- [Weekly Live Stream](https://codingit.live): working on two web+native Expo apps
 - [Test Double - React and React Native consultants](https://testdouble.com)
 - [The Instructor - Josh Justice](https://codingitwrong.com)
 
