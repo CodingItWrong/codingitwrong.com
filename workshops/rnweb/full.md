@@ -2,49 +2,15 @@
 title: Building for Web and Mobile with Expo
 ---
 
-by Josh Justice
-
-React Advanced London 2022
+{% include_relative _header.md %}
 
 ## Introduction
 
 This page will take you through the full workshop exercise. You can also download [the finished repository](https://github.com/CodingItWrong/rnweb-workshop-app), but I recommend working through the exercise to get a better feel for how the libraries and customizations work together.
 
+{% include_relative _setup.md %}
+
 {% raw %}
-## Requirements
-
-- [git](https://git-scm.com/)
-- [Node](https://nodejs.org/)
-- [Yarn 1.x](https://classic.yarnpkg.com/en/docs/install)
-- A way to run the Expo app. One of:
-  - A physical Android or iOS device
-  - [Android Studio](https://developer.android.com/studio/) for the Android Emulator
-  - [Xcode](https://developer.apple.com/xcode/) for the iOS Simulator
-
-## Setting Up the Repo
-
-We will be building off of the GitHub repo [rnweb-workshop-app](https://github.com/CodingItWrong/rnweb-workshop-app). It is a basic [Expo](https://expo.dev/) app with linting and autoformatting added.
-
-Clone the repo locally:
-
-```bash
-$ git clone https://github.com/CodingItWrong/rnweb-workshop-app.git
-```
-
-Install the dependencies:
-
-```bash
-$ cd rnweb-workshop-app
-$ yarn install
-```
-
-Start the development server:
-
-```bash
-$ yarn start
-```
-
-For instructions for opening the app on a physical phone, Android Emulator, or iOS Simulator, see [Opening the app on your phone/tablet - Expo Docs](https://docs.expo.dev/get-started/create-a-new-app/#opening-the-app-on-your-phonetablet)
 
 ## RN Web
 
@@ -863,7 +829,7 @@ To learn more about conditionals based on whether you are on web or mobile, or s
 - [Workshop Discord channel](LINK HERE)
 - [Example mobile/web app: surelytodo.com](https://surelytodo.com)
 - [Weekly Live Stream](https://codingit.live): working on two web+native Expo apps
-- [Test Double - React and React Native consultants](https://testdouble.com)
-- [The Instructor - Josh Justice](https://codingitwrong.com)
 
 {% endraw %}
+
+{% include_relative _contact.md %}
