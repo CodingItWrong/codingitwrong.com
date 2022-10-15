@@ -1,12 +1,13 @@
 ## Requirements
 
 - [git](https://git-scm.com/)
-- [Node](https://nodejs.org/)
+- [Node](https://nodejs.org/) 16.x or above
 - [Yarn 1.x](https://classic.yarnpkg.com/en/docs/install)
-- A way to run the Expo app. One of:
+- At least one of the following ways to run a React Native app:
   - A physical Android or iOS device
   - [Android Studio](https://developer.android.com/studio/) for the Android Emulator
   - [Xcode](https://developer.apple.com/xcode/) for the iOS Simulator
+- A code editor configured for React development
 
 ## Setting Up the Repo
 
