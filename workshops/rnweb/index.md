@@ -10,8 +10,8 @@ Thank you for signing up for the workshop! Here are the steps you can go through
 
 {% include_relative _setup.md %}
 
-## More to Come!
+## You're Ready!
 
-Once you have the mobile app booting up, you're all set! On Thursday, October 27th in the workshop we will take it from here. See you then!
+If you reached this point and everything is working, congratulations: you are ready for the workshop! On Thursday, October 27th in the workshop we will take it from here. See you then!
 
 {% include_relative _contact.md %}
