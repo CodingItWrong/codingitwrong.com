@@ -32,4 +32,4 @@ Start the development server:
 $ yarn start
 ```
 
-For instructions for opening the app on a physical phone, Android Emulator, or iOS Simulator, see [Opening the app on your phone/tablet - Expo Docs](https://docs.expo.dev/get-started/create-a-new-app/#opening-the-app-on-your-phonetablet)
+Next, open the app on a physical phone, Android Emulator, or iOS Simulator. For instructions, see [Opening the app on your phone/tablet - Expo Docs](https://docs.expo.dev/get-started/create-a-new-app/#opening-the-app-on-your-phonetablet)

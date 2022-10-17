@@ -12,6 +12,6 @@ Thank you for signing up for the workshop! Here are the steps you can go through
 
 ## You're Ready!
 
-If you reached this point and everything is working, congratulations: you are ready for the workshop! On Thursday, October 27th in the workshop we will take it from here. See you then!
+If you reached this point and were able to see the app on a physical phone, Android Emulator, or iOS Simulator, congratulations: you are ready for the workshop! On Thursday, October 27th in the workshop we will take it from here. See you then!
 
 {% include_relative _contact.md %}
