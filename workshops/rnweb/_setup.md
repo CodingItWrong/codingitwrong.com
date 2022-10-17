@@ -16,7 +16,7 @@ We will be building off of the GitHub repo [rnweb-workshop-app](https://github.c
 Clone the repo locally:
 
 ```bash
-$ git clone https://github.com/CodingItWrong/rnweb-workshop-app.git
+git clone https://github.com/CodingItWrong/rnweb-workshop-app.git
 ```
 
 Install the dependencies:
