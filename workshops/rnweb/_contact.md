@@ -1,6 +1,6 @@
 ## Contact Josh
 
-- Email: [me@codingitwrong.com](mailto:me@codingitwrong.com)
+- Email: josh.justice@testdouble.com
 - LinkedIn: [Josh Justice](https://www.linkedin.com/in/jjustice/)
 - Home page: [CodingItWrong.com](https://codingitwrong.com)
 
