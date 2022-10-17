@@ -34,4 +34,4 @@ $ yarn start
 
 Next, open the app on a physical phone, Android Emulator, or iOS Simulator. For instructions, see [Opening the app on your phone/tablet - Expo Docs](https://docs.expo.dev/get-started/create-a-new-app/#opening-the-app-on-your-phonetablet)
 
-If it works, you should see the message "Open up App.js to start working on your app!"
+You should see the app launch on the device and the message "Open up App.js to start working on your app!" displayed.
