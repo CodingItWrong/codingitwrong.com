@@ -4,6 +4,8 @@ title: Building for Web and Mobile with Expo
 
 {% include_relative _header.md %}
 
+Oct 27, 2022, 3-6 BST
+
 ## Pre-Workshop Setup
 
 Thank you for signing up for the workshop! Here are the steps you can go through in advance to ensure your local development environment is ready.
