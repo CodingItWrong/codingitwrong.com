@@ -1,0 +1,8 @@
+- Libraries
+  - [React Native for Web](https://necolas.github.io/react-native-web/docs/)
+  - [Expo - Developing for Web](https://docs.expo.dev/workflow/web/)
+  - [React Navigation](https://reactnavigation.org/)
+  - [React Native Paper](https://reactnativepaper.com/)
+- [Workshop Discord channel](https://discord.gg/zTkEtyx7hk)
+- [Example mobile/web app: surelytodo.com](https://surelytodo.com)
+- [Weekly Live Stream](https://codingit.live): working on two web+native Expo apps
