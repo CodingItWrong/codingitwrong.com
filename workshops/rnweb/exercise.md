@@ -143,13 +143,15 @@ const Drawer = createDrawerNavigator();
 
 function NavigationContents() {
   return (
-    <Drawer.Navigator useLegacyImplementation>
+    <Drawer.Navigator>
       <Drawer.Screen name="Home" component={Home} />
       <Drawer.Screen name="Other" component={Other} />
     </Drawer.Navigator>
   );
 }
 ```
+
+(**Note:** previously I found I needed to add a `useLegacyImplementation` prop to `<Drawer.Navigator>` to fix a mysterious error on the web. If you run into a Drawer-related error during this tutorial that you can't explain, try adding the `useLegacyImplementation` prop and see if that helps.)
 
 To finish up this file for now, we wrap it in a `NavigationContainer` in a separate component:
 
@@ -322,11 +324,8 @@ Now configure the drawer to use it in `Navigation.js`:
 ...
  function NavigationContents() {
    return (
--    <Drawer.Navigator useLegacyImplementation>
-+    <Drawer.Navigator
-+      useLegacyImplementation
-+      drawerContent={CustomNavigationDrawer}
-+    >
+-    <Drawer.Navigator>
++    <Drawer.Navigator drawerContent={CustomNavigationDrawer}>
        <Drawer.Screen name="Home" component={Home} />
        <Drawer.Screen name="Other" component={Other} />
      </Drawer.Navigator>
@@ -385,11 +384,11 @@ Now configure each Stack Navigator to use this header component:
 We also configure the drawer's own header not to show, since our custom navigation bar handles it:
 
 ```diff
- <Drawer.Navigator
-   useLegacyImplementation
+-<Drawer.Navigator drawerContent={CustomNavigationDrawer}>
++<Drawer.Navigator
 +  screenOptions={{headerShown: false}}
-   drawerContent={CustomNavigationDrawer}
- >
++  drawerContent={CustomNavigationDrawer}
++>
 ```
 
 Load up the app. See how there is only one header bar now, and it has a Material look. We can press the right-hand icon to toggle the drawer. And if we're on a detail screen there is a back arrow to go back to the initial screen.
@@ -520,7 +519,6 @@ This is subtle, but I think this is because the `Drawer.Navigator` isn't actuall
  function NavigationContents() {
    return (
      <Drawer.Navigator
-       useLegacyImplementation
        screenOptions={{headerShown: false}}
 -      drawerContent={CustomNavigationDrawer}
 +      drawerContent={renderCustomNavigationDrawer}
@@ -792,7 +790,6 @@ Next, we'll configure the drawer to be either permanent or not depending on the 
 +  const breakpoint = useBreakpoint();
 +  const drawerType = breakpoint === large ? 'permanent' : 'back';
 +
-   // not sure why useLegacyImplementation is needed; isn't in my other apps
    return (
      <Drawer.Navigator
 ...
