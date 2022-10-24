@@ -13,6 +13,13 @@ Nov 7, 2022
 - [Exercise repo](https://github.com/CodingItWrong/react-testing-exercises)
 - Lecture slides - COMING SOON!
 
+## More Resources for Testing and TDD in React
+
+- [React Testing Library docs](https://testing-library.com/docs/react-testing-library/intro)
+- [Cypress docs](https://docs.cypress.io/)
+- [CodingItWrong's Discord](https://discord.gg/PKDynbmCFh) - discuss this workshop and React testing in general.
+
+
 ## Contact Josh
 
 - Email: josh.justice@testdouble.com
