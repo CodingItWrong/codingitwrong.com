@@ -92,11 +92,9 @@ function HomeDetail() {
   );
 }
 
-const OtherRoot = () => (
-  <>
-    <Text>OtherRoot</Text>
-  </>
-);
+function OtherRoot() {
+  return <Text>OtherRoot</Text>;
+}
 ```
 
 Now let's create two stack navigators, one for each set:
@@ -105,31 +103,35 @@ Now let's create two stack navigators, one for each set:
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 //...
 const HomeStack = createNativeStackNavigator();
-const Home = () => (
-  <HomeStack.Navigator>
-    <HomeStack.Screen
-      name="HomeRoot"
-      component={HomeRoot}
-      options={{title: 'Home'}}
-    />
-    <HomeStack.Screen
-      name="HomeDetail"
-      component={HomeDetail}
-      options={{title: 'Home Detail'}}
-    />
-  </HomeStack.Navigator>
-);
+function Home() {
+  return (
+    <HomeStack.Navigator>
+      <HomeStack.Screen
+        name="HomeRoot"
+        component={HomeRoot}
+        options={{title: 'Home'}}
+      />
+      <HomeStack.Screen
+        name="HomeDetail"
+        component={HomeDetail}
+        options={{title: 'Home Detail'}}
+      />
+    </HomeStack.Navigator>
+  );
+}
 
 const OtherStack = createNativeStackNavigator();
-const Other = () => (
-  <OtherStack.Navigator>
-    <OtherStack.Screen
-      name="OtherRoot"
-      component={OtherRoot}
-      options={{title: 'Other'}}
-    />
-  </OtherStack.Navigator>
-);
+function Other() {
+  return (
+    <OtherStack.Navigator>
+      <OtherStack.Screen
+        name="OtherRoot"
+        component={OtherRoot}
+        options={{title: 'Other'}}
+      />
+    </OtherStack.Navigator>
+  );
+}
 ```
 
 Now, we combine them in a Drawer:
@@ -323,7 +325,7 @@ Now configure the drawer to use it in `Navigation.js`:
 -    <Drawer.Navigator useLegacyImplementation>
 +    <Drawer.Navigator
 +      useLegacyImplementation
-+      drawerContent={props => <CustomNavigationDrawer {...props} />}
++      drawerContent={CustomNavigationDrawer}
 +    >
        <Drawer.Screen name="Home" component={Home} />
        <Drawer.Screen name="Other" component={Other} />
@@ -367,25 +369,17 @@ Now configure each Stack Navigator to use this header component:
  const HomeStack = createNativeStackNavigator();
  const Home = () => (
 -  <HomeStack.Navigator>
-+  <HomeStack.Navigator
-+    screenOptions={{
-+      header: props => <CustomNavigationBar {...props} />,
-+    }}
-+  >
++  <HomeStack.Navigator screenOptions={{header: CustomNavigationBar}}>
      <HomeStack.Screen
        name="HomeRoot"
        component={HomeRoot}
-@@ -51,7 +56,11 @@ const Home = () => (
-
+...
  const OtherStack = createNativeStackNavigator();
- const Other = () => (
--  <OtherStack.Navigator>
-+  <OtherStack.Navigator
-+    screenOptions={{
-+      header: props => <CustomNavigationBar {...props} />,
-+    }}
-+  >
-     <OtherStack.Screen
+ function Other() {
+   return (
+-    <OtherStack.Navigator>
++    <OtherStack.Navigator screenOptions={{header: CustomNavigationBar}}>
+       <OtherStack.Screen
 ```
 
 We also configure the drawer's own header not to show, since our custom navigation bar handles it:
@@ -393,10 +387,8 @@ We also configure the drawer's own header not to show, since our custom navigati
 ```diff
  <Drawer.Navigator
    useLegacyImplementation
-+  screenOptions={{
-+    headerShown: false,
-+  }}
-   drawerContent={props => <CustomNavigationDrawer {...props} />}
++  screenOptions={{headerShown: false}}
+   drawerContent={CustomNavigationDrawer}
  >
 ```
 
@@ -463,13 +455,14 @@ Let's use this for all our screens in `Navigation.js`:
    );
  }
 
- const OtherRoot = () => (
--  <>
-+  <ScreenBackground>
-     <Text>OtherRoot</Text>
--  </>
-+  </ScreenBackground>
- );
+ function OtherRoot() {
+-  return <Text>OtherRoot</Text>;
++  return (
++    <ScreenBackground>
++      <Text>OtherRoot</Text>
++    </ScreenBackground>
++  );
+ }
 ```
 
 Now our backgrounds change color but our text doesn't. The `Text` component from Paper will help:
@@ -508,6 +501,33 @@ Next, take a look at the drawer. Its background doesn't change either. Let's add
          <Drawer.Item
            key={route.key}
 ```
+
+When we make this change, we get an error:
+
+> Render Error
+>
+> Invalid hook call. Hooks can only be called inside of the body of a function component.
+
+This is subtle, but I think this is because the `Drawer.Navigator` isn't actually calling the `drawerContent` as a component, but as a plain function. But I've found we can fix this by wrapping the component in a function, so the component is actually called within JSX:
+
+```diff
+ const Drawer = createDrawerNavigator();
+
++function renderCustomNavigationDrawer(props) {
++  return <CustomNavigationDrawer {...props} />;
++}
++
+ function NavigationContents() {
+   return (
+     <Drawer.Navigator
+       useLegacyImplementation
+       screenOptions={{headerShown: false}}
+-      drawerContent={CustomNavigationDrawer}
++      drawerContent={renderCustomNavigationDrawer}
+     >
+```
+
+Save, and the error should be fixed.
 
 ## Theme Color
 
@@ -638,13 +658,15 @@ Let's center the content on all the screens:
    );
  }
 
- const OtherRoot = () => (
-   <ScreenBackground>
-+    <CenterColumn>
-       <Text>OtherRoot</Text>
-+    </CenterColumn>
-   </ScreenBackground>
- );
+ function OtherRoot() {
+   return (
+     <ScreenBackground>
++      <CenterColumn>
+         <Text>OtherRoot</Text>
++      </CenterColumn>
+     </ScreenBackground>
+   );
+ }
 ```
 
 What about more complex situations? Let's say we want to put buttons above one another on small screens but put them next to each other on large screens. On the web you can accomplish this with media queries and breakpoints, but that's not built in to React Native. There are a lot of styling libraries for React Native, and some of them may provide built in breakpoint support.
@@ -701,7 +723,7 @@ Now let's update `HomeRoot` to use it:
 
  function HomeRoot() {
    const navigation = useNavigation();
-@@ -14,9 +14,16 @@ function HomeRoot() {
+...
      <ScreenBackground>
        <CenterColumn>
          <Text>HomeRoot</Text>
@@ -763,7 +785,7 @@ Next, we'll configure the drawer to be either permanent or not depending on the 
 
  function HomeRoot() {
    const navigation = useNavigation();
-@@ -89,6 +90,9 @@ const Other = () => (
+...
  const Drawer = createDrawerNavigator();
 
  function NavigationContents() {
