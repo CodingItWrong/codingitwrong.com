@@ -4,6 +4,10 @@ title: Migrating a Mastodon Account
 
 The Mastodon instance I've been using, mastodon.technology, is shutting down in a few months, so I've migrated my Mastodon account to a new server. I wanted to share the steps I went through in case the details are helpful to anyone, especially others migrating off that instance--*especially* a warning about when you lose access to your old account. I don't know if these are the best steps to follow, but they worked for me.
 
+(Note that unfortunately transferring to another server does not transfer your posts, media, favorites, mentions, etc. But you can at least back these up—see [IzzyOnDroid's "Mastodon Backups" tips](https://android.izzysoft.de/articles/named/fediverse-2#backups) for more detail.)
+
+To migrate to a new server:
+
 1. *Create a new Mastodon account on another instance.* You can go with one you've seen others on, search for one on [instances.social](https://instances.social/), or create your own instances. I ended up creating a small instance on [masto.host](https://masto.host/); it was extremely easy to set up.
 1. *Set up your account and send a post from your new account explaining that you're moving.* This way, once you import followers, for people who require approval for follows they will see that it's a real account. As far as I can tell you need to copy over your bio, profile pic, and banner manually. Note that although you can download your old posts, I'm not aware of any way to migrate them to another account.
 1. *Export the list of people you follow.* On your old account, go to Preferences > Import and export, then click the "CSV" link next to "Follows". You may want to download other lists from there too. Note that if you are following people who have configured their account to require approval of follower requests, they will need to re-approve this new request.
