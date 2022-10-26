@@ -12,7 +12,7 @@ This page will take you through the full workshop exercise. You can also downloa
 
 Expo is actually *almost* preconfigured to run on the web out of the box.
 
-Press W on the keyboard to open it on the web. You will get a warning:
+Press W on the keyboard to attempt to open it on the web. You will get a warning:
 
 ```text
 It looks like you're trying to use web support but don't have the required
@@ -33,7 +33,7 @@ $ npx expo install react-native-web@~0.18.7 \
                    @expo/webpack-config@^0.17.0
 ```
 
-Once those are installed, run `yarn start` again, then press W. The app should open on the web.
+Once those are installed, run `yarn start` again, then press W. This time, the app should successfully open in your browser, and you should see the message "Open up App.js to start working on your app!"
 
 ## React Navigation
 
@@ -140,7 +140,6 @@ Now, we combine them in a Drawer:
 import {createDrawerNavigator} from '@react-navigation/drawer';
 //...
 const Drawer = createDrawerNavigator();
-
 function NavigationContents() {
   return (
     <Drawer.Navigator>
@@ -151,7 +150,7 @@ function NavigationContents() {
 }
 ```
 
-(**Note:** previously I found I needed to add a `useLegacyImplementation` prop to `<Drawer.Navigator>` to fix a mysterious error on the web. If you run into a Drawer-related error during this tutorial that you can't explain, try adding the `useLegacyImplementation` prop and see if that helps.)
+(**Note:** previously I found I needed to add a `useLegacyImplementation` prop to `<Drawer.Navigator>` to fix a mysterious error on the web. If you run into a Drawer-related error during this tutorial and you can't figure out the cause, try adding the `useLegacyImplementation` prop and see if that helps.)
 
 To finish up this file for now, we wrap it in a `NavigationContainer` in a separate component:
 
@@ -163,6 +162,7 @@ To finish up this file for now, we wrap it in a `NavigationContainer` in a separ
      </Drawer.Navigator>
    );
  }
++
 +export default function Navigation() {
 +  // IMPORTANT: NavigationContainer needs to not rerender too often or
 +  // else Safari and Firefox error on too many history API calls. Put
@@ -191,7 +191,9 @@ export default function App() {
 }
 ```
 
-Open the app on mobile and on web. See how we can drill down into screens and switch between different stacks. Now, there are two title bars which doesn't look good. We'll address that once we start customizing our navigation components.
+Open the app on mobile and on web. See how we can drill down into screens and switch between different stacks.
+
+It doesn't look good, though: there are two title bars stacked on top of each other. We'll address that once we start customizing our navigation components.
 
 ## URLs
 
@@ -238,7 +240,7 @@ Try reloading the browser tab when you're on a screen other than the home screen
 
 Try reloading when you're on `/home/detail`, though. There's a problem: there's no back button! There's no way to get to the home screen. Why is this?
 
-The reason is that stacks don't automatically have a "starting" screen. If you navigate to the details screen, that's where you begin in that stack.
+The reason is that stacks don't automatically have a "starting" screen. If you use a URL to go to the details screen, that's where you begin in that stack.
 
 To fix this, configure an `initialRouteName` in the linking config for the home stack:
 
@@ -263,7 +265,7 @@ In this workshop we're going to use React Native Paper. I've found that it has g
 Add the Paper dependency:
 
 ```bash
-$ yarn add react-native-paper@5.0.0-rc.6
+$ yarn add react-native-paper@5.0.0-rc.8
 ```
 
 Next, wrap the app with the Paper provider:
@@ -386,8 +388,10 @@ We also configure the drawer's own header not to show, since our custom navigati
 ```diff
 -<Drawer.Navigator drawerContent={CustomNavigationDrawer}>
 +<Drawer.Navigator
-+  screenOptions={{headerShown: false}}
 +  drawerContent={CustomNavigationDrawer}
++  screenOptions={{
++    headerShown: false,
++  }}
 +>
 ```
 
@@ -501,43 +505,21 @@ Next, take a look at the drawer. Its background doesn't change either. Let's add
            key={route.key}
 ```
 
-When we make this change, we get an error:
-
-> Render Error
->
-> Invalid hook call. Hooks can only be called inside of the body of a function component.
-
-This is subtle, but I think this is because the `Drawer.Navigator` isn't actually calling the `drawerContent` as a component, but as a plain function. But I've found we can fix this by wrapping the component in a function, so the component is actually called within JSX:
-
-```diff
- const Drawer = createDrawerNavigator();
-
-+function renderCustomNavigationDrawer(props) {
-+  return <CustomNavigationDrawer {...props} />;
-+}
-+
- function NavigationContents() {
-   return (
-     <Drawer.Navigator
-       screenOptions={{headerShown: false}}
--      drawerContent={CustomNavigationDrawer}
-+      drawerContent={renderCustomNavigationDrawer}
-     >
-```
-
-Save, and the error should be fixed.
+Save, and the drawer will now display with a dark background in dark mode.
 
 ## Theme Color
 
-This looks good, but the theme also looks exactly like every other RN Paper app out there. Here's how we can do it.
+This looks good, but the theme also looks exactly like every other Material Design app out there. Let's customize our theme with our own primary color.
 
-React Native Paper v5 supports two different versions of the Material Design spec: the older Material Design 2, and the newer Material You. It defaults to Material You.
+To approach custom theming, we have to talk about the two different versions of the Material Design spec that React Native Paper v5 supports: the older Material Design 2, and the newer Material You.
 
-If we want to stick with Material You, we have to customize a number of different colors in the theme. But if we're willing to fall back to Material Design 2, we can just set one primary color, and our design will be set. For this exercise, we'll do the latter.
+Paper defaults to Material You. If we want to stick with that, changing the color scheme means customizing a number of different colors.
 
-If we use the built-in theme we get light and dark mode switching automatically, but since we're customizing the theme we will need to handle the switching ourselves.
+There's a simpler way, though. If we're willing to fall back to Material Design 2, we can just set one primary color, and Paper will calculate the rest of the colors for the UI for us. For this exercise, we'll do the latter.
 
-Create a file `src/useCustomTheme.js` and add the following:
+There's one other challenge that comes up when we customize the theme. While we've used the built-in theme we've gotten light and dark mode switching automatically. But once we customize the theme, we will need to handle the switching ourselves.
+
+Let's build an implementation that handles these concerns. Create a file `src/useCustomTheme.js` and add the following:
 
 ```js
 import {useColorScheme} from 'react-native';
@@ -597,7 +579,7 @@ Pull up the app again and try switching between light and dark mode to see our c
 
 Let's take a look at a few ways we can make our app look good at different sizes.
 
-First, in a large viewport like the web on desktop, the content area is pretty wide. Let's make it a centered column that hsa a maximum width. Let's create a component for this, `src/components/CenterColumn.js`. Add the following:
+First, in a large viewport like the web on desktop, the content area is pretty wide. Let's make it a centered column that has a maximum width. Let's create a component for this, `src/components/CenterColumn.js`. Add the following:
 
 ```jsx
 import {StyleSheet, View} from 'react-native';
@@ -669,7 +651,7 @@ Let's center the content on all the screens:
 
 What about more complex situations? Let's say we want to put buttons above one another on small screens but put them next to each other on large screens. On the web you can accomplish this with media queries and breakpoints, but that's not built in to React Native. There are a lot of styling libraries for React Native, and some of them may provide built in breakpoint support.
 
-If you don't already have a breakpoint option, I created a tiny library to help with this:
+If you don't already have a breakpoint option, I created a tiny library to help with this, called [`react-native-style-queries`](https://github.com/CodingItWrong/react-native-style-queries). Add it to the project:
 
 ```bash
 $ yarn add react-native-style-queries
@@ -735,7 +717,7 @@ Now let's update `HomeRoot` to use it:
 +            mode="contained"
 +            onPress={() => navigation.navigate('HomeDetail')}
 +          >
-+            <Text>Go to Detail</Text>
++            Go to Detail
 +          </Button>
 +        </ButtonGroup>
        </CenterColumn>
@@ -743,7 +725,61 @@ Now let's update `HomeRoot` to use it:
    );
 ```
 
-Note how the buttons are laid out. We could add padding to them to space them apart.
+Drag your browser window to make it narrower, then wider. Note that at a small enough width the buttons switch to being stacked on top of one another, and extending the full width of the window. Make the window wide enough again, and they go back to being in a row.
+
+Now, the layout isn't perfect. Ideally we'd like to add margin at the top on a narrow screen and on the left on a wide screen. We can do that in `Navigation.js`:
+
+```diff
+ import ButtonGroup from './components/ButtonGroup';
++import {screenWidthMin, useStyleQueries} from 'react-native-style-queries';
++import {breakpointMedium} from './breakpoints';
+
+ const linking = {
+   config: {
+...
+     </NavigationContainer>
+   );
+ }
++
++const styleQueries = {
++  button: [
++    {
++      marginTop: 10,
++    },
++    screenWidthMin(breakpointMedium, {
++      marginLeft: 10,
++    }),
++  ],
++};
+```
+
+Now, apply these styles to the buttons:
+
+```diff
+ function HomeRoot() {
+   const navigation = useNavigation();
++  const styles = useStyleQueries(styleQueries);
+   return (
+     <ScreenBackground>
+       <CenterColumn>
+         <Text>HomeRoot</Text>
+         <ButtonGroup>
+-          <Button mode="outlined">Other Button</Button>
+-          <Button mode="outlined">Third Button</Button>
++          <Button mode="outlined" style={styles.button}>
++            Other Button
++          </Button>
++          <Button mode="outlined" style={styles.button}>
++            Third Button
++          </Button>
+           <Button
+             mode="contained"
+             onPress={() => navigation.navigate('HomeDetail')}
++            style={styles.button}
+           >
+             Go to Detail
+           </Button>
+```
 
 Another responsive feature that would be the nice relates to the drawer. With all the screen space on a large screen, it would be nice to keep it visible all the time. Here's how we can do that.
 
@@ -759,7 +795,9 @@ First, let's make a function that tells us which breakpoint we're at. In `breakp
 +export const medium = 'medium';
 +export const large = 'large';
 +
-+function breakpointForWidth(width) {
++export function useBreakpoint() {
++  const {width} = useWindowDimensions();
++
 +  if (width >= breakpointLarge) {
 +    return large;
 +  } else if (width >= breakpointMedium) {
@@ -767,11 +805,6 @@ First, let's make a function that tells us which breakpoint we're at. In `breakp
 +  } else {
 +    return small;
 +  }
-+}
-+
-+export function useBreakpoint() {
-+  const {width} = useWindowDimensions();
-+  return breakpointForWidth(width);
 +}
 ```
 
