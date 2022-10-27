@@ -2,7 +2,7 @@
 title: Building for Web and Mobile with Expo - Exercise
 ---
 
-This page will take you through the full workshop exercise. You can also download [the finished repository](https://github.com/CodingItWrong/rnweb-workshop-app), but I recommend working through the exercise to get a better feel for how the libraries and customizations work together.
+This page will take you through the full workshop exercise. You can also download [the finished repository](https://github.com/CodingItWrong/rnweb-workshop-app/tree/solution), but I recommend working through the exercise to get a better feel for how the libraries and customizations work together.
 
 {% include_relative _setup.md %}
 
