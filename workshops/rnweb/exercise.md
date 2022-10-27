@@ -65,6 +65,8 @@ We will also need to configure Babel to support the Reanimated library. Make the
    };
 ```
 
+After saving this change, stop the server and then rerun `yarn start`.
+
 Now that our project is set up for navigation, let's begin configuring our navigation structure.
 
 Create a `src` folder and, inside it, a `Navigation.js` file. First, let's create a few sample screens to navigate between:
@@ -272,6 +274,8 @@ Add the Paper dependency:
 ```bash
 yarn add react-native-paper@5.0.0-rc.8
 ```
+
+Stop and restart the server after this step.
 
 Next, wrap the app with the Paper provider:
 
@@ -554,7 +558,7 @@ Now use this to set the theme on the provider in `App.js`:
 
 If you look in the app, the look has changed. This is Material Design 2.
 
-But now let's set that theme color. You can pick any vibrant color. Here's what I chose:
+But now let's set that theme color. You can pick any vibrant color. The web site [Hex Color Picker](https://rgbacolorpicker.com/hex-color-picker) will let you choose one and give you the hex value for it. Here's what I chose:
 
 ```diff
  import {MD2DarkTheme, MD2LightTheme} from 'react-native-paper';
@@ -695,7 +699,9 @@ const styleQueries = {
 };
 ```
 
-Now let's update `HomeRoot` to use it:
+Here's how this works: for a style name `buttonContainer`, we give it an array. First we put an object literal in the array: this contains styles that will always be applied. Then we call the helper function `screenWidthMin()`: this allows us to define styles that we only want to apply if the screen width is at least the configured size, `breakpointMedium`. If that condition is met, the styles we pass here will be merged into the `buttonContainer` styles. We use this configuration within the component with the `useStyleQueries()` hook, and we get a `styles` object back.
+
+Now let's update `HomeRoot` to use it, as well as some RN Paper buttons:
 
 ```diff
  import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -718,8 +724,8 @@ Now let's update `HomeRoot` to use it:
 -          <Text>Go to Detail</Text>
 -        </Pressable>
 +        <ButtonGroup>
-+          <Button mode="outlined">Other Button</Button>
-+          <Button mode="outlined">Third Button</Button>
++          <Button mode="outlined">Second</Button>
++          <Button mode="outlined">Third</Button>
 +          <Button
 +            mode="contained"
 +            onPress={() => navigation.navigate('HomeDetail')}
@@ -738,7 +744,7 @@ Now, the layout isn't perfect. Ideally we'd like to add margin at the top on a n
 
 ```diff
  import ButtonGroup from './components/ButtonGroup';
-+import {screenWidthMin, useStyleQueries} from 'react-native-style-queries';
++import {screenWidthMin} from 'react-native-style-queries';
 +import {breakpointMedium} from './breakpoints';
 
  const linking = {
@@ -763,6 +769,10 @@ Now, the layout isn't perfect. Ideally we'd like to add margin at the top on a n
 Now, apply these styles to the buttons:
 
 ```diff
+-import {screenWidthMin} from 'react-native-style-queries';
++import {screenWidthMin, useStyleQueries} from 'react-native-style-queries';
+import {breakpointMedium} from './breakpoints';
+...
  function HomeRoot() {
    const navigation = useNavigation();
 +  const styles = useStyleQueries(styleQueries);
@@ -771,13 +781,13 @@ Now, apply these styles to the buttons:
        <CenterColumn>
          <Text>HomeRoot</Text>
          <ButtonGroup>
--          <Button mode="outlined">Other Button</Button>
--          <Button mode="outlined">Third Button</Button>
+-          <Button mode="outlined">Second</Button>
+-          <Button mode="outlined">Third</Button>
 +          <Button mode="outlined" style={styles.button}>
-+            Other Button
++            Second
 +          </Button>
 +          <Button mode="outlined" style={styles.button}>
-+            Third Button
++            Third
 +          </Button>
            <Button
              mode="contained"
@@ -790,29 +800,29 @@ Now, apply these styles to the buttons:
 
 Another responsive feature that would be the nice relates to the drawer. With all the screen space on a large screen, it would be nice to keep it visible all the time. Here's how we can do that.
 
-First, let's make a function that tells us which breakpoint we're at. In `breakpoints.js`:
+First, let's make a function that tells us which breakpoint we're at. Right now in `breakpoints.js` we just have a `breakpointMedium`. Replace the contents of that file with the following:
 
-```diff
-+import {useWindowDimensions} from 'react-native';
-+
- export const breakpointMedium = 429;
-+export const breakpointLarge = 600;
-+
-+export const small = 'small';
-+export const medium = 'medium';
-+export const large = 'large';
-+
-+export function useBreakpoint() {
-+  const {width} = useWindowDimensions();
-+
-+  if (width >= breakpointLarge) {
-+    return large;
-+  } else if (width >= breakpointMedium) {
-+    return medium;
-+  } else {
-+    return small;
-+  }
-+}
+```js
+import {useWindowDimensions} from 'react-native';
+
+export const breakpointMedium = 429;
+export const breakpointLarge = 600;
+
+export const small = 'small';
+export const medium = 'medium';
+export const large = 'large';
+
+export function useBreakpoint() {
+  const {width} = useWindowDimensions();
+
+  if (width >= breakpointLarge) {
+    return large;
+  } else if (width >= breakpointMedium) {
+    return medium;
+  } else {
+    return small;
+  }
+}
 ```
 
 Next, we'll configure the drawer to be either permanent or not depending on the breakpoint. In `Navigation.js`:
