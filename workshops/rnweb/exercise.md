@@ -28,9 +28,9 @@ npx expo install react-native-web@~0.18.7 react-dom@18.0.0 \
 Let's install those. Press ctrl-C to quit Expo, then run the following command:
 
 ```bash
-$ npx expo install react-native-web@~0.18.7 \
-                   react-dom@18.0.0 \
-                   @expo/webpack-config@^0.17.0
+npx expo install react-native-web@~0.18.7 \
+                 react-dom@18.0.0 \
+                 @expo/webpack-config@^0.17.0
 ```
 
 Once those are installed, run `yarn start` again, then press W. This time, the app should successfully open in your browser, and you should see the message "Open up App.js to start working on your app!"
@@ -42,13 +42,18 @@ The first thing we'll set up is navigation. We'll use React Navigation, the most
 Add the dependencies for React Navigation, including both the drawer and stack navigator:
 
 ```bash
-$ yarn add @react-navigation/drawer \
-           @react-navigation/native \
-           @react-navigation/native-stack
-$ npx expo install react-native-gesture-handler \
-                   react-native-reanimated \
-                   react-native-screens \
-                   react-native-safe-area-context
+yarn add @react-navigation/drawer \
+         @react-navigation/native \
+         @react-navigation/native-stack
+```
+
+Next, add some transitive dependencies through Expo so the compatible versions are installed:
+
+```bash
+npx expo install react-native-gesture-handler \
+                 react-native-reanimated \
+                 react-native-screens \
+                 react-native-safe-area-context
 ```
 
 We will also need to configure Babel to support the Reanimated library. Make the following change in `babel.config.js`:
@@ -265,7 +270,7 @@ In this workshop we're going to use React Native Paper. I've found that it has g
 Add the Paper dependency:
 
 ```bash
-$ yarn add react-native-paper@5.0.0-rc.8
+yarn add react-native-paper@5.0.0-rc.8
 ```
 
 Next, wrap the app with the Paper provider:
@@ -649,12 +654,14 @@ Let's center the content on all the screens:
  }
 ```
 
+Since we have so little content, it can be hard to visualize what it's doing. Copy and paste a bunch of text into there and you'll see that it wraps in a nice centered column.
+
 What about more complex situations? Let's say we want to put buttons above one another on small screens but put them next to each other on large screens. On the web you can accomplish this with media queries and breakpoints, but that's not built in to React Native. There are a lot of styling libraries for React Native, and some of them may provide built in breakpoint support.
 
 If you don't already have a breakpoint option, I created a tiny library to help with this, called [`react-native-style-queries`](https://github.com/CodingItWrong/react-native-style-queries). Add it to the project:
 
 ```bash
-$ yarn add react-native-style-queries
+yarn add react-native-style-queries
 ```
 
 Let's create a file `src/breakpoints.js` where we'll configure the breakpoints for our app. For now we just need one value:
