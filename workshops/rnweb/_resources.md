@@ -3,6 +3,6 @@
   - [Expo - Developing for Web](https://docs.expo.dev/workflow/web/)
   - [React Navigation](https://reactnavigation.org/)
   - [React Native Paper](https://reactnativepaper.com/)
-- [Workshop Discord channel](https://discord.gg/zTkEtyx7hk)
 - [Example mobile/web app: surelytodo.com](https://surelytodo.com)
+- [CodingItWrong's Discord Server](https://discord.gg/zTkEtyx7hk) - the workshop, React Native, and testing
 - [Weekly Live Stream](https://codingit.live): working on two web+native Expo apps
