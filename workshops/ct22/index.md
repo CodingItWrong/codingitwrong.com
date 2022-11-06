@@ -19,6 +19,13 @@ Nov 7, 2022
 - [Cypress docs](https://docs.cypress.io/)
 - [CodingItWrong's Discord](https://discord.gg/PKDynbmCFh) - discuss this workshop and React testing in general.
 
+## Contact Test Double
+
+React and web development consulting. Learn more at [testdouble.com](https://testdouble.com/)
+
+- What content topics would be helpful to you? Fill out a [quick survey](https://link.testdouble.com/ct-survey) for a free t-shirt and rubber duck.
+- Request a 1:1 [virtual pairing session](https://link.testdouble.com/ct-pairing)
+
 <div class="media my-4">
   <div class="media-body">
     <em><strong>Outside-In React Development: A TDD Primer</strong></em>
@@ -36,9 +43,3 @@ Nov 7, 2022
 - Email: josh.justice@testdouble.com
 - LinkedIn: [Josh Justice](https://www.linkedin.com/in/jjustice/)
 - Home page: [CodingItWrong.com](https://codingitwrong.com)
-
-## Contact Test Double
-
-React and web development consulting.
-
-Learn more at [testdouble.com](https://testdouble.com/)
