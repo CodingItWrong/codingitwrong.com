@@ -20,7 +20,6 @@ Nov 7, 2022
 - [CodingItWrong's Discord](https://discord.gg/PKDynbmCFh) - discuss this workshop and React testing in general.
 
 <div class="media my-4">
-  <img class="pull-left mr-3" src="/img/books/outside-in-react.jpg" alt="Outside-In React Development: A TDD Primer" />
   <div class="media-body">
     <em><strong>Outside-In React Development: A TDD Primer</strong></em>
     <p>A book about test-driven development with React Testing Library and Cypress.</p>
@@ -29,6 +28,7 @@ Nov 7, 2022
       <li><a href="https://link.outsidein.dev/amazon">Amazon Paperback</a></li>
     </ul>
   </div>
+  <img class="ml-3" src="/img/books/outside-in-react.jpg" alt="Outside-In React Development: A TDD Primer" />
 </div>
 
 ## Contact Josh
