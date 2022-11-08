@@ -18,6 +18,7 @@ Nov 7, 2022
 - [React Testing Library docs](https://testing-library.com/docs/react-testing-library/intro)
 - [Cypress docs](https://docs.cypress.io/)
 - [CodingItWrong's Discord](https://discord.gg/PKDynbmCFh) - discuss this workshop and React testing in general.
+- Kent C. Dodds' blog post, [Fix the "not wrapped in act(...)" warning](https://kentcdodds.com/blog/fix-the-not-wrapped-in-act-warning)
 
 ## Contact Test Double
 
