@@ -11,7 +11,7 @@ Nov 7, 2022
 ## Workshop Resources
 
 - [Exercise repo](https://github.com/CodingItWrong/react-testing-exercises)
-- Lecture slides: [1](slides/01-Intro.pdf) [2](slides/02-Component-Tests-Rendering.pdf) [3](slides/03-Component-Tests-Actions-and-Mocks.pdf) [4](slides/04-Component-Tests-Effects-and-Module-Mocks.pdf) [5](slides/05-End-to-End-Testing.pdf) [6](slides/06-End-to-End-Testing-External-Service.pdf) [7](slides/07-Wrapup.pdf)
+- Lecture slide decks: [1](slides/01-Intro.pdf) [2](slides/02-Component-Tests-Rendering.pdf) [3](slides/03-Component-Tests-Actions-and-Mocks.pdf) [4](slides/04-Component-Tests-Effects-and-Module-Mocks.pdf) [5](slides/05-End-to-End-Testing.pdf) [6](slides/06-End-to-End-Testing-External-Service.pdf) [7](slides/07-Wrapup.pdf)
 
 ## More Resources for Testing and TDD in React
 
