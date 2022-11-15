@@ -18,19 +18,19 @@ Press W on the keyboard to attempt to open it on the web. You will get a warning
 It looks like you're trying to use web support but don't have the required
 dependencies installed.
 
-Please install react-native-web@~0.18.7, react-dom@18.0.0,
-@expo/webpack-config@^0.17.0 by running:
+Please install react-native-web@~0.18.9, react-dom@18.1.0,
+@expo/webpack-config@^0.17.2 by running:
 
-npx expo install react-native-web@~0.18.7 react-dom@18.0.0 \
-  @expo/webpack-config@^0.17.0
+npx expo install react-native-web@~0.18.9 react-dom@18.1.0 \
+  @expo/webpack-config@^0.17.2
 ```
 
 Let's install those. Press ctrl-C to quit Expo, then run the following command:
 
 ```bash
-npx expo install react-native-web@~0.18.7 \
-                 react-dom@18.0.0 \
-                 @expo/webpack-config@^0.17.0
+npx expo install react-native-web@~0.18.9 \
+                 react-dom@18.1.0 \
+                 "@expo/webpack-config@^0.17.2"
 ```
 
 Once those are installed, run `yarn start` again, then press W. This time, the app should successfully open in your browser, and you should see the message "Open up App.js to start working on your app!"
@@ -272,7 +272,7 @@ In this workshop we're going to use React Native Paper. I've found that it has g
 Add the Paper dependency:
 
 ```bash
-yarn add react-native-paper@5.0.0-rc.8
+yarn add react-native-paper@5.0.0-rc.10
 ```
 
 Stop and restart the server after this step.
