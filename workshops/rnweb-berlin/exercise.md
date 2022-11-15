@@ -64,7 +64,8 @@ Add the dependencies for React Navigation, including both the drawer and stack n
 ```bash
 yarn add @react-navigation/drawer \
          @react-navigation/native \
-         @react-navigation/native-stack
+         @react-navigation/native-stack \
+         @babel/plugin-proposal-export-namespace-from
 ```
 
 Next, add some transitive dependencies through Expo so the compatible versions are installed:
@@ -81,7 +82,10 @@ We will also need to configure Babel to support the Reanimated library. Make the
 ```diff
    return {
      presets: ['babel-preset-expo'],
-+    plugins: ['react-native-reanimated/plugin'],
++    plugins: [
++      '@babel/plugin-proposal-export-namespace-from',
++      'react-native-reanimated/plugin',
++    ],
    };
 ```
 
