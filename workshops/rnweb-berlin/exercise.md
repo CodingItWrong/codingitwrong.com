@@ -853,13 +853,13 @@ Next, we'll configure the drawer to be either permanent or not depending on the 
 
 ```diff
  import ButtonGroup from './components/ButtonGroup';
-+import {large, useBreakpoint} from './breakpoints';
+-import {breakpointMedium} from './breakpoints';
++import {breakpointMedium, large, useBreakpoint} from './breakpoints';
 
  function HomeRoot() {
    const navigation = useNavigation();
 ...
  const Drawer = createDrawerNavigator();
-
  function NavigationContents() {
 +  const breakpoint = useBreakpoint();
 +  const drawerType = breakpoint === large ? 'permanent' : 'back';
