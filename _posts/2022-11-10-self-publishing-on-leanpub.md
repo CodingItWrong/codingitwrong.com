@@ -1,6 +1,5 @@
 ---
 title: Self-Publishing on Leanpub
-tags: [testing]
 ---
 
 I wanted to share some brief notes on my experience self-publishing on [Leanpub](https://leanpub.com). This isn't an authoritative assessment of publishing options, but that's actually kind of the point: I love Leanpub because it made it easy for me to self-publish without having to become an expert.
