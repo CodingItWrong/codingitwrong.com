@@ -8,4 +8,5 @@
 
 React Native, React, and web development consulting.
 
-Learn more at [testdouble.com](https://testdouble.com/)
+- Newsletter: [testdouble.com/newsletter](https://testdouble.com/newsletter)
+- Learn more at [testdouble.com](https://testdouble.com/)
