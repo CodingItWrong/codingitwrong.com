@@ -515,7 +515,7 @@ Now our backgrounds change color but our text doesn't. The `Text` component from
 
 Now our text looks good.
 
-Next, take a look at the drawer. Its background doesn't change either. Let's add that support:
+Next, take a look at the drawer. Its background doesn't change either. Let's add that support in `CustomNavigationDrawer.js`:
 
 ```diff
  import {DrawerContentScrollView} from '@react-navigation/drawer';
