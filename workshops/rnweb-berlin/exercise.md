@@ -61,7 +61,7 @@ Once those are installed, run `yarn start` again, then press W. This time, the a
 
 The first thing we'll set up is navigation. We'll use React Navigation, the most popular navigation library for React Native. It has great web support as well.
 
-Add the dependencies for React Navigation, including both the drawer and stack navigator:
+Add the dependencies for React Navigation, including the drawer and stack navigator, as well as a build dependency:
 
 ```bash
 yarn add @react-navigation/drawer \
