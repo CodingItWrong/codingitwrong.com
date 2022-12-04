@@ -12,7 +12,29 @@ This page will take you through the full workshop exercise. You can also downloa
 
 Expo is actually *almost* preconfigured to run on the web out of the box.
 
-Press W on the keyboard to attempt to open it on the web. You will get a warning:
+Press W on the keyboard to attempt to open it on the web.
+
+If you're using a version of Node newer than 16, you may get the following error:
+
+```bash
+node:internal/crypto/hash:71
+  this[kHandle] = new _Hash(algorithm, xofLen);
+                  ^
+
+Error: error:0308010C:digital envelope routines::unsupported
+    at new Hash (node:internal/crypto/hash:71:19)
+    at Object.createHash (node:crypto:133:10)
+...
+  opensslErrorStack: [ 'error:03000086:digital envelope routines::initialization error' ],
+  library: 'digital envelope routines',
+  reason: 'unsupported',
+  code: 'ERR_OSSL_EVP_UNSUPPORTED'
+}
+```
+
+To fix this, switch to Node 16.x; this is the latest version that Expo is currently tested to work with.
+
+In Node 16.x, you will get a warning:
 
 ```text
 It looks like you're trying to use web support but don't have the required
@@ -34,26 +56,6 @@ npx expo install react-native-web@~0.18.9 \
 ```
 
 Once those are installed, run `yarn start` again, then press W. This time, the app should successfully open in your browser, and you should see the message "Open up App.js to start working on your app!"
-
-Note that if you're using a version of Node newer than 16, you may get the following error:
-
-```bash
-node:internal/crypto/hash:71
-  this[kHandle] = new _Hash(algorithm, xofLen);
-                  ^
-
-Error: error:0308010C:digital envelope routines::unsupported
-    at new Hash (node:internal/crypto/hash:71:19)
-    at Object.createHash (node:crypto:133:10)
-...
-  opensslErrorStack: [ 'error:03000086:digital envelope routines::initialization error' ],
-  library: 'digital envelope routines',
-  reason: 'unsupported',
-  code: 'ERR_OSSL_EVP_UNSUPPORTED'
-}
-```
-
-To fix this, switch to Node 16.x; this is the latest version that Expo is currently tested to work with.
 
 ## React Navigation
 
