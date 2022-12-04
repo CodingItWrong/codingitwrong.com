@@ -331,13 +331,13 @@ Create the folder `src/components` and create a file `src/components/CustomNavig
 import {DrawerContentScrollView} from '@react-navigation/drawer';
 import {Drawer} from 'react-native-paper';
 
-export default function CustomNavigationDrawer({...navProps}) {
-  const {state, navigation} = navProps;
+export default function CustomNavigationDrawer(props) {
+  const {state, navigation} = props;
 
   const isSelected = index => index === state.index;
 
   return (
-    <DrawerContentScrollView {...navProps}>
+    <DrawerContentScrollView {...props}>
       {state.routes.map((route, index) => (
         <Drawer.Item
           key={route.key}
@@ -522,8 +522,8 @@ Next, take a look at the drawer. Its background doesn't change either. Let's add
 -import {Drawer} from 'react-native-paper';
 +import {Drawer, useTheme} from 'react-native-paper';
 
- function CustomNavigationDrawer({...navProps}) {
-   const {state, navigation} = navProps;
+ function CustomNavigationDrawer(props) {
+   const {state, navigation} = props;
 +  const theme = useTheme();
 +
 +  const scrollViewStyle = {
@@ -533,8 +533,8 @@ Next, take a look at the drawer. Its background doesn't change either. Let's add
    const isSelected = index => index === state.index;
 
    return (
--    <DrawerContentScrollView {...navProps}>
-+    <DrawerContentScrollView style={scrollViewStyle} {...navProps}>
+-    <DrawerContentScrollView {...props}>
++    <DrawerContentScrollView style={scrollViewStyle} {...props}>
        {state.routes.map((route, index) => (
          <Drawer.Item
            key={route.key}
