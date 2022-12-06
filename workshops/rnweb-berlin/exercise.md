@@ -293,7 +293,7 @@ Try reloading `/home/detail` again. Now you should see the back button and be ab
 
 With our navigation working, it's time to make our app look awesome. There are a lot of different ways to style a React Native app.
 
-In this workshop we're going to use React Native Paper. I've found that it has great support for both mobile and web. Version 5 of Paper is currently in release candidate stage; we're going to go ahead and use it to make sure you're set for the future. It's nice and stable.
+In this workshop we're going to use React Native Paper. I've found that it has great support for both mobile and web.
 
 Add the Paper dependency:
 
