@@ -591,7 +591,7 @@ But now let's set that theme color. You can pick any vibrant color. The web site
 
 +const THEME_COLOR = '#4caf50';
 +
- export default function useTheme() {
+ export default function useCustomTheme() {
    const colorScheme = useColorScheme() ?? 'light';
    const baseTheme = colorScheme === 'dark' ? MD2DarkTheme : MD2LightTheme;
 -  return baseTheme;
