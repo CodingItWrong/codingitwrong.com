@@ -5,4 +5,3 @@
   - [React Native Paper](https://reactnativepaper.com/)
 - [Example mobile/web app: surelytodo.com](https://surelytodo.com)
 - [CodingItWrong's Discord Server](https://discord.gg/zTkEtyx7hk) - the workshop, React Native, and testing
-- [Weekly Live Stream](https://codingit.live): working on two web+native Expo apps
