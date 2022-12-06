@@ -298,7 +298,7 @@ In this workshop we're going to use React Native Paper. I've found that it has g
 Add the Paper dependency:
 
 ```bash
-yarn add react-native-paper@5.0.0-rc.10
+yarn add react-native-paper@5.0.0
 ```
 
 Stop and restart the server after this step.
