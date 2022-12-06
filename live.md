@@ -4,14 +4,16 @@ redirect_from:
   - /stream/
 ---
 
-<i>Tuesdays at 5:00 pm Eastern</i>
+<i>Streams currently on hold</i>
 
+{% comment %}
 <h3>
   <a href="https://twitch.tv/codingitwrong/">
     <img src="/img/logos/twitch.png" alt="Twitch logo" class="stream-logo" />
     Watch live or subscribe on Twitch
   </a>
 </h3>
+{% endcomment %}
 
 <h3>
   <a href="https://www.youtube.com/playlist?list=PLXXnezSEtvNNP4thY98rOMpjw35Fz0W1c">
@@ -22,9 +24,9 @@ redirect_from:
 
 <br />
 
-<h2>Current Series: React Native Testing</h2>
+<h2>Previous Series: React Native Testing</h2>
 
-<i>Ongoing since Sep 2022<i>
+<i>Sep-Nov 2022<i>
 
 <p>
   Let's explore topics around testing in React Native together! We'll mostly be working in real open-source apps I maintain. We'll add test coverage, figure out how to test tricky cases, update to new testing APIs, and try out alternative ways to test to see the pros and cons.

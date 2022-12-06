@@ -2,7 +2,9 @@
 
 - Email: josh.justice@testdouble.com
 - LinkedIn: [Josh Justice](https://www.linkedin.com/in/jjustice/)
+- Mastodon: [@CodingItWrong@tdd.social](https://tdd.social/@CodingItWrong)
 - Home page: [CodingItWrong.com](https://codingitwrong.com)
+- Live stream recordings: [CodingIt.Live](/live)
 
 ## Contact Test Double
 
