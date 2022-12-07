@@ -4,16 +4,27 @@ title: Designing Effective Tests with React Testing Library
 
 {% include_relative _header.md %}
 
-Dec 7, 2022
+## Workshop Resources
 
-## Pre-Workshop Setup
+- [Exercise repo](https://github.com/CodingItWrong/react-testing-exercises)
+- [Lecture slides](https://www.slideshare.net/JoshJustice1/intro-to-react-native-testing-library-253860341)
+- Workshop video - COMING SOON!
 
-Thank you for signing up for the workshop! Here are the steps you can go through in advance to ensure your local development environment is ready.
+## More Resources for Testing and TDD in React
 
-{% include_relative _setup.md %}
+- [CodingItWrong's Discord](https://discord.gg/jVXCxZPF6f) - discuss this workshop, React, and testing.
+- Kent C. Dodds' blog post, [Fix the "not wrapped in act(...)" warning](https://kentcdodds.com/blog/fix-the-not-wrapped-in-act-warning)
 
-## You're Ready!
-
-If you reached this point and were able to see the app and the tests running, congratulations: you are ready for the workshop! On Wednesday, December 7th in the workshop we will take it from here. See you then!
+<div class="media my-4">
+  <div class="media-body">
+    <em><strong>Outside-In React Development: A TDD Primer</strong></em>
+    <p>A book about test-driven development with React Testing Library and Cypress.</p>
+    <ul>
+      <li><a href="https://link.outsidein.dev/berlin22">Ebook $10 off</a></li>
+      <li><a href="https://link.outsidein.dev/amazon">Amazon Paperback</a></li>
+    </ul>
+  </div>
+  <img class="ml-3" src="/img/books/outside-in-react.jpg" alt="Outside-In React Development: A TDD Primer" />
+</div>
 
 {% include_relative _contact.md %}
