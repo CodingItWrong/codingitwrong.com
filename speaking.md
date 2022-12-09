@@ -14,30 +14,6 @@ Max pixel width of images 468 @1x
 <div class="row">
   {% include video-thumbnail.html
     name="Workshop: Building for Web and Mobile with Expo"
-    image="react-advanced-london-2022.png"
-    venue="React Advanced London (virtual)"
-    date="Oct 27, 2022"
-    url="https://reactadvanced.com/workshops-3h"
-    length="3 hours"
-  %}
-  {% include video-thumbnail.html
-    name="Workshop: Introduction to React Native Testing Library"
-    image="react-advanced-london-2022.png"
-    venue="React Advanced London (virtual)"
-    date="Oct 28, 2022"
-    url="https://reactadvanced.com/workshops-3h"
-    length="3 hours"
-  %}
-  {% include video-thumbnail.html
-    name="Workshop: Testing React Apps with React Testing Library and Cypress"
-    image="connect.tech-2022.png"
-    venue="connect.tech (in-person in Atlanta, GA)"
-    date="Nov 7, 2022"
-    url="https://2022.connect.tech/session?id=376496"
-    length="full day"
-  %}
-  {% include video-thumbnail.html
-    name="Workshop: Building for Web and Mobile with Expo"
     image="react-day-berlin-2022.png"
     venue="React Day Berlin (virtual)"
     date="Dec 6, 2022"
@@ -83,6 +59,22 @@ Max pixel width of images 468 @1x
 ## Standalone
 
 <div class="row">
+  {% include video-thumbnail.html
+    name="Introduction to React Native Testing Library"
+    image="react-advanced-london-2022.png"
+    venue="React Advanced London (paid account required)"
+    date="Oct 28, 2022"
+    url="https://portal.gitnation.org/contents/introduction-to-react-native-testing-library"
+    length="3 hour workshop"
+  %}
+  {% include video-thumbnail.html
+    name="Building for Web and Mobile with Expo"
+    image="react-advanced-london-2022.png"
+    venue="React Advanced London (paid account required)"
+    date="Oct 27, 2022"
+    url="https://portal.gitnation.org/contents/building-for-web-and-mobile-with-expo"
+    length="3 hour workshop"
+  %}
   {% include video-thumbnail.html
     name="Getting Better All the Time: How to Escape Bad Code"
     image="gettingbetter.jpg"
