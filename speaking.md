@@ -9,26 +9,9 @@ redirect_from:
 Max pixel width of images 468 @1x
 {% endcomment %}
 
+{% comment %}
 ## Upcoming
-
-<div class="row">
-  {% include video-thumbnail.html
-    name="Workshop: Building for Web and Mobile with Expo"
-    image="react-day-berlin-2022.png"
-    venue="React Day Berlin (virtual)"
-    date="Dec 6, 2022"
-    url="https://reactday.berlin/workshops-3h"
-    length="3 hours"
-  %}
-  {% include video-thumbnail.html
-    name="Workshop: Designing Effective Tests with React Testing Library"
-    image="react-day-berlin-2022.png"
-    venue="React Day Berlin (virtual)"
-    date="Dec 7, 2022"
-    url="https://reactday.berlin/workshops-3h"
-    length="3 hours"
-  %}
-</div>
+{% endcomment %}
 
 ## Featured Series
 
@@ -59,6 +42,22 @@ Max pixel width of images 468 @1x
 ## Standalone
 
 <div class="row">
+  {% include video-thumbnail.html
+    name="Designing Effective Tests with React Testing Library"
+    image="react-day-berlin-2022.png"
+    venue="React Day Berlin  (paid account required)"
+    date="Dec 7, 2022"
+    url="https://portal.gitnation.org/contents/designing-effective-tests-with-react-testing-library"
+    length="3 hour workshop"
+  %}
+  {% include video-thumbnail.html
+    name="Building for Web and Mobile with Expo"
+    image="react-day-berlin-2022.png"
+    venue="React Day Berlin  (paid account required)"
+    date="Dec 6, 2022"
+    url="https://portal.gitnation.org/contents/building-for-web-and-mobile-with-expo-877"
+    length="3 hour workshop"
+  %}
   {% include video-thumbnail.html
     name="Introduction to React Native Testing Library"
     image="react-advanced-london-2022.png"
