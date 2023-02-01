@@ -43,6 +43,13 @@ Max pixel width of images 468 @1x
 
 <div class="row">
   {% include video-thumbnail.html
+    name="Sustainable Learning"
+    image="sustainable-learning-2023.jpg"
+    venue="Test Double"
+    date="Jan 18, 2023"
+    url="https://blog.testdouble.com/talks/2023-02-01-sustainable-learning/"
+  %}
+  {% include video-thumbnail.html
     name="Designing Effective Tests with React Testing Library"
     image="react-day-berlin-2022.png"
     venue="React Day Berlin  (paid account required)"
