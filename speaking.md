@@ -9,9 +9,26 @@ redirect_from:
 Max pixel width of images 468 @1x
 {% endcomment %}
 
-{% comment %}
 ## Upcoming
-{% endcomment %}
+
+<div class="row">
+  {% include video-thumbnail.html
+    name="Testing React Native Apps"
+    image="chain-react-2023.png"
+    venue="Chain React"
+    date="May 17, 2023"
+    url="https://chainreactconf.com/#workshops"
+    length="Full-day in-person workshop"
+  %}
+  {% include video-thumbnail.html
+    name="Designing Effective Tests with React Testing Library"
+    image="react-summit-2023.png"
+    venue="React Summit"
+    date="Jun 14, 2023"
+    url="https://www.reactsummit.com/#workshops-list"
+    length="3 hour virtual workshop"
+  %}
+</div>
 
 ## Featured Series
 
