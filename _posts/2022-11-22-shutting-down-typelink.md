@@ -2,17 +2,23 @@
 title: "Shutting Down TypeLink"
 ---
 
-After 11 years I am going to be shutting down [TypeLink](https://typelink.net), the personal wiki notepad. Important logistics first, then reflections.
+After 11 years I've shut down [TypeLink](https://typelink.net), the personal wiki notepad. Important logistics first, then reflections.
 
 ## Logistics
 
-- **TypeLink.net will shut down no earlier than March 1, 2023.** After that time, no data will be accessible through the web site or iOS app.
-- To export your data, sign in to the [TypeLink.net](https://typelink.net) web interface, then click “List” in the toolbar to see your list of pages, then click “Export.” You will receive a zip archive of text files. You can use these text files in any other note taking app you like. Note that the automatic links that TypeLink creates based on page titles are not preserved.
-- If you have other questions, check back at this blog post—I will keep it up-to-date if any other questions come up.
+- TypeLink users were notified of the pending shutdown via email in November 2022, with a shutdown date of no earlier than March 1, 2023. They were provided with instructions to export their data before that time.
+- **TypeLink was permanently shut down on March 2, 2023.** After this date, no data is accessible through the web site or iOS app.
 
 There are now many notetaking apps with a lot of powerful features that TypeLink couldn’t match. Popular ones include [Bear Notes](https://bear.app/), [Obsidian](https://obsidian.md/), and [Notion](https://www.notion.so/). I was able to get my TypeLink notes loaded into Obsidian by changing the `.txt` file extensions to `.md`.
 
-When TypeLink shuts down, I will release the source code of TypeLink's web site and iOS app in case you want to run your own instance. The link will be posted here and on [TypeLink.net](https://typelink.net). Note that the codebases are very old and I won’t be able to provide support.
+## Open Source
+
+The source code of TypeLink's web app and iOS app have been released, in case you want to run your own instance:
+
+- [typelink-ios](https://github.com/CodingItWrong/typelink-ios)
+- [typelink-web](https://github.com/CodingItWrong/typelink-web)
+
+Note that the codebases are very old and I won’t be able to provide support. I've archived the repositories to help make that clear.
 
 ## Reflections
 
