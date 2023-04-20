@@ -60,6 +60,13 @@ Max pixel width of images 468 @1x
 
 <div class="row">
   {% include video-thumbnail.html
+    name="RN testing with Detox"
+    image="rnradio.jpg"
+    venue="React Native Radio with Jason Grosz"
+    date="Apr 20, 2023"
+    url="https://reactnativeradio.com/episodes/rnr-264-a-detox-case-study-with-josh-justice-and-jason-grosz"
+  %}
+  {% include video-thumbnail.html
     name="Sustainable Learning"
     image="sustainable-learning-2023.jpg"
     venue="Test Double"
