@@ -28,6 +28,14 @@ Max pixel width of images 468 @1x
     url="https://www.reactsummit.com/#workshops-list"
     length="3 hour virtual workshop"
   %}
+  {% include video-thumbnail.html
+    name="Effective Detox Testing"
+    image="react-advanced-london-2022.png"
+    venue="React Advanced London"
+    date="October 25, 2023"
+    url="https://reactadvanced.com/workshops-3h#josh-justice"
+    length="3 hour virtual workshop"
+  %}
 </div>
 
 ## Featured Series
