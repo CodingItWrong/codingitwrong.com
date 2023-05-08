@@ -33,7 +33,7 @@ Max pixel width of images 468 @1x
     image="react-advanced-london-2022.png"
     venue="React Advanced London"
     date="October 25, 2023"
-    url="https://reactadvanced.com/workshops-3h#josh-justice"
+    url="https://reactadvanced.com/workshops-3h"
     length="3 hour virtual workshop"
   %}
 </div>
