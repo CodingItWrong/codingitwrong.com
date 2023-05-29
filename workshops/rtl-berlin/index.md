@@ -8,7 +8,7 @@ title: Designing Effective Tests with React Testing Library
 
 - [Exercise repo](https://github.com/CodingItWrong/rtl-exercises)
 - [Lecture slides](https://www.slideshare.net/JoshJustice1/designing-effective-tests-with-react-testing-library)
-- Workshop video - COMING SOON!
+- [Workshop video](https://portal.gitnation.org/contents/designing-effective-tests-with-react-testing-library) (conference ticket required)
 
 ## More Resources for Testing and TDD in React
 

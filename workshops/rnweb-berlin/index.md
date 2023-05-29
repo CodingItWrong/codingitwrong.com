@@ -9,7 +9,7 @@ title: Building for Web and Mobile with Expo
 - [Exercise Walkthrough](./exercise)
 - [Repository](https://github.com/CodingItWrong/rnweb-workshop-app)
 - [Slides](https://www.slideshare.net/JoshJustice1/building-for-mobile-and-web-with-expo-react-day-berlin-2022)
-- Workshop video - COMING SOON!
+- [Workshop video](https://portal.gitnation.org/contents/building-for-web-and-mobile-with-expo-877) (conference ticket required)
 
 ## More Resources
 
