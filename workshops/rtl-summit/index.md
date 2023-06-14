@@ -6,6 +6,7 @@ title: Designing Effective Tests with React Testing Library
 
 ## Workshop Resources
 
+- [Workshop Survey](https://link.codingitwrong.com/rs23survey)
 - [Exercise repo](https://github.com/CodingItWrong/rtl-exercises)
 - [Lecture slides](https://www.slideshare.net/JoshJustice1/designing-effective-tests-with-react-testing-library-react-summit-2023)
 - Workshop video - COMING SOON!
