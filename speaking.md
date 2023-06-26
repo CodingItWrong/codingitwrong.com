@@ -26,13 +26,6 @@ Max pixel width of images 468 @1x
 
 <div class="row">
   {% include video-thumbnail.html
-    name="Building for Mobile and Web with Expo"
-    image="expo-web-series.jpg"
-    venue="Twitch"
-    date="Feb-Apr 2022"
-    url="/streams/expo-mobile-web"
-  %}
-  {% include video-thumbnail.html
     name="Test-Driven Development in React"
     image="react-tdd-series.jpg"
     venue="Twitch"
@@ -139,6 +132,13 @@ Max pixel width of images 468 @1x
     venue="React Native Radio"
     date="Mar 18, 2022"
     url="https://www.reactnativeradio.com/episodes/rnr-229-building-an-expo-app-for-mobile-and-web-with-josh-justice"
+  %}
+  {% include video-thumbnail.html
+    name="Building for Mobile and Web with Expo"
+    image="expo-web-series.jpg"
+    venue="Twitch"
+    date="Feb-Apr 2022"
+    url="/streams/expo-mobile-web"
   %}
   {% include video-thumbnail.html
     name="Sustainable Learning"
