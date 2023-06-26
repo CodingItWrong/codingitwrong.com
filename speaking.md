@@ -13,14 +13,6 @@ Max pixel width of images 468 @1x
 
 <div class="row">
   {% include video-thumbnail.html
-    name="Designing Effective Tests with React Testing Library"
-    image="react-summit-2023.png"
-    venue="React Summit"
-    date="Jun 14, 2023"
-    url="https://www.reactsummit.com/#workshops-list"
-    length="3 hour virtual workshop"
-  %}
-  {% include video-thumbnail.html
     name="Effective Detox Testing"
     image="react-advanced-london-2022.png"
     venue="React Advanced London"
@@ -59,6 +51,14 @@ Max pixel width of images 468 @1x
 ## Standalone
 
 <div class="row">
+  {% include video-thumbnail.html
+    name="Designing Effective Tests with React Testing Library"
+    image="react-summit-2023.png"
+    venue="React Summit"
+    date="Jun 14, 2023"
+    url="https://www.reactsummit.com/#workshops-list"
+    length="3 hour virtual workshop"
+  %}
   {% include video-thumbnail.html
     name="RN testing with Detox"
     image="rnradio.jpg"
