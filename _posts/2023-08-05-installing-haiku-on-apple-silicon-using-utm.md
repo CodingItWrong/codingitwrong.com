@@ -12,6 +12,8 @@ Let's walk through the process of installing Haiku on UTM. You can go through th
 
 These instructions were written on macOS Ventura 13.4.1 on an Apple M1 Max processor, with UTM 4.2.5 and Haiku R1/beta4.
 
+Big thanks to [Action Retro](https://bitbang.social/@ActionRetro) for giving me the UTM settings to use!
+
 ***
 
 First, [install UTM](https://docs.getutm.app/installation/macos/) from the Mac App Store or by downloading from GitHub.
