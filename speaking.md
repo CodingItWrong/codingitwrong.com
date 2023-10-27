@@ -9,18 +9,14 @@ redirect_from:
 Max pixel width of images 468 @1x
 {% endcomment %}
 
+{% comment %}
 ## Upcoming
 
 <div class="row">
-  {% include video-thumbnail.html
-    name="Effective Detox Testing"
-    image="react-advanced-london-2022.png"
-    venue="React Advanced London"
-    date="October 25, 2023"
-    url="https://reactadvanced.com/workshops-3h"
-    length="3 hour virtual workshop"
-  %}
 </div>
+
+{% endcomment %}
+
 
 ## Featured Series
 
@@ -45,11 +41,19 @@ Max pixel width of images 468 @1x
 
 <div class="row">
   {% include video-thumbnail.html
+    name="Effective Detox Testing"
+    image="react-advanced-london-2022.png"
+    venue="React Advanced London (paid account required)"
+    date="October 25, 2023"
+    url="https://portal.gitnation.org/contents/effective-detox-testing"
+    length="3 hour virtual workshop"
+  %}
+  {% include video-thumbnail.html
     name="Designing Effective Tests with React Testing Library"
     image="react-summit-2023.png"
-    venue="React Summit"
+    venue="React Summit (paid account required)"
     date="Jun 14, 2023"
-    url="https://www.reactsummit.com/#workshops-list"
+    url="https://portal.gitnation.org/contents/designing-effective-tests-with-react-testing-library-1153"
     length="3 hour virtual workshop"
   %}
   {% include video-thumbnail.html
@@ -69,7 +73,7 @@ Max pixel width of images 468 @1x
   {% include video-thumbnail.html
     name="Designing Effective Tests with React Testing Library"
     image="react-day-berlin-2022.png"
-    venue="React Day Berlin  (paid account required)"
+    venue="React Day Berlin (paid account required)"
     date="Dec 7, 2022"
     url="https://portal.gitnation.org/contents/designing-effective-tests-with-react-testing-library"
     length="3 hour workshop"
