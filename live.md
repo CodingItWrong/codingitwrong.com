@@ -5,7 +5,7 @@ redirect_from:
 ---
 
 <h3>
-  <a href="https://www.youtube.com/@CodingItWrong/streams">
+  <a href="https://www.youtube.com/@CodingItWrong/streams" target="_blank" rel="noopener" rel="noreferrer">
     <img src="/img/logos/youtube.png" alt="YouTube logo" class="stream-logo" />
     Watch live or subscribe on YouTube
   </a>
@@ -21,7 +21,7 @@ redirect_from:
 {% endcomment %}
 
 <h3>
-  <a href="https://www.youtube.com/playlist?list=PLXXnezSEtvNNP4thY98rOMpjw35Fz0W1c">
+  <a href="https://www.youtube.com/playlist?list=PLXXnezSEtvNNP4thY98rOMpjw35Fz0W1c" target="_blank" rel="noopener" rel="noreferrer">
     <img src="/img/logos/youtube.png" alt="YouTube logo" class="stream-logo" />
     Watch past recordings on YouTube
   </a>
