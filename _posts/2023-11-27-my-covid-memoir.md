@@ -4,7 +4,7 @@ title: My Covid Memoir
 
 It's November 2023 as I'm finalizing this post for publishing. I first wrote a draft of it in September of 2022. At that time and now, Covid isn't gone, but it's enough in control that I feel like I can look back and record what the experience of this time period has been like. It's been a time unlike any other in my lifetime.
 
-It began in March of 2020. My kids were was six, three, and fourteen months. I was working for Big Nerd Ranch as a software consultant, and I was about six months into a contract with a client that was local to Atlanta. Since I had begun at BNR I had mostly worked from home, but since this client was local, every week or two I would drive down to their headquarters to work from their offices.
+It began in March of 2020. My kids were six, three, and fourteen months. I was working for Big Nerd Ranch as a software consultant, and I was about six months into a contract with a client that was local to Atlanta. Since I had begun at BNR I had mostly worked from home, but since this client was local, every week or two I would drive down to their headquarters to work from their offices.
 
 It started with toilet paper. The news was reporting that the coronavirus was spreading, and people nervous of shortages were buying up toilet paper. I don't know why that in particular was what people were worried about. I made a joke about it on Twitter, but then I realized "hang on, *I* use toilet paper!" So we went and bought several packages from the drug store nearby.
 
