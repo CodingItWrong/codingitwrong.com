@@ -23,9 +23,11 @@ Get the Macs connected over Ethernet. I used a Netgear WPN824 router.
 
 Next, enable AppleTalk and configure it to run over Ethernet.
 
-Open the AppleTalk control panel and choose “Ethernet” from the dropdown.
+If you have an AppleTalk control panel, open it and choose “Ethernet” from the dropdown.
 
 ![The Mac OS 9 AppleTalk control panel, with Ethernet selected from the "Connect via" dropdown.](/img/posts/marathon-lan/appletalk-over-ethernet.png)
+
+On some computers running pre-Open Transport, you may need to do this in the Network control panel instead of AppleTalk.
 
 Next, make sure AppleTalk is enabled. You can do this one of two places. The first is in Chooser:
 
@@ -45,7 +47,7 @@ Then open Chooser and pick AppleShare. If the machines are connected, they shoul
 
 ![The Mac OS 9 Chooser, with AppleShare selected and a file server named "Josh's TAM" showing in the list](/img/posts/marathon-lan/chooser-appleshare.png)
 
-Next you'll need one of the Marathon games installed on each machine. Bungie now has a [serial number generator](https://marathon.bungie.org/maraserialgen/) on their web site, so you can get a different serial number for each machine. I went with Marathon Infinity.
+Next you'll need one of the Marathon games installed on each machine. There is a Marathon [serial number generator](https://marathon.bungie.org/maraserialgen/) that Bungie is not opposed to, so you can get a different serial number for each machine. I went with Marathon Infinity.
 
 ![The Marathon Serial Generator, with generated serial numbers blurred out](/img/posts/marathon-lan/serial-generator.jpg)
 
@@ -64,3 +66,5 @@ Click each name and click Add.
 ![The Marathon Infinity Gather Network Game dialog, with players named Pismo and TAM in game](/img/posts/marathon-lan/gather-network-game-added.png)
 
 Then click OK and the game will start!
+
+*Thanks to cheesestraws and treellama on 68kmla.org for additions and corrections!*
