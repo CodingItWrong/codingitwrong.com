@@ -8,7 +8,7 @@ title: How to Play Marathon over a LAN on Classic Macs
 
 One of my favorite memories growing up a Mac user was LAN gaming with my brothers playing Marathon. When I started collecting Macs again, being able to play Marathon on a LAN was one of my main goals. I had trouble getting it working, and now that I’ve found the answer, I wanted to share it so it’ll show up in others’ search results.
 
-Note that another option to play Marathon over the network is Aleph One, a project for running Marathon on modern machines. But in my case I wanted the authentic original experience on original hardware.
+Note that another option to play Marathon over the network is [Aleph One](https://alephone.lhowon.org/), a project for running Marathon on modern machines. But in my case I wanted the authentic original experience on original hardware.
 
 First, get Macs with classic Mac OS and a working Ethernet port. All the Macs I used had on-board Ethernet:
 
