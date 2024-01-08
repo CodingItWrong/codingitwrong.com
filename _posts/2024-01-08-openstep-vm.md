@@ -6,6 +6,8 @@ An article on Adafruit.com describes [how to run OPENSTEP 4.2 in a virtual machi
 
 Here are screenshots and info about the VirtualBox 7.0 settings to use when following along with the Adafruit article. This article isn't a complete tutorial for setting up OPENSTEP 4.2 in VirtualBox, as there are a lot more steps beyond this; follow along with both articles side-by-side for the best experience.
 
+![OPENSTEP 4.2 desktop with a File Viewer displaying the Demos folder, and BoinkOut.app selected](/img/posts/openstep-vm/00-openstep-desktop.png)
+
 When first creating the virtual machine, the "Type" dropdown is set to "Other", and the "Version" dropdown is set to "Other/Unknown". Note that you don't specify an "ISO Image" at this point; leave it at the default "&lt;not selected&gt;".
 
 ![The VirtualBox "Create Virtual Machine" dialog, with ISO Image not selected, Type set to "Other", and Version set to "Other/Unknown"](/img/posts/openstep-vm/01-vm-name.jpg)
