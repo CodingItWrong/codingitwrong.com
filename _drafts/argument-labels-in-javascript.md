@@ -70,6 +70,8 @@ let y = Point()
 drawLine(from: x, to: y)
 ```
 
+As in this example, argument labels are typically used in Swift to make the call site read like a sentence: "Draw line from X to Y."
+
 Object destructuring can give us the option for a different external and internal name as well. Although we almost always see object structuring with property value shorthands, you can also give the variable a different name than the property name:
 
 ```js
@@ -85,7 +87,7 @@ drawLine({ from: x, to: y });
 
 Notice a few things about this approach:
 
-- The call site reads line a sentence: "Draw line from X to Y."
+- Like in Swift, the call site reads like a sentence.
 - The function declaration reads like a sentence too: "Draw line from start to end."
 - You don't refer to the variables as `from` and `to` in the function implementation; you refer to them as `start` and `end`.
 

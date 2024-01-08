@@ -2,7 +2,7 @@
 title: The Case for Dynamic, Interpreted, Reflective, High-Level Languages
 ---
 
-Recently someone asked me why people choose high-level programming languages. They pointed out that you can do categorically more in a machine-level language — for example, operating systems and embedded drivers. The implication was, why limit yourself to only the things that high-level languages can do? I can add a few more arguments for languages that tend to group together:
+Recently someone asked me why people choose high-level programming languages. They pointed out that you can do categorically more in a machine-level language — for example, operating systems and embedded drivers. The implication was, why limit yourself to only the things that high-level languages can do? I can add a few more arguments for languages that tend to group together:
 
 - Compiled languages are significantly faster at runtime than interpreted languages. Why would you hinder your performance like that?
 - In statically-typed languages, the compiler gives you more information about errors you're making. Why would you not want to avail yourself of that information?
