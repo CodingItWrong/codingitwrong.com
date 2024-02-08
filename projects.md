@@ -23,6 +23,7 @@ permalink: /projects/
 
 ## Open Source Apps
 
+* [Riverbed](https://about.riverbed.app) - a personal information management tool that allows you to build mini apps. OSS and free for web and iOS.
 * [Surely](https://github.com/CodingItWrong/surely-expo) - a todo app available on iOS and Web, built with React Native Web
 * [Firehose](https://github.com/CodingItWrong/firehose-expo) - a bookmarking app available on iOS and Web, built with React Native Web
 * [Slapdash](https://github.com/CodingItWrong/slapdash) - public markdown notes
