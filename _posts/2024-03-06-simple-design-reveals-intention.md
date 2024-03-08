@@ -2,14 +2,14 @@
 title: "Simple Design: Reveals Intention"
 ---
 
-_This is the first post in a series about the Four Rules of Simple Design. Click a links in the list below to navigate to a post about the linked rule._
+_This is the first post in a series about the Four Rules of Simple Design. Click a link in the list below to navigate to a post about the linked rule._
 
 In the first edition of the book *Extreme Programming Explained*, Kent Beck introduced four rules of simple design. Martin Fowler has a succinct [summary](https://www.martinfowler.com/bliki/BeckDesignRules.html) of them:
 
 > * Passes the tests
 > * Reveals intention
 > * [No duplication](/2024/03/07/simple-design-no-duplication.html)
-> * Fewest elements
+> * [Fewest elements](/2024/03/08/simple-design-fewest-elements.html)
 
 Let’s discuss all of them in a series of posts, skipping over “passes the tests” for the moment; we’ll look at it at the end in light of the other rules. In this first post we’ll look at “reveals intention”.
 

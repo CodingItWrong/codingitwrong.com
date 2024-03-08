@@ -2,6 +2,8 @@
 title: "Simple Design: Fewest Elements"
 ---
 
+_This is the third post in a [series about the Four Rules of Simple Design](/2024/03/06/simple-design-reveals-intention.html)._
+
 "Fewest elements" means that if there is a way to accomplish the same functionality with fewer programming elements, prefer the option with fewer.
 
 ## Many examples of fewest elements
