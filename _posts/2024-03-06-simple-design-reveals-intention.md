@@ -6,8 +6,8 @@ _This is the first post in a series about the Four Rules of Simple Design. Click
 
 In the first edition of the book *Extreme Programming Explained*, Kent Beck introduced four rules of simple design. Martin Fowler has a succinct [summary](https://www.martinfowler.com/bliki/BeckDesignRules.html) of them:
 
-> * Passes the tests
-> * Reveals intention
+> * [Passes the tests](/2024/03/11/simple-design-passes-the-tests.html)
+> * Reveals intention *(this post)*
 > * [No duplication](/2024/03/07/simple-design-no-duplication.html)
 > * [Fewest elements](/2024/03/08/simple-design-fewest-elements.html)
 
