@@ -14,3 +14,4 @@ From within Rhapsody, Mac OS 8 could be booted in the “Blue Box” environment
 - [Shaw's Rhapsody Resource Page](http://rhapsodyos.org/)
 - [Action Retro: Installing Rhapsody OS on a Homemade SSD](https://youtu.be/jMFnwhTXar8)
 - [YouTube: Gil Amelio and Steve Jobs introduce Rhapsody](https://youtu.be/QhhFQ-3w5tE)
+- [Rhapsody System Requirements](http://www.rhapsodyos.org/hardware/system_requirements/system_requirements_1.html)
