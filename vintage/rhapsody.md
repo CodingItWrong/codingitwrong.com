@@ -10,6 +10,8 @@ Apple settled on buying NeXT, Inc to acquire their NeXTSTEP operating system as 
 
 From within Rhapsody, Mac OS 8 could be booted in the “Blue Box” environment to allow running classic Mac OS software; both operating systems can run at the same, but they take the full screen and only one can be visible at a time. However, third-party developers pushed back on Apple, saying that this wasn’t sufficient to support their applications during the transition to Mac OS X. Apple would refine their strategy for backwards compatibility before their next OS release.
 
+## Resources
+
 - [Wikipedia: Rhapsody](<https://en.wikipedia.org/wiki/Rhapsody_(operating_system)>)
 - [Shaw's Rhapsody Resource Page](http://rhapsodyos.org/)
 - [Action Retro: Installing Rhapsody OS on a Homemade SSD](https://youtu.be/jMFnwhTXar8)
