@@ -19,11 +19,11 @@ The following computers and operating systems are on display:
       <td><a href="./system7.html">System 7</a></td>
     </tr>
     <tr>
-      <td><a href="./power-mac-7500.html">Power Macintosh 7500</a></td>
+      <td><a href="./power-mac-7500-100.html">Power Macintosh 7500/100</a></td>
       <td><a href="./copland.html">Copland</a></td>
     </tr>
     <tr>
-      <td><a href="./power-mac-8500.html">Power Macintosh 8500</a></td>
+      <td><a href="./power-mac-8500-120.html">Power Macintosh 8500/120</a></td>
       <td><a href="./beos.html">BeOS</a></td>
     </tr>
     <tr>
@@ -31,7 +31,7 @@ The following computers and operating systems are on display:
       <td><a href="./nextstep.html">NeXTSTEP</a></td>
     </tr>
     <tr>
-      <td><a href="./power-mac-9600.html">Power Macintosh 9600</a></td>
+      <td><a href="./power-mac-9600-300.html">Power Macintosh 9600/300</a></td>
       <td><a href="./rhapsody.html">Rhapsody</a></td>
     </tr>
     <tr>

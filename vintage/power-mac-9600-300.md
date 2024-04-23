@@ -1,8 +1,8 @@
 ---
-title: Power Macintosh 9600
+title: Power Macintosh 9600/300
 ---
 
-First release: February 17, 1997
+First 9600 release: February 17, 1997
 
 This model:
 Released: August 5, 1997

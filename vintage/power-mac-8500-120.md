@@ -1,5 +1,5 @@
 ---
-title: Power Macintosh 8500
+title: Power Macintosh 8500/120
 ---
 
 Released: August 7, 1995

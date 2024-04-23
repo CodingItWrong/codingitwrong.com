@@ -1,5 +1,5 @@
 ---
-title: Power Macintosh 7500
+title: Power Macintosh 7500/100
 ---
 
 Released: August 8, 1995
