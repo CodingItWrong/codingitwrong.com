@@ -2,8 +2,8 @@
 title: BeOS
 ---
 
-First released: October 1995 (Developer Release 5)
-Final release: 5.0.3, November 2001
+- First released: October 1995 (Developer Release 5)
+- Final release: 5.0.3, November 2001
 
 Be Inc was founded in 1990 by former Apple executive Jean-Louis Gassée and engineer Steve Sakoman. They developed a new operating system, BeOS, targeting the PowerPC architecture. Initially creating their own hardware, they were later able to run on Mac clones and even Apple Macintoshes. However, Apple resisted providing Be with information they needed to allow it to run on newer hardware, meaning that after the end of the clone program and the introduction of the new G3 processor architecture, BeOS was unable to offer support for new Macintoshes.
 

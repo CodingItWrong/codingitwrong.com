@@ -2,8 +2,8 @@
 title: Twentieth Anniversary Macintosh
 ---
 
-Released: March 20, 1997
-Processor: 250 MHz PowerPC 603e
+- Released: March 20, 1997
+- Processor: 250 MHz PowerPC 603e
 
 Released to celebrate the twentieth anniversary of Apple Computer (founded in 1977), the The Twentieth Anniversary Macintosh features a compact design rare in the day, as well as integrated Bose speakers and subwoofer and the ability to play analog video feeds. It originally retailed for $7499, and was criticized for outdated technical specs for such a high price point. The price was later dropped to $3500, then $1995.
 

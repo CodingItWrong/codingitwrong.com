@@ -2,11 +2,9 @@
 title: Power Macintosh G3 Tower (Blue and White)
 ---
 
-First release: January 5, 1999
-
-This model:
-Released:
-Processor: 350 MHz PowerPC G3
+- First release: January 5, 1999
+- This model:
+  - Processor: 350 MHz PowerPC G3
 
 After the success of the iMac’s visual design, Apple updated the previously beige G3 tower with a new translucent plastic design. The Power Mac G3 tower also included advancements in ports, such as USB and Firewire. An easy-to-open door provides quick access to internals for maintenance and upgrades.
 
