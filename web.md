@@ -1,0 +1,105 @@
+---
+title: Web History
+---
+
+- 1989
+  - WWW proposed
+- 1990
+  - First web server and client working
+- 1993
+  - [NCSA Mosaic](<https://en.wikipedia.org/wiki/Mosaic_(web_browser)>)released
+  - [Common Gateway Interface](https://en.wikipedia.org/wiki/Common_Gateway_Interface)introduced
+- 1994
+  - [Netscape Navigator](https://en.wikipedia.org/wiki/Netscape_Navigator) 1.0 released
+  - [HTTPS](https://en.wikipedia.org/wiki/HTTPS) created by Netscape
+  - [Cookies](https://en.wikipedia.org/wiki/HTTP_cookie) introduced
+  - [World Wide Web Consortium \(W3C\)](https://en.wikipedia.org/wiki/World_Wide_Web_Consortium) formed
+- 1995
+  - [Internet Explorer](https://en.wikipedia.org/wiki/Internet_Explorer) 1.0 released
+  - [Apache HTTP Server](https://en.wikipedia.org/wiki/Apache_HTTP_Server) released
+  - Microsoft [IIS web server](https://en.m.wikipedia.org/wiki/Internet_Information_Services) released
+  - [PHP](https://en.wikipedia.org/wiki/PHP) 1.0 released
+  - [Java](<https://en.wikipedia.org/wiki/Java_(programming_language)>) 1.0 released, including applets
+  - [JavaScript](https://en.wikipedia.org/wiki/JavaScript) 1.0 released
+  - First [wiki](https://en.m.wikipedia.org/wiki/Wiki) launched
+  - [RealAudio Player](https://en.wikipedia.org/wiki/RealPlayer) launches for streaming audio
+- 1996
+  - HTTP 1.0
+  - Macromedia [Flash](https://en.m.wikipedia.org/wiki/Adobe_Flash) 1.0 released
+  - [CSS](https://en.wikipedia.org/wiki/CSS) introduced
+  - [Internet Archive](https://en.wikipedia.org/wiki/Internet_Archive) founded
+  - [PNG](https://en.wikipedia.org/wiki/PNG) image format released
+- 1997
+  - HTTP 1.1
+  - [ECMAScript](https://en.wikipedia.org/wiki/ECMAScript) language specification
+- 1998
+  - Mozilla Organization launched
+  - Netscape source code released
+  - [DOM APIs](https://en.wikipedia.org/wiki/Document_Object_Model) introduced
+  - Term "[open source](https://opensource.org/history)" coined
+  - [Web Standards Project](https://en.wikipedia.org/wiki/Web_Standards_Project) started to combat proprietary browser features
+- 1999
+  - [RSS](https://en.wikipedia.org/wiki/RSS) 1.0 released
+  - [Web Content Accessibility Guidelines](https://en.wikipedia.org/wiki/Web_Content_Accessibility_Guidelines) first published
+- 2000
+  - [HTTPS](https://en.wikipedia.org/wiki/HTTPS) specified
+  - [Wikipedia](https://en.wikipedia.org/wiki/Wikipedia) launched
+  - [Dot-com bubble](https://en.wikipedia.org/wiki/Dot-com_bubble) burst
+  - [REST](https://en.wikipedia.org/wiki/REST) principles defined
+- 2001
+  - [JSON](https://en.wikipedia.org/wiki/JSON) introduced
+- 2002
+  - Mozilla Organization creates [Phoenix](https://en.wikipedia.org/wiki/Firefox_early_version_history) project
+  - [.NET](https://en.wikipedia.org/wiki/.NET_Framework) released
+  - [Amazon Web Services](https://en.wikipedia.org/wiki/Amazon_Web_Services) launches, beginning cloud computing
+- 2003
+  - [Mozilla Foundation](https://en.wikipedia.org/wiki/Mozilla_Foundation) launched
+  - [Safari](<https://en.wikipedia.org/wiki/Safari_(web_browser)>) 1.0 for Mac released
+  - [WordPress](https://en.wikipedia.org/wiki/WordPress) released
+  - [OWASP](https://en.wikipedia.org/wiki/OWASP) Top Ten first published
+  - "[Progressive enhancement](https://en.m.wikipedia.org/wiki/Progressive_enhancement)" term coined
+- 2004
+  - [Firefox](https://en.wikipedia.org/wiki/Firefox) 1.0 released
+  - [Ruby on Rails](https://en.wikipedia.org/wiki/Ruby_on_Rails) 1.0 released
+- 2005
+  - [Ajax](https://en.wikipedia.org/wiki/Ajax) technique introduced
+- 2006
+  - [jQuery](https://en.wikipedia.org/wiki/JQuery) 1.0 released
+- 2007
+  - [iPhone](https://en.wikipedia.org/wiki/IPhone) released with Safari browser; Flash not supported
+  - [OAuth](https://en.wikipedia.org/wiki/OAuth) 1.0 published
+- 2008
+  - [Google Chrome](https://en.wikipedia.org/wiki/Google_Chrome) 1.0 released
+  - [HTML5](https://en.m.wikipedia.org/wiki/HTML5) introduced, including semantic and media elements
+  - App Store for iPhone releases; native mobile apps begin to compete with web apps
+  - [Jekyll](https://en.m.wikipedia.org/wiki/Jekyll_%28software%29), an early static site generator, released
+- 2009
+  - [WebSockets](https://en.wikipedia.org/wiki/WebSocket) first shipped in Chrome
+  - [Flexbox](https://en.wikipedia.org/wiki/CSS_Flexible_Box_Layout) introduced
+  - [Node.js](https://en.wikipedia.org/wiki/Node.js) released
+  - [Golang](<https://en.wikipedia.org/wiki/Go_(programming_language)>) released
+- 2010
+  - [Angular](https://en.wikipedia.org/wiki/AngularJS) released
+  - [WebP](https://en.wikipedia.org/wiki/WebP) image format introduced
+- 2012
+  - [TypeScript](https://en.m.wikipedia.org/wiki/TypeScript)released
+  - [Media queries](https://en.wikipedia.org/wiki/Media_queries) introduced, supporting responsive design
+  - [OAuth](https://en.wikipedia.org/wiki/OAuth) 2.0 published
+- 2013
+  - [React](<https://en.wikipedia.org/wiki/React_(JavaScript_library)>) released
+  - [Electron](https://en.wikipedia.org/wiki/Electron) released
+- 2014
+  - [Babel](<https://en.wikipedia.org/wiki/Babel_(transcompiler)>) JS transpiler released
+  - [Webpack](https://en.wikipedia.org/wiki/Webpack) 1.0 released
+- 2015
+  - HTTP/2 released
+  - [ECMAScript 6](https://en.wikipedia.org/wiki/ECMAScript_version_history#6th_Edition_%E2%80%93_ECMAScript_2015) published
+  - ["Progressive web apps"](https://en.wikipedia.org/wiki/Progressive_web_app) coined
+  - [Microsoft Edge](https://en.wikipedia.org/wiki/Microsoft_Edge)Released
+- 2017
+  - [WebAssembly](https://en.wikipedia.org/wiki/WebAssembly)
+- 2018
+  - Chrome marked HTTP sites "not secure"
+  - TLS 1.3
+- 2020
+  - Chromium version of MS Edge released
