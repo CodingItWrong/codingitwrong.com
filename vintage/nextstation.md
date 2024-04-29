@@ -11,3 +11,4 @@ The original “NeXT Computer” (later renamed the NeXTcube) struggled to find 
 
 - [Wikipedia: NeXTstation](https://en.wikipedia.org/wiki/NeXTstation)
 - [Action Retro: Going Online with a NeXT Color Slab!](https://youtu.be/i_EjnxkYEn8)
+- [NeXT Computers Forums](https://www.nextcomputers.org/forums/index.php)

@@ -11,3 +11,4 @@ NeXTSTEP was the operating system built for NeXT’s computers. Originally it ra
 
 - [Wikipedia: NeXTSTEP](https://en.wikipedia.org/wiki/NeXTSTEP)
 - [Action Retro: Are Modern Macs Really NeXTSTEP in Disguise?](https://youtu.be/HyitnJQRvu0)
+- [NeXT Computers Forums](https://www.nextcomputers.org/forums/index.php)
