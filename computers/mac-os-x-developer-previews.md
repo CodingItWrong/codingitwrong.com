@@ -2,7 +2,12 @@
 title: Mac OS X Developer Previews
 ---
 
-hello
+- First release: Developer Preview 1, May 10, 1999
+- Final preview release: DP 4, May 15, 2000
+- Public Beta: Sep 13, 2000
+- Full Release: Mac OS X 10.0, Mar 24, 2001
+
+Before the public launch of Mac OS X, it was released to developers in a series of Developer Previews. Each of the four preview releases had significant changes. DP3 was the first to use the Aqua user interface, although icons in the dock were square, similar to the NeXTSTEP dock. DP3 also introduced integrating Classic mode application windows with the rest of the windows, instead of running the Classic desktop in its own window.
 
 ## Resources
 
