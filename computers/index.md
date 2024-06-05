@@ -8,10 +8,10 @@ title: 'Computer Collection'
 | Centris 610                                                | [Macintosh System 7.1](./system7)                                                                      |
 | [Power Macintosh 7500/100](./power-mac-7500-100)           | [Copland](./copland) D11E4                                                                             |
 | [Power Macintosh 8500/120](./power-mac-8500-120)           | [BeOS](./beos) 5.0.3                                                                                   |
-| [NeXTstation](./nextstation)                               | [NeXTSTEP 3.3](./nextstep)                                                                             |
+| [NeXTstation](./nextstation)                               | [NeXTSTEP](./nextstep) 3.3                                                                             |
 | [Twentieth Anniversary Macintosh](./tam)                   | [Mac OS 7.6.1](./system7), 8.6, 9.1                                                                    |
 | [Power Macintosh 9600/300](./power-mac-9600-300)           | [Rhapsody](./rhapsody) DR2                                                                             |
-| [Power Macintosh G3 (Blue&White)](./power-mac-g3-tower-bw) | [Mac OS X Server 1.2](./rhapsody), [Mac OS X Developer Preview 2, 3, 4](./mac-os-x-developer-previews) |
+| [Power Macintosh G3 (Blue&White)](./power-mac-g3-tower-bw) | [Mac OS X Server](./rhapsody) 1.2, [Mac OS X Developer Preview](./mac-os-x-developer-previews) 2, 3, 4 |
 | PowerBook G3 (Pismo)                                       | Mac OS 9.2                                                                                             |
 | Power Macintosh G4 (MDD)                                   | Mac OS 9.2.2, Mac OS X 10.4.11                                                                         |
 | iMac G4                                                    | Mac OS X 10.4.11                                                                                       |

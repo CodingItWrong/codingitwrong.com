@@ -24,7 +24,7 @@ The following computers and operating systems are on display:
     </tr>
     <tr>
       <td><a href="./nextstation">NeXTstation</a></td>
-      <td><a href="./nextstep">NeXTSTEP 3.3</a></td>
+      <td><a href="./nextstep">NeXTSTEP</a> 3.3</td>
     </tr>
     <tr>
       <td><a href="./power-mac-9600-300">Power Macintosh 9600/300</a></td>
@@ -32,7 +32,7 @@ The following computers and operating systems are on display:
     </tr>
     <tr>
       <td><a href="./power-mac-g3-tower-bw">Power Macintosh G3 (Blue&White)</a></td>
-      <td><a href="./mac-os-x-developer-previews">Mac OS X Developer Preview 2, 3, 4</a></td>
+      <td><a href="./mac-os-x-developer-previews">Mac OS X Developer Preview</a> 2, 3, 4</td>
     </tr>
   </tbody>
 </table>
