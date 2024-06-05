@@ -15,28 +15,24 @@ The following computers and operating systems are on display:
   </thead>
   <tbody>
     <tr>
-      <td><a href="./tam.html">Twentieth Anniversary Mac</a></td>
-      <td><a href="./system7.html">System 7</a></td>
+      <td><a href="./power-mac-7500-100">Power Macintosh 7500/100</a></td>
+      <td><a href="./copland">Copland</a>  D11E4</td>
     </tr>
     <tr>
-      <td><a href="./power-mac-7500-100.html">Power Macintosh 7500/100</a></td>
-      <td><a href="./copland.html">Copland</a></td>
+      <td><a href="./power-mac-8500-120">Power Macintosh 8500/120</a></td>
+      <td><a href="./beos">BeOS</a> 5.0.3</td>
     </tr>
     <tr>
-      <td><a href="./power-mac-8500-120.html">Power Macintosh 8500/120</a></td>
-      <td><a href="./beos.html">BeOS</a></td>
+      <td><a href="./nextstation">NeXTstation</a></td>
+      <td><a href="./nextstep">NeXTSTEP 3.3</a></td>
     </tr>
     <tr>
-      <td><a href="./nextstation.html">NeXTstation</a></td>
-      <td><a href="./nextstep.html">NeXTSTEP</a></td>
+      <td><a href="./power-mac-9600-300">Power Macintosh 9600/300</a></td>
+      <td><a href="./rhapsody">Rhapsody</a> DR2</td>
     </tr>
     <tr>
-      <td><a href="./power-mac-9600-300.html">Power Macintosh 9600/300</a></td>
-      <td><a href="./rhapsody.html">Rhapsody</a></td>
-    </tr>
-    <tr>
-      <td><a href="./power-mac-g3-tower-bw.html">Power Macintosh G3 (Blue&White)</a></td>
-      <td><a href="./mac-os-x-developer-previews.html">Mac OS X Developer Previews</a></td>
+      <td><a href="./power-mac-g3-tower-bw">Power Macintosh G3 (Blue&White)</a></td>
+      <td><a href="./mac-os-x-developer-previews">Mac OS X Developer Preview 2, 3, 4</a></td>
     </tr>
   </tbody>
 </table>

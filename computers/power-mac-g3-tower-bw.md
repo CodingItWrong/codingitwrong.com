@@ -2,7 +2,7 @@
 title: Power Macintosh G3 Tower (Blue and White)
 ---
 
-- First release: January 5, 1999
+- Released: January 5, 1999
 - This model:
   - Processor: 350 MHz PowerPC G3
 
