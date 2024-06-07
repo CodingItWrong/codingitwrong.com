@@ -27,6 +27,10 @@ The following computers and operating systems are on display:
       <td><a href="./nextstep">NeXTSTEP</a> 3.3</td>
     </tr>
     <tr>
+      <td><a href="./hp-model-712-100">HP Model 712/100</a></td>
+      <td><a href="./nextstep">NeXTSTEP</a> 3.3</td>
+    </tr>
+    <tr>
       <td><a href="./power-mac-9600-300">Power Macintosh 9600/300</a></td>
       <td><a href="./rhapsody">Rhapsody</a> DR2</td>
     </tr>
