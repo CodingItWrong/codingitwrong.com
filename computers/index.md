@@ -20,4 +20,4 @@ title: 'Computer Collection'
 | Newton MessagePad 120                                      | Newton OS 2.0                                                                                          |
 | Newton MessagePad 2000                                     | Newton OS 2.1                                                                                          |
 | eMate 300                                                  | Newton OS 2.1                                                                                          |
-| PinePhone                                                  | postmarketOS v23.12                                                                                    |
+| PinePhone                                                  | postmarketOS v24.06                                                                                    |
