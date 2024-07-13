@@ -2,6 +2,8 @@
 title: NeXTstation
 ---
 
+[[More VCF Southeast 2024]](/computers/vcfse2024)
+
 - First Release: September 18, 1990
 - Discontinued: 1993
 - This model:
@@ -16,3 +18,4 @@ The improvements to the NeXTstation were not enough for NeXT to make inroads aga
 - [Wikipedia: NeXTstation](https://en.wikipedia.org/wiki/NeXTstation)
 - [Action Retro: Going Online with a NeXT Color Slab!](https://youtu.be/i_EjnxkYEn8)
 - [NeXT Computers Forums](https://www.nextcomputers.org/forums/index.php)
+- [Steve Jobs &amp; the NeXT Big Thing - Amazon](https://www.amazon.com/Steve-Jobs-NeXT-Big-Thing-ebook/dp/B006VOM5V6/ref=sr_1_1?crid=XLFMUCGXLO32&dib=eyJ2IjoiMSJ9.WTHA7TY2KRxzHoPgErbOTnQay338HOyGyL7aU2M4x8rzy9zkgFsLAbcTD4cEpPwYlGlEVe73tIod2TJIbxJNeq34w1X2Z-7tkuU4JauBXfrLa7D12hKEJmcp81AHlGcPQNIaF2jhCHI-Wqt4RD8fo9Xc0ac0b190FoZ6i8OmNltrqk9zxS2v2TZdf0vbiq1A.-MksYU-A_vb-SKjbCFJcXF0taG5le7nV11HqgbGpmR0&dib_tag=se&keywords=steve+jobs+and+the+next+big+thing&qid=1720894864&sprefix=steve+jobs+and+the+next+big%2Caps%2C271&sr=8-1)

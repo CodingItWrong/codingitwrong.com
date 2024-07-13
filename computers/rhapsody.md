@@ -2,6 +2,8 @@
 title: Apple Rhapsody
 ---
 
+[[More VCF Southeast 2024]](/computers/vcfse2024)
+
 - First release: October 13, 1997 (Developer Release 1, aka Rhapsody 5.0)
 - Commercial release: Mac OS X Server 1.0 (Rhapsody 5.3) , on March 16, 1999
 - Final release: Mac OS X Server 1.2 v3 (Rhapsody 5.6), October 27, 2000
@@ -16,4 +18,6 @@ From within Rhapsody, Mac OS 8 could be booted in the “Blue Box” environment
 - [Shaw's Rhapsody Resource Page](http://rhapsodyos.org/)
 - [Action Retro: Installing Rhapsody OS on a Homemade SSD](https://youtu.be/jMFnwhTXar8)
 - [YouTube: Gil Amelio and Steve Jobs introduce Rhapsody](https://youtu.be/QhhFQ-3w5tE)
+- [YouTube: Mac OS X Server Introduction](https://www.youtube.com/watch?v=DZ1LRPzfOqg)
 - [Rhapsody System Requirements](http://www.rhapsodyos.org/hardware/system_requirements/system_requirements_1.html)
+- [The Road to OS X #3: Apple Rhapsody and Mac OS X Server 1.x - Tech Tales](https://overcast.fm/+wCpzfqSf8)

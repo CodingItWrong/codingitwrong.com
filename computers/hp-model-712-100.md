@@ -2,6 +2,8 @@
 title: 'HP Model 712/100'
 ---
 
+[[More VCF Southeast 2024]](/computers/vcfse2024)
+
 Released: June 1995
 This model: 100 MHz
 

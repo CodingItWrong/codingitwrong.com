@@ -2,6 +2,8 @@
 title: Power Macintosh 8500/120
 ---
 
+[[More VCF Southeast 2024]](/computers/vcfse2024)
+
 - Released: August 7, 1995
 - This model:
   - Processor: 120 MHz PowerPC 604

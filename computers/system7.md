@@ -2,6 +2,8 @@
 title: Macintosh System 7
 ---
 
+[[More VCF Southeast 2024]](/computers/vcfse2024)
+
 - Released: May 13, 1991
 - Final Release: 7.6.1, Apr 7, 1997
 

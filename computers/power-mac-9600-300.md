@@ -2,6 +2,8 @@
 title: Power Macintosh 9600/300
 ---
 
+[[More VCF Southeast 2024]](/computers/vcfse2024)
+
 - First 9600 release: February 17, 1997
 - This model:
   - Released: August 5, 1997

@@ -2,6 +2,8 @@
 title: BeOS
 ---
 
+[[More VCF Southeast 2024]](/computers/vcfse2024)
+
 - First released: October 1995 (Developer Release 5)
 - Final release: 5.0.3, November 2001
 
@@ -15,5 +17,8 @@ Apple considered acquiring Be Inc so that BeOS could be the foundation of a next
 - [YouTube: The Rise, Fall, and Rebirth of BeOS](https://youtu.be/u3QoGZRTB_I)
 - [Haiku](https://www.haiku-os.org/)
 - [Action Retro: Installing BeOS on a TAM. Oh no.](https://youtu.be/UVzrVLRhDrA)
+- [Left Behind: A BeOS and Be Incorporated Post-Mortem](https://macfolkloreradio.com/be/)
+- [The Road to OS X #2: Apple Copland and NeXT - Tech Tales](https://overcast.fm/+wCpzWVZXA)
 - [BeOS 5 System Requirements](https://web.archive.org/web/20010204022700/http://www.be.com/support/guides/beosreadylist_ppc.html)
 - [Be Inc. Forums](https://discuss.haiku-os.org/c/be/7)
+- [_The BeOS Bible_ - archive.org](https://archive.org/details/the_beos_bible)

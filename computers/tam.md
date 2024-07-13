@@ -2,6 +2,8 @@
 title: Twentieth Anniversary Macintosh
 ---
 
+[[More VCF Southeast 2024]](/computers/vcfse2024)
+
 - Released: March 20, 1997
 - Processor: 250 MHz PowerPC 603e
 

@@ -2,6 +2,8 @@
 title: Power Macintosh G3 Tower (Blue and White)
 ---
 
+[[More VCF Southeast 2024]](/computers/vcfse2024)
+
 - Released: January 5, 1999
 - This model:
   - Processor: 350 MHz PowerPC G3

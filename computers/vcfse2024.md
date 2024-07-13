@@ -6,37 +6,12 @@ title: The Road to Mac OS X
 
 The following computers and operating systems are on display:
 
-<table>
-  <thead>
-    <tr>
-      <th>Computer</th>
-      <th>Operating System</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="./power-mac-7500-100">Power Macintosh 7500/100</a></td>
-      <td><a href="./copland">Copland</a>  D11E4</td>
-    </tr>
-    <tr>
-      <td><a href="./power-mac-8500-120">Power Macintosh 8500/120</a></td>
-      <td><a href="./beos">BeOS</a> 5.0.3</td>
-    </tr>
-    <tr>
-      <td><a href="./nextstation">NeXTstation</a></td>
-      <td><a href="./nextstep">NeXTSTEP</a> 3.3</td>
-    </tr>
-    <tr>
-      <td><a href="./hp-model-712-100">HP Model 712/100</a></td>
-      <td><a href="./nextstep">NeXTSTEP</a> 3.3</td>
-    </tr>
-    <tr>
-      <td><a href="./power-mac-9600-300">Power Macintosh 9600/300</a></td>
-      <td><a href="./rhapsody">Rhapsody</a> DR2</td>
-    </tr>
-    <tr>
-      <td><a href="./power-mac-g3-tower-bw">Power Macintosh G3 (Blue&White)</a></td>
-      <td><a href="./mac-os-x-developer-previews">Mac OS X Developer Preview</a> 2, 3, 4</td>
-    </tr>
-  </tbody>
-</table>
+| Computer                                                   | Operating System                                                    |
+| ---------------------------------------------------------- | ------------------------------------------------------------------- |
+| [Power Macintosh 7500/100](./power-mac-7500-100)           | [Copland](./copland) D11E4                                          |
+| [Power Macintosh 8500/120](./power-mac-8500-120)           | [BeOS](./beos) 5.0.3                                                |
+| [NeXTstation](./nextstation)                               | [NeXTSTEP](./nextstep) 3.3                                          |
+| [HP Model 712/100](./hp-model-712-100)                     | [NeXTSTEP](./nextstep) 3.3                                          |
+| [Power Macintosh 9600/300](./power-mac-9600-300)           | [Rhapsody](./rhapsody) DR2                                          |
+| [Power Macintosh G3 (Blue&White)](./power-mac-g3-tower-bw) | [Mac OS X Developer Preview](./mac-os-x-developer-previews) 2, 3, 4 |
+| [Twentieth Anniversary Macintosh](./tam)                   | [Mac OS 7.6.1](./system7), 8.6, 9.1                                 |

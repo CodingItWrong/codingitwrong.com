@@ -2,6 +2,8 @@
 title: Mac OS X Developer Previews
 ---
 
+[[More VCF Southeast 2024]](/computers/vcfse2024)
+
 - First release: Developer Preview 1, May 10, 1999
 - Final preview release: DP 4, May 15, 2000
 - Public Beta: Sep 13, 2000
@@ -22,3 +24,4 @@ Before the public launch of Mac OS X, it was released to developers in a series 
 - [John Siracusa — Mac OS X Update: Quartz & Aqua](https://archive.arstechnica.com/reviews/1q00/macos-x-gui/macos-x-gui-1.html)
 - [John Siracusa — Mac OS X DP3: Trial by Water](https://archive.arstechnica.com/reviews/1q00/macos-x-dp3/macos-x-dp3-1.html)
 - [YouTube: Steve Jobs Mac OS X Introduction](https://youtu.be/Ko4V3G4NqII)
+- [The Road to OS X #4: Public Beta, 10.0, and 10.1 - Tech Tales](https://overcast.fm/+wCpwbBqbw)

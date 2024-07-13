@@ -2,6 +2,8 @@
 title: Power Macintosh 7500/100
 ---
 
+[[More VCF Southeast 2024]](/computers/vcfse2024)
+
 - Released: August 8, 1995
 - Processor: 100 MHz PowerPC 601
 
