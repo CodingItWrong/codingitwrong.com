@@ -20,9 +20,9 @@ Before the public launch of Mac OS X, it was released to developers in a series 
 ## Resources
 
 - [Apple Wiki: Mac OS X Developer Preview](https://apple.fandom.com/wiki/Mac_OS_X_Developer_Preview)
+- [YouTube: WWDC 1998 Keynote - Mac OS X/Carbon Strategy](https://youtu.be/03kTC0Sm7wc?t=2868)
+- [YouTube: Macworld 2000 Keynote - Mac OS X Introduction](https://youtu.be/AcGzCIlz8y0?t=4057)
+- [The Road to OS X #4: Public Beta, 10.0, and 10.1 - Tech Tales](https://overcast.fm/+wCpwbBqbw)
 - [John Siracusa — Mac OS X DP2: A Preview](https://archive.arstechnica.com/reviews/4q99/macos-x-dp2/m-macos-x-dp2-1.html)
 - [John Siracusa — Mac OS X Update: Quartz & Aqua](https://archive.arstechnica.com/reviews/1q00/macos-x-gui/macos-x-gui-1.html)
 - [John Siracusa — Mac OS X DP3: Trial by Water](https://archive.arstechnica.com/reviews/1q00/macos-x-dp3/macos-x-dp3-1.html)
-- [YouTube: WWDC 1998 Keynote - Mac OS X/Carbon Strategy](https://www.youtube.com/watch?v=03kTC0Sm7wc)
-- [YouTube: Steve Jobs Mac OS X Introduction](https://youtu.be/Ko4V3G4NqII)
-- [The Road to OS X #4: Public Beta, 10.0, and 10.1 - Tech Tales](https://overcast.fm/+wCpwbBqbw)
