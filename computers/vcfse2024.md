@@ -14,4 +14,3 @@ The following computers and operating systems are on display:
 | [HP Model 712/100](./hp-model-712-100)                     | [NeXTSTEP](./nextstep) 3.3                                          |
 | [Power Macintosh 9600/300](./power-mac-9600-300)           | [Rhapsody](./rhapsody) DR2                                          |
 | [Power Macintosh G3 (Blue&White)](./power-mac-g3-tower-bw) | [Mac OS X Developer Preview](./mac-os-x-developer-previews) 2, 3, 4 |
-| [Twentieth Anniversary Macintosh](./tam)                   | [Mac OS 7.6.1](./system7), 8.6, 9.1                                 |

@@ -11,7 +11,7 @@ NeXTSTEP was the operating system built for NeXT’s computers. It featured powe
 
 Key software programs that originated on NeXTSTEP are id Software’s Doom and Quake, and the first web browser and server.
 
-Originally NeXTSTEP ran only on NeXT hardware. However, as NeXT continued to struggle to find a market, they eventually ported NeXTSTEP to run on other processors in an attempt to increase the installed base of the operating system in order to attract developers. Supported processor architectures included Intel, SPARC, and PA-RISC. Eventually NeXT exited the hardware business entirely and focused on the NeXTSTEP software as their sole product.
+Originally NeXTSTEP ran only on NeXT hardware. However, as NeXT continued to struggle to find a market, they eventually ported NeXTSTEP to run on other processors in an attempt to increase the installed base of the operating system in order to attract developers. Supported processor architectures included Intel, SPARC, and [PA-RISC](./hp-model-712-100). Eventually NeXT exited the hardware business entirely and focused on the NeXTSTEP software as their sole product.
 
 After Apple’s attempts at building their own next-generation operating system failed, NeXTSTEP was one of the operating systems Apple looked into purchasing. NeXTSTEP was eventually chosen, and its code serves as the foundation of macOS to this day. In Apple’s APIs for building macOS applications, many classes and constants have the prefix “NS”, which stands for NeXTSTEP.
 

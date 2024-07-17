@@ -9,17 +9,18 @@ title: Mac OS X Developer Previews
 - Public Beta: Sep 13, 2000
 - Full Release: Mac OS X 10.0, Mar 24, 2001
 
-Mac OS X represented a shift in the Rhapsody strategy to address developers’ concerns about the effort of rewriting applications to take advantage of the new OS’s features. It provided three ways to run applications:
+Mac OS X represented a shift in the [Rhapsody](./rhapsody) strategy to address developers’ concerns about the effort of rewriting applications to take advantage of the new OS’s features. It provided three ways to run applications:
 
 - _Classic,_ which ran unchanged classic Mac OS applications in their own windows,
 - _Carbon_, which allowed developers to recompile their classic applications against a new API implementation to get many of the benefits of OS X with minimal changes, and
 - _Cocoa,_ the API to natively build new Mac OS X applications.
 
-Before the public launch of Mac OS X, it was released to developers in a series of Developer Previews. Each of the four preview releases had significant changes. DP3 was the first to use the Aqua user interface, although icons in the dock were square, similar to the NeXTSTEP dock. DP3 also introduced integrating Classic mode application windows with the rest of the windows, instead of running the Classic desktop in its own window.
+Before the public launch of Mac OS X, it was released to developers in a series of Developer Previews. Each of the four preview releases had significant changes. DP3 was the first to use the Aqua user interface, although icons in the dock were square, similar to the [NeXTSTEP](./nextstep) dock. DP3 also introduced integrating Classic mode application windows with the rest of the windows, instead of running the Classic desktop in its own window.
 
 ## Resources
 
 - [Apple Wiki: Mac OS X Developer Preview](https://apple.fandom.com/wiki/Mac_OS_X_Developer_Preview)
+- [Wikipedia: macOS - Timeline of Releases](https://en.wikipedia.org/wiki/MacOS#Timeline_of_releases)
 - [YouTube: WWDC 1998 Keynote - Mac OS X/Carbon Strategy](https://youtu.be/03kTC0Sm7wc?t=2868)
 - [YouTube: Macworld 2000 Keynote - Mac OS X Introduction](https://youtu.be/AcGzCIlz8y0?t=4057)
 - [The Road to OS X #4: Public Beta, 10.0, and 10.1 - Tech Tales](https://overcast.fm/+wCpwbBqbw)
