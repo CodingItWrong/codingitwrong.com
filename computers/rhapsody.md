@@ -15,9 +15,9 @@ Within Rhapsody, Mac OS 8 could be booted in the “Blue Box” environment to a
 ## Resources
 
 - [Wikipedia: Rhapsody](<https://en.wikipedia.org/wiki/Rhapsody_(operating_system)>)
-- [Shaw's Rhapsody Resource Page](http://rhapsodyos.org/)
+- [The Road to OS X #3: Apple Rhapsody and Mac OS X Server 1.x - Tech Tales](https://overcast.fm/+wCpzfqSf8)
 - [Action Retro: Installing Rhapsody OS on a Homemade SSD](https://youtu.be/jMFnwhTXar8)
 - [YouTube: Macworld San Francisco 1997 - Gil Amelio and Steve Jobs introduce Rhapsody](https://youtu.be/QhhFQ-3w5tE)
 - [YouTube: Macworld San Francisco 1999 - Steve Jobs Mac OS X Server Introduction](https://youtu.be/EFIF2496Br0)
+- [Shaw's Rhapsody Resource Page](http://rhapsodyos.org/)
 - [Rhapsody System Requirements](http://www.rhapsodyos.org/hardware/system_requirements/system_requirements_1.html)
-- [The Road to OS X #3: Apple Rhapsody and Mac OS X Server 1.x - Tech Tales](https://overcast.fm/+wCpzfqSf8)

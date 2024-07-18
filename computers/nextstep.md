@@ -19,6 +19,6 @@ After Apple’s attempts at building their own next-generation operating system 
 
 - [Wikipedia: NeXTSTEP](https://en.wikipedia.org/wiki/NeXTSTEP)
 - [Action Retro: Are Modern Macs Really NeXTSTEP in Disguise?](https://youtu.be/HyitnJQRvu0)
-- [NeXT Computers Forums](https://www.nextcomputers.org/forums/index.php)
 - [The Road to OS X #2: Apple Copland and NeXT - Tech Tales](https://overcast.fm/+wCpzWVZXA)
-- [Steve Jobs &amp; the NeXT Big Thing - Amazon](https://www.amazon.com/Steve-Jobs-NeXT-Big-Thing-ebook/dp/B006VOM5V6/ref=sr_1_1?crid=XLFMUCGXLO32&dib=eyJ2IjoiMSJ9.WTHA7TY2KRxzHoPgErbOTnQay338HOyGyL7aU2M4x8rzy9zkgFsLAbcTD4cEpPwYlGlEVe73tIod2TJIbxJNeq34w1X2Z-7tkuU4JauBXfrLa7D12hKEJmcp81AHlGcPQNIaF2jhCHI-Wqt4RD8fo9Xc0ac0b190FoZ6i8OmNltrqk9zxS2v2TZdf0vbiq1A.-MksYU-A_vb-SKjbCFJcXF0taG5le7nV11HqgbGpmR0&dib_tag=se&keywords=steve+jobs+and+the+next+big+thing&qid=1720894864&sprefix=steve+jobs+and+the+next+big%2Caps%2C271&sr=8-1)
+- [_Steve Jobs &amp; the NeXT Big Thing_ - Amazon](https://www.amazon.com/Steve-Jobs-NeXT-Big-Thing-ebook/dp/B006VOM5V6/ref=sr_1_1?crid=XLFMUCGXLO32&dib=eyJ2IjoiMSJ9.WTHA7TY2KRxzHoPgErbOTnQay338HOyGyL7aU2M4x8rzy9zkgFsLAbcTD4cEpPwYlGlEVe73tIod2TJIbxJNeq34w1X2Z-7tkuU4JauBXfrLa7D12hKEJmcp81AHlGcPQNIaF2jhCHI-Wqt4RD8fo9Xc0ac0b190FoZ6i8OmNltrqk9zxS2v2TZdf0vbiq1A.-MksYU-A_vb-SKjbCFJcXF0taG5le7nV11HqgbGpmR0&dib_tag=se&keywords=steve+jobs+and+the+next+big+thing&qid=1720894864&sprefix=steve+jobs+and+the+next+big%2Caps%2C271&sr=8-1)
+- [NeXT Computers Forums](https://www.nextcomputers.org/forums/index.php)
