@@ -16,7 +16,6 @@ title: 'Computer Collection'
 | Power Macintosh G4 (MDD)                                   | Mac OS 9.2.2, Mac OS X 10.4.11                                                                         |
 | iMac G4                                                    | Mac OS X 10.4.11                                                                                       |
 | Power Macintosh G5                                         | Mac OS X 10.5.1                                                                                        |
-| Mac mini (Intel, 2014)                                     | Haiku nightly build                                                                                    |
 | Newton MessagePad 120                                      | Newton OS 2.0                                                                                          |
 | Newton MessagePad 2000                                     | Newton OS 2.1                                                                                          |
 | eMate 300                                                  | Newton OS 2.1                                                                                          |
