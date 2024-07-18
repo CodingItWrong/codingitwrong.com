@@ -20,6 +20,7 @@ Before the public launch of Mac OS X, it was released to developers in a series 
 ## Resources
 
 - [Apple Wiki: Mac OS X Developer Preview](https://apple.fandom.com/wiki/Mac_OS_X_Developer_Preview)
+- [ADSP Podcast, episode 28: Sean Parent and the Creation of Carbon](https://www.adspthepodcast.com/2021/06/04/Episode-28.html)
 - [The Road to OS X #4: Public Beta, 10.0, and 10.1 - Tech Tales](https://overcast.fm/+wCpwbBqbw)
 - [YouTube: WWDC 1998 Keynote - Mac OS X/Carbon Strategy](https://youtu.be/03kTC0Sm7wc?t=2868)
 - [YouTube: Macworld 2000 Keynote - Mac OS X Introduction](https://youtu.be/AcGzCIlz8y0?t=4057)
