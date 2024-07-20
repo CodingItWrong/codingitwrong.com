@@ -20,5 +20,6 @@ Apple considered acquiring Be Inc so that BeOS could be the foundation of a next
 - [The Road to OS X #2: Apple Copland and NeXT - Tech Tales](https://overcast.fm/+wCpzWVZXA)
 - [BeOS 5 System Requirements](https://web.archive.org/web/20010204022700/http://www.be.com/support/guides/beosreadylist_ppc.html)
 - [_The BeOS Bible_ - archive.org](https://archive.org/details/the_beos_bible)
-- [Haiku](https://www.haiku-os.org/)
 - [Be Inc. Forums](https://discuss.haiku-os.org/c/be/7)
+- [Haiku](https://www.haiku-os.org/)
+- [Installing Haiku on Apple silicon Using UTM](/2023/08/05/installing-haiku-on-apple-silicon-using-utm)
