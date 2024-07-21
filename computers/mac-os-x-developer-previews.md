@@ -4,6 +4,8 @@ title: Mac OS X Developer Previews
 
 [[More VCF Southeast 2024]](/computers/vcfse2024)
 
+<img src="/img/vcfse2024/bw-dp3-desktop.jpg" width="300" style="float: right" />
+
 - First release: Developer Preview 1, May 10, 1999
 - Final preview release: DP 4, May 15, 2000
 - Public Beta: Sep 13, 2000

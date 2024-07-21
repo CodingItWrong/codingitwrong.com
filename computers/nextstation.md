@@ -4,6 +4,8 @@ title: NeXTstation
 
 [[More VCF Southeast 2024]](/computers/vcfse2024)
 
+<img src="/img/vcfse2024/nextstation-nextstep-molecule.jpg" width="300" style="float: right" />
+
 - First Release: September 18, 1990
 - Discontinued: 1993
 - This model:

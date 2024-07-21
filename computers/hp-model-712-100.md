@@ -4,6 +4,8 @@ title: 'HP Model 712/100'
 
 [[More VCF Southeast 2024]](/computers/vcfse2024)
 
+<img src="/img/vcfse2024/hp-nextstep-molecule.jpg" width="300" style="float: right" />
+
 - Released: Jan 1994
 - This model:
   - Processor: 100 MHz

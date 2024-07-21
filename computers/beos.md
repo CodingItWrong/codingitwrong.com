@@ -4,6 +4,8 @@ title: BeOS
 
 [[More VCF Southeast 2024]](/computers/vcfse2024)
 
+<img src="/img/vcfse2024/8500-beos-media.jpg" width="300" style="float: right" />
+
 - First released: October 1995 (Developer Release 5)
 - Final release: 5.0.3, May 2000
 

@@ -4,6 +4,8 @@ title: Copland
 
 [[More VCF Southeast 2024]](/computers/vcfse2024)
 
+<img src="/img/vcfse2024/7500-copland-demo.jpg" width="300" style="float: right" />
+
 - Developed: 1994 to 1996
 - Released: n/a
 
