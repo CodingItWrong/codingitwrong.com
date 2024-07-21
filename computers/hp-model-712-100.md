@@ -4,7 +4,7 @@ title: 'HP Model 712/100'
 
 [[More VCF Southeast 2024]](/computers/vcfse2024)
 
-<img src="/img/vcfse2024/hp-nextstep-molecule.jpg" width="300" style="float: right" />
+<img src="/img/vcfse2024/hp-nextstep-molecule.jpg" alt="An HP 712/100 running NeXTSTEP 3.3" class="computer-pic" />
 
 - Released: Jan 1994
 - This model:

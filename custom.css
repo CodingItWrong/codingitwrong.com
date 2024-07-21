@@ -22,3 +22,58 @@
     margin: 0 0 10px 10px;
   }
 }
+
+.computers-wide {
+  display: none;
+}
+
+@media screen and (min-width: 710px) {
+  .computers-wide {
+    display: block;
+  }
+}
+
+.computer-list {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 1;
+}
+
+@media screen and (min-width: 710px) {
+  .computer-list {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+
+.computer-list-item {
+  flex: 1 1 0px;
+  margin-bottom: 10px;
+}
+
+.computer-list-item > * {
+  display: block;
+  margin: 0;
+  text-align: center;
+}
+
+@media screen and (min-width: 710px) {
+  .computer-list-pic {
+    display: none;
+  }
+}
+
+.computer-pic {
+  display: block;
+  margin: 0 auto 10px;
+}
+
+@media screen and (min-width: 710px) {
+  .computer-pic {
+    float: right;
+    width: 300px;
+    margin-left: 10px;
+    margin-right: 0;
+  }
+}

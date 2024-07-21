@@ -4,7 +4,7 @@ title: Mac OS X Developer Previews
 
 [[More VCF Southeast 2024]](/computers/vcfse2024)
 
-<img src="/img/vcfse2024/bw-dp3-desktop.jpg" width="300" style="float: right" />
+<img src="/img/vcfse2024/bw-dp3-desktop.jpg" alt="A Power Macintosh G3 Blue-and-White running Mac OS X Developer Preview 3" class="computer-pic" />
 
 - First release: Developer Preview 1, May 10, 1999
 - Final preview release: DP 4, May 15, 2000

@@ -4,7 +4,7 @@ title: Power Macintosh 9600/300
 
 [[More VCF Southeast 2024]](/computers/vcfse2024)
 
-<img src="/img/vcfse2024/9600-rhapsody-workspace-manager.jpg" width="300" style="float: right" />
+<img src="/img/vcfse2024/9600-rhapsody-workspace-manager.jpg" alt="A Power Macintosh 9600/300 running Rhapsody Developer Release 2" class="computer-pic" />
 
 - First 9600 release: February 17, 1997
 - This model:

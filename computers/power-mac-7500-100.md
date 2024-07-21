@@ -4,7 +4,7 @@ title: Power Macintosh 7500/100
 
 [[More VCF Southeast 2024]](/computers/vcfse2024)
 
-<img src="/img/vcfse2024/7500-copland-demo.jpg" width="300" style="float: right" />
+<img src="/img/vcfse2024/7500-copland-demo.jpg" alt="A Power Macintosh 7500/100 running Copland D11E4" class="computer-pic" />
 
 - Released: August 8, 1995
 - Processor: 100 MHz PowerPC 601

@@ -4,7 +4,7 @@ title: Apple Rhapsody
 
 [[More VCF Southeast 2024]](/computers/vcfse2024)
 
-<img src="/img/vcfse2024/9600-rhapsody-workspace-manager.jpg" width="300" style="float: right" />
+<img src="/img/vcfse2024/9600-rhapsody-workspace-manager.jpg" alt="A Power Macintosh 9600/300 running Rhapsody Developer Release 2" class="computer-pic" />
 
 - First release: October 13, 1997 (Developer Release 1, aka Rhapsody 5.0)
 - Commercial release: Mac OS X Server 1.0 (Rhapsody 5.3), on March 16, 1999
