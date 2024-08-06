@@ -14,7 +14,7 @@ We will build software that maximizes value and benefit to users and society, an
 - Enable users to do what they want instead of modifying their behavior
 - Users are in control of settings and uses, instead of the technology assuming, nagging, or preventing users from what they want to do
 - Protect privacy by using the minimal data from people, making it clear what data is used and why, and allowing users to easily opt out
-- Work to prevent implicit biases from being encoded in the technology
+- Look for and prevent ways that design decisions and encoded implicit biases disproportionately affect some groups over others
 - Maximize how users can access and reuse their data and functionality
 
 ## 2. Sustainable organization and systems
