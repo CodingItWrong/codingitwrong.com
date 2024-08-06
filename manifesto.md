@@ -12,7 +12,7 @@ We will build computer systems that maximize value and benefit to users and soci
 - Honestly communicate capabilities and limitations
 - Focus on technologies that provide demonstrated value over hype
 - Enable users to do what they want instead of modifying their behavior
-- Users are in control of settings and uses, instead of the technology assuming, nagging, or preventing users from what they want to do
+- Users are in control of settings and uses, instead of the technology nagging, preventing users from what they want to do, or making assumptions that users cannot change.
 - Protect privacy by using the minimal data from people, making it clear what data is used and why, and allowing users to easily opt out
 - Look for and prevent ways that design decisions and encoded implicit biases disproportionately affect some groups over others
 - Maximize how users can access and reuse their data and functionality
