@@ -2,11 +2,11 @@
 title: Untitled Manifesto About Computers [DRAFT]
 ---
 
-Our goal is to to maximally utilize the potential of computers.
+Our goal is to to maximally utilize the potential of computers (hardware and software).
 
 ## 1. Beneficial to society
 
-We will build software that maximizes value and benefit to users and society, and minimizes harm to them.
+We will build computer systems that maximize value and benefit to users and society, and minimize harm to them.
 
 - Focus primarily on providing value to users, not selling ads
 - Honestly communicate capabilities and limitations
@@ -19,15 +19,15 @@ We will build software that maximizes value and benefit to users and society, an
 
 ## 2. Sustainable organization and systems
 
-We will build software systems that are sustainable in terms of maintenance and software organizations that are sustainable economically.
+We will build computer systems that are sustainable in terms of maintenance and computer organizations that are sustainable economically.
 
 - Have a sustainable profit model
 - Focus on long-term organizational sustainability over short-term returns
-- Apply software quality and maintainability practices
+- Apply quality and maintainability practices
 
 ## 3. Kind to creators
 
-We will treat those involved with the creation of the software with respect, engaging their work in a sustainable way
+We will treat those involved with the creation of computer systems with respect, engaging their work in a sustainable way
 
 - Sustainable work hours
 - Do not compromise on quality in order to meet a fixed time and scope
