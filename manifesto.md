@@ -36,6 +36,6 @@ We will treat those involved with the creation of computer systems with respect,
 
 We will use computing resources in an efficient way to minimize climate impact.
 
-- Avoid technologies whose energy use is disproportiante to their value
+- Avoid technologies whose energy use is disproportionate to their value
 - Use hardware that supports installing your own OS
 - Use operating systems with long-term hardware support
