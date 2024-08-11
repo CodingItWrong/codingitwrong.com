@@ -1,13 +1,11 @@
 ---
 title: The Road to Mac OS X
+description: 'The computers I exhibited at Vintage Computer Festival Southeast 2024'
 ---
 
 ## Vintage Computer Festival Southeast 2024
 
-The following computers and operating systems are on display:
-
-<!-- TODO: separate photos of each line of three -->
-<!-- TODO: on small window width, do separate photo for each -->
+The following computers and operating systems were exhibited:
 
 <div class="computers-wide">
   <img src="/img/vcfse2024/inline-left.jpg" alt="A table with a Power Macintosh 7500 running Copland, an 8500 running BeOS, and a NeXTstation running NeXTSTEP" />

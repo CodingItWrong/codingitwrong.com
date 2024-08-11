@@ -1,5 +1,6 @@
 ---
 title: 'Computer Collection'
+description: 'A collection of vintage and obscure hardware I own.'
 ---
 
 | Hardware                                                   | Operating System                                                                                       |

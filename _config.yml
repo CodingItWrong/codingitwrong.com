@@ -10,7 +10,7 @@ title: CodingItWrong.com
 author: Josh Justice
 email: me@codingitwrong.com
 description: > # this means to ignore newlines until "baseurl:"
-  Developer, author, speaker, and trainer focused on testing, test-driven development (TDD), refactoring, and evolutionary design.
+  Trying to steer computers towards more value and less harm.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://codingitwrong.com" # the base hostname & protocol for your site
 github_username:  CodingItWrong

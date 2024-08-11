@@ -1,5 +1,6 @@
 ---
 title: Untitled Manifesto About Computers [DRAFT]
+description: Our goal is to to maximally utilize the potential of computers (hardware and software).
 ---
 
 Our goal is to to maximally utilize the potential of computers (hardware and software).
