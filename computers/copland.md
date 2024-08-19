@@ -16,6 +16,7 @@ The Copland project was plagued with delays due to management issues. It was sho
 ## Resources
 
 - [Wikipedia: Copland](<https://en.wikipedia.org/wiki/Copland_(operating_system)>)
+- [YouTube: Copland Concept Animations](https://youtu.be/MSDiqMH5vGs)
 - [YouTube: Computer Chronicles - Macintosh Copland](https://www.youtube.com/watch?v=SBRKzJMS6Uw)
 - [The Road to OS X #2: Apple Copland and NeXT - Tech Tales](https://overcast.fm/+wCpzWVZXA)
 - [YouTube: Apple's Copland OS (Info/Tour)](https://youtu.be/9VpTu5c8I_w)
