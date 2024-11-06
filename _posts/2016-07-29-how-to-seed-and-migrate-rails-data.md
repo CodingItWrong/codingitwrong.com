@@ -9,8 +9,8 @@ There are a few things about setting up initial data and migrating existing data
 
 Rails provides a `rails db:seed` command that makes it easy to [set up initial data in a database](http://guides.rubyonrails.org/active_record_migrations.html#migrations-and-seed-data). But what kind of data is that supposed to be? There are at least two kinds of initial data:
 
-* **Reference data:** data needed in all environments, from dev to production. This could include things like lists of countries and states. Usually hard-coded data.
-* **Sample data:** data needed only for the dev environment, so that there are already fake records in every table to make the app easy to interact with. Usually generated with Factory Girl.
+- **Reference data:** data needed in all environments, from dev to production. This could include things like lists of countries and states. Usually hard-coded data.
+- **Sample data:** data needed only for the dev environment, so that there are already fake records in every table to make the app easy to interact with. Usually generated with Factory Girl.
 
 The seeds file is commonly used for both of these, but that makes it difficult to set up initial data in production. The Rails guides don't make it clear which of these the seeds file is for.
 
@@ -37,7 +37,3 @@ As Rails developers we're used to doing all our database access through Active R
 However, if you need to do data transformation within a migration, using a model can cause problems. Migrations stick around forever, but models will change over time, and can even be removed. This will cause the migrations to fail if they're run in an environment in the future. Writing direct SQL queries is an alternative, but these can quickly become difficult to write and understand, and that means missing out of the benefit of writing transformations in the Active Record syntax we're used to as Rails developers.
 
 Instead, [Makandra explains](http://blog.makandra.com/2010/03/how-to-use-models-in-your-migrations-without-killing-kittens/) how to create "mirror" Active Record models as inner classes within your migration. You only have to implement enough of the Active Record model to support the query you need to run: often just the table name and relationships are enough. These inner model classes will still be available after your core models change, and you're safe!
-
-## That's what I've got.
-
-Do you have other tips for seeding and migrating data in Rails? Let me know via [Twitter](https://twitter.com/CodingItWrong) or [email](me@codingitwrong.com)!

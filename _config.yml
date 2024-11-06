@@ -8,17 +8,16 @@
 # Site settings
 title: CodingItWrong.com
 author: Josh Justice
-email: me@codingitwrong.com
+email: ""
 description: > # this means to ignore newlines until "baseurl:"
   Trying to steer computers towards more value and less harm.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://codingitwrong.com" # the base hostname & protocol for your site
-github_username:  CodingItWrong
+github_username: CodingItWrong
 mastodon:
-  -
-    username: CodingItWrong
+  - username: CodingItWrong
     instance: tdd.social
-google_analytics: 'G-B9G24QHNZH'
+google_analytics: "G-B9G24QHNZH"
 
 # Build settings
 markdown: kramdown
@@ -28,14 +27,12 @@ plugins:
   - jekyll-redirect-from
 
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "pages"
     values:
       layout: "page"
-  -
-    scope:
+  - scope:
       path: ""
       type: "posts"
     values:
