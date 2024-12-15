@@ -1,5 +1,5 @@
 ---
-title: "Comparing Vue Component Testing Tools"
+title: 'Comparing Vue Component Testing Tools'
 tags: [testing]
 ---
 
@@ -19,7 +19,7 @@ What’s externally visible in a component? For example, you can provide input t
 
 There are some things I see in Vue testing guides that aren’t externally visible, though: checking data items, calling a component method directly, confirming that a component method is called. Data items and methods are implementation details of components.
 
-With that stated, let’s take a look at our testing options. We’ll look at an example from [my Vue TDD tutorial](http://learntdd.in/vue): a form that allows you to enter a message and send it.
+With that stated, let’s take a look at our testing options. We’ll look at a form that allows you to enter a message and send it.
 
 ## Built-in Vue Unit Testing
 
@@ -43,7 +43,9 @@ describe('NewMessageForm.vue', () => {
       spy = sinon.spy();
       vm.$on('save', spy);
 
-      const messageTextField = vm.$el.querySelector("[data-test='messageText']");
+      const messageTextField = vm.$el.querySelector(
+        "[data-test='messageText']",
+      );
       messageTextField.value = 'New message';
       messageTextField.dispatchEvent(new window.Event('input'));
 
@@ -51,7 +53,7 @@ describe('NewMessageForm.vue', () => {
       saveButton.click();
     });
 
-    it('clears the text field', done => {
+    it('clears the text field', (done) => {
       Vue.nextTick(() => {
         const messageField = vm.$el.querySelector("[data-test='messageText']");
         expect(messageField.value).to.eq('');
@@ -129,7 +131,7 @@ messageField.element.value = 'New message';
 messageField.trigger('input');
 ```
 
-But setting the value on the text field is actually a bit *more* indirect. We have to know to retrieve the element from the wrapper.
+But setting the value on the text field is actually a bit _more_ indirect. We have to know to retrieve the element from the wrapper.
 
 Another thing that’s nice about Vue Test Utils is the `emitted()` method that exposes events emitted by the component. That makes it clear how you can test events, and encourages that kind of testing:
 
@@ -153,16 +155,13 @@ describe('NewMessageForm', () => {
       spy = cy.spy();
       Cypress.vue.$on('save', spy);
 
-      cy.get("[data-test='messageText']")
-        .type('New message');
+      cy.get("[data-test='messageText']").type('New message');
 
-      cy.get("[data-test='saveButton']")
-        .click();
+      cy.get("[data-test='saveButton']").click();
     });
 
     it('clears the text field', () => {
-      cy.get("[data-test='messageText']")
-        .should('have.value', '');
+      cy.get("[data-test='messageText']").should('have.value', '');
     });
 
     it('emits the "save" event', () => {
@@ -177,15 +176,14 @@ describe('NewMessageForm', () => {
 In a sense, Cypress component tests are a higher level of abstraction. You aren’t just calling methods on component objects; you can also interact with the UI in the same way you do in end-to-end tests:
 
 ```js
-cy.get("[data-test='messageText']")
-  .type('New message');
+cy.get("[data-test='messageText']").type('New message');
 ```
 
 This is convenient but it may raise questions in your head: aren’t unit tests supposed to be lower level? This is why I would argue for using the term "component test" rather than "unit test." In unit tests we tend to make function calls. But function calls aren’t how we use components; we interact with them in the UI. Therefore that’s the right level of abstraction for testing components. We can see evidence for this in the fact that we don’t easily know how to call the functions to test components; that’s not how we use them.
 
 ## Why does it matter?
 
-All of these approaches will work to test components, and if you're on a project that's already chosen a component test appraoch, you don't need to change right away. But what *is* the value of picking a cleaner approach to component testing?
+All of these approaches will work to test components, and if you're on a project that's already chosen a component test appraoch, you don't need to change right away. But what _is_ the value of picking a cleaner approach to component testing?
 
 - **Friction:** we developers are human, and it’s hard to get motivated to do something that’s tedious. The more work it is to test the external interface of our components, the more we’ll be tempted to write easier tests of component internals—or not test at all.
 - **Reliability of tests:** when you have several lines of code to write to execute one conceptual step, that’s more places for errors to creep in. Errors in tests can manifest as mysterious failures or (maybe worse) tests that pass even though the functionality is broken.
