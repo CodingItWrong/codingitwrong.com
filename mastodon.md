@@ -2,7 +2,7 @@
 title: Mastodon
 ---
 
-**tl;dr: follow me on Mastodon at [@CodingItWrong@tdd.social](https://tdd.social/@CodingItWrong)**
+**tl;dr: follow me on Mastodon at [@CodingItWrong@oldbytes.space](https://oldbytes.space/@CodingItWrong)**
 
 Mastodon is an open-source social network. It's a microblogging platform and so most closely modeled after Twitter.
 

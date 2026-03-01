@@ -16,7 +16,7 @@ url: "https://codingitwrong.com" # the base hostname & protocol for your site
 github_username: CodingItWrong
 mastodon:
   - username: CodingItWrong
-    instance: tdd.social
+    instance: oldbytes.space
 google_analytics: "G-B9G24QHNZH"
 
 # Build settings
