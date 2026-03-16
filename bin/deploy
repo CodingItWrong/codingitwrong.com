@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 
-JEKYLL_ENV=production bundle exec jekyll build
-npm install -g netlify-cli
-netlify deploy --prod
+git push origin main
