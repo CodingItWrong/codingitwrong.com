@@ -10,12 +10,6 @@ bin/serve
 # or: bundle exec jekyll serve --drafts
 ```
 
-**Deploy to GitHub Pages:**
-```
-bin/deploy
-# or: git push origin main
-```
-
 **Process webring images:**
 ```
 npm run images
@@ -44,4 +38,4 @@ The site uses a custom gem-based theme sourced directly from GitHub (`codingitwr
 
 ### Deployment
 
-The site deploys to GitHub Pages via GitHub Actions. Pushing to `main` triggers the workflow at `.github/workflows/deploy.yml`, which builds the site with `JEKYLL_ENV=production` and deploys it. `bin/deploy` is a shorthand that pushes to `origin main`.
+The site deploys to GitHub Pages via GitHub Actions. Pushing to `main` triggers the workflow at `.github/workflows/deploy.yml`, which builds the site with `JEKYLL_ENV=production` and deploys it.
