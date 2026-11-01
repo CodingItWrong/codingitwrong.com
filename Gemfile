@@ -14,6 +14,6 @@ gem 'base64'
 gem 'bigdecimal'
 
 group :jekyll_plugins do
-  gem 'jekyll-feed', '~> 0.17'
+  gem 'jekyll-feed', '~> 0.18'
   gem 'jekyll-seo-tag'
 end
